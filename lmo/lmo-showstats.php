@@ -222,7 +222,7 @@ if ($file != '') {
             if (file_exists(PATH_TO_LMO . "/$temp11/$file16")) {
                 require (PATH_TO_LMO . "/$temp11/$file16");
 ?>
-<div class="container">
+<div class="container text-break">
   <div class="row">
     <div class="col text-center"><h2><?php echo $text[4009] ?></h2></div>
   </div>
@@ -236,16 +236,16 @@ if ($file != '') {
   <div class="row">
     <div class="col-3">&nbsp;</div>
     <div class="col-2"><strong><?php echo $ggesamt = $gzusieg1 + $gzusieg2 + $gzuunent + $gbeide; ?></strong></div>
-    <div class="col-2"><strong><?php echo $gzusieg1 ?></strong><?php if ($ggesamt > 0) { $v = round($gzusieg1 / $ggesamt * 100); echo " ($v%)"; } ?></div>
-    <div class="col-2"><strong><?php echo $gzuunent ?></strong><?php if ($ggesamt > 0) { $v = round($gzuunent / $ggesamt * 100); echo " ($v%)"; } ?></div>
-    <div class="col-2"><strong><?php echo $gzusieg2 ?></strong><?php if ($ggesamt > 0) { $v = round($gzusieg2 / $ggesamt * 100); echo " ($v%)"; } ?></div>
+    <div class="col-2"><strong><?php echo $gzusieg1 ?></strong><?php if ($ggesamt > 0) { $v = round($gzusieg1 / $ggesamt * 100); echo " <small>($v%)</small>"; } ?></div>
+    <div class="col-2"><strong><?php echo $gzuunent ?></strong><?php if ($ggesamt > 0) { $v = round($gzuunent / $ggesamt * 100); echo " <small>($v%)</small>"; } ?></div>
+    <div class="col-2"><strong><?php echo $gzusieg2 ?></strong><?php if ($ggesamt > 0) { $v = round($gzusieg2 / $ggesamt * 100); echo " <small>($v%)</small>"; } ?></div>
   </div>
     <?php
                 if ($gbeide > 0) {
     ?>
    <div class="row">
      <div class="col-3"><?php echo $text[4012] ?></div>
-     <div class="col-2 offset-4"><strong><?php echo $gbeide ?></strong><?php if ($ggesamt > 0) { $v = round($gbeide / $ggesamt * 100); echo " ($v%)"; } ?></div>
+     <div class="col-2 offset-4"><strong><?php echo $gbeide ?></strong><?php if ($ggesamt > 0) { $v = round($gbeide / $ggesamt * 100); echo " <small>($v%)</small>"; } ?></div>
    </div><?php
                 }
 ?>
@@ -255,14 +255,13 @@ if ($file != '') {
    <div class="row">
      <div class="col-3"><strong><?php echo $text[38] ?></strong></div>
      <div class="col-2"><?php echo $text[516] ?></div>
-     <div class="col-4"><?php echo $text[41] . '-' . $text[38] ?></div>
+     <div class="col-3"><?php echo $text[41] . '-' . $text[38] ?></div>
      <div class="col-3"><?php echo $text[42] . '-' . $text[38] ?></div>
    </div>
    <div class="row">
-     <div class="col-3">&nbsp;</div>
-     <div class="col-2"><strong><?php echo applyFactor($gzutore, $goalfaktor); ?></strong> (<?php echo $text[517] . ' ' . applyFactor($gdstore, $goalfaktor) ?>)</div>
-     <div class="col-4"><strong><?php echo applyFactor($gheimtore, $goalfaktor); ?></strong><?php if ($gdstore > 0) { $v = round($dsheimtore / $gdstore * 100); echo " ($v% " . $text[517] . ' ' . applyFactor($dsheimtore, $goalfaktor) . ')'; } ?></div>
-     <div class="col-3"><strong><?php echo applyFactor($ggasttore, $goalfaktor); ?></strong><?php if ($gdstore > 0) { echo ' (' . (100 - $v) . '% ' . $text[517] . ' ' . applyFactor($dsgasttore, $goalfaktor) . ')'; } ?></div>
+     <div class="col-2 offset-3"><strong><?php echo applyFactor($gzutore, $goalfaktor); ?></strong> <small>(<?php echo $text[517] . applyFactor($gdstore, $goalfaktor) ?>)</small></div>
+     <div class="col-3"><strong><?php echo applyFactor($gheimtore,$goalfaktor);?></strong> <small>(<?php echo $text[517] . applyFactor($dsheimtore,$goalfaktor) ?>)</small></div>
+     <div class="col-3"><strong><?php echo applyFactor($ggasttore,$goalfaktor);?></strong> <small>(<?php echo $text[517] . applyFactor($dsgasttore,$goalfaktor) ?>)</small></div>   
    </div>
     <?php
                 if ($hheimsiegtor > 0) {
@@ -270,10 +269,11 @@ if ($file != '') {
    <div class="row">
      <div class="col">&nbsp;</div>
    </div>
-	<div class="row">
-     <div class="col-3"><strong><?php echo $text[4013] ?></strong></div>
-	 <div class="col-6"><?php echo $hheimsieg ?> - <?php echo $hgastsieg ?></div>
-     <div class="col-2"><?php echo applyFactor($hheimsiegtor, $goalfaktor) ?>:<?php echo applyFactor($hgastsiegtor, $goalfaktor) ?> (<?php echo $spieltagflag ?>. <?php echo $text[4014] ?>)</div>
+   <div class="row">
+     <div class="col-3 d-none d-xl-block"><strong><?php echo $text[4013]?></strong></div>
+     <div class="col-3 d-xl-none"><strong><?php echo $text[4006]?></strong></div>
+     <div class="col-7"><?php echo $hheimsieg ?> - <?php echo $hgastsieg ?></div>
+     <div class="col-2"><?php echo applyFactor($hheimsiegtor, $goalfaktor) ?>:<?php echo applyFactor($hgastsiegtor, $goalfaktor) ?></div>
    </div><?php
                     if ($hheimsiegtor1 > 0) {
 ?>
@@ -281,14 +281,14 @@ if ($file != '') {
      <div class="col">&nbsp;</div>
    </div>
    <div class="row">
-     <div class="col-6 offset-3"><?php echo $hheimsieg1 ?> - <?php echo $hgastsieg1 ?></div>
-     <div class="col-2"><?php echo applyFactor($hheimsiegtor1, $goalfaktor) ?>:<?php echo applyFactor($hgastsiegtor1, $goalfaktor) ?> (<?php echo $spieltagflag1 ?>. <?php echo $text[4014] ?>)</div>
+     <div class="col-7 offset-3"><?php echo $hheimsieg1 ?> - <?php echo $hgastsieg1 ?></div>
+     <div class="col-2"><?php echo applyFactor($hheimsiegtor1, $goalfaktor) ?>:<?php echo applyFactor($hgastsiegtor1, $goalfaktor) ?></div>
    </div><?php
                         if ($counteranz > 2) {
                             $counteranz0 = $counteranz - 2;
 ?>
    <div class="row">
-     <div class="col"><small><?php echo $text[4015] ?> <?php echo $counteranz0 ?> <?php echo $text[4016] ?></small></div>
+     <div class="col-7 offset-3"><small><?php echo $text[4015] ?> <?php echo $counteranz0 ?> <?php echo $text[4016] ?></small></div>
    </div><?php
                         }
                     }
@@ -298,10 +298,11 @@ if ($file != '') {
    <div class="row">
      <div class="col">&nbsp;</div>
    </div>
-	<div class="row">
-     <div class="col-3"><strong><?php echo $text[4017] ?></strong></div>
-     <div class="col-6"><?php echo $aheimsieg ?> - <?php echo $agastsieg ?></div>
-     <div class="col-2"><?php echo applyFactor($aheimsiegtor, $goalfaktor) ?>:<?php echo applyFactor($agastsiegtor, $goalfaktor) ?> (<?php echo $spieltagflag2 ?>. <?php echo $text[4014] ?>)</div>
+   <div class="row">
+     <div class="col-3 d-none d-xl-block"><strong><?php echo $text[4017]?></strong></div>
+     <div class="col-3 d-xl-none"><strong><?php echo $text[4007]?></strong></div>
+     <div class="col-7"><?php echo $aheimsieg ?> - <?php echo $agastsieg ?></div>
+     <div class="col-2"><?php echo applyFactor($aheimsiegtor, $goalfaktor) ?>:<?php echo applyFactor($agastsiegtor, $goalfaktor) ?></div>
    </div>  <?php
                     if ($agastsiegtor1 > 0) {
 ?>
@@ -316,7 +317,7 @@ if ($file != '') {
                             $counteranz4 = $counteranz1 - 2;
 ?>
    <div class="row">
-     <div class="col"><small><?php echo $text[4015] ?> <?php echo $counteranz4 ?> <?php echo $text[4016] ?></small></div>
+     <div class="col-7 offset-3"><small><?php echo $text[4015] ?> <?php echo $counteranz4 ?> <?php echo $text[4016] ?></small></div>
    </div><?php
                         }
                     }
@@ -325,20 +326,20 @@ if ($file != '') {
 ?>
    <div class="row">
      <div class="col-3"><strong><?php echo $text[4018] ?> <?php echo $text[38] ?></strong></div>
-     <div class="col-6"><?php echo $htorreichm1 ?> - <?php echo $htorreichm2 ?></div>
-     <div class="col-2"><?php echo applyFactor($htorreicht1, $goalfaktor) ?>:<?php echo applyFactor($htorreicht2, $goalfaktor) ?>  (<?php echo $spieltagflag4 ?>. <?php echo $text[4014] ?>)</div>
+     <div class="col-7"><?php echo $htorreichm1 ?> - <?php echo $htorreichm2 ?></div>
+     <div class="col-2"><?php echo applyFactor($htorreicht1, $goalfaktor) ?>:<?php echo applyFactor($htorreicht2, $goalfaktor) ?></div>
    </div><?php
                     if ($spieltagflag5 > 0) {
 ?>
    <div class="row">
-     <div class="col-6 offset-3"><?php echo $htorreichm3 ?> - <?php echo $htorreichm4 ?></div>
-     <div class="col-2"><?php echo applyFactor($htorreicht3, $goalfaktor) ?>:<?php echo applyFactor($htorreicht4, $goalfaktor) ?>  (<?php echo $spieltagflag5 ?>. <?php echo $text[4014] ?>)</div>
+     <div class="col-7 offset-3"><?php echo $htorreichm3 ?> - <?php echo $htorreichm4 ?></div>
+     <div class="col-2"><?php echo applyFactor($htorreicht3, $goalfaktor) ?>:<?php echo applyFactor($htorreicht4, $goalfaktor) ?></div>
    </div><?php
                         if ($counteranz5 > 2) {
                             $counteranz6 = $counteranz5 - 2;
 ?>
    <div class="row">
-     <div class="col"><small><?php echo $text[4015] ?> <?php echo $counteranz6 ?> <?php echo $text[4019] ?></small></div>
+     <div class="col-7 offset-3"><small><?php echo $text[4015] ?> <?php echo $counteranz6 ?> <?php echo $text[4019] ?></small></div>
    </div><?php
                         }
                     }
@@ -349,42 +350,40 @@ if ($file != '') {
      <div class="col text-center"><h4><?php echo $text[1000] ?></h4></div>
    </div>
    <div class="row">
-     <div class="col-2">&nbsp;</div>
-       <div class="col-1"></div>
-       <div class="col-4"><strong><?php echo $text[1006] ?></strong></div>
-       <div class="col-1"></div>
-       <div class="col-4"><strong><?php echo $text[1007] ?></strong></div>
+       <div class="col-2"></div>
+       <div class="col-3 offset-1"><strong><?php echo $text[1006] ?></strong></div>
+       <div class="col-3 offset-2"><strong><?php echo $text[1007] ?></strong></div>
    </div>
    <div class="row">
-     <div class="col-2"><strong><?php echo $text[1001] ?></strong></div>
+     <div class="col-2 text-end"><strong><?php echo $text[1001] ?></strong></div>
      <div class="col-1 text-end"><strong><?php echo $akt_gewonnen ?></strong></div>
      <div class="col-4"><?php echo nl2br($team_akt_gewonnen) ?></div>
      <div class="col-1 text-end"><strong><?php echo $max_gewonnen ?></strong></div>
      <div class="col-4"><?php echo nl2br($team_max_gewonnen) ?></div>
    </div>  
    <div class="row">
-     <div class="col-2"><strong><?php echo $text[1002] ?></strong></div>
+     <div class="col-2 text-end"><strong><?php echo $text[1002] ?></strong></div>
      <div class="col-1 text-end"><strong><?php echo $akt_ungeschlagen ?></strong></div>
      <div class="col-4"><?php echo nl2br($team_akt_ungeschlagen) ?></div>
      <div class="col-1 text-end"><strong><?php echo $max_ungeschlagen ?></strong></div>
      <div class="col-4"><?php echo nl2br($team_max_ungeschlagen) ?></div>
    </div>
    <div class="row">
-     <div class="col-2"><strong><?php echo $text[1003] ?></strong></div>
+     <div class="col-2 text-end"><strong><?php echo $text[1003] ?></strong></div>
      <div class="col-1 text-end"><strong><?php echo $akt_unentschieden ?></strong></div>
      <div class="col-4"><?php echo nl2br($team_akt_unentschieden) ?></div>
      <div class="col-1 text-end"><strong><?php echo $max_unentschieden ?></strong></div>
      <div class="col-4"><?php echo nl2br($team_max_unentschieden) ?></div>
    </div>
    <div class="row">
-     <div class="col-2"><strong><?php echo $text[1004] ?></strong></div>
+     <div class="col-2 text-end"><strong><?php echo $text[1004] ?></strong></div>
      <div class="col-1 text-end"><strong><?php echo $akt_sieglos ?></strong></div>
      <div class="col-4"><?php echo nl2br($team_akt_sieglos) ?></div>
      <div class="col-1 text-end"><strong><?php echo $max_sieglos ?></strong></div>
      <div class="col-4"><?php echo nl2br($team_max_sieglos) ?></div>
    </div>
    <div class="row">
-     <div class="col-2"><strong><?php echo $text[1005] ?></strong></div>
+     <div class="col-2 text-end"><strong><?php echo $text[1005] ?></strong></div>
      <div class="col-1 text-end"><strong><?php echo $akt_verloren ?></strong></div>
      <div class="col-4"><?php echo nl2br($team_akt_verloren) ?></div>
      <div class="col-1 text-end"><strong><?php echo $max_verloren ?></strong></div>
