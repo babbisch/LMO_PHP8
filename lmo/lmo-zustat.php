@@ -516,37 +516,37 @@ if ($_SESSION['lmouserok'] > 0) {
             if ($team_serien['max_gewonnen']['count'] > $max_gewonnen) {
                 $max_gewonnen = $team_serien['max_gewonnen']['count'];
                 $team_max_gewonnen = array();
-                $team_max_gewonnen[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_gewonnen']['st'] . ')';
+                $team_max_gewonnen[] = $team;
             } elseif ($team_serien['max_gewonnen']['count'] == $max_gewonnen && $max_gewonnen > 0) {
-                $team_max_gewonnen[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_gewonnen']['st'] . ')';
+                $team_max_gewonnen[] = $team;
             }
             if ($team_serien['max_ungeschlagen']['count'] > $max_ungeschlagen) {
                 $max_ungeschlagen = $team_serien['max_ungeschlagen']['count'];
                 $team_max_ungeschlagen = array();
-                $team_max_ungeschlagen[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_ungeschlagen']['st'] . ')';
+                $team_max_ungeschlagen[] = $team;
             } elseif ($team_serien['max_ungeschlagen']['count'] == $max_ungeschlagen && $max_ungeschlagen > 0) {
-                $team_max_ungeschlagen[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_ungeschlagen']['st'] . ')';
+                $team_max_ungeschlagen[] = $team;
             }
             if ($team_serien['max_unentschieden']['count'] > $max_unentschieden) {
                 $max_unentschieden = $team_serien['max_unentschieden']['count'];
                 $team_max_unentschieden = array();
-                $team_max_unentschieden[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_unentschieden']['st'] . ')';
+                $team_max_unentschieden[] = $team;
             } elseif ($team_serien['max_unentschieden']['count'] == $max_unentschieden && $max_unentschieden > 0) {
-                $team_max_unentschieden[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_unentschieden']['st'] . ')';
+                $team_max_unentschieden[] = $team;
             }
             if ($team_serien['max_sieglos']['count'] > $max_sieglos) {
                 $max_sieglos = $team_serien['max_sieglos']['count'];
                 $team_max_sieglos = array();
-                $team_max_sieglos[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_sieglos']['st'] . ')';
+                $team_max_sieglos[] = $team;
             } elseif ($team_serien['max_sieglos']['count'] == $max_sieglos && $max_sieglos > 0) {
-                $team_max_sieglos[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_sieglos']['st'] . ')';
+                $team_max_sieglos[] = $team;
             }
             if ($team_serien['max_verloren']['count'] > $max_verloren) {
                 $max_verloren = $team_serien['max_verloren']['count'];
                 $team_max_verloren = array();
-                $team_max_verloren[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_verloren']['st'] . ')';
+                $team_max_verloren[] = $team;
             } elseif ($team_serien['max_verloren']['count'] == $max_verloren && $max_verloren > 0) {
-                $team_max_verloren[] = $team . ' (' . $text[2] . ' ' . $team_serien['max_verloren']['st'] . ')';
+                $team_max_verloren[] = $team;
             }
         }
         // Serien Ende
