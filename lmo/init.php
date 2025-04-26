@@ -23,7 +23,7 @@
 $get = array();
 $get = $_GET;
 foreach ($get as $value) {
-    if (str_starts_with($value, '<') || str_starts_with($value, "\'"))
+    if (str_starts_with(urlencode($value), '<') || str_starts_with(urlencode($value), '%'))
         die('XSS-Scripting detected');
 }
 
