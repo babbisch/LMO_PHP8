@@ -38,7 +38,7 @@ if ($action == 'admin') {
         $newpage = 0;
     }
     $file = isset($_REQUEST['file']) ? $_REQUEST['file'] : '';
-    $subdir = isset($_REQUEST['subdir']) ? $_REQUEST['subdir'] : dirname($file) . '/';
+    $subdir = isset($_REQUEST['subdir']) ? $_REQUEST['subdir'] : dirname($file) ;
 
     if (@file_exists(PATH_TO_LMO . '/install/install.php') && @is_readable(PATH_TO_LMO . '/install/install.php'))
         echo getMessage('Delete install folder or set its chmod to 000!', TRUE);
