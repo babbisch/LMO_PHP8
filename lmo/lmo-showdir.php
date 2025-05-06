@@ -20,11 +20,6 @@
 
 ?>
 <div  class="container">
-   <?php  /*<tr>
-    <td align="right">
-<?php include(PATH_TO_LMO."/lmo-ligensortierung.php");?></td>
-  </tr>*/
-?>
   <div class="row">
     <div class="col"><?php
 include (PATH_TO_LMO . '/lmo-dirlist.php');
@@ -70,9 +65,4 @@ if ($archivlink == 1) {
 ?>
     </div>
   </div>
-  <?php  /*<tr>
-    <td align="right">
-<?php include(PATH_TO_LMO."/lmo-ligensortierung.php");?></td>
-  </tr>*/
-?>
 </div>
