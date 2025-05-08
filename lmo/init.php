@@ -23,21 +23,9 @@
 $get = array();
 $get = $_GET;
 foreach ($get as $value) {
-    if (str_starts_with(urlencode($value), '%'))
+    if (str_contains($value, 'script') || str_contains($value, '%'))
         die('XSS-Scripting detected');
 }
-
-/*
- * $content = "Date: ".date("d.m.y H:i:s")."\n";
- * $content .= "GET: ".$_SERVER['QUERY_STRING']."\n";
- * $content .= "Host: ".gethostbyaddr($_SERVER['REMOTE_ADDR'])."\n";
- * $content .= "Server: ".$_SERVER['REMOTE_ADDR']."\n";
- * $content .= "Proxy: ".$_SERVER['HTTP_X_FORWARDED_FOR']."\n";
- *
- * $access = fopen("access_log", "a");
- * fwrite($access, $content);
- * fclose($access);
- */
 
 @ini_set('session.use_trans_sid', '1');
 @ini_set('arg_separator.output', '&amp;');
@@ -52,7 +40,6 @@ if (isset($_GET['debug']) || isset($_SESSION['debug'])) {
     @ini_set('display_errors', '1');
 }
 $_SERVER['QUERY_STRING'] = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
-
 // Path-Contants
 if (!defined('PATH_TO_LMO'))
     define('PATH_TO_LMO', $lmo_dateipfad);
