@@ -23,7 +23,7 @@ require (__DIR__ . '/../../init.php');
 require_once (PATH_TO_ADDONDIR . '/classlib/ini.php');
 ?>
 <script src="<?php echo URL_TO_JSDIR ?>/viewer.js" type="text/javascript"></script>
-<?PHP
+<?php
 if ($_SESSION['lmouserok'] == 2) {
     $verz = substr($dirliga, -1) == '/' ? opendir(substr(PATH_TO_LMO . '/' . $dirliga, 0, -1)) : opendir(PATH_TO_LMO . '/' . $dirliga);
     $tmpl_verz = substr($dirliga, -1) == '/' ? opendir(substr(PATH_TO_TEMPLATEDIR . '/viewer/', 0, -1)) : opendir(PATH_TO_TEMPLATEDIR . '/viewer/');
@@ -132,14 +132,17 @@ if ($_SESSION['lmouserok'] == 2) {
         $save_config_array = implode(';', $config_array);
         $zz = 1;
         $z = $_POST['zaehler'];
+        $ausgewaehlte_ligen_arr = array();
         for ($i = 1; $i < $z; $i++) {
             $h = 'c' . $i;
             if (isset($_POST[$h])) {
-                $ausgewaehlte_ligen[$zz++] = $i;
+                $ausgewaehlte_ligen_arr[$zz++] = $i;
             }
+            $ausgewaehlte_ligen = count($ausgewaehlte_ligen_arr);
+
         }
     }
-
+    
     $z = 1;
     $error_dateiopen = false;
     $speicherflag = false;
@@ -404,11 +407,11 @@ if ($_SESSION['lmouserok'] == 2) {
       <div class="col"><strong><?php echo $text['viewer'][31]; ?></strong></div>
     </div>
     <?php $ges_teams = 0;
-        for ($i = 1; $i <= count($ausgewaehlte_ligen); $i++) {
+        for ($i = 1; $i <= $ausgewaehlte_ligen; $i++) {
             $liga1 = new liga();
-            if ($liga1->loadFile(PATH_TO_LMO . '/' . $dirliga . $ligenfile[$ausgewaehlte_ligen[$i]]) == TRUE) { // Ligenfile vorhanden? ?>
+            if ($liga1->loadFile(PATH_TO_LMO . '/' . $dirliga . $ligenfile[$i]) == TRUE) { // Ligenfile vorhanden? ?>
     <div class="row pt-4">
-      <div class="col d-flex justify-content-center"><h3><?php echo $ligennamen[$ausgewaehlte_ligen[$i]]; ?></h3></div>
+      <div class="col d-flex justify-content-center"><h3><?php echo $ligennamen[$i]; ?></h3></div>
     </div>
              <?php $ii = 1;
                 $spalte = 1;
@@ -420,7 +423,7 @@ if ($_SESSION['lmouserok'] == 2) {
                         echo '<div class="row">' . chr(13) . '<div class="col-2 offset-3 text-start">';
                     if ($spalte > 1)
                         echo '<div class="col-2 text-start">';
-                    echo '<input type="checkbox" class="form-check-input" name="t' . $ges_teams . '" value="' . $ligenfile[$ausgewaehlte_ligen[$i]] . '[' . $ii . ']' . '">&nbsp;' . $mannschaft->name;
+                    echo '<input type="checkbox" class="form-check-input" name="t' . $ges_teams . '" value="' . $ligenfile[$i] . '[' . $ii . ']' . '">&nbsp;' . $mannschaft->name;
                     if ($spalte < 4)
                         echo '</div>' . chr(13);
                     if ($spalte == 4)
@@ -432,7 +435,7 @@ if ($_SESSION['lmouserok'] == 2) {
                     $ges_teams++;
                 }
             } else {
-                echo '[' . PATH_TO_LMO . '/' . $dirliga . $ligenfile[$ausgewaehlte_ligen[$i]] . '] ' . $text['viewer'][50] . '<br>';
+                echo '[' . PATH_TO_LMO . '/' . $dirliga . $ligenfile[$i] . '] ' . $text['viewer'][50] . '<br>';
             }
         } ?>
     <div class="row pt-3">
@@ -449,7 +452,7 @@ if ($_SESSION['lmouserok'] == 2) {
         <br />
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="formular3" value="1">
-        <input type="hidden" name="ausgewaehlte_ligen[]" value="<?php echo $ausgewaehlte_ligen ?>">
+        <input type="hidden" name="ausgewaehlte_ligen" value="<?php echo $ausgewaehlte_ligen ?>">
         <input type="hidden" name="zaehler" value="<?php echo $ges_teams; ?>">
         <input type="hidden" name="dateiname" value="<?php echo $save_file_name; ?>">
         <input type="hidden" name="config_array" value="<?php echo $save_config_array; ?>">
