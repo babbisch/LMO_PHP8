@@ -57,7 +57,6 @@ if (($file != '') && ($kurve == 1)) {
             unset(${'platz' . $j}[$key]);
         }
         ${'pgplatz' . $j} = implode(',', ${'platz' . $j});
-        $color = mt_rand(0, 160) . ',' . mt_rand(0, 160) . ',' . mt_rand(0, 160) . ',1';
         $axisColor = 'rgba(90, 90, 90, 1)';
         $flag = 'true';
         if ($j < 3)
@@ -65,18 +64,17 @@ if (($file != '') && ($kurve == 1)) {
         $data .= "{
                         label: '$teams[$j]',
                         fill: false,
-                        lineTension: $tension,
-                        color: '{$axisColor}',
+                        lineTension: $tension,                       
                         data: [{${'pgplatz' . $j}}],
                         hidden: $flag,
                     },";
     }
+
 ?>
 <script src="//cdn.jsdelivr.net/npm/chart.js"></script>
 <script src='//cdn.jsdelivr.net/npm/chartjs-plugin-autocolors'></script>
 <script>
 const autocolors = window['chartjs-plugin-autocolors'];
-const lighten = (color, value) => Chart.helpers.color(color).lighten(value).rgbString();
 Chart.register(autocolors);
 
 const ctx = document.getElementById('myChart');
@@ -95,7 +93,6 @@ new Chart(ctx, {
 		title: {
 		    display: true,
 		    text: '<?php echo $pgtext1; ?>',
-		    color: '<?php echo $axisColor; ?>',
 		    font: {
 			size: 24,
 		    },
@@ -111,7 +108,6 @@ new Chart(ctx, {
 		title: {
 		    display: true,
 		    text: '<?php echo $pgtext2; ?>',
-		    color: '<?php echo $axisColor; ?>',
 		    font: {
 			size: 24,
 		    },
@@ -144,13 +140,7 @@ new Chart(ctx, {
                 }
 	    },
 	    autocolors: {
-                customize(context) {
-                    const colors = context.colors;
-                    return {
-                        background: lighten(colors.background, 0.0),
-                        border: lighten(colors.border, 0.0)
-                    };            
-                }
+                mode: 'label'
             }
 	}
     }
