@@ -103,7 +103,7 @@ if ($save == 1) {
         </div>
       </div>
     </div>
-    <div class="col-auto">
+    <div class="col-6">
       <form name="lmoedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onSubmit="return chklmopass()">
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="todo" value="options">
@@ -115,7 +115,7 @@ if ($show == 0) {
     ?>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><acronym title="<?php echo $text[506] ?>"><?php echo $text[505]; ?></acronym></div>
-            <div class="col-7 text-start">
+            <div class="col-4 text-start">
               <select class="form-select" name="xdeflang" onchange="dolmoedit()"><?php
     $handle = opendir(PATH_TO_LANGDIR);
     while (false !== ($f = readdir($handle))) {
@@ -133,7 +133,7 @@ if ($show == 0) {
         ?>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><acronym title="<?php echo $text[575] ?>"><?php echo $text[574]; ?></acronym></div>
-            <div class="col-7 text-start">
+            <div class="col-4 text-start">
               <select class="form-select" name="xtimezone" onchange="dolmoedit()"><?php
         $timezones = get_timezones();
         foreach ($timezones as $continent => $zones) {
@@ -153,15 +153,15 @@ if ($show == 0) {
     ?>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><acronym title="<?php echo $text[222] ?>"><?php echo $text[221]; ?></acronym></div>
-            <div class="col-7 text-start"><input class="form-control" type="text" name="xdirliga" size="25" maxlength="80" value="<?php echo $dirliga; ?>" onChange="dolmoedit()"></div>
+            <div class="col-3 text-start"><input class="form-control" type="text" name="xdirliga" size="25" maxlength="80" value="<?php echo $dirliga; ?>" onChange="dolmoedit()"></div>
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><acronym title="<?php echo $text[240] ?>"><?php echo $text[239]; ?></acronym></div>
-            <div class="col-7 text-start"><input class="form-control" type="text" name="xdeftime" size="25" maxlength="5" value="<?php echo $deftime; ?>" onChange="dolmoedit()"></div>
+            <div class="col-2 text-start"><input class="form-control" type="text" name="xdeftime" size="25" maxlength="5" value="<?php echo $deftime; ?>" onChange="dolmoedit()"></div>
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><acronym title="<?php echo $text[256] ?>"><?php echo $text[257]; ?></acronym>&nbsp;</div>
-            <div class="col-7 text-start">
+            <div class="col-5 text-start">
               <input type="text" class="custom-control" name="xdefdateformat2" value="<?php echo $defdateformat ?>">
               <a href="https://unicode-org.github.io/icu/userguide/format_parse/datetime/#datetime-format-syntax" class="none">
                 <span class="popup">
@@ -186,18 +186,18 @@ if ($show == 0) {
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><acronym title="<?php echo $text[344] ?>"><?php echo $text[343]; ?></acronym></div>
-            <div class="col-7 text-start"><input class="form-control" type="text" name="xadr" size="25" maxlength="128" value="<?php echo $aadr; ?>" onChange="dolmoedit()"></div>
+            <div class="col-4 text-start"><input class="form-control" type="text" name="xadr" size="25" maxlength="128" value="<?php echo $aadr; ?>" onChange="dolmoedit()"></div>
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><acronym title="<?php echo $text[532] ?>"><?php echo $text[533]; ?></acronym></div>
-            <div class="col-2">
+            <div class="col-4">
               <select class="custom-select" name="xliga_sort" onChange="dolmoedit()">
                 <option value="liga_name"<?php if ($liga_sort == 'liga_name') echo ' selected'; ?>><?php echo $text[529] ?></option>
                 <option value="file_date"<?php if ($liga_sort == 'file_date') echo ' selected'; ?>><?php echo $text[530] ?></option>
                 <option value="file_name"<?php if ($liga_sort == 'file_name') echo ' selected'; ?>><?php echo $text[531] ?></option>
               </select>
             </div>
-            <div class="col-5 text-end">
+            <div class="col-3 text-start">
               <input type="radio" class="form-check-input" id="gridRadio1" name="xliga_sort_direction" onClick="dolmoedit()" value="asc"<?php if ($liga_sort_direction == 'asc') echo ' checked'; ?>>
               <label class="form-check-label" for="gridRadio1"><?php echo $text[527] ?></label><br/>
               <input type="radio" class="form-check-input" id="gridRadio2" name="xliga_sort_direction" onClick="dolmoedit()" value="desc"<?php if ($liga_sort_direction == 'desc') echo ' checked'; ?>>
@@ -206,15 +206,15 @@ if ($show == 0) {
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><?php echo $text[600]; ?></div>
-            <div class="col-7 text-start"><input class="form-control" type="text" name="bootstrap" maxlength="15" value="<?php echo $bootstrap; ?>" onChange="dolmoedit()"></div>
+            <div class="col-2 text-start"><input class="form-control" type="text" name="bootstrap" maxlength="15" value="<?php echo $bootstrap; ?>" onChange="dolmoedit()"></div>
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><?php echo $text[602]; ?></div>
-            <div class="col-7 text-start"><input class="form-control" type="text" name="bootstrapIcon" maxlength="15" value="<?php echo $bootstrapIcon; ?>" onChange="dolmoedit()"></div>
+            <div class="col-2 text-start"><input class="form-control" type="text" name="bootstrapIcon" maxlength="15" value="<?php echo $bootstrapIcon; ?>" onChange="dolmoedit()"></div>
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><?php echo $text[601]; ?></div>
-            <div class="col-7 text-start"><input class="form-control" type="text" name="chartjs" maxlength="6" value="<?php echo $chartjs; ?>" onChange="dolmoedit()"></div>
+            <div class="col-2 text-start"><input class="form-control" type="text" name="chartjs" maxlength="6" value="<?php echo $chartjs; ?>" onChange="dolmoedit()"></div>
           </div><?php
 } elseif ($show == 1) {
     ?>
@@ -252,9 +252,6 @@ if ($show == 0) {
             <div class="col-5 text-start"><acronym title="<?php echo $text[484] ?>"><?php echo $text[483]; ?></acronym></div>
           </div>
           <div class="row align-items-center pb-1">
-            <?php  /*<td class="nobr" align="right"><acronym title="<?php echo $text[494]?>"><?php echo $text[493];?></acronym></td>
-             <td class="nobr"><input type="checkbox" class="form-check-input" name="xeinhinrueck" onChange="dolmoedit()"<?php if($einhinrueck==1){echo " checked";}?>></td>*/
-            ?>
             <div class="col-5 text-end"><acronym title="<?php echo $text[486] ?>"><?php echo $text[485]; ?></acronym></div>
             <div class="col-1"><input type="checkbox" class="form-check-input" name="xeinspieler" onChange="dolmoedit()"<?php if ($einspieler == 1) { echo ' checked'; } ?>></div>
             <div class="col-1"><input type="checkbox" class="form-check-input" name="xeinzustats" onChange="dolmoedit()"<?php if ($einzustats == 1) { echo ' checked'; } ?>></div>

@@ -134,9 +134,9 @@ if ($file != '') {
                         $datu2 = explode(':', $dum2);
                         $dummy = strtotime($datu1[0] . ' ' . $me[intval($datu1[1])] . ' ' . $datu1[2] . ' ' . $datu2[0] . ':' . $datu2[1]);
                         $mterm[$st - 1][$i][$n] = $dummy > -1 ? $dummy : '';
-		    } else {
-                    	$mterm[$st - 1][$i][$n] = '';
-                    }
+					} else {
+                    $mterm[$st - 1][$i][$n] = '';
+                }
                 }
             }
             if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
@@ -330,7 +330,7 @@ if ($file != '') {
     <div class="col d-flex justify-content-center"><h1><?php echo $titel ?></h1></div>
   </div>
   <div class="row p-1">
-    <div class="col">
+    <div class="col text-center">
       <?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php'); ?>
       <?php if ($lmtype == 0) { ?>
 	<form  name="lmoedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
