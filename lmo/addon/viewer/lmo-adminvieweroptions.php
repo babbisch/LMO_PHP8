@@ -165,7 +165,7 @@ if ($_SESSION['lmouserok'] == 2) {
                 $team = substr($team, 0, strrpos($team, ']'));
                 $liga1 = new liga();
                 if ($liga1->loadFile(PATH_TO_LMO . '/' . $dirliga . $ligen_datei) == TRUE) {  // Ligenfile vorhanden?
-                    $file_ligen_datei = file(chop(PATH_TO_LMO . '/ligen/' . $ligen_datei));
+                    $file_ligen_datei = file(chop(PATH_TO_LMO . '/' . $dirliga . $ligen_datei));
                     if ($ligen_datei != $doppelt_check) {
                         $doppelt_check = $ligen_datei;
                         $zz++;
@@ -452,7 +452,6 @@ if ($_SESSION['lmouserok'] == 2) {
         <br />
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="formular3" value="1">
-        <input type="hidden" name="ausgewaehlte_ligen" value="<?php echo $ausgewaehlte_ligen ?>">
         <input type="hidden" name="zaehler" value="<?php echo $ges_teams; ?>">
         <input type="hidden" name="dateiname" value="<?php echo $save_file_name; ?>">
         <input type="hidden" name="config_array" value="<?php echo $save_config_array; ?>">
