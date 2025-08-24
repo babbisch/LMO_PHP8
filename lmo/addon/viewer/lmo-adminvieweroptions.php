@@ -246,7 +246,7 @@ if ($_SESSION['lmouserok'] == 2) {
     </div>
     <div class="row align-items-center pb-1">
       <div class="col-1 offset-2"><?php echo $text['viewer'][1]; ?></div>
-      <div class="col-3"><input class="form-control" type="text" name="dateiname" value="unbenannt"></div>
+      <div class="col-3"><input class="form-control" type="text" name="dateiname" placeholder="unbenannt"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][2]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
