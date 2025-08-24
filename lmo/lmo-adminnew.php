@@ -27,17 +27,6 @@ $xanzst = isset($_POST['xanzst']) ? $_POST['xanzst'] : 0;
 $xanzsp = isset($_POST['xanzsp']) ? $_POST['xanzsp'] : 0;
 $xteams = isset($_POST['xteams']) ? $_POST['xteams'] : 0;
 
-if ($newpage == 0) {
-    if ($xfile == '') {
-        $xfile = 'noname';
-    }
-    if ($xtitel == '') {
-        $xtitel = 'No Name';
-    }
-    if ($xtype == '') {
-        $xtype = '0';
-    }
-}
 if ($newpage == 1) {
     if (file_exists($dirliga . $xfile . '.l98')) {
         echo getMessage($text[280], TRUE);
@@ -119,8 +108,7 @@ if ($newpage == 3) {
     $enablegamesort = '1';
     $urlt = '1';
     $urlb = '1';
-    $stats = '0';
-    $icon = '';
+    $stats = '1';
     $favteam = '0';
     $selteam = '0';
     $mittore = '1';
@@ -263,15 +251,15 @@ if ($newpage == 1) {
         ?>
           <div class="row pb-1">
             <div class="col text-end"><acronym title="<?php echo $text[272] ?>"><?php echo $text[271]; ?></acronym></div>
-            <div class="col text-start"><input class="custom-control" type="number" name="xteams" style="width: 4rem;" min="2" maxlength="2" value="18"></div>
+            <div class="col text-start"><input class="custom-control" type="number" name="xteams" style="width: 4rem;" maxlength="2" value="18"></div>
           </div>
           <div class="row pb-1">
             <div class="col text-end"><acronym title="<?php echo $text[275] ?>"><?php echo $text[274]; ?></acronym></div>
-            <div class="col text-start"><input class="custom-control" type="number" name="xanzst" style="width: 4rem;" min="1" maxlength="3" value="34"></div>
+            <div class="col text-start"><input class="custom-control" type="number" name="xanzst" style="width: 4rem;" maxlength="3" value="34"></div>
           </div>
           <div class="row pb-1">
             <div class="col text-end"><acronym title="<?php echo $text[278] ?>"><?php echo $text[277]; ?></acronym></div>
-            <div class="col text-start"><input class="custom-control" type="number" name="xanzsp" style="width: 4rem;" min="1" maxlength="2" value="9"></div>
+            <div class="col text-start"><input class="custom-control" type="number" name="xanzsp" style="width: 4rem;" maxlength="2" value="9"></div>
           </div><?php
     } else {
         ?>
