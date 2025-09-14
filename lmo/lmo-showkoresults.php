@@ -66,27 +66,29 @@ if ($file != '') {
     $datsort = $mterm[$st - 1];
     asort($datsort);
     reset($datsort);
+    // while (list ($key, $val) = each ($datsort)) { //Deprecated: The each() function ...
     foreach ($datsort as $key => $val) {
         $i = $key;
         $heim1 = $heim2 = $gast1 = $gast2 = '';
         if (($teama[$st - 1][$i] > 0) && ($teamb[$st - 1][$i] > 0)) {
             for ($n = 0; $n < $modus[$st - 1]; $n++) {
 ?>
-      <div class="row"><?php
+      <div class="row p-1"><?php
                 if (($klfin == 1) && ($st == $anzst)) {
 ?>
           <div class="col-2 text-end"><?php echo $text[419 + $i]; ?></div><?php
                 }
                 if ($datm == 1) {
                     if ($mterm[$st - 1][$i][$n] > 0) {
+                        // $dum1 = date($datf, $mterm[$st-1][$i][$n]);
                         $dum1 = datefmt_format($fmt, $mterm[$st - 1][$i][$n]);
-                        $dum2 = date('d.m', $mterm[$st - 1][$i][$n]);
+                        $dum2 = date('d.m.', $mterm[$st - 1][$i][$n]);
                     } else {
                         $dum1 = $dum2 = '';
                     }
 ?>
-          <div class="col-2 text-end d-none d-lg-block"><?php echo $dum1; ?></div>
-          <div class="col-2 text-end d-lg-none"><?php echo $dum2; ?></div><?php
+          <div class="col-2 text-end d-none d-xl-block"><?php echo $dum1; ?></div>
+          <div class="col-2 text-end d-xl-none"><?php echo $dum2; ?></div><?php
                 }
                 if ($n == 0) {
                     $m1 = array($goala[$st - 1][$i][0], $goala[$st - 1][$i][1], $goala[$st - 1][$i][2], $goala[$st - 1][$i][3], $goala[$st - 1][$i][4], $goala[$st - 1][$i][5], $goala[$st - 1][$i][6]);
@@ -100,7 +102,7 @@ if ($file != '') {
                         $color = '';
                     }
                     if ($plan == 1) {
-                        $heim1 = "<a href='" . $addp . $teama[$st - 1][$i] . "' class='" . $color . "' data-bs-toggle='tooltip' data-bs-placement='top' title='" . $text[269] . "'>";
+                        $heim1 = '<a href="' . $addp . $teama[$st - 1][$i] . '" class="' . $color . '" data-bs-toggle="tooltip" data-bs-placement="top" title="' . $text[269] . '">';
                     }
                     if (($favteam > 0) && ($favteam == $teama[$st - 1][$i])) {
                         $heim1 .= '<strong>';
@@ -112,16 +114,12 @@ if ($file != '') {
                         $heim2 .= '</a>';
                     }
 ?>
-          <div class="col-3 text-end d-none d-xl-block <?php echo $color; ?>"><?php
+          <div class="col-3 text-end d-none d-xl-block"><?php
                     echo $heim1 . $teams[$teama[$st - 1][$i]] . $heim2;
-                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " title='" . $teams[$teama[$st - 1][$i]] . "'") . '&nbsp;';
+                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt='V".$teams[$teama[$st - 1][$i]]."' width='24'") . '&nbsp;';
 ?>
           </div>
-          <div class="col-3 text-end d-none d-md-block d-lg-block d-xl-none <?php echo $color; ?>"><?php
-                    echo $heim1 . $teamm[$teama[$st - 1][$i]] . $heim2;
-?>
-          </div>
-          <div class="col-2 text-end d-md-none <?php echo $color; ?>"><?php
+          <div class="col-2 text-end d-xl-none"><?php
                     echo $heim1 . $teamk[$teama[$st - 1][$i]] . $heim2;
 ?>
           </div>
@@ -134,7 +132,7 @@ if ($file != '') {
                         $color = '';
                     }
                     if ($plan == 1) {
-                        $gast1 = "<a href='" . $addp . $teamb[$st - 1][$i] . "' class='" . $color . "' data-bs-toggle='tooltip' data-bs-placement='top' title='" . $text[269] . "'>";
+                        $gast1 = '<a href="' . $addp . $teamb[$st - 1][$i] . '" class="' . $color . '" data-bs-toggle="tooltip" data-bs-placement="top" title="' . $text[269] . '">';
                     }
                     if (($favteam > 0) && ($favteam == $teamb[$st - 1][$i])) {
                         $gast1 .= '<strong>';
@@ -146,35 +144,30 @@ if ($file != '') {
                         $gast2 .= '</a>';
                     }
 ?>
-          <div class="col-3 text-start d-none d-xl-block <?php echo $color; ?>"><?php
-                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " title='" . $teams[$teamb[$st - 1][$i]] . "'") . '&nbsp;';
+          <div class="col-3 text-start d-none d-xl-block"><?php
+                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt='".$teams[$teamb[$st - 1][$i]]."' width='24'") . '&nbsp;';
                     echo $gast1 . $teams[$teamb[$st - 1][$i]] . $gast2;
 ?>
           </div>
-
-          <div class="col-3 text-start d-none d-md-block d-lg-block d-xl-none <?php echo $color; ?>"><?php
-                    echo $gast1 . $teamm[$teamb[$st - 1][$i]] . $gast2;
-?>
-          </div>
-          <div class="col-2 text-start d-md-none <?php echo $color; ?>"><?php
+          <div class="col-2 text-start d-xl-none"><?php
                     echo $gast1 . $teamk[$teamb[$st - 1][$i]] . $gast2;
 ?>
           </div><?php
                 } else {
 ?>
-          <div class="col-6 d-none d-md-block"></div>
-          <div class="col-4 d-md-none"></div><?php
+          <div class="col-6 d-none d-xl-block"></div>
+          <div class="col-4 d-xl-none"></div><?php
                 }
 ?>
-          <div class="col-1 d-none d-lg-block"><?php echo applyFactor($goala[$st - 1][$i][$n], $goalfaktor); ?> : <?php echo applyFactor($goalb[$st - 1][$i][$n], $goalfaktor); ?> <?php echo $mspez[$st - 1][$i][$n]; ?></div>
-          <div class="col-3 d-lg-none"><?php echo applyFactor($goala[$st - 1][$i][$n], $goalfaktor); ?> : <?php echo applyFactor($goalb[$st - 1][$i][$n], $goalfaktor); ?> <?php echo $mspez[$st - 1][$i][$n]; ?></div>
-          <div class="col-1 text-start"><?php
+          <div class="col-1 d-none d-xl-block"><?php echo applyFactor($goala[$st - 1][$i][$n], $goalfaktor); ?> : <?php echo applyFactor($goalb[$st - 1][$i][$n], $goalfaktor); ?> <?php echo $mspez[$st - 1][$i][$n]; ?></div>
+          <div class="col-3 d-xl-none"><?php echo applyFactor($goala[$st - 1][$i][$n], $goalfaktor); ?> : <?php echo applyFactor($goalb[$st - 1][$i][$n], $goalfaktor); ?> <?php echo $mspez[$st - 1][$i][$n]; ?></div>
+          <div class="col-2 text-start"><?php
                 /** Mannschaftsicons finden */
                 $lmo_teamaicon = '';
                 $lmo_teambicon = '';
                 if ($urlb == 1 || $mnote[$st - 1][$i][$n] != '') {
-                    $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " title='" . $teams[$teama[$st - 1][$i]] . "'");
-                    $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " title='" . $teams[$teamb[$st - 1][$i]] . "'");
+                    $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt='" . $teams[$teama[$st - 1][$i]] . "");
+                    $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt='" . $teams[$teamb[$st - 1][$i]] . "");
                 }
                 /** Spielbericht verlinken */
                 if ($urlb == 1) {
@@ -185,6 +178,8 @@ if ($file != '') {
                         echo '&nbsp;';
                     }
                 }
+                /** Stats Addon */
+                include (PATH_TO_ADDONDIR . '/stats/lmo-showresults.inc.php');
                 /** Notizen anzeigen */
                 if ($mnote[$st - 1][$i][$n] != '') {
                     // Allgemeine Notiz
