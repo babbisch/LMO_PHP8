@@ -442,7 +442,7 @@ if ($file != '') {
             <div class="col-2"><?php
             if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
 ?>
-              <select class="form-select" name="xteama<?php echo $i; ?>" onChange="dolmoedit()" tabindex="<?php echo $i; ?>5" data-size="7"><?php
+              <select class="select2" name="xteama<?php echo $i; ?>" onChange="dolmoedit()" tabindex="<?php echo $i; ?>5" data-size="7"><?php
                 for ($y = 0; $y <= $anzteams; $y++) {
 ?>
                 <option value="<?php echo $y ?>"<?php if ($y == $teama[$st - 1][$i]) { echo ' selected'; } ?>><?php echo $teams[$y] ?></option><?php
@@ -458,7 +458,7 @@ if ($file != '') {
             <div class="col-2"><?php
             if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
 ?>
-              <select class="form-select" name="xteamb<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[108] ?>" tabindex="<?php echo $i; ?>6" data-size="7"><?php
+              <select class="select2" name="xteamb<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[108] ?>" tabindex="<?php echo $i; ?>6" data-size="7"><?php
                 for ($y = 0; $y <= $anzteams; $y++) {
 ?>
                 <option value="<?php echo $y ?>"<?php if ($y == $teamb[$st - 1][$i]) { echo ' selected'; } ?>><?php echo $teams[$y] ?></option><?php
@@ -570,7 +570,7 @@ if ($file != '') {
             <div class="col-2"><?php
                     if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
 ?>
-              <select class="form-select" name="xteama<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[107] ?>" tabindex="<?php echo $i . $n; ?>5"><?php
+              <select class="select2" name="xteama<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[107] ?>" tabindex="<?php echo $i . $n; ?>5"><?php
 
                         if (($klfin == 1) && ($st == $anzst) && ($i == 1)) {
                             echo '<option value="0"';
@@ -609,7 +609,7 @@ if ($file != '') {
             <div class="col-2"><?php
                     if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
 ?>
-              <select class="form-select" name="xteamb<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[108] ?>" tabindex="<?php echo $i . $n; ?>6"><?php
+              <select class="select2" name="xteamb<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[108] ?>" tabindex="<?php echo $i . $n; ?>6"><?php
                         if (($klfin == 1) && ($st == $anzst) && ($i == 1)) {
                             echo '<option value="0"';
                             if ($teamb[$st - 1][$i] == 0) {

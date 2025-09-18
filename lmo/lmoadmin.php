@@ -58,6 +58,7 @@ if (!file_exists(__DIR__ . '/config/init-parameters.php') || isset($_POST['lmo_i
     <link href="//cdn.jsdelivr.net/npm/bootstrap@<?php echo $bootstrap ?>/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="//cdn.jsdelivr.net/npm/bootstrap-icons@<?php echo $bootstrapIcon ?>/font/bootstrap-icons.css" rel="stylesheet" >
     <link type='text/css' rel='stylesheet' href='<?php echo URL_TO_TEMPLATEDIR ?>/style.css'>
+    <link type='text/css' rel='stylesheet' href='<?php echo URL_TO_TEMPLATEDIR ?>/select2.css'>
   </head>
   <body>
     <div class="container"><?php
@@ -75,7 +76,14 @@ if (!file_exists(__DIR__ . '/config/init-parameters.php') || isset($_POST['lmo_i
     ?>
     </div>
     <!-- JavaScript Bundle with Popper -->
-    <script type="text/javascrpt" src="//cdn.jsdelivr.net/npm/bootstrap@<?php echo $bootstrap ?>/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/bootstrap@<?php echo $bootstrap ?>/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script type="text/javascript" src='//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
+    <script type="text/javascript" src="<?php echo URL_TO_JSDIR ?>/select2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+    </script>
   </body>
 </html><?php
 }
