@@ -140,11 +140,11 @@ if ($file != '') {
                 }
             }
             if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
-                $teama[$st - 1][$i] = isset($_POST['xteamla' . $i]) ? $_POST['xteamla' . $i] : $_POST['xteamsa' . $i] :;
-                $teamb[$st - 1][$i] = isset($_POST['xteamlb' . $i]) ? $_POST['xteamlb' . $i] : $_POST['xteamsb' . $i] :;
+                $teama[$st - 1][$i] = isset($_POST['xteamla' . $i]) ? $_POST['xteamla' . $i] : $_POST['xteamsa' . $i];
+                $teamb[$st - 1][$i] = isset($_POST['xteamlb' . $i]) ? $_POST['xteamlb' . $i] : $_POST['xteamsb' . $i];
             }
             if ($lmtype == 0) {
-                $goala[$st - 1][$i] = isset($_POST['xgoalla' . $i]) ? trim($_POST['xgoalla' . $i]) : trim($_POST['xgoalsa' . $i]);
+                $goala[$st - 1][$i] = isset($_POST['xgoala' . $i]) ? trim($_POST['xgoala' . $i]) : '';
                 if ($goala[$st - 1][$i] == '' || $goala[$st - 1][$i] == '_') {
                     $goala[$st - 1][$i] = -1;
                 } elseif (strtoupper($goala[$st - 1][$i]) == 'X') {
@@ -156,7 +156,7 @@ if ($file != '') {
                         $goala[$st - 1][$i] = '0';
                     }
                 }
-                $goalb[$st - 1][$i] = isset($_POST['xgoallb' . $i]) ? trim($_POST['xgoallb' . $i]) : trim($_POST['xgoalsb' . $i]);
+                $goalb[$st - 1][$i] = isset($_POST['xgoalb' . $i]) ? trim($_POST['xgoalb' . $i]) : '';
                 if ($goalb[$st - 1][$i] == '' || $goalb[$st - 1][$i] == '_') {
                     $goalb[$st - 1][$i] = -1;
                 } elseif (strtoupper($goalb[$st - 1][$i]) == 'X') {
@@ -353,14 +353,8 @@ if ($file != '') {
         <input type="hidden" name="file" value="<?php echo $file; ?>">
         <input type="hidden" name="st" value="<?php echo $st; ?>">
         <div class="container">
-          <div class="row"><?php
-    if ($goalfaktor == 1) {
-        ?>
-            <div class="col-5 text-start"><?php
-    } else {
-        ?>
-            <div class="col-7 text-start"><?php
-    }
+          <div class="row">
+            <div class="col-11 col-lg text-start"><?php
     echo $st . '. ' . $text[2];
     if ($datum1[$st - 1] != '') {
         $datum = explode('.', $datum1[$st - 1]);
@@ -380,12 +374,7 @@ if ($file != '') {
                <?php echo $text[4] ?> <input class="custom-control" size="6" type="text" name="xdatum2" tabindex="2" maxlength="10" value="<?php echo $datum2[$st - 1]; ?>" onChange="dolmoedit()"><?php
     }
     ?>
-            </div><?php
-    if ($goalfaktor != 1) {
-        ?>
-            <div class="col-2"><?php if ($goalfaktor != 1) { echo '(' . $text[553 + log10($goalfaktor)] . ')'; } ?></div><?php
-    }
-    ?>
+            </div>
             <div class="col-4 d-none d-lg-block"></div>
             <div class="col-2 d-lg-none"></div>
             <div class="col-1 d-none d-lg-block"><acronym title="<?php echo $text[213] ?>"><i class="bi bi-chat-fill text-success" style="font-size: 1.3rem;"></i></acronym></div>
@@ -454,18 +443,18 @@ if ($file != '') {
             }
             ?>
             </div>
-            <div class="col-3 d-lg-none"><?php
+            <div class="col-2 d-lg-none"><?php
             if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
 ?>
               <select class="select2" name="xteamsa<?php echo $i; ?>" onChange="dolmoedit()" tabindex="<?php echo $i; ?>5" data-size="7"><?php
                 for ($y = 0; $y <= $anzteams; $y++) {
 ?>
-                <option value="<?php echo $y ?>"<?php if ($y == $teama[$st - 1][$i]) { echo ' selected'; } ?>><?php echo $teamm[$y] ?></option><?php
+                <option value="<?php echo $y ?>"<?php if ($y == $teama[$st - 1][$i]) { echo ' selected'; } ?>><?php echo $teamk[$y] ?></option><?php
                 }
 ?>
               </select><?php
             } else {
-                echo $teamm[$teama[$st - 1][$i]];
+                echo $teamk[$teama[$st - 1][$i]];
             }
             ?>
             </div>
@@ -485,18 +474,18 @@ if ($file != '') {
             }
             ?>
             </div>
-            <div class="col-3 d-lg-none"><?php
+            <div class="col-2 d-lg-none"><?php
             if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
 ?>
               <select class="select2" name="xteamsb<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[108] ?>" tabindex="<?php echo $i; ?>6" data-size="7"><?php
                 for ($y = 0; $y <= $anzteams; $y++) {
 ?>
-                <option value="<?php echo $y ?>"<?php if ($y == $teamb[$st - 1][$i]) { echo ' selected'; } ?>><?php echo $teamm[$y] ?></option><?php
+                <option value="<?php echo $y ?>"<?php if ($y == $teamb[$st - 1][$i]) { echo ' selected'; } ?>><?php echo $teamk[$y] ?></option><?php
                 }
 ?>
               </select><?php
             } else {
-                echo $teamm[$teamb[$st - 1][$i]];
+                echo $teamk[$teamb[$st - 1][$i]];
             }
             ?>
             </div><?php
@@ -507,15 +496,10 @@ if ($file != '') {
                 $goalb[$st - 1][$i] = '_';
             }
             ?>
-            <div class="col-2 d-none d-lg-block">
-              <input title="<?php echo $text[109] ?>" class="custom-control" style="width: 4rem;" type="number" name="xgoalla<?php echo $i; ?>" tabindex="<?php echo $i; ?>7" min="0" maxlength="4" value="<?php echo $goala[$st - 1][$i]; ?>">
+            <div class="col-5 col-lg">
+              <input title="<?php echo $text[109] ?>" class="custom-control" style="width: 3.5rem;" type="number" name="xgoala<?php echo $i; ?>" tabindex="<?php echo $i; ?>7" min="0" maxlength="4" value="<?php echo $goala[$st - 1][$i]; ?>">
               :
-              <input title="<?php echo $text[110] ?>" class="custom-control" style="width: 4rem;" type="number" name="xgoallb<?php echo $i; ?>" tabindex="<?php echo $i; ?>8" min="0" maxlength="4" value="<?php echo $goalb[$st - 1][$i]; ?>">
-            </div>
-            <div class="col-4 d-lg-none">
-              <input title="<?php echo $text[109] ?>" class="custom-control" style="width: 4rem;" type="number" name="xgoalsa<?php echo $i; ?>" tabindex="<?php echo $i; ?>7" min="0" maxlength="4" value="<?php echo $goala[$st - 1][$i]; ?>">
-              :
-              <input title="<?php echo $text[110] ?>" class="custom-control" style="width: 4rem;" type="number" name="xgoalsb<?php echo $i; ?>" tabindex="<?php echo $i; ?>8" min="0" maxlength="4" value="<?php echo $goalb[$st - 1][$i]; ?>">
+              <input title="<?php echo $text[110] ?>" class="custom-control" style="width: 3.5rem;" type="number" name="xgoalb<?php echo $i; ?>" tabindex="<?php echo $i; ?>8" min="0" maxlength="4" value="<?php echo $goalb[$st - 1][$i]; ?>">
             </div><?php
             if ($spez == 1) {
 ?>
