@@ -134,7 +134,7 @@ if ($show == 0) {
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end"><acronym title="<?php echo $text[575] ?>"><?php echo $text[574]; ?></acronym></div>
             <div class="col-4 text-start">
-              <select class="form-select" name="xtimezone" onchange="dolmoedit()"><?php
+              <select class="form-select select2" name="xtimezone" onchange="dolmoedit()"><?php
         $timezones = get_timezones();
         foreach ($timezones as $continent => $zones) {
             ?>
@@ -142,8 +142,8 @@ if ($show == 0) {
             foreach ($zones as $zone_value => $zone_name) {
                 ?>
                   <option value="<?php echo $zone_value; ?>" <?php if ($zone_value == $timezone) echo 'selected'; ?>><?php echo $zone_name; ?></option><?php
-            }
-?></optgroup><?php
+            }?>
+            </optgroup><?php
         }
         ?>
               </select>
@@ -175,11 +175,11 @@ if ($show == 0) {
                   MMM = <?php echo $text[702]; ?><br>
                   MMMM = <?php echo $text[703]; ?><br>
                   <strong><?php echo $text[548]; ?></strong><br>
+                  yy = 23<br>
                   Y = 2023<br>
-                  YY = 23<br>
                   <strong><?php echo $text[549]; ?></strong><br>
-                  HH = 21<br>
-                  mm = 30<br>
+                  HH = 20<br>
+                  mm = 45<br>
                 </span>
               ?</a>
             </div>
