@@ -19,10 +19,7 @@
  *
  * $Id$
  */
-if (!file_exists(__DIR__ . '/ligen/' . $_GET['file']))
-    die();
-
-echo "<div class='text-center p-2'><strong>" . $st . '. ' . $text[2];
+echo "<div class='text-center'><strong>" . $st . '. ' . $text[2];
 if ($dats == 1) {
     if ($datum1[$st - 1] != '') {
         echo ' ' . $text[3] . ' ' . $datum1[$st - 1];
@@ -41,10 +38,8 @@ if ($enablegamesort == '1' && filterZero($mterm[$st - 1])) {
     asort($datsort);
     reset($datsort);
 }
-
 $spielfreia = $spielfreib = array();
 $heim1 = $heim2 = $gast1 = $gast2 = '';
-
 foreach ($datsort as $key => $val) {
     $i = $key;
     if (($teama[$st - 1][$i] > 0) && ($teamb[$st - 1][$i] > 0)) {
@@ -81,18 +76,13 @@ foreach ($datsort as $key => $val) {
             $heim2 .= '</a>';
         }
 ?>
-    <div class="col-3 text-end d-none d-xl-block">
+    <div class="col-3 text-end d-none d-lg-block">
     <?php
         echo $heim1 . $teams[$teama[$st - 1][$i]] . $heim2;
-        echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " style='vertical-align: middle;' title='" . $teams[$teama[$st - 1][$i]] . "'");
+        echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt=''");
     ?>
     </div>
-    <div class="col-3 text-end d-none d-md-block d-lg-block d-xl-none">
-    <?php
-        echo $heim1 . $teamm[$teama[$st - 1][$i]] . $heim2;
-    ?>
-    </div>
-    <div class="col-2 text-end d-md-none">
+    <div class="col-3 text-end d-lg-none">
     <?php
         echo $heim1 . $teamk[$teama[$st - 1][$i]] . $heim2;
     ?>
@@ -111,22 +101,13 @@ foreach ($datsort as $key => $val) {
             $gast2 .= '</a>';
         }
     ?>
-    <div class="col-3 text-start d-none d-xl-block">-&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="col-3 text-start d-none d-lg-block">- &nbsp; &nbsp;
     <?php
-        echo HTML_smallTeamIcon(
-            $file,
-            $teams[$teamb[$st - 1][$i]],
-            " style='vertical-align: middle;' title='" . $teams[$teamb[$st - 1][$i]] . "'",
-        ) . '&nbsp;';
+        echo HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt=''") . "&nbsp;";
         echo $gast1 . $teams[$teamb[$st - 1][$i]] . $gast2;
     ?>
     </div>
-    <div class="col-3 text-start d-none d-md-block d-lg-block d-xl-none">-&nbsp;&nbsp;&nbsp;&nbsp;
-    <?php
-        echo $gast1 . $teamm[$teamb[$st - 1][$i]] . $gast2;
-    ?>  
-    </div> 
-    <div class="col-3 text-start d-md-none">-&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="col-3 text-start d-lg-none"> -&nbsp;&nbsp;
     <?php
         echo $gast1 . $teamk[$teamb[$st - 1][$i]] . $gast2;
     ?>  
@@ -143,8 +124,8 @@ foreach ($datsort as $key => $val) {
         $lmo_teamaicon = '';
         $lmo_teambicon = '';
         if ($urlb == 1 || $mnote[$st - 1][$i] != '' || $msieg[$st - 1][$i] > 0) {
-            $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " style='vertical-align: middle;' title='" . $teams[$teama[$st - 1][$i]] . "'");
-            $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " style='vertical-align: middle;' title='" . $teams[$teamb[$st - 1][$i]] . "'");
+            $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " style='vertical-align: middle;'", " alt=''");
+            $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " style='vertical-align: middle;'", " alt=''");
         }
         /** Spielbericht verlinken */
         if ($urlb == 1) {
@@ -228,7 +209,8 @@ if ($einspielfrei == 1) {
             if ($plan == '1') {
                 echo '</a>';
             }
-            echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$hoy8], " style='vertical-align: middle;' title='$teams[$hoy8]'");
+
+            echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$hoy8], '', " alt=''");
         }
     }
 ?></div> 
