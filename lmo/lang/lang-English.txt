@@ -52,7 +52,7 @@
 051=Dummy
 052=Welcome!
 053=Please choose a League
-054=Liga Manager Online 4
+054=Liga Manager Online
 055=© 1997-2019 LMO-Group
 056=[ <a href="http://www.liga-manager-online.de/" target="_blank" title="Visit the Homepage of Liga Manager Online">LMO-Project</a> | <a href="https://www.vest-sport.de/forum/?viewforum&forum_id=1" target="_blank" title="Find some help for LMO and his Addons">Support Forum</a> | <a href="https://www.vest-sport.de/forum/viewforum.php?f=10" target="_blank" title="Further leagues for your League Manager">The league-list</a> ]
 057=Statistic 1 from
@@ -578,18 +578,11 @@
 577=Team (long)
 578=(middle)
 579=(short)
-600=Bootstrap version
-601=Chart.js version
-602=BootstrapIcon version
 700=Sat.
 701=Saturday
 702=Aug.
 703=August
 704=en-US
-800=Playoff-Mode
-801=Home advantage playoff modeBest of 5/Best of 7
-802=H, A, H, A, H, (A, H)
-803=H, H, A, A, H, (A, H)
 1000=Series
 1001=won
 1002=not lost
@@ -598,12 +591,11 @@
 1005=lost
 1006=current record
 1007=season
-2000=League-Icon
 3000=set second half
 3001=The league as an odd number of matchdays. The start of second half couldn't be identifies
 3002=Second half successfull created
 4000=Total-
-4001=/Match
+4001=/ Match
 4002=2nd Season Half
 4003=1st Season Half
 4004=Free

@@ -52,7 +52,7 @@
 051=Vazio
 052=Bem vindo(a)!
 053=Por favor seleccione um campeonato ou taça:
-054=<acronym title="Sistema de resultados">LMO</acronym>
+054=Liga Manager Online
 055=© 1997-2019 LMO-Group
 056=[ <a href="http://www.liga-manager-online.de/" target="_blank" title="Visite a nossa Homepage">Projecto-LMO</a> | <a href="https://www.vest-sport.de/forum/?viewforum&forum_id=1" target="_blank" title="Find some help for LMO and his Addons">Support Forum</a> |  <a href="https://www.vest-sport.de/forum/viewforum.php?f=10" target="_blank" title="Aqui poderá encontrar mais campeonatos">Lista de campeonatos Hollwitz</a> ]
 057=Estatísticas para
@@ -578,18 +578,11 @@
 577=Equipe (longo)
 578=(médio)
 579=(curto)
-600=Versão de inicialização
-601=Versão Chart.js
-602=Versão do BootstrapIcon
 700=Sab.
 701=Sábado
 702=Ago.
 703=Agosto
 704=pt_PT
-800=Modo de playoff
-801=Modo playoff com vantagem em casa Best of 5/Best of 7
-802=C, F, C, F, C, (F, C)
-803=C, C, F, F, C, (F, C)
 1000=série
 1001=Ganhou
 1002=Invicto
@@ -598,12 +591,11 @@
 1005=Perdido
 1006=Atual
 1007=temporada
-2000=Liga-Icon
 3000=Criar plano de jogo para o segundo tempo
 3001=A liga tem um número ímpar de dias de jogo. Nenhuma viagem de ida e volta foi identificada.
 3002=A programação do jogo do segundo tempo foi salva com sucesso.
 4000=total
-4001=/jogo
+4001=/ jogo
 4002=segunda metade da temporada
 4003=Primeira parte
 4004=Livre para jogar

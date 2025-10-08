@@ -21,7 +21,4 @@ einzutore=1
 einzutoretab=1
 einzustats=1
 timezone=Europe/Berlin
-bootstrap=5.3.3
-chartjs=4.4.5
-bootstrapIcon=1.11.3
 lmoVersion=4.1.2

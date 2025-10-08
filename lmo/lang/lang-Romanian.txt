@@ -52,7 +52,7 @@
 051=Dummy
 052=Bine ati venit!
 053=Alegeti un campionat
-054=<acronym title="Liga Manager Online">LMO</acronym>4
+054=Liga Manager Online
 055=Ś 1997-2019 LMO-Group
 056=[ <a href="http://www.liga-manager-online.de/" target="_blank" title="Vizitati site-ul nostru">LMO-Projekt</a> | <a href="https://www.vest-sport.de/forum/?viewforum&forum_id=1" target="_blank" title="Find some help for LMO and his Addons">Support Forum</a> | <a href="https://www.vest-sport.de/forum/viewforum.php?f=10" target="_blank" title="Aici gasiti diferite competitii pentru LMO">Lista cu competitii</a> ]
 057=Statistica 1 din
@@ -578,18 +578,11 @@
 577=Echipă (lung)
 578=(mediu)
 579=(scurt)
-600=Versiune Bootstrap
-601=Versiunea Chart.js
-602=Versiunea BootstrapIcon
 700=sam.
 701=sâmbătă
 702=Aug.
 703=August
 704=ro_RO
-800=Modul playoff
-801=Mod playoff de avantaj acasă Best of 5/Best of 7
-802=A, D, A, D, A, (D, A)
-803=A, A, D, D, A, (D, A)
 1000=serie
 1001=Câștigat
 1002=Neînvins
@@ -598,12 +591,11 @@
 1005=Pierdut
 1006=Actual
 1007=sezon
-2000=Liga-Icon
 3000=Creează un plan de joc pentru a doua jumătate
 3001=Liga are un număr impar de zile de joc. Nu a putut fi identificată nicio călătorie dus-întors.
 3002=Programul meciului a doua repriză a fost salvat cu succes.
 4000=total
-4001=/joc
+4001=/ joc
 4002=a doua jumătate a sezonului
 4003=Prima jumătate
 4004=Liber de joc

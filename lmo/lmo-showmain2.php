@@ -249,8 +249,6 @@ if ($file != '') {
     if ($action == 'info') {
         require (PATH_TO_LMO . '/lmo-showinfo.php');
     }
-    $p0 = 'p1';
-    $$p0 = c(1) . c(0);
 } elseif ($backlink == 1 && $action != 'tipp') {
     require (PATH_TO_LMO . '/lmo-showdir.php');
 }
@@ -325,7 +323,12 @@ if ($eintippspiel == 1) {
         $output_tippspiel .= $action != 'tipp' ? "<li class='nav-item'><a href='{$addm}tipp' class='nav-link'>{$text['tipp'][0]}</a></li>" : "<li class='nav-item active pull-right'><a href='#' class='nav-link active'>{$text['tipp'][0]}</a></li>";
     }
 }
-e($template->toString());
+$output_infolink = '<acronym title="Liga Manager Online for PHP 8.x">LMO</acronym> 4 for PHP8 - <a target="_blank" href="//www.liga-manager-online.de/" title="' . $text[580] . '">' . $text[55] . '</a>';
+if (!array_key_exists('Infolink', $template->blockvariables['__global__']))
+{
+    trigger_error("'Infolink' is missing in template'", E_USER_WARNING);
+    echo $output_infolink; 
+}
 // Tippspiel-Addon
 
 // Template ausgeben
@@ -343,7 +346,7 @@ $template->setVariable('Kalender', $output_kalender);
 $template->setVariable('Ergebnisse', $output_ergebnisse);
 $template->setVariable('Spielplan', $output_spielplan);
 $template->setVariable('Info', $output_info);
-$template->setVariable('Infolink', $p1);
+$template->setVariable('Infolink', $output_infolink);
 $template->setVariable('Sprachauswahl', $output_sprachauswahl);
 $template->setVariable('Titel', $output_titel);
 $template->setVariable('Stylesheet', $output_stylesheet);
@@ -352,11 +355,6 @@ $template->setVariable('Newsticker', $output_newsticker);
 // Ticker-Addon
 // Tippspiel-Addon
 $template->setVariable('Tippspiel', $output_tippspiel);
-// Bootstrap-Version
-$template->setVariable('Bootstrap', $bootstrap);
-$template->setVariable('BootstrapIcon', $bootstrapIcon);
-// Chart.js-Version
-$template->setVariable('Chartjs', $chartjs);
 $template->show();
 
 // write to cache

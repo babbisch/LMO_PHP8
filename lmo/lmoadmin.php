@@ -55,8 +55,8 @@ if (!file_exists(__DIR__ . '/config/init-parameters.php') || isset($_POST['lmo_i
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>LMO Admin</title>
-    <link href="//cdn.jsdelivr.net/npm/bootstrap@<?php echo $bootstrap ?>/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="//cdn.jsdelivr.net/npm/bootstrap-icons@<?php echo $bootstrapIcon ?>/font/bootstrap-icons.css" rel="stylesheet" >
+    <link href="//cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="//cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" >
     <link type='text/css' rel='stylesheet' href='<?php echo URL_TO_TEMPLATEDIR ?>/style.css'>
     <link type='text/css' rel='stylesheet' href='<?php echo URL_TO_TEMPLATEDIR ?>/select2.css'>
   </head>
@@ -76,7 +76,7 @@ if (!file_exists(__DIR__ . '/config/init-parameters.php') || isset($_POST['lmo_i
     ?>
     </div>
     <!-- JavaScript Bundle with Popper -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/bootstrap@<?php echo $bootstrap ?>/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script type="text/javascript" src='//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
     <script type="text/javascript" src="<?php echo URL_TO_JSDIR ?>/select2.js"></script>
     <script type="text/javascript">

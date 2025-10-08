@@ -32,9 +32,9 @@
 031=nach Heimbilanz sortieren
 032=nach Auswärtsbilanz sortieren
 033=Sp.
-034=s
-035=u
-036=n
+034=S
+035=U
+036=N
 037=Pkt.
 038=Tore
 039=Diff.
@@ -340,7 +340,7 @@
 339=Hier die Anzahl der Spieltage und die Anzahl der Spiele pro Spieltag ändern. \nACHTUNG: Das kann zu Datenverlust führen!
 340=Anzahl der Spieltage und Spiele
 341=LMO-Admin Ligaversand
-342=Hier ist die angeforderte Liga.
+342=Hier ist die angeforderte Liga. \n\n Viel Spaß
 343=E-Mail des Webmasters
 344=Gibe hier die E-Mail-Adresse des Webmasters bzw. Haupt-Admins ein. Die wird für den E-Mail-Versand von Ligen benötigt.
 345=E-Mail-Versand einer Liga
@@ -579,9 +579,6 @@
 578=(mittel)
 579=(kurz)
 580=Straftore, die diese Mannschaft vom Verband erhalten hat
-600=Bootstrap-Version
-601=Chart.js-Version
-602=BootstrapIcon-Version
 700=Sa.
 701=Samstag
 702=Aug.
@@ -604,7 +601,7 @@
 3001=Die Liga hat eine ungerade Anzahl an Spieltagen. Es konnte keine Hin- & Rückrunde identifiziert werden.
 3002=Der Rückrundenspielplan wurde erfolgreich gespeichert.
 4000=Gesamt-
-4001=/Spiel
+4001=/ Spiel
 4002=Rückrunde
 4003=Hinrunde
 4004=Spielfrei

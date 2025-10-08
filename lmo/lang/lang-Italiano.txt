@@ -52,7 +52,7 @@
 051=Dummy
 052=Cordiale benvenuto!
 053=Prego, seleziona un campionato
-054=Liga Manager Online 4
+054=Liga Manager Online
 055=© 1997-2019 LMO-Group
 056=[ <a href="http://www.liga-manager-online.de/" target="_blank" title="Visitate il nostro sito">Progetto-LMO</a> | <a href="https://www.vest-sport.de/forum/?viewforum&forum_id=1" target="_blank" title="Forum di supporto per LMO e Addons">Foro de apoyo</a> | <a href="https://www.vest-sport.de/forum/viewforum.php?f=10" target="_blank" title="Qui troverete altri campionati per il vostro LigaManager">Lista campionati</a> ]
 057=La statistica 1 di
@@ -581,18 +581,11 @@
 577=Squadra (lunga)
 578=(medio)
 579=(breve)
-600=Versione bootstrap
-601=Versione Chart.js
-602=Versione BootstrapIcon
 700=Sab.
 701=Sabado
 702=Ago.
 703=Agosto
 704=it_IT
-800=Modalità playoff
-801=Modalità playoff vantaggio casa Best of 5/Best of 7
-802=I, E, I, E, I, (E, I)
-803=I, I, E, E, I, (E, I)
 1000=serie
 1001=Vinto
 1002=Imbattuto
@@ -601,12 +594,11 @@
 1005=Perso
 1006=Corrente
 1007=stagione
-2000=Campionato-Icon
 3000=Crea il piano di gioco del secondo tempo
 3001=Il campionato ha un numero dispari di giorni di gioco. Non è stato possibile identificare alcun viaggio di andata e ritorno.
 3002=Il programma della seconda metà della partita è stato salvato con successo.
 4000=totale
-4001=/gioco
+4001=/ gioco
 4002=seconda metà della stagione
 4003=Prima metà
 4004=Senza gioco

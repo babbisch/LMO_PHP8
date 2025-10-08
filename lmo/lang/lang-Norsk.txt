@@ -52,7 +52,7 @@
 051=Dummy
 052=Velkommen!
 053=Vennligst velg en liga
-054=Liga Manager Online 4
+054=Liga Manager Online
 055=© 1997-2019 LMO-Group
 056=[ <a href="http://www.liga-manager-online.de/" target="_blank" title="Visit the Homepage of Liga Manager Online">LMO-Project</a> | <a href="https://www.vest-sport.de/forum/?viewforum&forum_id=1" target="_blank" title="Find some help for LMO and his Addons">Support Forum</a> | <a href="https://www.vest-sport.de/forum/viewforum.php?f=10" target="_blank" title="Further leagues for your League Manager">The league-list</a> ]
 057=Statistikk 1 fra
@@ -578,18 +578,11 @@
 577=Lag (langt)
 578=(middels)
 579=(kort)
-600=Bootstrap-versjon
-601=Chart.js-versjon
-602=BootstrapIcon versjon
 700=lør.
 701=lørdag
 702=aug.
 703=august
 704=no_NO
-800=Sluttspillmodus
-801=Hjemmefordel sluttspillmodus Best of 5/Best of 7
-802=H, B, H, B, H, (B, H)
-803=H, H, B, B, H, (B, H)
 1000=serie
 1001=Vunnet
 1002=Ubeseiret
@@ -598,12 +591,11 @@
 1005=Tapt
 1006=Gjeldende
 1007=sesong
-2000=Ligaen-Icon
 3000=Lag andre omgangsspillplan
 3001=Ligaen har et oddetall spilledager. Ingen rundtur kunne identifiseres.
 3002=Den andre omgangs kampplan ble lagret.
 4000 = totalt
-4001=/spill
+4001=/ spill
 4002=andre halvdel av sesongen
 4003=Første halvdel
 4004=Fritt spill

@@ -52,7 +52,7 @@
 051=Dummy
 052=Hartelijk welkom!
 053=Kies hieronder een competitieoverzicht:
-054=<acronym title="Liga Manager Online">LMO</acronym>4
+054=Liga Manager Online
 055=© 1997-2019 LMO-Groep
 056=[ <a href="http://www.liga-manager-online.de/" target="_blank" title="Visit the Homepage of Liga Manager Online">LMO-Project</a> | <a href="https://www.vest-sport.de/forum/?viewforum&forum_id=1" target="_blank" title="Further leagues for your League Manager">The league-list</a> ]
 057=De statistieken 1 van
@@ -578,18 +578,11 @@
 577=Team (lang)
 578=(gemiddeld)
 579=(kort)
-600=Bootstrap-versie
-601=Chart.js-versie
-602=BootstrapIcon-versie
 700=Za.
 701=Zaterdag
 702=Aug.
 703=augustus
 704=nl_NL
-800=Playoff-Modus
-801=Thuisvoordeel playoff-modus Best of 5/Best of 7
-802=T, U, T, U, T, (U, T)
-803=T, T, U, U, T, (U, T)
 1000=reeks
 1001=Won
 1002=Ongeslagen
@@ -598,12 +591,11 @@
 1005=Verloren
 1006=Huidige
 1007=seizoen
-2000=Competitie-Icon
 3000=Maak een spelplan voor de tweede helft
 3001=De competitie heeft een oneven aantal speeldagen. Er kon geen heen- en terugreis worden geïdentificeerd.
 3002=Het wedstrijdschema van de tweede helft is succesvol opgeslagen.
 4000=totaal
-4001=/spel
+4001=/ spel
 4002=tweede seizoenshelft
 4003=Eerste helft
 4004=Vrij spel
