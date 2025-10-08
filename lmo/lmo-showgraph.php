@@ -25,10 +25,7 @@ if (($file != '') && ($kurve == 1)) {
 ?>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="container">
-      <?php
+<?php
     $tabtype = 0;
     require (PATH_TO_LMO . '/lmo-calcgraph.php');
     for ($k = 1; $k < $anzteams + 1; $k++) {
@@ -37,10 +34,11 @@ if (($file != '') && ($kurve == 1)) {
             ${'platz_' . $k} = ${'platz_' . $k} . $platz[$k][$l] . ',';
         }
     }
-    ?>
-        <div class="row">
-          <div class="col"><br/><canvas id="myChart" width="1000" height="600"></canvas>
-		     <?php
+?>
+  <div class="row">
+    <div class="col p-3">
+      <canvas id="myChart" width="1000" height="600"></canvas>
+    <?php
     $data = '';
     $pgtext1 = $text[135];
     $pgtext2 = $text[136];
@@ -70,10 +68,10 @@ if (($file != '') && ($kurve == 1)) {
                     },";
     }
 
-?>
-<script src="//cdn.jsdelivr.net/npm/chart.js"></script>
-<script src='//cdn.jsdelivr.net/npm/chartjs-plugin-autocolors'></script>
-<script>
+   ?>
+  <script src="//cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src='//cdn.jsdelivr.net/npm/chartjs-plugin-autocolors'></script>
+      <script>
 const autocolors = window['chartjs-plugin-autocolors'];
 Chart.register(autocolors);
 
@@ -145,10 +143,7 @@ new Chart(ctx, {
 	}
     }
 });
-</script>
-          </div>
-        </div>
-      </div>
+      </script>
     </div>
   </div>
 </div>

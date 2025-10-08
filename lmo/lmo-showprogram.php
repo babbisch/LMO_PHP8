@@ -26,16 +26,13 @@ if ($file != '') {
 ?>
 
 <div class="container">
-  <div class="row">
-    <div class="col">&nbsp;</div>
-  </div>
-  <div class="row">
+  <div class="row pt-3">
     <div class="col-1 text-end">
       <?php
     for ($i = 1; $i <= $anzteams; $i++) {
         if ($i != $selteam) {
             ?>
-            <p><a href="<?php echo $addp . $i ?>" data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $teams[$i] ?>"><?php echo HTML_smallTeamIcon($file, $teams[$i], " alt='$teams[$i]' width='24' style='vertical-align: middle;'"); ?></a></p><?php
+            <p><a href="<?php echo $addp . $i ?>" data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $teams[$i] ?>"><?php echo HTML_smallTeamIcon($file, $teams[$i], " alt='$teams[$i]' width='24' style='vertical-align: middle;'", $teamk[$i]); ?></a></p><?php
         } else {
             echo '<p>' . HTML_smallTeamIcon($file, $teams[$i], " alt='$teams[$i]' width='24' style='vertical-align: middle;'") . '</p>';
         }
