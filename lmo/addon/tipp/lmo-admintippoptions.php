@@ -73,7 +73,7 @@ if ($show == 0) {
     ?>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][91]; ?></div>
-            <div class="col-2 text-start">
+            <div class="col-7 col-md-2 text-start">
               <select class="form-select" name="xtippmodus" onChange="moduschange()">
                 <option value="1"<?php if ($tipp_tippmodus == 1) { echo ' selected'; } ?>><?php echo $text['tipp'][92] ?></option>
                 <option value="0"<?php if ($tipp_tippmodus == 0) { echo ' selected'; } ?>><?php echo $text['tipp'][93] ?></option>
@@ -86,22 +86,22 @@ if ($show == 0) {
           </div><?php } elseif ($show == 2) { ?>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][34]; ?></div>
-            <div class="col-1 text-start"><input class="form-control" type="text" name="xrergebnis" size="5" maxlength="5" value="<?php echo $tipp_rergebnis; ?>" onChange="dolmoedit()"></div>
+            <div class="col-3 col-md-1 text-start"><input class="form-control" type="text" name="xrergebnis" size="5" maxlength="5" value="<?php echo $tipp_rergebnis; ?>" onChange="dolmoedit()"></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][35]; ?></div>
-            <div class="col-1 text-start"><input class="form-control" type="text" name="xrtendenzdiff" size="5" maxlength="5" value="<?php echo $tipp_rtendenzdiff; ?>" onChange="dolmoedit()"></div>
+            <div class="col-3 col-md-1 text-start"><input class="form-control" type="text" name="xrtendenzdiff" size="5" maxlength="5" value="<?php echo $tipp_rtendenzdiff; ?>" onChange="dolmoedit()"></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][36]; ?></div>
-            <div class="col-1 text-start"><input class="form-control" type="text" name="xrtendenz" size="5" maxlength="5" value="<?php echo $tipp_rtendenz; ?>" onChange="dolmoedit()"></div>
+            <div class="col-3 col-md-1 text-start"><input class="form-control" type="text" name="xrtendenz" size="5" maxlength="5" value="<?php echo $tipp_rtendenz; ?>" onChange="dolmoedit()"></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][37]; ?></div>
-            <div class="col-1 text-start"><input class="form-control" type="text" name="xrtor" size="5" maxlength="5" value="<?php echo $tipp_rtor; ?>" onChange="dolmoedit()"></div>
+            <div class="col-3 col-md-1 text-start"><input class="form-control" type="text" name="xrtor" size="5" maxlength="5" value="<?php echo $tipp_rtor; ?>" onChange="dolmoedit()"></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
           <div class="row pb-2">
@@ -124,7 +124,7 @@ if ($show == 0) {
           </div>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][192]; ?></div>
-            <div class="col-1 text-start"><input class="form-control" type="text" name="xrremis" size="5" maxlength="5" value="<?php echo $tipp_rremis; ?>" onChange="dolmoedit()"></div>
+            <div class="col-3 col-md-1 text-start"><input class="form-control" type="text" name="xrremis" size="5" maxlength="5" value="<?php echo $tipp_rremis; ?>" onChange="dolmoedit()"></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
           <div class="row pb-2">
@@ -146,42 +146,42 @@ if ($show == 0) {
             </div>
           </div><?php } elseif ($show == 3) { ?>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][157]; ?></div>
+            <div class="col-6 col-md-4 text-end"><?php echo $text['tipp'][157]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xtippeinsicht" onClick="dolmoedit()"<?php if ($tipp_tippeinsicht == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][172]; ?></div>
+            <div class="col-6 col-md-4 text-end"><?php echo $text['tipp'][172]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xtipptabelle1" onClick="dolmoedit()"<?php if ($tipp_tipptabelle1 == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][56]; ?></div>
+            <div class="col-6 col-md-4 text-end"><?php echo $text['tipp'][56]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xgesamt" onClick="dolmoedit()"<?php if ($tipp_gesamt == 1) { echo ' checked'; } ?>></select>
             </div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][187]; ?></div>
+            <div class="col-6 col-md-4 text-end"><?php echo $text['tipp'][187]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xregeln" onClick="regelnchange()"<?php if ($tipp_regeln == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][186]; ?></div>
+            <div class="col-6 col-md-4 text-end"><?php echo $text['tipp'][186]; ?></div>
             <div class="col-2 text-start"><input class="form-control" type="text" name="xregelnlink" size="30" maxlength="256" value="<?php echo $tipp_regelnlink; ?>" onChange="dolmoedit()"<?php if ($tipp_regeln == 0) { echo ' disabled'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][200]; ?></div>
-            <div class="col-2 text-start">
+            <div class="col-6 col-md-4 text-end"><?php echo $text['tipp'][200]; ?></div>
+            <div class="col-6 text-start">
               <input type="checkbox" class="form-check-input" name="xshownick" value="1" <?php if ($tipp_shownick == 1) { echo 'checked'; } ?> onClick="dolmoedit()"> <?php echo $text['tipp'][23]; ?><br />
               <input type="checkbox" class="form-check-input" name="xshowname" value="1" <?php if ($tipp_showname == 1) { echo 'checked'; } ?> onClick="dolmoedit()"> <?php echo $text['tipp'][134]; ?><br />
               <input type="checkbox" class="form-check-input" name="xshowemail" value="1" <?php if ($tipp_showemail == 1) { echo 'checked'; } ?> onClick="dolmoedit()"> <?php echo $text['tipp'][219]; ?>
             </div>
           </div><?php } elseif ($show == 4) { ?>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][87]; ?></div>
-            <div class="col-1 text-start"><input class="form-control" type="text" name="xtippbis" size="5" maxlength="5" value="<?php echo $tipp_tippBis; ?>" onChange="dolmoedit()"></div>
+            <div class="col-6 col-md-4 text-end"><?php echo $text['tipp'][87]; ?></div>
+            <div class="col-3 col-md-1 text-start"><input class="form-control" type="text" name="xtippbis" size="5" maxlength="5" value="<?php echo $tipp_tippBis; ?>" onChange="dolmoedit()"></div>
             <div class="col-3"><?php echo ' ' . $text['tipp'][88]; ?></div>
           </div>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][248]; ?></div>
-            <div class="col-auto text-start">
+            <div class="col-6 col-md-auto text-start">
               <select class="form-select" name="xtippohne" onChange="dolmoedit()">
                 <option value="1"<?php if ($tipp_tippohne == 1) { echo ' selected'; } ?>><?php echo $text['tipp'][249] ?></option>
                 <option value="0"<?php if ($tipp_tippohne == 0) { echo ' selected'; } ?>><?php echo $text['tipp'][250] ?></option>
@@ -190,7 +190,7 @@ if ($show == 0) {
           </div>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][100]; ?></div>
-            <div class="col-auto text-start">
+            <div class="col-6 col-md-auto text-start">
               <select class="form-select" name="xtipperteam" onChange="dolmoedit()">
                 <option value="-1"<?php if ($tipp_tipperimteam == -1) { echo ' selected'; } ?>><?php echo $text['tipp'][101] ?></option>
                 <option value="2"<?php if ($tipp_tipperimteam == 2) { echo ' selected'; } ?>>2</option>
@@ -207,7 +207,7 @@ if ($show == 0) {
           </div>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][154]; ?></div>
-            <div class="col-auto text-start">
+            <div class="col-6 col-md-auto text-start">
               <select class="form-select" name="ximvorraus" onChange="dolmoedit()">
                 <option value="0"<?php if ($tipp_imvorraus == 0) { echo ' selected'; } ?>>0</option>
                 <option value="1"<?php if ($tipp_imvorraus == 1) { echo ' selected'; } ?>>1</option>
@@ -235,45 +235,45 @@ if ($show == 0) {
             </div>
           </div><?php } elseif ($show == 5) { ?>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][132]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][132]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xadresse" onClick="dolmoedit()"<?php if ($tipp_adresse == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][286]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][286]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xrealname" onClick="dolmoedit()"<?php if ($tipp_realname == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][299]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][299]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xfreischaltcode" onClick="dolmoedit()"<?php if ($tipp_freischaltcode == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][146]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][146]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xfreischaltung" onClick="dolmoedit()"<?php if ($tipp_freischaltung == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][293]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][293]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xmailbeianmeldung" onClick="dolmoedit()"<?php if ($tipp_mailbeianmeldung == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 6) { ?>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][259]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][259]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xsttipp" onClick="viewerchange();"<?php if ($tipp_sttipp == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][253]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][253]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xviewertipp" onClick="viewerchange();"<?php if ($tipp_viewertipp == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][254]; ?></div>
-            <div class="col-1 text-start"><input class="form-control" type="text" name="xviewertage" size="2" maxlength="2" value="<?php echo $tipp_viewertage; ?>" onChange="dolmoedit()"<?php if ($tipp_viewertipp == 0) { echo ' disabled'; } ?>></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][254]; ?></div>
+            <div class="col-3 col-md-1 text-start"><input class="form-control" type="text" name="xviewertage" size="2" maxlength="2" value="<?php echo $tipp_viewertage; ?>" onChange="dolmoedit()"<?php if ($tipp_viewertipp == 0) { echo ' disabled'; } ?>></div>
             <div class="col-1"><?php echo $text['tipp'][171]; ?></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][161]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][161]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xakteinsicht" onClick="dolmoedit()"<?php if ($tipp_akteinsicht == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 7) { ?>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][160]; ?></div>
-            <div class="col-auto text-start">
+            <div class="col-6 col-md-auto text-start">
               <select class="form-select" name="xeinsichterst" onChange="dolmoedit()">
                 <option value="0"<?php if ($tipp_einsichterst == 0) { echo ' selected'; } ?>><?php echo $text['tipp'][215] ?></option>
                 <option value="1"<?php if ($tipp_einsichterst == 1) { echo ' selected'; } ?>><?php echo $text['tipp'][216] ?></option>
@@ -286,32 +286,32 @@ if ($show == 0) {
             <div class="col-auto text-start"><input class="form-control" type="text" name="xanzseite" size="2" maxlength="5" value="<?php echo $tipp_anzseite; ?>" onChange="dolmoedit()"></div>
           </div><?php } elseif ($show == 8) { ?>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][183]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][183]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xtipptabelle" onClick="dolmoedit()"<?php if ($tipp_tipptabelle == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][260]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][260]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xwertverein" onClick="dolmoedit()"<?php if ($tipp_wertverein == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 9) { ?>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][302]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][302]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xnurgesamt" onClick="dolmoedit()"<?php if ($tipp_nurgesamt == 1) { echo ' checked'; } ?><?php if ($tipp_gesamt == 0) { echo ' disabled'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][204]; ?></div>
-            <div class="col-auto text-start"><input class="form-control" type="text" name="xanzseite1" size="5" maxlength="5" value="<?php echo $tipp_anzseite1; ?>" onChange="dolmoedit()"></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][204]; ?></div>
+            <div class="col-3 col-md-auto text-start"><input class="form-control" type="text" name="xanzseite1" size="5" maxlength="5" value="<?php echo $tipp_anzseite1; ?>" onChange="dolmoedit()"></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][251]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][251]; ?></div>
             <div class="col-4 text-start"><input type="checkbox" class="form-check-input" name="xshowzus" onClick="dolmoedit()"<?php if ($tipp_showzus == 1) { echo ' checked'; } ?>>&nbsp;<?php echo $text['tipp'][282]; ?></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][272]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][272]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xshowstsiege" onClick="dolmoedit()"<?php if ($tipp_showstsiege == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 10) { ?>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][275] . ' 1'; ?></div>
-            <div class="col-auto text-start">
+            <div class="col-6 col-md-auto text-start">
               <select class="form-select" name="xkrit1" onChange="dolmoedit()">
                 <option value="-1"<?php if ($tipp_krit1 == -1) { echo ' selected'; } ?>><?php echo $text['tipp'][281] ?></option>
                 <option value="0"<?php if ($tipp_krit1 == 0) { echo ' selected'; } ?>><?php echo $text['tipp'][276] ?></option>
@@ -326,7 +326,7 @@ if ($show == 0) {
           </div>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][275] . ' 2'; ?></div>
-            <div class="col-auto  text-start">
+            <div class="col-6 col-md-auto text-start">
               <select class="form-select" name="xkrit2" onChange="dolmoedit()">
                 <option value="-1"<?php if ($tipp_krit2 == -1) { echo ' selected'; } ?>><?php echo $text['tipp'][281] ?></option>
                 <option value="0"<?php if ($tipp_krit2 == 0) { echo ' selected'; } ?>><?php echo $text['tipp'][276] ?></option>
@@ -341,7 +341,7 @@ if ($show == 0) {
           </div>
           <div class="row pb-2">
             <div class="col-4 text-end"><?php echo $text['tipp'][275] . ' 3'; ?></div>
-            <div class="col-auto  text-start">
+            <div class="col-6 col-md-auto text-start">
               <select class="form-select" name="xkrit3" onChange="dolmoedit()">
                 <option value="-1"<?php if ($tipp_krit3 == -1) { echo ' selected'; } ?>><?php echo $text['tipp'][281] ?></option>
                 <option value="0"<?php if ($tipp_krit3 == 0) { echo ' selected'; } ?>><?php echo $text['tipp'][276] ?></option>
@@ -355,15 +355,15 @@ if ($show == 0) {
             </div>
           </div><?php } elseif ($show == 11) { ?>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][81]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][81]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xaktauswert" onClick="dolmoedit()"<?php if ($tipp_aktauswert == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-end"><?php echo $text['tipp'][180]; ?></div>
+            <div class="col-8 col-md-4 text-end"><?php echo $text['tipp'][180]; ?></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xaktauswertges" onClick="dolmoedit()"<?php if ($tipp_aktauswertges == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 12) { ?>
           <div class="row pb-2">
-            <div class="col-5"><?php echo $text['tipp'][104]; ?></div>
+            <div class="col-10"><?php echo $text['tipp'][104]; ?></div>
             <div class="col-2 text-start"><input type="checkbox" class="form-check-input" name="ximmeralle" onClick="immerallechange()"<?php if ($tipp_immeralle == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-2">
@@ -373,14 +373,14 @@ if ($show == 0) {
             </div>
           </div>
           <div class="row pb-2">
-            <div class="col-4 text-start"><?php
+            <div class="col-auto text-start"><?php
     $ftype = '.l98';
     require (PATH_TO_ADDONDIR . '/tipp/lmo-tippnewdir.php');
     ?>
             </div>
           </div><?php } ?>
           <div class="row pb-2">
-            <div class="col-auto">
+            <div class="col text-end">
               <input type="hidden" name="show" value="<?php echo $show ?>">
               <input class="btn btn-primary"  type="submit" name="best" value="<?php echo $text[188]; ?>">
             </div>

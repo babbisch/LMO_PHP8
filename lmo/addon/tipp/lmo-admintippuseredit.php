@@ -251,7 +251,7 @@ if ($action == 'admin' && $todo == 'tippuseredit' && ($nick != '' || $save == -1
         }
 ?>
        </div>
-       <div class="col-3"><?php
+       <div class="col-7 col-md-3"><?php
         if ($save == count($users)) {
 ?>
          <input class="form-control" type="text" name="xtipperpass" value="<?php include (PATH_TO_LMO . '/lmo-adminuserpass.php'); ?>"><?php
@@ -264,50 +264,50 @@ if ($action == 'admin' && $todo == 'tippuseredit' && ($nick != '' || $save == -1
      </div>
      <div class="row">
        <div class="col-2 text-end"><?php echo $text['tipp'][14]; ?></div>
-       <div class="col-3"><input class="form-control" type="text" name="xtippervorname" size="25" maxlength="32" value="<?php echo substr($tipp_tipperdaten[3], 0, strpos($tipp_tipperdaten[3], ' ')); ?>"></div>
+       <div class="col-7 col-md-3"><input class="form-control" type="text" name="xtippervorname" size="25" maxlength="32" value="<?php echo substr($tipp_tipperdaten[3], 0, strpos($tipp_tipperdaten[3], ' ')); ?>"></div>
      </div>
      <div class="row">
        <div class="col-2 text-end"><?php echo $text['tipp'][15]; ?></div>
-       <div class="col-3"><input class="form-control" type="text" name="xtippernachname" size="25" maxlength="32" value="<?php echo substr($tipp_tipperdaten[3], strpos($tipp_tipperdaten[3], ' ') + 1); ?>"></div>
+       <div class="col-7 col-md-3"><input class="form-control" type="text" name="xtippernachname" size="25" maxlength="32" value="<?php echo substr($tipp_tipperdaten[3], strpos($tipp_tipperdaten[3], ' ') + 1); ?>"></div>
      </div>
      <div class="row">
        <div class="col-2 text-end"><?php echo $text['tipp'][126]; ?></div>
-       <div class="col-3"><input class="form-control" type="text" name="xtipperstrasse" size="25" maxlength="32" value="<?php echo $tipp_tipperdaten[6]; ?>"></div>
+       <div class="col-7 col-md-3"><input class="form-control" type="text" name="xtipperstrasse" size="25" maxlength="32" value="<?php echo $tipp_tipperdaten[6]; ?>"></div>
      </div>
      <div class="row">
        <div class="col-2 text-end"><?php echo $text['tipp'][127]; ?></div>
-       <div class="col-3"><input class="form-control" type="text" name="xtipperplz" size="7" maxlength="5" value="<?php echo $tipp_tipperdaten[7]; ?>"></div>
+       <div class="col-7 col-md-3"><input class="form-control" type="text" name="xtipperplz" size="7" maxlength="5" value="<?php echo $tipp_tipperdaten[7]; ?>"></div>
      </div>
      <div class="row">
        <div class="col-2 text-end"><?php echo $text['tipp'][128]; ?></div>
-       <div class="col-3"><input class="form-control" type="text" name="xtipperort" size="25" maxlength="32" value="<?php echo $tipp_tipperdaten[8]; ?>"></div>
+       <div class="col-7 col-md-3"><input class="form-control" type="text" name="xtipperort" size="25" maxlength="32" value="<?php echo $tipp_tipperdaten[8]; ?>"></div>
      </div>
      <div class="row">
        <div class="col-2 text-end"><?php echo $text['tipp'][16]; ?></div>
-       <div class="col-3"><input class="form-control" type="text" name="xtipperemail" size="25" maxlength="64" value="<?php echo $tipp_tipperdaten[4]; ?>"></div>
+       <div class="col-7 col-md-3"><input class="form-control" type="text" name="xtipperemail" size="25" maxlength="64" value="<?php echo $tipp_tipperdaten[4]; ?>"></div>
      </div>
      <div class="row">
-       <div class="col-3 offset-2 text-start"><input type="checkbox" class="form-check-input" name="xfrei" <?php if ($tipp_tipperdaten[2] == 5) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][147] ?></div>
+       <div class="col-7 col-md-3 offset-2 text-start"><input type="checkbox" class="form-check-input" name="xfrei" <?php if ($tipp_tipperdaten[2] == 5) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][147] ?></div>
       </div>
       <div class="row">
         <div class="col-4"><strong><?php echo $text['tipp'][165]; ?></strong></div>
       </div>
       <div class="row">
-        <div class="col-3 offset-2 text-start"><input type="checkbox" class="form-check-input" name="xnews" <?php if (isset($tipp_tipperdaten[9]) && $tipp_tipperdaten[9] != -1) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][206] ?></div>
+        <div class="col-7 col-md-3 offset-md-2 text-start"><input type="checkbox" class="form-check-input" name="xnews" <?php if (isset($tipp_tipperdaten[9]) && $tipp_tipperdaten[9] != -1) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][206] ?></div>
       </div>
       <div class="row">
-        <div class="col-3 offset-2 text-start"><input type="checkbox" class="form-check-input" name="xremind" <?php if (isset($tipp_tipperdaten[10]) && $tipp_tipperdaten[10] != -1) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][167] ?></div>
+        <div class="col-7 col-md-3 offset-md-2 text-start"><input type="checkbox" class="form-check-input" name="xremind" <?php if (isset($tipp_tipperdaten[10]) && $tipp_tipperdaten[10] != -1) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][167] ?></div>
       </div>
 <?php if ($tipp_tipperimteam >= 0) { ?>
        <div class="row">
-         <div class="col-4 offset-3"><strong><?php echo $text['tipp'][27]; ?></strong></div>
+         <div class="col-7 col-md-4"><strong><?php echo $text['tipp'][27]; ?></strong></div>
        </div>
        <div class="row">
-         <div class="col-4"><input type="radio" class="form-check-input" name="xtippervereinradio" value="0" id="0" <?php if ($xtippervereinradio == 0) { echo 'checked'; } ?>> <?php echo $text['tipp'][50]; ?></div>
+         <div class="col"><input type="radio" class="form-check-input" name="xtippervereinradio" value="0" id="0" <?php if ($xtippervereinradio == 0) { echo 'checked'; } ?>> <?php echo $text['tipp'][50]; ?></div>
        </div>
        <div class="row">
-         <div class="col-2 text-end"><input type="radio" class="form-check-input" name="xtippervereinradio" value="1" id="1" <?php if ($xtippervereinradio == 1) { echo 'checked'; } ?>> <?php echo $text['tipp'][48]; ?></div>
-         <div class="col-3">
+         <div class="col-5 col-md-2"><input type="radio" class="form-check-input" name="xtippervereinradio" value="1" id="1" <?php if ($xtippervereinradio == 1) { echo 'checked'; } ?>> <?php echo $text['tipp'][48]; ?></div>
+         <div class="col-7 col-md-3">
            <select class="form-select" name="xtippervereinalt" onChange="xtippervereinradio[1].checked=true"><?php
             echo '<option value="" ';
             if ($xtippervereinalt == '') {
@@ -320,14 +320,14 @@ if ($action == 'admin' && $todo == 'tippuseredit' && ($nick != '' || $save == -1
          </div>
        </div>
        <div class="row">
-         <div class="col-2 text-end"><input type="radio" class="form-check-input" name="xtippervereinradio" value="2" id="2" <?php if ($xtippervereinradio == 2) { echo 'checked'; } ?>> <?php echo $text['tipp'][49]; ?></div>
-         <div class="col-3"><input class="form-control" type="text" name="xtippervereinneu" size="25" maxlength="32" value="<?php echo $xtippervereinneu; ?>" onFocus="xtippervereinradio[2].checked=true"></div>
+         <div class="col-5 col-md-2"><input type="radio" class="form-check-input" name="xtippervereinradio" value="2" id="2" <?php if ($xtippervereinradio == 2) { echo 'checked'; } ?>> <?php echo $text['tipp'][49]; ?></div>
+         <div class="col-7 col-md-3"><input class="form-control" type="text" name="xtippervereinneu" size="25" maxlength="32" value="<?php echo $xtippervereinneu; ?>" onFocus="xtippervereinradio[2].checked=true"></div>
        </div><?php } ?>
        <div class="row">
-         <div class="col-4"><strong><?php echo $text['tipp'][273]; ?></strong></div>
+         <div class="col"><strong><?php echo $text['tipp'][273]; ?></strong></div>
        </div>
        <div class="row">
-         <div class="col-5 offset-2 text-start"><?php $ftype = '.l98';
+         <div class="col-10 col-md-5 offset-md-2 text-start"><?php $ftype = '.l98';
         require (PATH_TO_ADDONDIR . '/tipp/lmo-tippnewdir.php'); ?>
          </div>
        </div>

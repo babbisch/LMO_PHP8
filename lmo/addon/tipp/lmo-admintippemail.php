@@ -84,11 +84,11 @@ echo $tipp_textreminder1; ?>">
       <div class="col d-flex justify-content-center"><h1><?php echo $text['tipp'][165] ?></h1></div>
     </div>
     <div class="row p-1">
-      <div class="col-3 text-end"><input type="radio" class="form-check-input" name="emailart" value="0" <?php if ($emailart == 0) { echo 'checked'; } ?> onClick="changetextarea(0)">&nbsp;<?php echo $text['tipp'][166]; ?></div>
+      <div class="col-4 col-md-3 text-end"><input type="radio" class="form-check-input" name="emailart" value="0" <?php if ($emailart == 0) { echo 'checked'; } ?> onClick="changetextarea(0)">&nbsp;<?php echo $text['tipp'][166]; ?></div>
     </div>
     <div class="row p-1">
-      <div class="col-3 text-end"><input type="radio" class="form-check-input" name="emailart" value="2" <?php if ($emailart == 2) { echo 'checked'; } ?> onClick="changetextarea(2)">&nbsp;<?php echo $text['tipp'][168]; ?></div>
-      <div class="col-3 text-start">
+      <div class="col-4 col-md-3 text-end"><input type="radio" class="form-check-input" name="emailart" value="2" <?php if ($emailart == 2) { echo 'checked'; } ?> onClick="changetextarea(2)">&nbsp;<?php echo $text['tipp'][168]; ?></div>
+      <div class="col-7 col-md-3 text-start">
         <select class="form-select" name="adressat" onChange="emailart[1].checked=true;changetextarea(2);">
           <option value=""><?php echo $text['tipp'][51] ?></option><?php
 require (PATH_TO_ADDONDIR . '/tipp/lmo-tippselectemail.php');
@@ -97,8 +97,8 @@ require (PATH_TO_ADDONDIR . '/tipp/lmo-tippselectemail.php');
        </div>
      </div>
      <div class="row p-1">
-       <div class="col-3 text-end"><input type="radio" class="form-check-input" name="emailart" value="1" <?php if ($emailart == 1) { echo 'checked'; } ?> onClick="changetextarea(1)">&nbsp;<?php echo $text['tipp'][167]; ?></div>
-       <div class="col-5 text-start">
+       <div class="col-4 col-md-3 text-end"><input type="radio" class="form-check-input" name="emailart" value="1" <?php if ($emailart == 1) { echo 'checked'; } ?> onClick="changetextarea(1)">&nbsp;<?php echo $text['tipp'][167]; ?></div>
+       <div class="col-7 col-md-5 text-start">
          <div class="container"><?php
 $ftype = '.l98';
 $iptype = 'reminder';
@@ -127,7 +127,7 @@ if ($save == 1) {
 }
 ?>
           <div class="row p-1">
-            <div class="col-auto offset-2"><?php echo $text['tipp'][164]; ?></div>
+            <div class="col-3 text-end"><?php echo $text['tipp'][164]; ?></div>
             <div class="col-auto"><input class="form-control" type="text" name="start" size="2" maxlength="4" value="<?php echo $start1; ?>"></div>
             <div class="col-auto"><?php echo $text[4]; ?></div>
             <div class="col-auto"><input class="form-control" type="text" name="ende" size="2" maxlength="4" value="<?php echo $ende1; ?>"></div>
@@ -142,12 +142,12 @@ if ($save == 1) {
 }
 ?>
           <div class="row p-1">
-            <div class="col-5 offset-3">
+            <div class="col-9 col-md-5 offset-3">
               <input class="form-control" type="text" name="betreff" id="betreff" size="20" maxlength="40" placeholder="<?php echo $text['tipp'][265]; ?>" value="<?php echo $betreff1; ?>">
             </div>
           </div>
           <div class="row p-1">
-            <div class="col-5 offset-3">
+            <div class="col-9 col-md-5 offset-3">
               <textarea  class="form-control"id="message" name="message" rows="10" cols="60"><?php
 if ($emailart == 1) {
     echo $tipp_textreminder1;
@@ -164,8 +164,8 @@ if ($emailart == 1) {
             <div class="col"><input class="btn btn-success" type="submit" name="best" value="<?php echo $text['tipp'][169]; ?>"></td>
           </div>
           <div class="row p-1">
-            <div class="col-1 offset-4"><?php echo $text['tipp'][178]; ?></div>
-            <div class="col-3 text-start"><?php echo $text['tipp'][179]; ?></div>
+            <div class="col-3 col-md-1 offset-md-4"><?php echo $text['tipp'][178]; ?></div>
+            <div class="col-9 col-md-3 text-start"><?php echo $text['tipp'][179]; ?></div>
           </div>
         </div>
       </div>

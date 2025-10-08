@@ -30,7 +30,6 @@ if ($file != '') {
                     if ($titel == '') {
                         $titel = 'No Name';
                     }
-                    $icon = isset($_POST['xicon']) ? trim($_POST['xicon']) : $icon;
                     $goalfaktor = isset($_POST['xgoalfaktor']) && is_numeric($_POST['xgoalfaktor']) ? $_POST['xgoalfaktor'] : $goalfaktor;
                     $pointsfaktor = isset($_POST['xpointsfaktor']) && is_numeric($_POST['xpointsfaktor']) ? $_POST['xpointsfaktor'] : $pointsfaktor;
                 }
@@ -131,34 +130,34 @@ if ($file != '') {
     <div class="col d-flex justify-content-center"><h1><?php echo $titel ?></h1></div>
   </div>
   <div class="row">
-    <div class="col-2 text-end">
+    <div class="col-3 text-end">
     <?php if ($show == 0) {
-        echo "<p>$text[183]</p>";
+        echo $text[183] . '<br />';
     } else { ?>
-      <p><a class="btn btn-sm btn-outline-primary" href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=0&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[183]; ?></a></p><?php
+      <a href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=0&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[183]; ?></a><br /><?php
     }
     if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
         if ($show == 2) {
-            echo "<p>$text[250]</p>";
+            echo $text[250] . '<br />';
         } else {
 ?>
-          <p><a class="btn btn-sm btn-outline-primary" href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=2&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[250]; ?></a><p><?php
+          <a href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=2&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[250]; ?></a><br /><?php
         }
         if ($lmtype == 0) {
             if ($show == 3) {
-                echo "<p>$text[178]</p>";
+                echo $text[178] . '<br />';
             } else {
 ?>
-            <p><a class="btn btn-sm btn-outline-primary" href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=3&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[178]; ?></a><p><?php
+            <a href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=3&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[178]; ?></a><br /><?php
             }
             if ($show == 4) {
-                echo "<p>$text[40]</p>";
+                echo $text[40] . '<br />';
             } else {
 ?>
-            <a class="btn btn-sm btn-outline-primary" href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=4&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[40]; ?></a><p><?php
+            <a href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=4&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[40]; ?></a><br /><?php
             }
 ?>
-        <p><a class="btn btn-sm btn-outline-primary" href='<?php echo "$addr-3" ?>' title="<?php echo $text[339] ?>"><?php echo $text[338] ?></a></p><?php
+        <a href='<?php echo "$addr-3" ?>' title="<?php echo $text[339] ?>"><?php echo $text[338] ?></a><?php
         }
     }
     ?>
@@ -176,25 +175,21 @@ if ($file != '') {
         if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
 ?>
           <div class="row pb-1">
-            <div class="col-3 offset-2 text-end"><input class="form-control" type="text" name="xtitel" maxlength="60" value="<?php echo $titel; ?>" onChange="dolmoedit()"></div>
+            <div class="col-7 col-md-3 offset-md-2 text-end"><input class="form-control" type="text" name="xtitel" maxlength="60" value="<?php echo $titel; ?>" onChange="dolmoedit()"></div>
             <div class="col-5 text-start"><acronym title="<?php echo $text[118]; ?>"><?php echo $text[113]; ?></acronym></div>
-          </div>
-          <div class="row pb-1">
-            <div class="col-3 offset-2 text-end"><input class="form-control" type="text" name="xicon" maxlength="60" value="<?php echo $icon; ?>" onChange="dolmoedit()"></div>
-            <div class="col-5 text-start"><?php echo $text[2000]; ?></div>
           </div><?php if ($lmtype == 0) { ?>
           <div class="row pb-1">
-            <div class="col-2 offset-3 text-end"><input class="form-control" type="text" name="xnamepkt" maxlength="60" value="<?php if ($namepkt == '') { echo $text[37]; } else { echo $namepkt; } ?>" onChange="dolmoedit()"></div>
+            <div class="col-7 col-md-3 offset-md-2 text-end"><input class="form-control" type="text" name="xnamepkt" maxlength="60" value="<?php if ($namepkt == '') { echo $text[37]; } else { echo $namepkt; } ?>" onChange="dolmoedit()"></div>
             <div class="col-5 text-start"><acronym title="<?php echo $text[66]; ?>"><?php echo $text[65] . ' ' . $text[37]; ?></acronym></div>
           </div>
           <div class="row pb-1">
-            <div class="col-2 offset-3 text-end"><input class="form-control" type="text" name="xnametor" maxlength="60" value="<?php if ($nametor == '') { echo $text[38]; } else { echo $nametor; } ?>" onChange="dolmoedit()"></div>
+            <div class="col-7 col-md-3 offset-md-2 text-end"><input class="form-control" type="text" name="xnametor" maxlength="60" value="<?php if ($nametor == '') { echo $text[38]; } else { echo $nametor; } ?>" onChange="dolmoedit()"></div>
             <div class="col-5 text-start"><acronym title="<?php echo $text[66]; ?>"><?php echo $text[65] . ' ' . $text[38]; ?></acronym></div>
           </div><?php
             }
 ?>
           <div class="row pb-1">
-            <div class="col-3 offset-2 text-end">
+            <div class="col-7 col-md-3 offset-md-2 text-end">
               <select class="form-select" name="xpointsfaktor" onChange="dolmoedit()">
                 <option value="1"<?php if ($pointsfaktor == 1) echo ' selected'; ?>><?php echo $text[553] ?></option>
                 <option value="10"<?php if ($pointsfaktor == 10) echo ' selected'; ?>><?php echo $text[554] ?></option>
@@ -205,7 +200,7 @@ if ($file != '') {
             <div class="col-5 text-start"><acronym title="<?php echo $text[558]; ?>"><?php echo $text[557]; ?> <?php echo $text[37]; ?></acronym></div>
           </div>
           <div class="row pb-1">
-            <div class="col-3 offset-2 text-end">
+            <div class="col-7 col-md-3 offset-md-2 text-end">
               <select class="form-select" name="xgoalfaktor" onChange="dolmoedit()">
                 <option value="1"<?php if ($goalfaktor == 1) echo ' selected'; ?>><?php echo $text[553] ?></option>
                 <option value="10"<?php if ($goalfaktor == 10) echo ' selected'; ?>><?php echo $text[554] ?></option>
@@ -218,7 +213,7 @@ if ($file != '') {
         }
         ?>
           <div class="row pb-1">
-            <div class="col-3 offset-2 text-end">
+            <div class="col-7 col-md-3 offset-md-2 text-end">
               <select class="form-select" name="xfavteam" onChange="dolmoedit()"><?php
         for ($y = 0; $y <= $anzteams; $y++) {
             ?>
@@ -230,7 +225,7 @@ if ($file != '') {
             <div class="col-5 text-start"><acronym title="<?php echo $text[190]; ?>"><?php echo $text[189]; ?></acronym></div>
           </div>
           <div class="row pb-1">
-            <div class="col-3 offset-2 text-end">
+            <div class="col-7 col-md-3 offset-md-2 text-end">
               <select class="form-select" name="xselteam" onChange="dolmoedit()"><?php
         for ($y = 0; $y <= $anzteams; $y++) {
             ?>
@@ -242,7 +237,7 @@ if ($file != '') {
             <div class="col-5 text-start"><acronym title="<?php echo $text[195]; ?>"><?php echo $text[194]; ?></acronym></div>
           </div><?php if ($lmtype == 0) { ?>
           <div class="row pb-1">
-            <div class="col-3 offset-2 text-end">
+            <div class="col-7 col-md-3 offset-md-2 text-end">
               <select class="form-select" name="xstat1" onChange="dolmoedit()"><?php
             for ($y = 0; $y <= $anzteams; $y++) {
                 ?>
@@ -254,7 +249,7 @@ if ($file != '') {
             <div class="col-5 text-start"><acronym title="<?php echo $text[197]; ?>"><?php echo $text[196]; ?></acronym></div>
           </div>
           <div class="row pb-1">
-            <div class="col-3 offset-2 text-end"><select class="form-select" name="xstat2" onChange="dolmoedit()"><?php
+            <div class="col-7 col-md-3 offset-md-2 text-end"><select class="form-select" name="xstat2" onChange="dolmoedit()"><?php
             for ($y = 0; $y <= $anzteams; $y++) {
                 ?>
                 <option value="<?php echo $y ?>"<?php if ($y == $stat2) { echo ' selected'; } ?>><?php echo $teams[$y] ?></option><?php
@@ -266,23 +261,23 @@ if ($file != '') {
     } elseif ($show == 2) {
         if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) { ?>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[570]; ?>"><?php echo $text[569]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[570]; ?>"><?php echo $text[569]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xenablegamesort" onChange="dolmoedit()"<?php if ($enablegamesort == 1) { echo ' checked'; } ?>></div>
           </div><?php
             if ($lmtype == 1) {
 ?>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[418]; ?>"><?php echo $text[417]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[418]; ?>"><?php echo $text[417]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xklfin" onChange="dolmoedit()"<?php if ($klfin == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[552]; ?>"><?php echo $text[551]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[552]; ?>"><?php echo $text[551]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xplaydown" onChange="dolmoedit()"<?php if ($playdown == 1) { echo ' checked'; } ?>></div>
           </div><?php }
             if ($lmtype == 0) { ?>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[400]; ?>"><?php echo $text[399]; ?></acronym></div>
-            <div class="col-3 text-start">
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[400]; ?>"><?php echo $text[399]; ?></acronym></div>
+            <div class="col-6 col-md-3 text-start">
               <select class="form-select" name="xonrun" onChange="dolmoedit()">
                 <option value="0"<?php if ($ergebnis == '0') { echo ' disabled'; } elseif ($onrun == 0) { echo ' selected'; } ?>><?php echo $text[10] ?></option>
                 <option value="1"<?php if ($tabelle == '0') { echo ' disabled'; } elseif ($onrun == 1) { echo ' selected'; } ?>><?php echo $text[16] ?></option>
@@ -292,67 +287,72 @@ if ($file != '') {
                 <option value="5"<?php if ($ligastats == '0') { echo ' disabled'; } elseif ($onrun == 5) { echo ' selected'; } ?>><?php echo $text[18] ?></option>
                 <option value="6"<?php if ($dats == '0') { echo ' disabled'; } elseif ($onrun == 6) { echo ' selected'; } ?>><?php echo $text[140] ?></option>
                 <option value="7"<?php if ($mittore == '0') { echo ' disabled'; } elseif ($onrun == 7) { echo ' selected'; } ?>><?php echo $text[485] ?></option>
+		<option value="8"<?php if ($stats == '0') { echo ' disabled'; } elseif ($onrun == 8) { echo ' selected'; } ?>><?php echo $text['stats'][0] ?></option>
               </select>
             </div>
           </div><?php } ?>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[254]; ?>"><?php echo $text[253]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[254]; ?>"><?php echo $text[253]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xdatm" onChange="dolmoedit()"<?php if ($datm == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[252]; ?>"><?php echo $text[251]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[252]; ?>"><?php echo $text[251]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xdats" onChange="dolmoedit()"<?php if ($dats == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1"><?php
             if ($lmtype == 0 && $tabonres == 0) {
 ?>
-            <div class="col-5 text-end"><acronym title="<?php echo $text[512]; ?>"><?php echo $text[10]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[512]; ?>"><?php echo $text[10]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xergebnis" onChange="dolmoedit()"<?php if ($ergebnis == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[513]; ?>"><?php echo $text[16]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[513]; ?>"><?php echo $text[16]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xtabelle" onChange="dolmoedit()"<?php if ($tabelle == 1) { echo ' checked'; } ?>></div><?php
             }
             if ($lmtype == 1) {
 ?>
-            <div class="col-5 text-end"><acronym title="<?php echo $text[512]; ?>"><?php echo $text[10]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[512]; ?>"><?php echo $text[10]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xergebnis" onChange="dolmoedit()"<?php if ($ergebnis == 1) { echo ' checked'; } ?>></div><?php
             }
             if ($lmtype == 0 && $tabonres >= 1) {
 ?>
-            <div class="col-5 text-end"><acronym title="<?php echo $text[512]; ?>"><?php echo $text[10] . '/' . $text[16]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[512]; ?>"><?php echo $text[10] . '/' . $text[16]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xergebnis" onChange="dolmoedit()"<?php if ($ergebnis == 1) { echo ' checked'; } ?>></div><?php
             }
 ?>
           </div>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[256]; ?>"><?php echo $text[255]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[256]; ?>"><?php echo $text[255]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xdatc" onChange="dolmoedit()"<?php if ($datc == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[511]; ?>"><?php echo $text[12]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[511]; ?>"><?php echo $text[12]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xplan" onChange="dolmoedit()"<?php if ($plan == 1) { echo ' checked'; } ?>></div>
+          </div>
+	  <div class="row pb-1">
+            <div class="col-6 col-md-4 text-end"><?php echo $text['stats'][0]; ?></div>
+            <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xstats" onChange="dolmoedit()"<?php if ($stats == 1) { echo ' checked'; } ?>></div>
           </div><?php if ($lmtype == 0) { ?>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[468]; ?>"><?php echo $text[467]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[468]; ?>"><?php echo $text[467]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xkreuz" onChange="dolmoedit()"<?php if ($kreuz == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[238]; ?>"><?php echo $text[237]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[238]; ?>"><?php echo $text[237]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xkurve" onChange="dolmoedit()"<?php if ($kurve == 1) { echo ' checked'; } ?>></div>
           </div><?php
             }
             if ($einspieler == 1) {
 ?>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text['spieler'][19]; ?>"><?php echo $text['spieler'][18]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text['spieler'][19]; ?>"><?php echo $text['spieler'][18]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xmittore" onChange="dolmoedit()"<?php if ($mittore == 1) { echo ' checked'; } ?>></div>
           </div><?php
             }
             if ($lmtype == 0) {
 ?>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[514]; ?>"><?php echo $text[18]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[514]; ?>"><?php echo $text[18]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xligastats" onChange="dolmoedit()"<?php if ($ligastats == 1) { echo ' checked'; } ?>></div>
           </div><?php
             }
@@ -361,38 +361,38 @@ if ($file != '') {
             <div class="col"><strong><?php echo $text[264]; ?></strong></div>
           </div>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[268]; ?>"><?php echo $text[267]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[268]; ?>"><?php echo $text[267]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xurlt" onChange="dolmoedit()"<?php if ($urlt == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
-            <div class="col-5 text-end"><acronym title="<?php echo $text[266]; ?>"><?php echo $text[265]; ?></acronym></div>
+            <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[266]; ?>"><?php echo $text[265]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xurlb" onChange="dolmoedit()"<?php if ($urlb == 1) { echo ' checked'; } ?>></div>
           </div><?php }
     } elseif ($show == 3) {
         if (($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) && $lmtype == 0) { ?>
           <div class="row pb-1">
-            <div class="col-1 offset-3 text-end"><input type="checkbox" class="form-check-input" name="xminus" onChange="dolmoedit()"<?php if ($minus == 2) { echo ' checked'; } ?>></div>
-            <div class="col-6 text-start"><acronym title="<?php echo $text[180]; ?>"><?php echo $text[179]; ?></acronym></div>
+            <div class="col-1 offset-2 text-end"><input type="checkbox" class="form-check-input" name="xminus" onChange="dolmoedit()"<?php if ($minus == 2) { echo ' checked'; } ?>></div>
+            <div class="col-8 col-md-5 text-start"><acronym title="<?php echo $text[180]; ?>"><?php echo $text[179]; ?></acronym></div>
           </div>
           <div class="row pb-1">
-            <div class="col-1 offset-3 text-end"><input type="checkbox" class="form-check-input" name="xspez" onChange="dolmoedit()"<?php if ($spez == 1) { echo ' checked'; } ?>></div>
-            <div class="col-6 text-start"><acronym title="<?php echo $text[185]; ?>"><?php echo $text[184]; ?></acronym></div>
+            <div class="col-1 offset-2 text-end"><input type="checkbox" class="form-check-input" name="xspez" onChange="dolmoedit()"<?php if ($spez == 1) { echo ' checked'; } ?>></div>
+            <div class="col-8 col-md-5 text-start"><acronym title="<?php echo $text[185]; ?>"><?php echo $text[184]; ?></acronym></div>
           </div>
           <div class="row pb-1">
-            <div class="col-1 offset-3 text-end"><input type="checkbox" class="form-check-input" name="xhidr" onChange="dolmoedit()"<?php if ($hidr == 1) { echo ' checked'; } ?>></div>
-            <div class="col-6 text-start"><acronym title="<?php echo $text[242]; ?>"><?php echo $text[241]; ?></acronym></div>
+            <div class="col-1 offset-2 text-end"><input type="checkbox" class="form-check-input" name="xhidr" onChange="dolmoedit()"<?php if ($hidr == 1) { echo ' checked'; } ?>></div>
+            <div class="col-8 col-md-5 text-start"><acronym title="<?php echo $text[242]; ?>"><?php echo $text[241]; ?></acronym></div>
           </div>
           <div class="row pb-1">
-            <div class="col-1 offset-3 text-end"><input type="checkbox" class="form-check-input" name="xdirekt" onChange="dolmoedit()"<?php if ($direkt == 1) { echo ' checked'; } ?>></div>
-            <div class="col-6 text-start"><acronym title="<?php echo $text[187]; ?>"><?php echo $text[186]; ?></acronym></div>
+            <div class="col-1 offset-2 text-end"><input type="checkbox" class="form-check-input" name="xdirekt" onChange="dolmoedit()"<?php if ($direkt == 1) { echo ' checked'; } ?>></div>
+            <div class="col-8 col-md-5 text-start"><acronym title="<?php echo $text[187]; ?>"><?php echo $text[186]; ?></acronym></div>
           </div>
           <div class="row pb-1">
-            <div class="col-1 offset-3 text-end"><input type="checkbox" class="form-check-input" name="xkegel" onChange="dolmoedit()"<?php if ($kegel == 1) { echo ' checked'; } ?>></div>
-            <div class="col-6 text-start"><acronym title="<?php echo $text[396]; ?>"><?php echo $text[395]; ?></acronym></div>
+            <div class="col-1 offset-2 text-end"><input type="checkbox" class="form-check-input" name="xkegel" onChange="dolmoedit()"<?php if ($kegel == 1) { echo ' checked'; } ?>></div>
+            <div class="col-8 col-md-5 text-start"><acronym title="<?php echo $text[396]; ?>"><?php echo $text[395]; ?></acronym></div>
           </div>
           <div class="row pb-1">
-            <div class="col-1 offset-3 text-end"><input type="checkbox" class="form-check-input" name="xhands" onChange="dolmoedit()"<?php if ($hands == 1) { echo ' checked'; } ?>></div>
-            <div class="col-6 text-start"><acronym title="<?php echo $text[408]; ?>"><?php echo $text[407]; ?></acronym></div>
+            <div class="col-1 offset-2 text-end"><input type="checkbox" class="form-check-input" name="xhands" onChange="dolmoedit()"<?php if ($hands == 1) { echo ' checked'; } ?>></div>
+            <div class="col-8 col-md-5 text-start"><acronym title="<?php echo $text[408]; ?>"><?php echo $text[407]; ?></acronym></div>
           </div>
           <div class="row p-2">
             <div class="col"><strong><?php echo $text[198]; ?></strong></div>
@@ -401,25 +401,25 @@ if ($file != '') {
             <div class="col">
               <div class="container">
                 <div class="row pb-1">
-                  <div class="col-6"></div>
+                  <div class="col-5"></div>
                   <div class="col-1 text-center"><acronym title="<?php echo $text[199]; ?>"><?php echo $text[34]; ?></acronym></div>
                   <div class="col-1 text-center"><acronym title="<?php echo $text[200]; ?>"><?php echo $text[35]; ?></acronym></div>
                   <div class="col-1 text-center"><acronym title="<?php echo $text[201]; ?>"><?php echo $text[36]; ?></acronym></div>
                 </div>
                 <div class="row pb-1">
-                  <div class="col-6 text-end"><?php echo $text[202]; ?></div>
+                  <div class="col-5 text-end"><?php echo $text[202]; ?></div>
                   <div class="col-1"><input class="form-control" type="number" style="width: 3.6rem;" name="xpns" onChange="dolmoedit()" value=<?php echo $pns ?>></div>
                   <div class="col-1"><input class="form-control" type="number" style="width: 3.6rem;" name="xpnu" onChange="dolmoedit()" value=<?php echo $pnu ?>></div>
                   <div class="col-1"><input class="form-control" type="number" style="width: 3.4rem;" name="xpnn" onChange="dolmoedit()" value=<?php echo $pnn ?>></div>
                 </div>
                 <div class="row pb-1">
-                  <div class="col-6 text-end"><?php echo $text[203]; ?></div>
+                  <div class="col-5 text-end"><?php echo $text[203]; ?></div>
                   <div class="col-1"><input class="form-control" type="number" style="width: 3.4rem;" name="xpxs" onChange="dolmoedit()" value=<?php echo $pxs ?>></div>
                   <div class="col-1"><input class="form-control" type="number" style="width: 3.4rem;" name="xpxu" onChange="dolmoedit()" value=<?php echo $pxu ?>></div>
                   <div class="col-1"><input class="form-control" type="number" style="width: 3.4rem;" name="xpxn" onChange="dolmoedit()" value=<?php echo $pxn ?>></div>
                 </div>
                 <div class="row pb-1">
-                  <div class="col-6 text-end"><?php echo $text[204]; ?></div>
+                  <div class="col-5 text-end"><?php echo $text[204]; ?></div>
                   <div class="col-1"><input class="form-control" type="number" style="width: 3.4rem;" name="xpps" onChange="dolmoedit()" value=<?php echo $pps ?>></div>
                   <div class="col-1"><input class="form-control" type="number" style="width: 3.4rem;" name="xppu" onChange="dolmoedit()" value=<?php echo $ppu ?>></div>
                   <div class="col-1"><input class="form-control" type="number" style="width: 3.4rem;" name="xppn" onChange="dolmoedit()" value=<?php echo $ppn ?>></div>
@@ -433,22 +433,22 @@ if ($file != '') {
             <div class="col"><strong><?php echo $text[264]; ?></strong></div>
           </div>
           <div class="row pb-1">
-            <div class="col-6 text-end"><acronym title="<?php echo $text[494]; ?>"><?php echo $text[493]; ?></acronym></div>
+            <div class="col-10 col-md-6 text-end"><acronym title="<?php echo $text[494]; ?>"><?php echo $text[493]; ?></acronym></div>
             <div class="col-auto"><input type="checkbox" class="form-check-input" name="xeinhinrueck" onChange="dolmoedit()"<?php if ($einhinrueck == 1) { echo ' checked'; } ?>></div>
           </div>
            <div class="row pb-1">
-            <div class="col-6 text-end"><acronym title="<?php echo $text[566]; ?>"><?php echo $text[565]; ?></acronym></div>
+            <div class="col-10 col-md-6 text-end"><acronym title="<?php echo $text[566]; ?>"><?php echo $text[565]; ?></acronym></div>
             <div class="col-auto"><input type="checkbox" class="form-check-input" name="xeinheimausw" onChange="dolmoedit()"<?php if ($einheimausw == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row p-2">
             <div class="col"><strong><?php echo $text[378]; ?></strong></div>
           </div>
           <div class="row pb-1">
-            <div class="col-6 text-end"><acronym title="<?php echo $text[380]; ?>"><?php echo $text[379]; ?></acronym></div>
+            <div class="col-10 col-md-6 text-end"><acronym title="<?php echo $text[380]; ?>"><?php echo $text[379]; ?></acronym></div>
             <div class="col-auto"><input type="checkbox" class="form-check-input" name="xchamp" onChange="dolmoedit()"<?php if ($champ == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
-          <div class="col-6 text-end"><acronym title="<?php echo $text[382]; ?>"><?php echo $text[381]; ?></acronym></div>
+          <div class="col-8 col-md-6 text-end"><acronym title="<?php echo $text[382]; ?>"><?php echo $text[381]; ?></acronym></div>
             <div class="col-auto"><select class="form-select" name="xanzcl" onChange="dolmoedit()"><?php
             for ($i = 0; $i < 5; $i++) {
                 ?>
@@ -459,7 +459,7 @@ if ($file != '') {
             </div>
           </div>
           <div class="row pb-1">
-          <div class="col-6 text-end"><acronym title="<?php echo $text[384]; ?>"><?php echo $text[383]; ?></acronym></div>
+          <div class="col-8 col-md-6 text-end"><acronym title="<?php echo $text[384]; ?>"><?php echo $text[383]; ?></acronym></div>
             <div class="col-auto">
               <select class="form-select" name="xanzck" onChange="dolmoedit()"><?php
             for ($i = 0; $i < 5; $i++) {
@@ -471,7 +471,7 @@ if ($file != '') {
             </div>
           </div>
           <div class="row pb-1">
-          <div class="col-6 text-end"><acronym title="<?php echo $text[386]; ?>"><?php echo $text[385]; ?></acronym></div>
+          <div class="col-8 col-md-6 text-end"><acronym title="<?php echo $text[386]; ?>"><?php echo $text[385]; ?></acronym></div>
             <div class="col-auto">
               <select class="form-select" name="xanzuc" onChange="dolmoedit()"><?php
             for ($i = 0; $i < 5; $i++) {
@@ -483,7 +483,7 @@ if ($file != '') {
             </div>
           </div>
           <div class="row pb-1">
-            <div class="col-6 text-end"><acronym title="<?php echo $text[394]; ?>"><?php echo $text[393]; ?></acronym></div>
+            <div class="col-8 col-md-6 text-end"><acronym title="<?php echo $text[394]; ?>"><?php echo $text[393]; ?></acronym></div>
             <div class="col-auto">
               <select class="form-select" name="xanzar" onChange="dolmoedit()"><?php
             for ($i = 0; $i < 5; $i++) {
@@ -495,7 +495,7 @@ if ($file != '') {
             </div>
           </div>
           <div class="row pb-1">
-            <div class="col-6 text-end"><acronym title="<?php echo $text[388]; ?>"><?php echo $text[387]; ?></acronym></div>
+            <div class="col-8 col-md-6 text-end"><acronym title="<?php echo $text[388]; ?>"><?php echo $text[387]; ?></acronym></div>
             <div class="col-auto">
               <select class="form-select" name="xanzab" onChange="dolmoedit()"><?php
             for ($i = 0; $i < 5; $i++) {

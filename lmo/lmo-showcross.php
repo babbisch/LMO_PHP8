@@ -30,13 +30,13 @@ if (($file != '') && ($kreuz == 1)) {
         for ($j = 0; $j <= ($anzteams); $j++) {
             $dummy = '';
             if ($j == 0) {
-                echo "<div class='col-cross d-flex align-items-center'>";
+                echo "<div class='col-cross'>";
             } elseif ($j == $i) {
                 echo "<div class='col-cross bg'>";
             } elseif ($croteam != 0 && ($j == $croteam || $i == $croteam)) {
-                echo "<div class='col-cross d-flex align-items-center sel'>";
+                echo "<div class='col-cross sel'>";
             } else {
-                echo "<div class='col-cross d-flex align-items-center'>";
+                echo "<div class='col-cross'>";
             }
 
             if (($j == 0) && ($i > 0) && ($i <= $anzteams)) {

@@ -46,7 +46,7 @@ require (PATH_TO_ADDONDIR . '/tipp/lmo-tippnewdir.php');
 if ($tipp_gesamt == 1) {
 ?>
   <div class="row p-3">
-    <div class="col-1 offset-4"><strong><?php echo $text['tipp'][56]; ?></strong></div>
+    <div class="col-4 col-md-2 offset-md-4 text-end"><strong><?php echo $text['tipp'][56]; ?></strong></div>
     <div class="col-3">
       <form name="lmoedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input type="hidden" name="action" value="admin">
