@@ -117,8 +117,8 @@ if ($file != '') {
                     }
                     $datu1 = explode('.', $dum1);
                     $datu2 = explode(':', $dum2);
-                    $dummy = strtotime($datu1[0] . ' ' . $me[intval($datu1[1])] . ' ' . $datu1[2] . ' ' . $datu2[0] . ':' . $datu2[1]);
-                    $mterm[$st - 1][$i] = $dummy > -1 ? $dummy : '';
+                    $dt = DateTime::createFromFormat('d.m.Y H:i', $dum1 . ' ' . $dum2);
+                    $dt !== false ? $mterm[$st-1][$i] = $dt->getTimestamp() : $mterm[$st-1][$i] = "";
                 } else {
                     $mterm[$st - 1][$i] = '';
                 }
@@ -414,14 +414,14 @@ if ($file != '') {
         if ($lmtype == 0) {
 ?>
           <div class="row p-1"><?php
-            if ($mterm[$st - 1][$i] > 0) {
-                $dum1 = date('d.m.Y', $mterm[$st - 1][$i]);
-                $dum2 = date('H:i', $mterm[$st - 1][$i]);
-                $dum3 = $me[intval(date('m', $mterm[$st - 1][$i]))] . ' ' . date('Y', $mterm[$st - 1][$i]);
+	    if (isset($mterm[$st-1][$i]) && $mterm[$st-1][$i] !== "") {
+		$dt = new DateTime();
+		$dt->setTimestamp((int)$mterm[$st-1][$i]);
+		$dum1 = $dt->format("d.m.Y");
+		$dum2 = $dt->format("H:i");
+		$dum3 = $me[intval($dt->format("m"))]." ".$dt->format("Y");
             } else {
-                $dum1 = '';
-                $dum2 = '';
-                $dum3 = '';
+                $dum1 = $dum2 = $dum3 = '';
             }
             ?>
             <div class="col-2 d-none d-lg-block">
@@ -569,16 +569,16 @@ if ($file != '') {
 ?>
           <div class="row p-1"><?php
                 if ($mterm[$st - 1][$i][$n] > 0) {
-                    $dum1 = date('d.m.Y', $mterm[$st - 1][$i][$n]);
-                    $dum2 = date('H:i', $mterm[$st - 1][$i][$n]);
-                    $dum3 = $me[intval(date('m', $mterm[$st - 1][$i][$n]))] . ' ' . date('Y', $mterm[$st - 1][$i][$n]);
+                    $dt = new DateTime();
+                    $dt->setTimestamp((int)$mterm[$st-1][$i][$n]);
+                    $dum1 = $dt->format("d.m.Y");
+                    $dum2 = $dt->format("H:i");
+                    $dum3 = $me[intval($dt->format("m"))]." ".$dt->format("Y");
                 } else {
-                    $dum1 = '';
-                    $dum2 = '';
-                    $dum3 = '';
+                    $dum1 = $dum2 = $dum3 = '';
                 }
 ?>
-            <div class="col-2">
+            <div class="col-2 d-none d-md-block">
               <input title="<?php echo $text[122] ?>" class="custom-control" type="text" name="xatdat<?php echo $i . $n; ?>" tabindex="<?php echo $i . $n; ?>3" size="6" maxlength="10" value="<?php echo $dum1; ?>" onChange="dolmoedit()">
               <input title="<?php echo $text[123] ?>" class="custom-control" type="text" name="xattim<?php echo $i . $n; ?>" tabindex="<?php echo $i . $n; ?>4" size="2" maxlength="5" value="<?php echo $dum2; ?>" onChange="dolmoedit()">
             </div>
@@ -586,10 +586,10 @@ if ($file != '') {
 
                 if ($n == 0) {
             ?>
-            <div class="col-2"><?php
+            <div class="col-2 d-none d-xl-block"><?php
                     if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
 ?>
-              <select class="select2" name="xteama<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[107] ?>" tabindex="<?php echo $i . $n; ?>5"><?php
+              <select class="select2" name="xteamla<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[107] ?>" tabindex="<?php echo $i . $n; ?>5"><?php
 
                         if (($klfin == 1) && ($st == $anzst) && ($i == 1)) {
                             echo '<option value="0"';
@@ -624,11 +624,49 @@ if ($file != '') {
                     }
 ?>
             </div>
-            <div class="col-1">vs.</div>
-            <div class="col-2"><?php
+            <div class="col-2 col-md-2 d-xl-none"><?php
                     if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
 ?>
-              <select class="select2" name="xteamb<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[108] ?>" tabindex="<?php echo $i . $n; ?>6"><?php
+              <select class="select2" name="xteamsa<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[107] ?>" tabindex="<?php echo $i . $n; ?>5"><?php
+
+                        if (($klfin == 1) && ($st == $anzst) && ($i == 1)) {
+                            echo '<option value="0"';
+                            if ($teama[$st - 1][$i] == 0) {
+                                echo ' selected';
+                            }
+                            echo '>' . $teams[0] . '</option>';
+                            for ($y = 1; $y <= $anzteams; $y++) {
+                                if (($playdown == 0 && $teamt[$y] == 2) || $playdown == 1) {
+                                    echo '<option value="' . $y . '"';
+                                    if ($y == $teama[$st - 1][$i]) {
+                                        echo ' selected';
+                                    }
+                                    echo '>' . $teamk[$y] . '</option>';
+                                }
+                            }
+                        } else {
+                            for ($y = 0; $y <= $anzteams; $y++) {
+                                if (($playdown == 0 && $teamt[$y] == 0) || $playdown == 1) {
+                                    echo '<option value="' . $y . '"';
+                                    if ($y == $teama[$st - 1][$i]) {
+                                        echo ' selected';
+                                    }
+                                    echo '>' . $teamk[$y] . '</option>';
+                                }
+                            }
+                        }
+?>
+              </select><?php
+                    } else {
+                        echo $teamk[$teama[$st - 1][$i]];
+                    }
+?>
+            </div>
+            <div class="col-1 align-top">vs.</div>
+            <div class="col-2 d-none d-xl-block"><?php
+                    if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
+?>
+              <select class="select2" name="xteamlb<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[108] ?>" tabindex="<?php echo $i . $n; ?>6"><?php
                         if (($klfin == 1) && ($st == $anzst) && ($i == 1)) {
                             echo '<option value="0"';
                             if ($teamb[$st - 1][$i] == 0) {
@@ -661,6 +699,43 @@ if ($file != '') {
                         echo $teams[$teamb[$st - 1][$i]];
                     }
 ?>
+            </div>
+            <div class="col-2 col-md-2 d-xl-none"><?php
+                    if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
+?>
+              <select class="select2" name="xteamsb<?php echo $i; ?>" onChange="dolmoedit()" title="<?php echo $text[108] ?>" tabindex="<?php echo $i . $n; ?>6"><?php
+                        if (($klfin == 1) && ($st == $anzst) && ($i == 1)) {
+                            echo '<option value="0"';
+                            if ($teamb[$st - 1][$i] == 0) {
+                                echo ' selected';
+                            }
+                            echo '>' . $teams[0] . '</option>';
+                            for ($y = 1; $y <= $anzteams; $y++) {
+                                if (($playdown == 0 && $teamt[$y] == 2) || $playdown == 1) {
+                                    echo '<option value="' . $y . '"';
+                                    if ($y == $teamb[$st - 1][$i]) {
+                                        echo ' selected';
+                                    }
+                                    echo '>' . $teamk[$y] . '</option>';
+                                }
+                            }
+                        } else {
+                            for ($y = 0; $y <= $anzteams; $y++) {
+                                if (($playdown == 0 && $teamt[$y] == 0) || $playdown == 1) {
+                                    echo '<option value="' . $y . '"';
+                                    if ($y == $teamb[$st - 1][$i]) {
+                                        echo ' selected';
+                                    }
+                                    echo '>' . $teamk[$y] . '</option>';
+                                }
+                            }
+                        }
+?>
+              </select><?php
+                    } else {
+                        echo $teamk[$teamb[$st - 1][$i]];
+                    }
+?>
             </div><?php
                 } else {
 ?>
@@ -673,7 +748,7 @@ if ($file != '') {
                     $goalb[$st - 1][$i][$n] = '_';
                 }
             ?>
-            <div class="col-2">
+            <div class="col-5 col-md-2">
               <input title="<?php echo $text[109] ?>" class="custom-control" style="width: 4rem;" type="number" name="xgoala<?php echo $i . $n; ?>" tabindex="<?php echo $i . $n; ?>7" min="0" smaxlength="4" value="<?php echo $goala[$st - 1][$i][$n]; ?>">
               :
               <input title="<?php echo $text[110] ?>" class="custom-control" style="width: 4rem;" type="number" name="xgoalb<?php echo $i . $n; ?>" tabindex="<?php echo $i . $n; ?>8" min="0" maxlength="4" value="<?php echo $goalb[$st - 1][$i][$n]; ?>">
@@ -685,7 +760,7 @@ if ($file != '') {
                 <option<?php if ($mspez[$st - 1][$i][$n] == $text[1]) { echo ' selected'; } ?>><?php echo $text[1] ?></option>
               </select>
             </div>
-            <div class="col-1">
+            <div class="col-1 d-none d-lg-block">
               <input id="n<?php echo $i . $n ?>" class="custom-control" type="text" name="xmnote<?php echo $i . $n; ?>" size="2" maxlength="255" value="<?php echo htmlentities($mnote[$st - 1][$i][$n]); ?>" onChange="dolmoedit()" tabindex="<?php echo $i; ?>10"><?php
                 if (trim($mnote[$st - 1][$i][$n]) == '') {
 ?>
@@ -693,7 +768,7 @@ if ($file != '') {
                 }
 ?>
             </div>
-             <div class="col-1">
+             <div class="col-1 d-none d-lg-block">
               <input id="s<?php echo $i . $n ?>" class="custom-control" type="text" name="xmberi<?php echo $i . $n; ?>" size="10" maxlength="255" value="<?php echo htmlentities($mberi[$st - 1][$i][$n]); ?>" onChange="dolmoedit()" tabindex="<?php echo $i; ?>11"><?php
                 if (trim($mberi[$st - 1][$i][$n]) == '') {
 ?>
