@@ -47,8 +47,10 @@ foreach ($datsort as $key => $val) {
   <div class="row"><?php
         if ($datm == 1) {
             if ($mterm[$st - 1][$i] > 0) {
-                $dum1 = datefmt_format($fmt, $mterm[$st - 1][$i]);
-                $dum2 = date('d.m.', $mterm[$st - 1][$i]);
+        	$dt = new DateTime();
+	        $dt->setTimeStamp((int)$mterm[$st-1][$i]);
+		$dum1 = datefmt_format($fmt, $dt->setTimeStamp((int)$mterm[$st-1][$i]));
+	        $dum2 = $dt->format("d.m.");
             } else {
                 $dum1 = $dum2 = '';
             }
@@ -119,7 +121,7 @@ foreach ($datsort as $key => $val) {
     <?php echo $mspez[$st - 1][$i]; ?><?php
         }
     ?>
-    <div class="col-2 d-none d-lg-block"><?php
+    <div class="col-2"><?php
         /** Mannschaftsicons finden */
         $lmo_teamaicon = '';
         $lmo_teambicon = '';

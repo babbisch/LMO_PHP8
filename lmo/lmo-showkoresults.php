@@ -66,7 +66,6 @@ if ($file != '') {
     $datsort = $mterm[$st - 1];
     asort($datsort);
     reset($datsort);
-    // while (list ($key, $val) = each ($datsort)) { //Deprecated: The each() function ...
     foreach ($datsort as $key => $val) {
         $i = $key;
         $heim1 = $heim2 = $gast1 = $gast2 = '';
@@ -80,9 +79,10 @@ if ($file != '') {
                 }
                 if ($datm == 1) {
                     if ($mterm[$st - 1][$i][$n] > 0) {
-                        // $dum1 = date($datf, $mterm[$st-1][$i][$n]);
-                        $dum1 = datefmt_format($fmt, $mterm[$st - 1][$i][$n]);
-                        $dum2 = date('d.m.', $mterm[$st - 1][$i][$n]);
+			$dt = new DateTime();
+			$dt->setTimeStamp((int)$mterm[$st-1][$i][$n]);
+			$dum1 = datefmt_format($fmt, $dt->setTimeStamp((int)$mterm[$st-1][$i][$n]));
+			$dum2 = $dt->format("d.m.");
                     } else {
                         $dum1 = $dum2 = '';
                     }
