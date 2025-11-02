@@ -97,8 +97,7 @@ if (!empty($file) && file_exists(PATH_TO_LMO . '/' . $dirliga . $file) && check_
                                 $favteam = $wert;
                                 break;
                             case 'selTeam':
-                                if (!isset($selteam))
-                                    $selteam = $wert;
+                                $selteam = $wert;
                                 break;
                             case 'ticker':
                                 $nticker = $wert;
@@ -212,12 +211,10 @@ if (!empty($file) && file_exists(PATH_TO_LMO . '/' . $dirliga . $file) && check_
                                     $einheimausw = $wert;
                                     break;
                                 case 'kurve1':
-                                    if (!isset($stat1))
-                                        $stat1 = $wert;
+                                    $stat1 = $wert;
                                     break;
                                 case 'kurve2':
-                                    if (!isset($stat2))
-                                        $stat2 = $wert;
+                                    $stat2 = $wert;
                                     break;
                             }
                         } else {
