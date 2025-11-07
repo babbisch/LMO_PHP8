@@ -37,22 +37,15 @@ if (($_SESSION['lmouserok'] == 2) || ($_SESSION['lmouserok'] == 1)) {
                 fputs($datei, "[Options]\n");
                 fputs($datei, 'Title=' . $text[54] . "\n");
                 fputs($datei, 'Name=' . $titel . "\n");
-                fputs($datei, 'icon=' . $icon . "\n");
                 fputs($datei, 'Type=' . $lmtype . "\n");
                 fputs($datei, 'Teams=' . $anzteams . "\n");
                 fputs($datei, 'goalfaktor=' . $goalfaktor . "\n");
                 fputs($datei, 'pointsfaktor=' . $pointsfaktor . "\n");
                 fputs($datei, 'enableGameSort=' . $enablegamesort . "\n");
+                $st > 0 ? fputs($datei, 'Actual=' . $st . "\n") : fputs($datei, 'Actual=' . $stx . "\n");
                 if ($lmtype == 0) {
                     fputs($datei, 'Rounds=' . $anzst . "\n");
                     fputs($datei, 'Matches=' . $anzsp . "\n");
-                }
-                if ($st > 0) {
-                    fputs($datei, 'Actual=' . $st . "\n");
-                } else {
-                    fputs($datei, 'Actual=' . $stx . "\n");
-                }
-                if ($lmtype == 0) {
                     fputs($datei, 'Kegel=' . $kegel . "\n");
                     fputs($datei, 'HandS=' . $hands . "\n");
                     fputs($datei, 'PointsForWin=' . $pns . "\n");
@@ -61,14 +54,12 @@ if (($_SESSION['lmouserok'] == 2) || ($_SESSION['lmouserok'] == 1)) {
                     fputs($datei, 'Spez=' . $spez . "\n");
                     fputs($datei, 'HideDraw=' . $hidr . "\n");
                     fputs($datei, 'OnRun=' . $onrun . "\n");
-                    if ($spez == 1) {
-                        fputs($datei, 'XtraS=' . $pxs . "\n");
-                        fputs($datei, 'XtraU=' . $pxu . "\n");
-                        fputs($datei, 'XtraV=' . $pxn . "\n");
-                        fputs($datei, 'SpezS=' . $pps . "\n");
-                        fputs($datei, 'SpezU=' . $ppu . "\n");
-                        fputs($datei, 'SpezV=' . $ppn . "\n");
-                    }
+                    fputs($datei, 'Graph=' . $kurve . "\n");
+                    fputs($datei, 'Kreuz=' . $kreuz . "\n");
+                    fputs($datei, 'Tabelle=' . $tabelle . "\n");
+                    fputs($datei, 'Ligastats=' . $ligastats . "\n");
+                    fputs($datei, 'kurve1=' . $stat1 . "\n");
+                    fputs($datei, 'kurve2=' . $stat2 . "\n");
                     fputs($datei, 'MinusPoints=' . $minus . "\n");
                     fputs($datei, 'Direct=' . $direkt . "\n");
                     fputs($datei, 'Champ=' . $champ . "\n");
@@ -77,6 +68,14 @@ if (($_SESSION['lmouserok'] == 2) || ($_SESSION['lmouserok'] == 1)) {
                     fputs($datei, 'UC=' . $anzuc . "\n");
                     fputs($datei, 'AR=' . $anzar . "\n");
                     fputs($datei, 'AB=' . $anzab . "\n");
+                    if ($spez == 1) {
+                        fputs($datei, 'XtraS=' . $pxs . "\n");
+                        fputs($datei, 'XtraU=' . $pxu . "\n");
+                        fputs($datei, 'XtraV=' . $pxn . "\n");
+                        fputs($datei, 'SpezS=' . $pps . "\n");
+                        fputs($datei, 'SpezU=' . $ppu . "\n");
+                        fputs($datei, 'SpezV=' . $ppn . "\n");
+                    }
                     if (isset($namepkt)) {
                         fputs($datei, 'namePkt=' . $namepkt . "\n");
                     }
@@ -102,15 +101,7 @@ if (($_SESSION['lmouserok'] == 2) || ($_SESSION['lmouserok'] == 1)) {
                 fputs($datei, 'favTeam=' . $favteam . "\n");
                 fputs($datei, 'selTeam=' . $selteam . "\n");
                 fputs($datei, 'ticker=' . $nticker . "\n");
-
-                if ($lmtype == 0) {
-                    fputs($datei, 'Graph=' . $kurve . "\n");
-                    fputs($datei, 'Kreuz=' . $kreuz . "\n");
-                    fputs($datei, 'Tabelle=' . $tabelle . "\n");
-                    fputs($datei, 'Ligastats=' . $ligastats . "\n");
-                    fputs($datei, 'kurve1=' . $stat1 . "\n");
-                    fputs($datei, 'kurve2=' . $stat2 . "\n");
-                }
+                
                 // if ($nticker==1) {
                 fputs($datei, "\n[News]\n");
                 if (isset($nlines)) {
@@ -158,23 +149,23 @@ if (($_SESSION['lmouserok'] == 2) || ($_SESSION['lmouserok'] == 1)) {
                     fputs($datei, 'D2=' . $datum2[$i - 1] . "\n");
                     if ($lmtype != 0) {
                         fputs($datei, 'MO=' . $modus[$i - 1] . "\n");
-                        if ($anzteams == 24) {
-                            switch ($i) {
-                                case 1:
-                                case 2:
-                                    $anzsp = 16;
-                                    break;
-                                case 3:
-                                    $anzsp = 8;
-                                    break;
-                                case 4:
-                                    $anzsp = 4;
-                                    break;
-                                case 5:
-                                    $anzsp = 2;
-                                    break;
-                            }
-                        }
+						if ($anzteams == 24) {
+							switch ($i) {
+								case 1:
+								case 2:
+									$anzsp=16;
+									break;
+								case 3:
+									$anzsp=8;
+									break;
+								case 4:
+									$anzsp=4;
+									break;
+								case 5:
+									$anzsp=2;
+									break;
+							}
+						}
                         $anzsp = $anzsp / 2;
                         if (($klfin == 1) && ($i == $anzst)) {
                             $anzsp = $anzsp + 1;
