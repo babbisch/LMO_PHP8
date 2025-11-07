@@ -23,7 +23,7 @@
 <nav>
   <ul class="nav nav-tabs nav-justified">
     <?php if ($st < 0 || $todo != 'edit') { ?>
-    <li class="nav-item"><a href='<?php echo $addr ?>1' class="nav-link"><?php echo $text[412] ?></a></li><?php
+    <li class="nav-item"><a href='<?php echo $addr . $stx ?>' class="nav-link"><?php echo $text[412] ?></a></li><?php
 } else {
     ?>
     <li class="nav-item active"><a href="#" class="nav-link active"><?php echo $text[412] ?></a></li><?php
