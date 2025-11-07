@@ -4,16 +4,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow" />
 <title><!--Titel--></title>
 <!--Stylesheet-->
-<link href="//cdn.jsdelivr.net/npm/bootstrap@<!--Bootstrap-->/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<link href="//cdn.jsdelivr.net/npm/bootstrap-icons@<!--BootstrapIcon-->/font/bootstrap-icons.css" rel="stylesheet" >
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/chart.js@<!--Chartjs-->/dist/chart.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css" >
 </head>
 <body>
-  <div class="container p-3">
-    <div class="text-center"><h1><!--Titel--></h1></div>
-  </div>
+  <div class=" p-3 text-center"><h1><!--Titel--></h1></div>
   <ul class="nav nav-tabs">
     <!--Kalender-->
     <!--Ergebnisse-->
@@ -47,7 +45,7 @@
     </div>
   </div>
   <!-- JavaScript Bundle with Popper -->
-   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/bootstrap@<!--Bootstrap-->/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
    <script type="text/javascript">
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
