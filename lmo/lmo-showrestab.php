@@ -89,18 +89,7 @@ if (isset($file) && $file != '') {
 <div class="container">
   <div class="row">
     <div class="col text-center"><?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php') ?></div>
-  </div><?php
-
-    /** Ergebnisse */
-    if ($tabonres >= 1 || $action == 'results') {
-?>
-  <div class="row">
-    <div class="col"><?php include (PATH_TO_LMO . '/lmo-showresults.php') ?></div>
-  </div><?php
-    }
-
-    /** Vor und Zurück-Pfeile */
-?>
+  </div>
   <div class="row p-2"><?php
     $st0 = $st - 1;
     if ($st > 1) {
@@ -121,6 +110,13 @@ if (isset($file) && $file != '') {
 ?>
   </div><?php
 
+    /** Ergebnisse */
+    if ($tabonres >= 1 || $action == 'results') {
+?>
+  <div class="row">
+    <div class="col"><?php include (PATH_TO_LMO . '/lmo-showresults.php') ?></div>
+  </div><?php
+    }
     /** Tabelle */
     if ($tabonres >= 1 || $action == 'table') {
 ?>
