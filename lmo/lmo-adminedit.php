@@ -127,14 +127,13 @@ if ($file != '') {
                     $dum1 = isset($_POST['xatdat' . $i . $n]) ? trim($_POST['xatdat' . $i . $n]) : '';
                     $dum2 = isset($_POST['xattim' . $i . $n]) ? trim($_POST['xattim' . $i . $n]) : '';
                     if ($dum1 != '') {
-                        if ($dum2 == '') {
+                        if ($dum2 == '') 
                             $dum2 = $deftime;
-                        }
                         $datu1 = explode('.', $dum1);
                         $datu2 = explode(':', $dum2);
-                        $dummy = strtotime($datu1[0] . ' ' . $me[intval($datu1[1])] . ' ' . $datu1[2] . ' ' . $datu2[0] . ':' . $datu2[1]);
-                        $mterm[$st - 1][$i][$n] = $dummy > -1 ? $dummy : '';
-					} else {
+                        $dt = DateTime::createFromFormat('d.m.Y H:i', $dum1 . ' ' . $dum2);
+                    	$dt !== false ? $mterm[$st-1][$i][$n] = $dt->getTimestamp() : $mterm[$st-1][$i][$n] = "";
+		    } else {
                     $mterm[$st - 1][$i][$n] = '';
                 }
                 }
@@ -249,12 +248,8 @@ if ($file != '') {
 
         $lmo_spieltermine = array_filter(array_values_recursive($mterm[$st - 1]), 'filterZero');
         if (!empty($lmo_spieltermine)) {
-            if (empty($datum1[$st - 1])) {
-                $datum1[$st - 1] = date('d.m.Y', min($lmo_spieltermine));
-            }
-            if (empty($datum2[$st - 1])) {
-                $datum2[$st - 1] = date('d.m.Y', max($lmo_spieltermine));
-            }
+            $datum1[$st - 1] = date('d.m.Y', min($lmo_spieltermine));
+            $datum2[$st - 1] = date('d.m.Y', max($lmo_spieltermine));
         }
 
         // Tippspiel-Addon
