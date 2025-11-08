@@ -119,57 +119,39 @@ if ($einsprachwahl == 1) {
 
 ob_start();
 if ($file != '') {
-    // Für normale Ligen
-    if ($lmtype == 0) {
-        // Kalenderlink
-        if ($datc == 1) {
-            $output_kalender .= $action != 'cal' ? "<li class='nav-item'><a href='{$addm}cal&amp;st={$st}' class='nav-link'>{$text[140]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[140]</a></li>";
-        }
-        // Ergebnis/Tabelle
-        if ($tabonres == 0) {
-            if ($ergebnis == 1) {
-                $output_ergebnisse .= $action != 'results' ? "<li class='nav-item'><a href='{$addm}results&amp;st={$ste}' class='nav-link'>{$text[10]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[10]</a></li>";
-            }
-            if ($tabelle == 1) {
-                $output_tabelle .= $action != 'table' ? "<li class='nav-item'><a href='{$addm}table' class='nav-link'>{$text[16]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[16]</a></li>";
-            }
-            // Kombinierte Ansicht
-        } else {
-            if ($ergebnis == 1) {
-                $output_ergebnisse .= $action != 'results' && $action != 'table' ? "<li class='nav-item'><a href='{$addm}results' class='nav-link'>{$text[10]}/{$text[16]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[10]/$text[16]</a></li>";
-            }
-        }
-
-        // Kreuztabelle
-        if ($kreuz == 1) {
-            $output_kreuztabelle .= $action != 'cross' ? "<li class='nav-item'><a href='{$addm}cross' class='nav-link'>{$text[14]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[14]</a></li>";
-        }
-        // Spielplan
-        if ($plan == 1) {
-            $output_spielplan .= $action != 'program' ? "<li class='nav-item'><a href='{$addm}program' class='nav-link'>{$text[12]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[12]</a></li>";
-        }
-        // Fieberkurve
-        if ($kurve == 1) {
-            $output_fieberkurve .= $action != 'graph' ? "<li class='nav-item'><a href='{$addm}graph&amp;stat1={$stat1}&amp;stat2={$stat2}' class='nav-link'>{$text[133]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[133]</a></li>";
-        }
-        // Ligastatistiken
-        if ($ligastats == 1) {
-            $output_ligastatistik .= $action != 'stats' ? "<li class='nav-item'><a href='{$addm}stats&amp;stat1={$stat1}&amp;stat2={$stat2}' class='nav-link'>{$text[18]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[18]</a></li>";
-        }
-        // Pokalligen
-    } else {
-        // Kalenderlink
-        if ($datc == 1) {
-            $output_kalender .= $action != 'cal' ? "<li class='nav-item'><a href='{$addm}cal&amp;st={$st}' class='nav-link'>{$text[140]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[140]</a></li>";;
-        }
-        // Ergebnisse
+    // Kalenderlink
+    if ($datc == 1) {
+        $output_kalender .= $action != 'cal' ? "<li class='nav-item'><a href='{$addm}cal&amp;st={$st}' class='nav-link'>{$text[140]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[140]</a></li>";
+    }
+    // Spielplan
+    if ($plan == 1) {
+        $output_spielplan .= $action != 'program' ? "<li class='nav-item'><a href='{$addm}program&amp;selteam={$selteam}' class='nav-link'>{$text[12]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[12]</a></li>";
+    }
+    // Ergebnis/Tabelle
+    if ($tabonres == 0) {
         if ($ergebnis == 1) {
             $output_ergebnisse .= $action != 'results' ? "<li class='nav-item'><a href='{$addm}results&amp;st={$ste}' class='nav-link'>{$text[10]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[10]</a></li>";
         }
-        // Spielplan
-        if ($plan == 1) {
-            $output_spielplan .= $action != 'program' ? "<li class='nav-item'><a href='{$addm}program' class='nav-link'>{$text[12]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[12]</a></li>";
+        if ($tabelle == 1) {
+            $output_tabelle .= $action != 'table' ? "<li class='nav-item'><a href='{$addm}table' class='nav-link'>{$text[16]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[16]</a></li>";
         }
+        // Kombinierte Ansicht
+    } else {
+        if ($ergebnis == 1) {
+            $output_ergebnisse .= $action != 'results' && $action != 'table' ? "<li class='nav-item'><a href='{$addm}results' class='nav-link'>{$text[10]}/{$text[16]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[10]/$text[16]</a></li>";
+        }
+    }
+    // Kreuztabelle
+    if ($kreuz == 1) {
+        $output_kreuztabelle .= $action != 'cross' ? "<li class='nav-item'><a href='{$addm}cross' class='nav-link'>{$text[14]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[14]</a></li>";
+    }
+    // Fieberkurve
+    if ($kurve == 1) {
+        $output_fieberkurve .= $action != 'graph' ? "<li class='nav-item'><a href='{$addm}graph&amp;stat1={$stat1}&amp;stat2={$stat2}' class='nav-link'>{$text[133]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[133]</a></li>";
+    }
+    // Ligastatistiken
+    if ($ligastats == 1) {
+        $output_ligastatistik .= $action != 'stats' ? "<li class='nav-item'><a href='{$addm}stats&amp;stat1={$favteam}' class='nav-link'>{$text[18]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[18]</a></li>";
     }
     $output_info .= $action != 'info' ? "<li class='nav-item'><a href='{$addm}info' class='nav-link'>{$text[20]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[20]</a></li>";
 
