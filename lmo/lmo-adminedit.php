@@ -112,9 +112,8 @@ if ($file != '') {
                 $dum1 = isset($_POST['xatdat' . $i]) ? trim($_POST['xatdat' . $i]) : '';
                 $dum2 = isset($_POST['xattim' . $i]) ? trim($_POST['xattim' . $i]) : '';
                 if ($dum1 != '') {
-                    if ($dum2 == '') {
+                    if ($dum2 == '') 
                         $dum2 = $deftime;
-                    }
                     $datu1 = explode('.', $dum1);
                     $datu2 = explode(':', $dum2);
                     $dt = DateTime::createFromFormat('d.m.Y H:i', $dum1 . ' ' . $dum2);
@@ -133,6 +132,7 @@ if ($file != '') {
                         $datu2 = explode(':', $dum2);
                         $dt = DateTime::createFromFormat('d.m.Y H:i', $dum1 . ' ' . $dum2);
                     	$dt !== false ? $mterm[$st-1][$i][$n] = $dt->getTimestamp() : $mterm[$st-1][$i][$n] = "";
+					}
 		    } else {
                     $mterm[$st - 1][$i][$n] = '';
                 }
