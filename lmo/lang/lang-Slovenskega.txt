@@ -54,7 +54,7 @@
 053=Prosimo izberite ligo
 054=Liga Manager Online
 055=© 1997-2019 LMO Group
-056=[ <a href="http://www.liga-manager-online.de/" target="_blank" title="Obiščite našo domačo stran">Domača stran</a> | <a href="https://www.vest-sport.de/forum/" target="_blank" title="Pomoč pri LMO in njegovih dodatkih">Forum za podporo</a> | <a href="https://www.vest-sport.de/forum/viewforum.php?f=10" target="_blank" title="Tukaj lahko najdete več lig za vaš LigaManager">Seznam lig</ a>]
+056=[ <a href="https://www.vest-sport.de/forum/" target="_blank" title="Pomoč pri LMO in njegovih dodatkih">Forum za podporo</a> | <a href="https://www.vest-sport.de/forum/viewforum.php?f=10" target="_blank" title="Tukaj lahko najdete več lig za vaš LigaManager">Seznam lig</ a>]
 057=Statistika za
 058=Statistika za
 059=Brez 2. ekipe
