@@ -96,7 +96,7 @@ if (!function_exists('c')) {
     {
         if ($c == 1)
             return (base64_decode('PGFjcm9ueW0gdGl0bGU9IkxpZ2EgTWFuYWdlciBPbmxpbmUgZm9yIFBIUCA4LngiPkxNTzwvYWNyb255bT4gNCBmb3IgUEhQIDggIC0gPGEgaHJlZj0i'));
-        return (base64_decode('aHR0cDovL3d3dy5saWdhLW1hbmFnZXItb25saW5lLmRlLyIgdGl0bGU9IkNsaWNrIGhlcmUgdG8gZ2V0IGluZm9ybWF0aW9ucyBhYm91dCB0aGlzIHNjcmlwdCI+wqkgMTk5Ny0yMDE5IExNTy1Hcm91cDwvYT4='));
+        return (base64_decode('aHR0cHM6Ly9naXRodWIuY29tL2hlbnNoaW5nbHkvbG1vX3BocDgiIHRpdGxlPSJDbGljayBoZXJlIHRvIGdldCBpbmZvcm1hdGlvbnMgYWJvdXQgdGhpcyBzY3JpcHQiPsKpIDE5OTctbm93IExNTy1Hcm91cDwvYT4='));
     }
 }
 if (!function_exists('e')) {
@@ -105,7 +105,7 @@ if (!function_exists('e')) {
         if (strpos(htmlentities($c), htmlentities(base64_decode('PCEtLUluZm9saW5rLS0+'))) > 0) {
             false;
         } else {
-            eval(base64_decode('ZWNobyAnPGFjcm9ueW0gdGl0bGU9IkxpZ2EgTWFuYWdlciBPbmxpbmUgZm9yIFBIUCA4LngiPkxNTzwvYWNyb255bT4gNCBmb3IgUEhQIDggLSA8YSBocmVmPSJodHRwOi8vd3d3LmxpZ2EtbWFuYWdlci1vbmxpbmUuZGUvIiB0aXRsZT0iQ2xpY2sgaGVyZSB0byBnZXQgaW5mb3JtYXRpb25zIGFib3V0IHRoaXMgc2NyaXB0Ij4gMTk5Ny0yMDE5IExNTy1Hcm91cDwvYT4='));
+            eval(base64_decode('ZWNobyAnPGFjcm9ueW0gdGl0bGU9IkxpZ2EgTWFuYWdlciBPbmxpbmUgZm9yIFBIUCA4LngiPkxNTzwvYWNyb255bT4gNCBmb3IgUEhQIDggLSA8YSBocmVmPSJodHRwczovL2dpdGh1Yi5jb20vaGVuc2hpbmdseS9sbW9fcGhwOCIgdGl0bGU9IkNsaWNrIGhlcmUgdG8gZ2V0IGluZm9ybWF0aW9ucyBhYm91dCB0aGlzIHNjcmlwdCI+IDE5OTctbm93IExNTy1Hcm91cDwvYT4='));
         }
     }
 }  // */
