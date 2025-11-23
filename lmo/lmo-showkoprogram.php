@@ -27,7 +27,8 @@ if ($file != '') {
 ?>
 <div class="container">
   <div class="row">
-    <div class="col-1"><?php
+    <div class="col-1">
+    <?php
     for ($i = 1; $i <= floor($anzteams / 2); $i++) {
         if ($i != $selteam) {
 ?>
@@ -43,7 +44,8 @@ if ($file != '') {
     ?>
     </div>
     <div class="col-10">
-      <div class="container" id="koprogram"><?php
+      <div class="container" id="koprogram">
+      <?php
     if ($selteam == 0) {
         echo "<div class='row justify-content-center'><div class='col text-center'><br/>" . $text[24] . '<br/></div></div>';
     } else {
@@ -157,7 +159,7 @@ if ($file != '') {
                     echo ' </div>';
                     for ($n = 0; $n < $modus[$j]; $n++) {
                         if ($datm == 1) {
-                            if ($mterm[$j][$i][$n] > 0) {
+                            if (is_numeric($mterm[$j][$i][$n])) {
                                 $dumn1 = '<acronym title="' . datefmt_format($fmt, $mterm[$j][$i][$n]) . '">';
                                 $dumn2 = '</acronym>';
                             } else {
@@ -165,9 +167,9 @@ if ($file != '') {
                                 $dumn2 = '';
                             }
                         }
-                        echo "<div class='col-1'>" . applyFactor($goala[$j][$i][$n], $goalfaktor);?> : <?php echo applyFactor($goalb[$j][$i][$n], $goalfaktor); ?> <?php echo $mspez[$j][$i][$n]; ?><?php
+                        echo "<div class='col-2'>" . applyFactor($goala[$j][$i][$n], $goalfaktor);?> : <?php echo applyFactor($goalb[$j][$i][$n], $goalfaktor); ?> <?php echo $mspez[$j][$i][$n]; ?><?php
                         if ($modus[$j] == 1)
-                            echo "</div><div class='col-1'>";
+                            echo "</div><div class='col-2'>";
                         /** Mannschaftsicons finden */
                         $lmo_teamaicon = '';
                         $lmo_teambicon = '';
@@ -202,7 +204,8 @@ if ($file != '') {
     } ?>
       </div>
     </div>
-    <div class="col-1 text-start"><?php
+    <div class="col-1 text-start">
+    <?php
     for ($i = ceil($anzteams / 2) + 1; $i <= $anzteams; $i++) {
         if ($i != $selteam) {
             ?>

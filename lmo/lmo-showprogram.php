@@ -51,7 +51,7 @@ if ($file != '') {
 ?>
         <div class="row"><?php
                     if ($datm == 1) {
-                        if ($mterm[$j][$i] > 0) {
+                        if (is_numeric($mterm[$j][$i])) {
                             $dum1 = datefmt_format($fmt, $mterm[$j][$i]);
                             $dum2 = date('d.m.', $mterm[$j][$i]);
                         } else {

@@ -46,10 +46,10 @@ foreach ($datsort as $key => $val) {
 ?>
   <div class="row"><?php
         if ($datm == 1) {
-            if ($mterm[$st - 1][$i] > 0) {
+            if (is_numeric($mterm[$st - 1][$i])) {
         	$dt = new DateTime();
 	        $dt->setTimeStamp((int)$mterm[$st-1][$i]);
-		$dum1 = datefmt_format($fmt, $dt->setTimeStamp((int)$mterm[$st-1][$i]));
+	        $dum1 = datefmt_format($fmt, $dt->setTimeStamp((int)$mterm[$st-1][$i]));
 	        $dum2 = $dt->format("d.m.");
             } else {
                 $dum1 = $dum2 = '';
@@ -138,6 +138,8 @@ foreach ($datsort as $key => $val) {
                 echo " <img src='" . URL_TO_IMGDIR . "/blank.png' width='19' border='0' alt=''>";
             }
         }
+        /** Stats Addon */
+        include (PATH_TO_ADDONDIR . '/stats/lmo-showresults.inc.php');
         /** Notizen anzeigen */
         if ($mnote[$st - 1][$i] != '' || $msieg[$st - 1][$i] > 0) {
             $lmo_spielnotiz = '';

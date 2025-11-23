@@ -78,11 +78,11 @@ if ($file != '') {
           <div class="col-2 text-end"><?php echo $text[419 + $i]; ?></div><?php
                 }
                 if ($datm == 1) {
-                    if ($mterm[$st - 1][$i][$n] > 0) {
-			$dt = new DateTime();
-			$dt->setTimeStamp((int)$mterm[$st-1][$i][$n]);
-			$dum1 = datefmt_format($fmt, $dt->setTimeStamp((int)$mterm[$st-1][$i][$n]));
-			$dum2 = $dt->format("d.m.");
+                    if (is_numeric($mterm[$st - 1][$i][$n])) {
+                        $dt = new DateTime();
+            		$dt->setTimeStamp((int)$mterm[$st-1][$i][$n]);
+            		$dum1 = $dt->format($datf));
+            		$dum2 = $dt->format("d.m.");
                     } else {
                         $dum1 = $dum2 = '';
                     }
