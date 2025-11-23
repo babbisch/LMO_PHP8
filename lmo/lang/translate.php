@@ -118,7 +118,7 @@ session_start();
           <th><input type="submit" name="save" value="Save"></th>
         </tr>
         <tr>
-          <th colspan="4"><small>LMO-Translation Tool &ndash; &copy; Rene Marth/<a href="liga-manager-online.de/">LMO-Group</a></small></td>
+          <th colspan="4"><small>LMO-Translation Tool &ndash; &copy; Rene Marth/<a href="github.com/henshingly/lmo_php8">LMO-Group</a></small></td>
         </tr>
       </tfoot>
   <?php

@@ -266,7 +266,7 @@ $lang = array(
         'STEP4_TEXT2' => 'Si usted experimenta errores repita la instalación o instale manualmente. Para instalar manualmente edite el archivo <code>init-parameters.php</code> con un editor de textos común y cambie los permisos chmod de los archivos con su herramienta FTP.',
         'STEP4_TEXT3' => 'Por favor elimine el archivo <code>install.php</code> o cambie los permisos chmod a 000.',
         'STEP4_TEXT4' => '<acronym title="Liga Manager Online">LMO</acronym> ahora está disponible en <code><a href="lmo.php">lmo.php</a></code>. El área de la administración está disponible en <code><a href="lmoadmin.php">lmoadmin.php</a></code> (la conexión estándar es <kbd>admin</kbd>/<kbd>lmo</kbd>).',
-        'STEP4_TEXT5' => 'Por favor consulte el <a href="http://www.liga-manager-online.de/">manual en nuestro sitio web</a> para obtener ayuda.',
+        'STEP4_TEXT5' => 'Por favor consulte el <a href="github.com/henshingly/lmo_php8">manual en nuestro sitio web</a> para obtener ayuda.',
         'STEP4_TEXT6' => 'Disfrútalo!',
     )
 );
@@ -722,7 +722,7 @@ if ($lmo_install_step == 4) {
         <a href="<?php echo $_SERVER['PHP_SELF']; ?>?userlang=ES"><img src="img/Espanol.svg" alt="ES" width="16"></a>
         <a href="<?php echo $_SERVER['PHP_SELF']; ?>?userlang=DE"><img src="img/Deutsch.svg" alt="DE" width="16"></a>
       </div>
-        <div class="col-auto text-end">© René Marth/<a href="http://liga-manager-online.de/">LMO Group</a></div>
+        <div class="col-auto text-end">© <a href="github.com/henshingly/lmo_php8">LMO Group</a></div>
       </div>
     </div>
   </div>
