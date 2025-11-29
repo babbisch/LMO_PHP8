@@ -124,11 +124,6 @@ if ($action == 'admin') {
         }
     }
     echo "<li class='nav-item'><a href='{$adda}logout' onclick='return chklmolink();' class='nav-link'>{$text[88]}</a></li>\n";
-    if ($_SESSION['lmouserok'] == 2) {
-        echo "<li class='nav-item'><a href='" . URL_TO_LMO . "/help/Deutsch/index.html' target='_blank' class='nav-link'>{$text[312]}</a></li>\n";
-    } else {
-        echo "<li class='nav-item'><a href='" . URL_TO_LMO . "/help/Deutsch/index.html' target='_blank' class='nav-link'>{$text[312]}</a></li>\n";
-    }
     ?>
       </ul>
 </nav><?php
