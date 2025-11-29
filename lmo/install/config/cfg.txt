@@ -21,4 +21,4 @@ einzutore=1
 einzutoretab=1
 einzustats=1
 timezone=Europe/Berlin
-lmoVersion=4.1.2
+lmoVersion=4.1.5
