@@ -927,7 +927,8 @@ class Cezpdf extends Cpdf
             }
             if ($x < $x0) {
                 $x0 = $x;
-            }++$cnt;
+            }
+            ++$cnt;
             if ($cnt == 1 || $cnt == $n) {
                 if (!($gridlines & EZ_GRIDLINE_TABLE_V)) {
                     continue;
@@ -1591,7 +1592,8 @@ class Cezpdf extends Cpdf
                     } else {
                         $rowColShading[] = array('color' => array());
                     }
-                }++$cnt;
+                }
+                ++$cnt;
                 // the transaction support will be used to prevent rows being split
                 if ($options['splitRows'] == 0) {
                     $pageStart = $this->ezPageCount;

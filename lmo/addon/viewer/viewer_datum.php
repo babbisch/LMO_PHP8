@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Liga Manager Online 4
  *

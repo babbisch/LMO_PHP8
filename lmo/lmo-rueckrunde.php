@@ -32,8 +32,8 @@ function completeSchedule($liga)
                 $liga->spieltage[$i + $daysPerRound]->addPartie($partie);
             }
         }
-    }
-    else
-        echo getMessage($text[3001], true);;
+    } else
+        echo getMessage($text[3001], true);
+    ;
 }
 ?>

@@ -38,7 +38,7 @@ if ($action == 'admin') {
         $newpage = 0;
     }
     $file = isset($_REQUEST['file']) ? $_REQUEST['file'] : '';
-    $subdir = isset($_REQUEST['subdir']) ? $_REQUEST['subdir'] : dirname($file) ;
+    $subdir = isset($_REQUEST['subdir']) ? $_REQUEST['subdir'] : dirname($file);
 
     if (@file_exists(PATH_TO_LMO . '/install/install.php') && @is_readable(PATH_TO_LMO . '/install/install.php'))
         echo getMessage('Delete install folder or set its chmod to 000!', TRUE);
@@ -162,10 +162,10 @@ if ($action == 'admin') {
             } elseif ($sty == -10) {
                 require (PATH_TO_LMO . '/lmo-adminrounds.php');
             }
-            /* Spielerstatistik-Addon */elseif ($sty == -4 && $einspieler == 1) {
+            /* Spielerstatistik-Addon */ elseif ($sty == -4 && $einspieler == 1) {
                 require (PATH_TO_ADDONDIR . '/spieler/lmo-statadmin.php');
             }
-            /* Spielerstatistik-Addon */else {
+            /* Spielerstatistik-Addon */ else {
                 require (PATH_TO_LMO . '/lmo-adminedit.php');
             }
         } elseif ($todo == 'tabs') {
@@ -183,7 +183,7 @@ if ($action == 'admin') {
         } elseif ($todo == 'design') {
             require (PATH_TO_LMO . '/lmo-admindesign.php');
         }
-        /* Tippspiel-Addon */elseif ($todo == 'tipp') {
+        /* Tippspiel-Addon */ elseif ($todo == 'tipp') {
             require (PATH_TO_ADDONDIR . '/tipp/lmo-admintipp.php');
         } elseif ($todo == 'tippemail') {
             require (PATH_TO_ADDONDIR . '/tipp/lmo-admintippemail.php');
@@ -195,16 +195,16 @@ if ($action == 'admin') {
             require (PATH_TO_ADDONDIR . '/tipp/lmo-admintippoptions.php');
         }
         /* Tippspiel-Addon */
-        /* Viewer-Addon */elseif ($todo == 'vieweroptions') {
+        /* Viewer-Addon */ elseif ($todo == 'vieweroptions') {
             require (PATH_TO_ADDONDIR . '/viewer/lmo-adminvieweroptions.php');
         }
         /* Viewer-Addon */
-        /* Stats-Addon */elseif ($todo == 'stats') {
+        /* Stats-Addon */ elseif ($todo == 'stats') {
             require (PATH_TO_ADDONDIR . '/stats/createstats.php');
         } elseif ($todo == 'archive') {
             require (PATH_TO_ADDONDIR . '/stats/archive.php');
         }
-        /* Stats-Addon */elseif ($todo == '') {
+        /* Stats-Addon */ elseif ($todo == '') {
             require (PATH_TO_LMO . '/lmo-adminpad.php');
         }
     } elseif ($_SESSION['lmouserok'] == 1) {
@@ -220,10 +220,10 @@ if ($action == 'admin') {
             } elseif ($sty == -10) {
                 require (PATH_TO_LMO . '/lmo-adminrounds.php');
             }
-            /* Spielerstatistik-Addon */elseif ($sty == -4 && $einspieler == 1) {
+            /* Spielerstatistik-Addon */ elseif ($sty == -4 && $einspieler == 1) {
                 require (PATH_TO_ADDONDIR . '/spieler/lmo-statadmin.php');
             }
-            /* Spielerstatistik-Addon */else {
+            /* Spielerstatistik-Addon */ else {
                 require (PATH_TO_LMO . '/lmo-adminedit.php');
             }
         } elseif ($todo == 'tabs') {
@@ -243,10 +243,10 @@ if ($action == 'admin') {
     </div>
   </div>
   <div class="row justify-content-center pt-3">
-    <div class="col-5">
+    <div class="col-4">
       <a class="btn btn-warning btn-sm" href="<?php echo URL_TO_LMO . '/lmo.php?file=' . $file; ?>" target="_blank" title="<?php echo $text[116] ?>"><?php echo $text[115] ?></a>
     </div>
-    <div class="col-5">
+    <div class="col-4">
       <?php echo $text[471] . ': ' . number_format((getmicrotime() - $startzeit), 4, '.', ',') . ' sek.'; ?>
     </div>
   </div>

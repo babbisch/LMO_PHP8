@@ -103,7 +103,7 @@ if ($save == 1) {
         </div>
       </div>
     </div>
-    <div class="col-9 col-md-6">
+    <div class="col-9 col-sm-6">
       <form name="lmoedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onSubmit="return chklmopass()">
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="todo" value="options">
@@ -142,7 +142,8 @@ if ($show == 0) {
             foreach ($zones as $zone_value => $zone_name) {
                 ?>
                   <option value="<?php echo $zone_value; ?>" <?php if ($zone_value == $timezone) echo 'selected'; ?>><?php echo $zone_name; ?></option><?php
-            }?>
+            }
+            ?>
             </optgroup><?php
         }
         ?>
@@ -221,7 +222,6 @@ if ($show == 0) {
               <select class="form-select" name="xtabonres" onChange="dolmoedit()">
                 <option value="0"<?php if ($tabonres == 0) { echo ' selected'; } ?>><?php echo $text[233] ?></option>
                 <option value="1"<?php if ($tabonres == 1) { echo ' selected'; } ?>><?php echo $text[234] ?></option>
-                <option value="2"<?php if ($tabonres == 2) { echo ' selected'; } ?>><?php echo $text[235] ?></option>
               </select>
             </div>
           </div><?php

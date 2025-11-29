@@ -22,7 +22,7 @@ if ($_SERVER['PHP_SELF'] == '/lmo-showgraph.php')
 
 if (($file != '') && ($kurve == 1)) {
     $tension = '0.4';
-?>
+    ?>
 
 <div class="container">
 <?php
@@ -68,7 +68,7 @@ if (($file != '') && ($kurve == 1)) {
                     },";
     }
 
-   ?>
+    ?>
   <script src="//cdn.jsdelivr.net/npm/chart.js"></script>
       <script src='//cdn.jsdelivr.net/npm/chartjs-plugin-autocolors'></script>
       <script>

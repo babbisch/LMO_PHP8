@@ -76,8 +76,8 @@ while ($files = readdir($verz)) {
                         }
                         // Alle ben�tigten Werte gefunden -> Abbruch
                         if ($ligadatei[$liga_counter]['liga_name'] != '' &&
-                                $ligadatei[$liga_counter]['aktueller_spieltag'] != '' &&
-                                $ligadatei[$liga_counter]['anz_teams'] != '')
+                            $ligadatei[$liga_counter]['aktueller_spieltag'] != '' &&
+                            $ligadatei[$liga_counter]['anz_teams'] != '')
                             break;
                     }
                 }

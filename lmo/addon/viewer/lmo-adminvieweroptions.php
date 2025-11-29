@@ -68,7 +68,7 @@ if ($_SESSION['lmouserok'] == 2) {
                             }
                         }  // Alle benötigten Werte gefunden -> Abbruch
                         if ($ligadatei[$liga_counter]['liga_name'] != '' &&
-                                $ligadatei[$liga_counter]['anz_teams'] != '')
+                            $ligadatei[$liga_counter]['anz_teams'] != '')
                             break;
                     }
                 }
@@ -139,10 +139,9 @@ if ($_SESSION['lmouserok'] == 2) {
                 $ausgewaehlte_ligen_arr[$zz++] = $i;
             }
             $ausgewaehlte_ligen = count($ausgewaehlte_ligen_arr);
-
         }
     }
-    
+
     $z = 1;
     $error_dateiopen = false;
     $speicherflag = false;
@@ -207,7 +206,7 @@ if ($_SESSION['lmouserok'] == 2) {
 
     if ($form3) {
         echo getMessage($text[138]);
-?>
+        ?>
 
 <div class="container">
   <div class="row">
@@ -407,37 +406,37 @@ if ($_SESSION['lmouserok'] == 2) {
       <div class="col"><strong><?php echo $text['viewer'][31]; ?></strong></div>
     </div>
     <?php $ges_teams = 0;
-        for ($i = 1; $i <= $ausgewaehlte_ligen; $i++) {
-            $liga1 = new liga();
-            if ($liga1->loadFile(PATH_TO_LMO . '/' . $dirliga . $ligenfile[$i]) == TRUE) { // Ligenfile vorhanden? ?>
+    for ($i = 1; $i <= $ausgewaehlte_ligen; $i++) {
+        $liga1 = new liga();
+        if ($liga1->loadFile(PATH_TO_LMO . '/' . $dirliga . $ligenfile[$i]) == TRUE) { // Ligenfile vorhanden? ?>
     <div class="row pt-4">
       <div class="col d-flex justify-content-center"><h3><?php echo $ligennamen[$i]; ?></h3></div>
     </div>
              <?php $ii = 1;
-                $spalte = 1;
-                $max = count($liga1->teams);
-                foreach ($liga1->teams as $mannschaft) {
-                    if ($ii > $max)
-                        break;
-                    if ($spalte == 1)
-                        echo '<div class="row">' . chr(13) . '<div class="col-2 offset-3 text-start">';
-                    if ($spalte > 1)
-                        echo '<div class="col-2 text-start">';
-                    echo '<input type="checkbox" class="form-check-input" name="t' . $ges_teams . '" value="' . $ligenfile[$i] . '[' . $ii . ']' . '">&nbsp;' . $mannschaft->name;
-                    if ($spalte < 4)
-                        echo '</div>' . chr(13);
-                    if ($spalte == 4)
-                        echo '</div>' . chr(13) . '</div>' . chr(13);
-                    $ii++;
-                    $spalte++;
-                    if ($spalte > 4)
-                        $spalte = 1;
-                    $ges_teams++;
-                }
-            } else {
-                echo '[' . PATH_TO_LMO . '/' . $dirliga . $ligenfile[$i] . '] ' . $text['viewer'][50] . '<br>';
+            $spalte = 1;
+            $max = count($liga1->teams);
+            foreach ($liga1->teams as $mannschaft) {
+                if ($ii > $max)
+                    break;
+                if ($spalte == 1)
+                    echo '<div class="row">' . chr(13) . '<div class="col-2 offset-3 text-start">';
+                if ($spalte > 1)
+                    echo '<div class="col-2 text-start">';
+                echo '<input type="checkbox" class="form-check-input" name="t' . $ges_teams . '" value="' . $ligenfile[$i] . '[' . $ii . ']' . '">&nbsp;' . $mannschaft->name;
+                if ($spalte < 4)
+                    echo '</div>' . chr(13);
+                if ($spalte == 4)
+                    echo '</div>' . chr(13) . '</div>' . chr(13);
+                $ii++;
+                $spalte++;
+                if ($spalte > 4)
+                    $spalte = 1;
+                $ges_teams++;
             }
-        } ?>
+        } else {
+            echo '[' . PATH_TO_LMO . '/' . $dirliga . $ligenfile[$i] . '] ' . $text['viewer'][50] . '<br>';
+        }
+    } ?>
     <div class="row pt-3">
       <div class="col">
         <script type="text/javascript">

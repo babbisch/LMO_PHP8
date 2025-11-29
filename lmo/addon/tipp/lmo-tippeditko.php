@@ -21,14 +21,14 @@
  */
 for ($n = 0; $n < $modus[$st - 1]; $n++) {
     if (($klfin == 1) && ($st == $anzst)) {
-?>
+        ?>
   <div class="row">
     <div class="col"><?php
         if ($i == 1) {
             echo '<br>';
         }
         echo $text[419 + $i];
-?>
+        ?>
     </div>
   </div><?php } ?>
   <div class="row"><?php
@@ -48,7 +48,7 @@ for ($n = 0; $n < $modus[$st - 1]; $n++) {
         } else {
             $dum1 = '';
         }
-?>
+        ?>
     <div class="col-2"><?php echo $dum1; ?></div><?php } ?>
     <?php if ($n == 0) {
         $m1 = array($goala[$st - 1][$i][0], $goala[$st - 1][$i][1], $goala[$st - 1][$i][2], $goala[$st - 1][$i][3], $goala[$st - 1][$i][4], $goala[$st - 1][$i][5], $goala[$st - 1][$i][6]);
@@ -110,7 +110,7 @@ for ($n = 0; $n < $modus[$st - 1]; $n++) {
         $read = '';
         if ($btip[$i] == false)
             $read = 'disabled';
-?>
+        ?>
   <div class="col-2">
     <input class="custom-control" type="text" name="xtippa<?php echo $i; ?>" style="width:4rem" maxlength="4" value="<?php echo $goaltippa[$i][$n]; ?>" <?php echo $read; ?>> : <input class="custom-control" type="text" name="xtippb<?php echo $i; ?>" style="width:4rem" maxlength="4" value="<?php echo $goaltippb[$i][$n]; ?>" <?php echo $read; ?>>
   </div><?php
@@ -127,7 +127,7 @@ for ($n = 0; $n < $modus[$st - 1]; $n++) {
         } else if ($goaltippa[$i][$n] < $goaltippb[$i][$n]) {
             $tipp = 2;
         }
-?>
+        ?>
     <div class="col-1">
       <input type="radio" class="form-check-input" name="xtipp<?php echo $i . $n; ?>" value="1" <?php if ($tipp == 1) {
             echo ' checked';

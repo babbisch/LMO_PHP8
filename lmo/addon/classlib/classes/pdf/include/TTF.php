@@ -1,22 +1,22 @@
 <?php
 
 /*
-    TTF.php: TrueType font file reader and writer
-    Copyright (C) 2012 Thanos Efraimidis (4real.gr)
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ * TTF.php: TrueType font file reader and writer
+ * Copyright (C) 2012 Thanos Efraimidis (4real.gr)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 class TTF
 {
@@ -30,12 +30,11 @@ class TTF
     const WE_HAVE_A_TWO_BY_TWO = 128;
     const WE_HAVE_INSTRUCTIONS = 256;
     const USE_MY_METRICS = 512;
-
     // For debugging
     const VERBOSE = false;
 
-    private $b; // Array of bytes
-    private $tables; // Tables
+    private $b;  // Array of bytes
+    private $tables;  // Tables
 
     // Constructor: parses the table directory
     public function __construct($b)
@@ -43,8 +42,8 @@ class TTF
         $this->b = $b;
 
         $off = 0;
-        $version = self::getFixed($b, $off); // sfnt version
-        $numTables = self::getUshort($b, $off); // number of tables
+        $version = self::getFixed($b, $off);  // sfnt version
+        $numTables = self::getUshort($b, $off);  // number of tables
         $searchRange = self::getUshort($b, $off);
         $entrySelector = self::getUshort($b, $off);
         $rangeShift = self::getUshort($b, $off);
@@ -78,22 +77,22 @@ class TTF
         return null;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////////////
     // Unmarshal - marshal functions follow
-    ////////////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////////////
     public function unmarshalHead()
     {
-        $head = array(); // To return
-        $b = $this->getTableRaw('head'); // Get raw bytes for 'head' table
+        $head = array();  // To return
+        $b = $this->getTableRaw('head');  // Get raw bytes for 'head' table
         $off = 0;
-        $head['version'] = self::getRaw($b, $off, 4); // This is actually fixed
-        $head['revision'] = self::getRaw($b, $off, 4); // This is actually fixed
-        $off += 4; // Skip checksum adjustment
-        $off += 4; // Skip magic number
+        $head['version'] = self::getRaw($b, $off, 4);  // This is actually fixed
+        $head['revision'] = self::getRaw($b, $off, 4);  // This is actually fixed
+        $off += 4;  // Skip checksum adjustment
+        $off += 4;  // Skip magic number
         $head['flags'] = self::getUshort($b, $off);
         $head['unitsPerEm'] = self::getUshort($b, $off);
-        $head['created'] = self::getRaw($b, $off, 8); // This is actually longdatetime
-        $head['modified'] = self::getRaw($b, $off, 8); // This is actually longdatetime
+        $head['created'] = self::getRaw($b, $off, 8);  // This is actually longdatetime
+        $head['modified'] = self::getRaw($b, $off, 8);  // This is actually longdatetime
         $head['xMin'] = self::getFword($b, $off);
         $head['yMin'] = self::getFword($b, $off);
         $head['xMax'] = self::getFword($b, $off);
@@ -109,16 +108,16 @@ class TTF
 
     public static function marshalHead($head)
     {
-        $b = str_repeat(chr(0), 54); // Size of 'head' is 54 bytes
+        $b = str_repeat(chr(0), 54);  // Size of 'head' is 54 bytes
         $off = 0;
-        self::setRaw($b, $off, $head['version'], 4); // This is actually fixed
-        self::setRaw($b, $off, $head['revision'], 4); // This is actually fixed
-        self::setUlong($b, $off, 0); // Checksum Adjustment - will be calculated later
-        self::setUlong($b, $off, 0x5F0F3CF5); // Magic Number
+        self::setRaw($b, $off, $head['version'], 4);  // This is actually fixed
+        self::setRaw($b, $off, $head['revision'], 4);  // This is actually fixed
+        self::setUlong($b, $off, 0);  // Checksum Adjustment - will be calculated later
+        self::setUlong($b, $off, 0x5F0F3CF5);  // Magic Number
         self::setUshort($b, $off, $head['flags']);
         self::setUshort($b, $off, $head['unitsPerEm']);
-        self::setRaw($b, $off, $head['created'], 8); // This is actually longdatetime
-        self::setRaw($b, $off, $head['modified'], 8); // This is actually longdatetime
+        self::setRaw($b, $off, $head['created'], 8);  // This is actually longdatetime
+        self::setRaw($b, $off, $head['modified'], 8);  // This is actually longdatetime
         self::setFword($b, $off, $head['xMin']);
         self::setFword($b, $off, $head['yMin']);
         self::setFword($b, $off, $head['xMax']);
@@ -160,10 +159,10 @@ class TTF
 
     public function unmarshalHhea()
     {
-        $hhea = array(); // To return
-        $b = $this->getTableRaw('hhea'); // Get raw bytes for 'hhea' table
+        $hhea = array();  // To return
+        $b = $this->getTableRaw('hhea');  // Get raw bytes for 'hhea' table
         $off = 0;
-        $hhea['version'] = self::getRaw($b, $off, 4); // This is actually fixed
+        $hhea['version'] = self::getRaw($b, $off, 4);  // This is actually fixed
         $hhea['ascender'] = self::getFword($b, $off);
         $hhea['descender'] = self::getFword($b, $off);
         $hhea['lineGap'] = self::getFword($b, $off);
@@ -173,7 +172,7 @@ class TTF
         $hhea['xMaxExtent'] = self::getFword($b, $off);
         $hhea['caretSlopeRise'] = self::getShort($b, $off);
         $hhea['caretSlopeRun'] = self::getShort($b, $off);
-        $off += 10; // Skip reserved
+        $off += 10;  // Skip reserved
         $hhea['metricDataFormat'] = self::getShort($b, $off);
         $hhea['numberOfHMetrics'] = self::getUShort($b, $off);
 
@@ -182,9 +181,9 @@ class TTF
 
     public static function marshalHhea($hhea)
     {
-        $b = str_repeat(chr(0), 36); // Size of 'hhea' is 36 bytes
+        $b = str_repeat(chr(0), 36);  // Size of 'hhea' is 36 bytes
         $off = 0;
-        self::setRaw($b, $off, $hhea['version'], 4); // This is actually fixed
+        self::setRaw($b, $off, $hhea['version'], 4);  // This is actually fixed
         self::setFword($b, $off, $hhea['ascender']);
         self::setFword($b, $off, $hhea['descender']);
         self::setFword($b, $off, $hhea['lineGap']);
@@ -194,7 +193,7 @@ class TTF
         self::setFword($b, $off, $hhea['xMaxExtent']);
         self::setShort($b, $off, $hhea['caretSlopeRise']);
         self::setShort($b, $off, $hhea['caretSlopeRun']);
-        $off += 10; // Skip reserved
+        $off += 10;  // Skip reserved
         self::setShort($b, $off, $hhea['metricDataFormat']);
         self::setUshort($b, $off, $hhea['numberOfHMetrics']);
 
@@ -203,10 +202,10 @@ class TTF
 
     public function unmarshalMaxp()
     {
-        $maxp = array(); // To return
-        $b = $this->getTableRaw('maxp'); // Get raw bytes for 'maxp' table
+        $maxp = array();  // To return
+        $b = $this->getTableRaw('maxp');  // Get raw bytes for 'maxp' table
         $off = 0;
-        $maxp['version'] = self::getRaw($b, $off, 4); // This is actually fixed
+        $maxp['version'] = self::getRaw($b, $off, 4);  // This is actually fixed
         $maxp['numGlyphs'] = self::getUshort($b, $off);
         $maxp['maxPoints'] = self::getUshort($b, $off);
         $maxp['maxContours'] = self::getUshort($b, $off);
@@ -227,9 +226,9 @@ class TTF
 
     public static function marshalMaxp($maxp)
     {
-        $b = str_repeat(chr(0), 32); // Size of 'maxp' is 32 bytes
+        $b = str_repeat(chr(0), 32);  // Size of 'maxp' is 32 bytes
         $off = 0;
-        self::setRaw($b, $off, $maxp['version'], 4); // This is actually fixed
+        self::setRaw($b, $off, $maxp['version'], 4);  // This is actually fixed
         self::setUshort($b, $off, $maxp['numGlyphs']);
         self::setUshort($b, $off, $maxp['maxPoints']);
         self::setUshort($b, $off, $maxp['maxContours']);
@@ -250,8 +249,8 @@ class TTF
 
     public function unmarshalLoca($indexToLocFormat, $numGlyphs)
     {
-        $loca = array(); // To return
-        $b = $this->getTableRaw('loca'); // Get raw bytes for 'loca' table
+        $loca = array();  // To return
+        $b = $this->getTableRaw('loca');  // Get raw bytes for 'loca' table
         $off = 0;
         if ($indexToLocFormat == 0) {
             for ($i = 0; $i < $numGlyphs + 1; ++$i) {
@@ -290,9 +289,9 @@ class TTF
 
     public function unmarshalHmtx($numberOfHMetrics, $numGlyphs)
     {
-        $metrics = array(); // To return
-        $lsbs = array(); // To return
-        $b = $this->getTableRaw('hmtx'); // Get raw bytes for 'hmtx' table
+        $metrics = array();  // To return
+        $lsbs = array();  // To return
+        $b = $this->getTableRaw('hmtx');  // Get raw bytes for 'hmtx' table
         $off = 0;
         for ($i = 0; $i < $numberOfHMetrics; ++$i) {
             $advanceWidth = self::getUFword($b, $off);
@@ -329,8 +328,8 @@ class TTF
 
     public function unmarshalGlyf($loca)
     {
-        $glyf = array(); // To return
-        $b = $this->getTableRaw('glyf'); // Get raw bytes for 'glyf' table
+        $glyf = array();  // To return
+        $b = $this->getTableRaw('glyf');  // Get raw bytes for 'glyf' table
 
         $num = count($loca) - 1;
         for ($i = 0; $i < $num; ++$i) {
@@ -353,8 +352,8 @@ class TTF
 
     public function unmarshalCmap()
     {
-        $cmap = array(); // To return
-        $b = $this->getTableRaw('cmap'); // Get raw bytes for 'cmap' table
+        $cmap = array();  // To return
+        $b = $this->getTableRaw('cmap');  // Get raw bytes for 'cmap' table
         $off = 0;
         $cmap['version'] = self::getUshort($b, $off);
         $cmap['numTables'] = self::getUshort($b, $off);
@@ -378,12 +377,14 @@ class TTF
                 for ($cid = 0; $cid < 256; ++$cid) {
                     $glyphIdArray[] = self::getByte($b, $off);
                 }
-                $cmap['tables'][] = array('platformID' => $platformIDs[$i],
-                      'platformSpecificID' => $platformSpecificIDs[$i],
-                      'format' => $format,
-                      'length' => $length,
-                      'version' => $version,
-                      'glyphIdArray' => $glyphIdArray, );
+                $cmap['tables'][] = array(
+                    'platformID' => $platformIDs[$i],
+                    'platformSpecificID' => $platformSpecificIDs[$i],
+                    'format' => $format,
+                    'length' => $length,
+                    'version' => $version,
+                    'glyphIdArray' => $glyphIdArray,
+                );
             } elseif ($format == 2) {
                 throw new Exception('cmap format is 2');
             } elseif ($format == 4) {
@@ -401,7 +402,7 @@ class TTF
                 for ($seg = 0; $seg < $segCount; ++$seg) {
                     $endCountArray[] = self::getUshort($b, $off);
                 }
-                $off += 2; // Skip reserved
+                $off += 2;  // Skip reserved
                 for ($seg = 0; $seg < $segCount; ++$seg) {
                     $startCountArray[] = self::getUshort($b, $off);
                 }
@@ -414,17 +415,19 @@ class TTF
                 while ($off < $off0 + $length) {
                     $glyphIdArray[] = self::getUshort($b, $off);
                 }
-                $cmap['tables'][] = array('platformID' => $platformIDs[$i],
-                      'platformSpecificID' => $platformSpecificIDs[$i],
-                      'format' => $format,
-                      'length' => $length,
-                      'version' => $version,
-                      'segCount' => $segCount,
-                      'endCountArray' => $endCountArray,
-                      'startCountArray' => $startCountArray,
-                      'idDeltaArray' => $idDeltaArray,
-                      'idRangeOffsetArray' => $idRangeOffsetArray,
-                      'glyphIdArray' => $glyphIdArray, );
+                $cmap['tables'][] = array(
+                    'platformID' => $platformIDs[$i],
+                    'platformSpecificID' => $platformSpecificIDs[$i],
+                    'format' => $format,
+                    'length' => $length,
+                    'version' => $version,
+                    'segCount' => $segCount,
+                    'endCountArray' => $endCountArray,
+                    'startCountArray' => $startCountArray,
+                    'idDeltaArray' => $idDeltaArray,
+                    'idRangeOffsetArray' => $idRangeOffsetArray,
+                    'glyphIdArray' => $glyphIdArray,
+                );
             } elseif ($format == 6) {
                 $firstCode = self::getUshort($b, $off);
                 $entryCount = self::getUshort($b, $off);
@@ -432,16 +435,18 @@ class TTF
                 for ($cid = $firstCode; $cid < $firstCode + $entryCount; ++$cid) {
                     $glyphIdArray[] = self::getUshort($b, $off);
                 }
-                $cmap['tables'][] = array('platformID' => $platformIDs[$i],
-                      'platformSpecificID' => $platformSpecificIDs[$i],
-                      'format' => $format,
-                      'length' => $length,
-                      'version' => $version,
-                      'firstCode' => $firstCode,
-                      'entryCount' => $entryCount,
-                      'glyphIdArray' => $glyphIdArray, );
+                $cmap['tables'][] = array(
+                    'platformID' => $platformIDs[$i],
+                    'platformSpecificID' => $platformSpecificIDs[$i],
+                    'format' => $format,
+                    'length' => $length,
+                    'version' => $version,
+                    'firstCode' => $firstCode,
+                    'entryCount' => $entryCount,
+                    'glyphIdArray' => $glyphIdArray,
+                );
             } else {
-                $off -= 6; // go back and check for 8.0, 10.0 and 12.0 formats
+                $off -= 6;  // go back and check for 8.0, 10.0 and 12.0 formats
                 $format = self::getFixed($b, $off);
                 $length = self::getUlong($b, $off);
                 $language = self::getUlong($b, $off);
@@ -459,14 +464,16 @@ class TTF
                         $endCharCodes[] = self::getUlong($b, $off);
                         $startGlyphCodes[] = self::getUlong($b, $off);
                     }
-                    $cmap['tables'][] = array('platformID' => $platformIDs[$i],
-                          'platformSpecificID' => $platformSpecificIDs[$i],
-                          'format' => $format,
-                          'length' => $length,
-                          'version' => $version,
-                          'startCharCodes' => $startCharCodes,
-                          'endCharCodes' => $endCharCodes,
-                          'startGlyphCodes' => $startGlyphCodes, );
+                    $cmap['tables'][] = array(
+                        'platformID' => $platformIDs[$i],
+                        'platformSpecificID' => $platformSpecificIDs[$i],
+                        'format' => $format,
+                        'length' => $length,
+                        'version' => $version,
+                        'startCharCodes' => $startCharCodes,
+                        'endCharCodes' => $endCharCodes,
+                        'startGlyphCodes' => $startGlyphCodes,
+                    );
                 } else {
                     throw new Exception('Internal error: unknwon cmap format');
                 }
@@ -478,23 +485,23 @@ class TTF
 
     public static function marshalCmap($cmap)
     {
-        $lengths = array(); // To hold the length of each table
+        $lengths = array();  // To hold the length of each table
 
         $sz = 4 + 8 * count($cmap['tables']);
         foreach ($cmap['tables'] as $table) {
             $format = $table['format'];
             if ($format == 0) {
-                $length = 6 + 256; // Size for format 0 table
+                $length = 6 + 256;  // Size for format 0 table
             } elseif ($format == 4) {
                 $cnt1 = count($table['startCountArray']);
                 $cnt2 = count($table['glyphIdArray']);
-                $length = 14 + 4 * 2 * $cnt1 + 2 + 2 * $cnt2; // Size for format 4 table
+                $length = 14 + 4 * 2 * $cnt1 + 2 + 2 * $cnt2;  // Size for format 4 table
             } elseif ($format == 6) {
                 $cnt = count($table['glyphIdArray']);
-                $length = 10 + 2 * $cnt; // Size for format 6 table
+                $length = 10 + 2 * $cnt;  // Size for format 6 table
             } elseif ($format == '12.0') {
                 $cnt = count($table['startCharCodes']);
-                $length = 16 + 12 * $cnt; // Size for format 12.0 table
+                $length = 16 + 12 * $cnt;  // Size for format 12.0 table
             } else {
                 throw new Exception('Internal error');
             }
@@ -539,20 +546,20 @@ class TTF
                 $idRangeOffsetArray = $table['idRangeOffsetArray'];
                 $glyphIdArray = $table['glyphIdArray'];
 
-        // Calculate searchRange, entrySelector and rangeShift
+                // Calculate searchRange, entrySelector and rangeShift
                 $binarySearchRegisters = self::calculateBinarySearchRegisters($segCount, 2, 1);
 
                 self::setUshort($b, $off, $format);
                 self::setUshort($b, $off, $length);
                 self::setUshort($b, $off, $version);
-                self::setUshort($b, $off, 2 * $segCount); // segCountX2
+                self::setUshort($b, $off, 2 * $segCount);  // segCountX2
                 self::setUshort($b, $off, $binarySearchRegisters['SearchRange']);
                 self::setUshort($b, $off, $binarySearchRegisters['EntrySelector']);
                 self::setUshort($b, $off, $binarySearchRegisters['RangeShift']);
                 for ($seg = 0; $seg < $segCount; ++$seg) {
                     self::setUshort($b, $off, $endCountArray[$seg]);
                 }
-                self::setUshort($b, $off, 0); // Reserved
+                self::setUshort($b, $off, 0);  // Reserved
                 for ($seg = 0; $seg < $segCount; ++$seg) {
                     self::setUshort($b, $off, $startCountArray[$seg]);
                 }
@@ -600,10 +607,10 @@ class TTF
 
     public function unmarshalPost($headOnly = false)
     {
-        $post = array(); // To return
-        $b = $this->getTableRaw('post'); // Get raw bytes for 'post' table
+        $post = array();  // To return
+        $b = $this->getTableRaw('post');  // Get raw bytes for 'post' table
         $off = 0;
-    // Collect standard header
+        // Collect standard header
         $post['formatType'] = self::getFixed($b, $off);
         $post['italicAngle'] = self::getFixed($b, $off);
         $post['underlinePosition'] = self::getFword($b, $off);
@@ -631,8 +638,8 @@ class TTF
                     $glyphNames[] = $name;
                 }
 
-            // 'gn' will contain either a number (for Macintosh standard order glyph name)
-            // or a string (otherwise)
+                // 'gn' will contain either a number (for Macintosh standard order glyph name)
+                // or a string (otherwise)
                 $gn = array();
                 for ($i = 0; $i < count($glyphNameIndex); ++$i) {
                     $index = $glyphNameIndex[$i];
@@ -658,13 +665,13 @@ class TTF
     public static function marshalPost($post)
     {
         // Calculate size
-        $sz = 32; // Standard header for all formatTypes
+        $sz = 32;  // Standard header for all formatTypes
         if ($post['formatType'] == '1.0') {
             // Nothing more
         } elseif ($post['formatType'] == '2.0') {
             $gn = $post['glyphNames'];
-            $sz += 2; // for numberOfGlyphs
-            $sz += 2 * count($gn); // for glyphNameIndex
+            $sz += 2;  // for numberOfGlyphs
+            $sz += 2 * count($gn);  // for glyphNameIndex
             for ($i = 0; $i < count($gn); ++$i) {
                 if (is_string($gn[$i])) {
                     $sz += 1 + strlen($gn[$i]);
@@ -693,7 +700,7 @@ class TTF
             $gn = $post['glyphNames'];
             $numGlyphs = count($gn);
             $glyphNames = array();
-            self::setUshort($b, $off, $numGlyphs); // Push numGlyphs
+            self::setUshort($b, $off, $numGlyphs);  // Push numGlyphs
             for ($i = 0; $i < $numGlyphs; ++$i) {
                 if (is_string($gn[$i])) {
                     self::setUshort($b, $off, count($glyphNames) + 258);
@@ -717,39 +724,85 @@ class TTF
         return $b;
     }
 
-    private static $tableNamesOrderedByRank = array('head', 'hhea', 'maxp', 'OS/2', 'hmtx', 'LTSH', 'VDMX', 'hdmx', 'cmap', 'fpgm',
-     'prep', 'cvt ', 'loca', 'glyf', 'kern', 'name', 'post', 'gasp', 'PCLT', 'GDEF',
-     'GPOS', 'GSUB', 'JSTF', 'DSIG', );
+    private static $tableNamesOrderedByRank = array(
+        'head',
+        'hhea',
+        'maxp',
+        'OS/2',
+        'hmtx',
+        'LTSH',
+        'VDMX',
+        'hdmx',
+        'cmap',
+        'fpgm',
+        'prep',
+        'cvt ',
+        'loca',
+        'glyf',
+        'kern',
+        'name',
+        'post',
+        'gasp',
+        'PCLT',
+        'GDEF',
+        'GPOS',
+        'GSUB',
+        'JSTF',
+        'DSIG',
+    );
 
-    private static $tableNamesOrderedByName = array('DSIG', 'GDEF', 'GPOS', 'GSUB', 'JSTF', 'LTSH', 'OS/2', 'PCLT', 'VDMX', 'cmap',
-     'cvt ', 'fpgm', 'gasp', 'glyf', 'hdmx', 'head', 'hhea', 'hmtx', 'kern', 'loca',
-     'maxp', 'name', 'post', 'prep', );
+    private static $tableNamesOrderedByName = array(
+        'DSIG',
+        'GDEF',
+        'GPOS',
+        'GSUB',
+        'JSTF',
+        'LTSH',
+        'OS/2',
+        'PCLT',
+        'VDMX',
+        'cmap',
+        'cvt ',
+        'fpgm',
+        'gasp',
+        'glyf',
+        'hdmx',
+        'head',
+        'hhea',
+        'hmtx',
+        'kern',
+        'loca',
+        'maxp',
+        'name',
+        'post',
+        'prep',
+    );
 
     public static function marshalAll($tables)
     {
         $numTables = count($tables);
 
-    // Arrays to hold for each table, the checksum, the offset and the length
+        // Arrays to hold for each table, the checksum, the offset and the length
         $checksums = array();
         $offsets = array();
         $lengths = array();
 
-        $sb = str_repeat(chr(0), 12 + $numTables * 16); // Allocate room for table directory
+        $sb = str_repeat(chr(0), 12 + $numTables * 16);  // Allocate room for table directory
         foreach (self::$tableNamesOrderedByRank as $tableName) {
             if (isset($tables[$tableName])) {
                 $data = $tables[$tableName];
 
-            // Special handling for 'head' table - set checksum adjustment to zero
+                // Special handling for 'head' table - set checksum adjustment to zero
                 if ($tableName == 'head') {
                     $off = 8;
                     self::setUlong($data, $off, 0);
                 }
 
-            // Calculate checksums, offsets, lengths
+                // Calculate checksums, offsets, lengths
                 $checksums[$tableName] = self::calculateTableChecksum($data);
                 $offsets[$tableName] = strlen($sb);
                 $lengths[$tableName] = strlen($data);
-            // Append data and right pad with '0' (align on four byte boundary)
+                // Append data and right pad with '0' (align on four byte boundary)
                 $sb .= $data;
                 while ((strlen($sb) % 4) != 0) {
                     $sb .= chr(0);
@@ -757,11 +810,11 @@ class TTF
             }
         }
 
-    // Dump the table directory
+        // Dump the table directory
         $off = 0;
-        self::setUlong($sb, $off, 0x00010000); // This is actually fixed
+        self::setUlong($sb, $off, 0x10000);  // This is actually fixed
         self::setUshort($sb, $off, $numTables);
-    // Calculate the binary search registers
+        // Calculate the binary search registers
         $binarySearchRegisters = self::calculateBinarySearchRegisters($numTables, 16, 4);
         self::setUshort($sb, $off, $binarySearchRegisters['SearchRange']);
         self::setUshort($sb, $off, $binarySearchRegisters['EntrySelector']);
@@ -775,14 +828,14 @@ class TTF
             }
         }
 
-    // Calculate the checksum adjustment for 'head' table
+        // Calculate the checksum adjustment for 'head' table
         $checksum = self::calculateTableChecksum(substr($sb, 0, 12 + 16 * $numTables));
         foreach ($checksums as $chk) {
             $checksum = bcadd($checksum, $chk);
         }
-        $checksum = bcsub('2981146554', $checksum); // This is "0xB1B0AFBA"
+        $checksum = bcsub('2981146554', $checksum);  // This is "0xB1B0AFBA"
         while (bccomp($checksum, '0') < 0) {
-            $checksum = bcadd($checksum, '4294967296'); // This is "0x100000000"
+            $checksum = bcadd($checksum, '4294967296');  // This is "0x100000000"
         }
         $off = $offsets['head'] + 8;
         self::setUlong($sb, $off, $checksum);
@@ -790,9 +843,9 @@ class TTF
         return $sb;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////////////
     // Helper functions follow
-    ////////////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////////////
 
     // Search "cmap" for an encoding table having given "platformID" and "platformSpecificID"
     // and return it. Return null if no such table exists
@@ -943,16 +996,16 @@ class TTF
                 $endPointsOfContours[] = $lastEndPoint;
             }
 
-        // Collect the instructions
+            // Collect the instructions
             $instructionLength = self::getUshort($description, $off);
             $instructions = self::getRaw($description, $off, $instructionLength);
 
-        // Collect the flags
+            // Collect the flags
             $flags = array();
             while (count($flags) <= $lastEndPoint) {
                 $flag = ord($description[$off]);
                 ++$off;
-                if (($flag & 0x08) != 0) {
+                if (($flag & 0x8) != 0) {
                     $num = ord($description[$off]) + 1;
                     ++$off;
                 } else {
@@ -963,18 +1016,24 @@ class TTF
                 }
             }
 
-        // Collect the x coordinates
-            $xs = self::getCoordinates($description, $off, $flags, 0x02, 0x10);
+            // Collect the x coordinates
+            $xs = self::getCoordinates($description, $off, $flags, 0x2, 0x10);
 
-        // Collect the y coordinates
-            $ys = self::getCoordinates($description, $off, $flags, 0x04, 0x20);
+            // Collect the y coordinates
+            $ys = self::getCoordinates($description, $off, $flags, 0x4, 0x20);
 
-            return array('numberOfContours' => $numberOfContours,
-             'xMin' => $xMin, 'yMin' => $yMin,
-             'xMax' => $xMax, 'yMax' => $yMax,
-             'endPointsOfContours' => $endPointsOfContours,
-             'instructions' => $instructions,
-             'flags' => $flags, 'xs' => $xs, 'ys' => $ys, );
+            return array(
+                'numberOfContours' => $numberOfContours,
+                'xMin' => $xMin,
+                'yMin' => $yMin,
+                'xMax' => $xMax,
+                'yMax' => $yMax,
+                'endPointsOfContours' => $endPointsOfContours,
+                'instructions' => $instructions,
+                'flags' => $flags,
+                'xs' => $xs,
+                'ys' => $ys,
+            );
         } else {
             $components = array();
 
@@ -1036,9 +1095,18 @@ class TTF
                     echo "\n\n";
                 }
 
-                $components[] = array('flags' => $flags, 'glyphIndex' => $glyphIndex,
-                      'argument1' => $argument1, 'argument2' => $argument2, 'arg1and2' => $arg1and2,
-                      'scale' => $scale, 'xscale' => $xscale, 'yscale' => $yscale, 'scale01' => $scale01, 'scale10' => $scale10, );
+                $components[] = array(
+                    'flags' => $flags,
+                    'glyphIndex' => $glyphIndex,
+                    'argument1' => $argument1,
+                    'argument2' => $argument2,
+                    'arg1and2' => $arg1and2,
+                    'scale' => $scale,
+                    'xscale' => $xscale,
+                    'yscale' => $yscale,
+                    'scale01' => $scale01,
+                    'scale10' => $scale10,
+                );
             } while (($flags & self::MORE_COMPONENTS) != 0);
             if (($flags & self::WE_HAVE_INSTRUCTIONS) != 0) {
                 $numInstr = self::getUshort($description, $off);
@@ -1047,11 +1115,15 @@ class TTF
                 $instructions = '';
             }
 
-            return array('numberOfContours' => $numberOfContours,
-             'xMin' => $xMin, 'yMin' => $yMin,
-             'xMax' => $xMax, 'yMax' => $yMax,
-             'components' => $components,
-             'instructions' => $instructions, );
+            return array(
+                'numberOfContours' => $numberOfContours,
+                'xMin' => $xMin,
+                'yMin' => $yMin,
+                'xMax' => $xMax,
+                'yMax' => $yMax,
+                'components' => $components,
+                'instructions' => $instructions,
+            );
         }
     }
 
@@ -1064,14 +1136,14 @@ class TTF
         if ($numberOfContours >= 0) {
             return $description;
         }
-        $off += 8; // Skip xMin, yMin, xMax, yMax
+        $off += 8;  // Skip xMin, yMin, xMax, yMax
         do {
             $flags = self::getUshort($description, $off);
             $glyphIndex = self::getUshort($description, $off);
             if (isset($replacements[$glyphIndex])) {
                 $from = $glyphIndex;
                 $to = $replacements[$from];
-                $off -= 2; // Go back and replace
+                $off -= 2;  // Go back and replace
                 self::setUshort($description, $off, $to);
             }
             // Skip arguments
@@ -1110,7 +1182,7 @@ class TTF
     {
         $ret = '0';
 
-    // "Right" pad with zeros
+        // "Right" pad with zeros
         while ((strlen($data) % 4) != 0) {
             $data .= chr(0);
         }
@@ -1124,7 +1196,7 @@ class TTF
         return $ret;
     }
 
-    //////////////////// Function to get and set bytes, shorts, longs, etc ////////////////////
+    // ////////////////// Function to get and set bytes, shorts, longs, etc ////////////////////
     private static function getByte($b, &$off)
     {
         return ord($b[$off++]);
@@ -1158,8 +1230,8 @@ class TTF
 
     private static function setShort(&$b, &$off, $val)
     {
-        $b[$off++] = chr(($val >> 8) & 0xff);
-        $b[$off++] = chr($val & 0xff);
+        $b[$off++] = chr(($val >> 8) & 0xFF);
+        $b[$off++] = chr($val & 0xFF);
     }
 
     private static function getUlong($b, &$off)
@@ -1202,10 +1274,10 @@ class TTF
         $fraction = $b3 * 256 + $b4;
 
         if ($fraction == 0) {
-            return sprintf('%d.0', $mantissa); // Append one zero
+            return sprintf('%d.0', $mantissa);  // Append one zero
         } else {
             $tmp = sprintf('%.6f', $fraction / 65536);
-            $tmp = substr($tmp, 2); // Remove leading "0."
+            $tmp = substr($tmp, 2);  // Remove leading "0."
             return sprintf('%d.%s', $mantissa, $tmp);
         }
     }
@@ -1227,10 +1299,10 @@ class TTF
         }
         $mantissa *= $sign;
 
-        $b[$off++] = chr(($mantissa >> 8) & 0xff);
-        $b[$off++] = chr(($mantissa >> 0) & 0xff);
-        $b[$off++] = chr(($fraction >> 8) & 0xff);
-        $b[$off++] = chr(($fraction >> 0) & 0xff);
+        $b[$off++] = chr(($mantissa >> 8) & 0xFF);
+        $b[$off++] = chr(($mantissa >> 0) & 0xFF);
+        $b[$off++] = chr(($fraction >> 8) & 0xFF);
+        $b[$off++] = chr(($fraction >> 0) & 0xFF);
     }
 
     private static function getFword($b, &$off)
@@ -1259,18 +1331,18 @@ class TTF
         $val2 = ord($b[$off + 1]);
         $val = 256 * $val1 + $val2;
 
-        $mantissa = ($val >> 14) & 0x03;
+        $mantissa = ($val >> 14) & 0x3;
         if ($mantissa >= 2) {
             $mantissa -= 4;
         }
-        $fraction = $val & 0x3fff;
+        $fraction = $val & 0x3FFF;
 
         if ($fraction == 0) {
             // Append only one zero
             $ret = sprintf('%d.0', $mantissa);
         } else {
             $tmp = sprintf('%.6f', $fraction / 16384);
-            $tmp = substr($tmp, 2); // Remove leading "0."
+            $tmp = substr($tmp, 2);  // Remove leading "0."
             $ret = sprintf('%d.%s', $mantissa, $tmp);
         }
 
@@ -1311,7 +1383,7 @@ class TTF
             return sprintf('%d.0', $mantissa);
         } else {
             $tmp = sprintf('%.6f', $fraction / 65536);
-            $tmp = substr($tmp, 2); // Remove leading ".0"
+            $tmp = substr($tmp, 2);  // Remove leading ".0"
             return sprintf('%d.%s', $mantissa, $tmp);
         }
     }

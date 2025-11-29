@@ -42,10 +42,10 @@ if (($file != '') && ($subteams != '')) {
     $tab1 = array();
     for ($a = 1; $a <= $anzteams; $a++) {
         if ($tabtype == 3 || $newtabtype == 3) {
-            $hoy = ($anzst / 2);
+            $hoy = intval($anzst / 2);
         }
         if ($tabtype == 4 || $newtabtype == 4) {
-            $endtab = ($anzst / 2);
+            $endtab = intval($anzst / 2);
         }
         for ($j = $hoy; $j < $endtab; $j++) {
             for ($i = 0; $i < $anzsp; $i++) {

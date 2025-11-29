@@ -202,7 +202,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
     $viewermode = 1;
     $file = '';
     $nw = 0;
-?>
+    ?>
 
 <div class="container">
   <div class="row">
@@ -236,7 +236,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
     }
     for ($i = 0; $i < $anzspiele; $i++) {
         if ($i == 0 || $liga[$i] != $liga[$i - 1]) {
-?>
+            ?>
         <div class="row">
           <div class="col"><?php echo $titel[$i]; ?></div>
         </div><?php
@@ -267,7 +267,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
                     $j = $spieltag[$i] . '. ' . $text[370];
                 }
             }
-?>
+            ?>
         <div class="row pt-3">
           <div class="col-8"><?php if ($tipp_tippeinsicht == 1) {
                 echo '<strong><a href="' . $_SERVER['PHP_SELF'] . '?action=tipp&amp;todo=einsicht&amp;file=' . $liga[$i] . '.l98&amp;st=' . $spieltag[$i] . '">';
@@ -289,16 +289,16 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
                 }
             } ?></div><?php
             if ($tipp_tippmodus == 1) {
-?>
+                ?>
           <div class="col-1">
             <acronym title="<?php echo $text['tipp'][241] . ':' . $text['tipp'][242] ?>"><?php echo $text['tipp'][209]; /* Dein Tipp */ ?></acronym><br><?php
                 if ($goalfaktor[$i] != 1) {
                     echo '(' . $text[553 + log10($goalfaktor[$i])] . ')';
                 }
-?></div><?php
+                ?></div><?php
             }
             if ($tipp_tippmodus == 0) {
-?>
+                ?>
           <div class="col-1">
             <acronym title="<?php echo $text['tipp'][95] ?>">1</acronym>&nbsp;<?php if ($hidr[$i] == 0) { ?>
             <acronym title="<?php echo $text['tipp'][96] ?>">0</acronym>&nbsp;<?php } else { ?>
@@ -359,12 +359,12 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
         }
         if ($tipp_tippmodus == 1) {
             if ($btip == true) {
-?>
+                ?>
           <div class="col-1">
               <input class="custom-control" style="width:2.2rem;" name="xtippa<?php echo $i; ?>" value="<?php echo $tippa[$i]; ?>"> : <input class="custom-control" style="width:2.2rem;" name="xtippb<?php echo $i; ?>" value="<?php echo $tippb[$i]; ?>">
           </div><?php
             } else {
-?>
+                ?>
           <div class="col-1">
             <?php echo $tippa[$i]; ?> : <?php echo $tippb[$i]; ?>
           </div><?php
@@ -381,7 +381,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
             } elseif ($tippa[$i] < $tippb[$i]) {
                 $tipp = 2;
             }
-?>
+            ?>
           <div class="col-1">
             <input type="radio" class="form-check-input" name="xtipp<?php echo $i; ?>" value="1" <?php if ($tipp == 1) {
                 echo ' checked';

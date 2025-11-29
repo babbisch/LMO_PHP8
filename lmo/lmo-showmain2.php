@@ -132,7 +132,7 @@ if ($file != '') {
         if ($ergebnis == 1) {
             $output_ergebnisse .= $action != 'results' ? "<li class='nav-item'><a href='{$addm}results&amp;st={$ste}' class='nav-link'>{$text[10]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[10]</a></li>";
         }
-        if ($tabelle == 1) {
+        if (isset($tabelle) && $tabelle == 1) {
             $output_tabelle .= $action != 'table' ? "<li class='nav-item'><a href='{$addm}table' class='nav-link'>{$text[16]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[16]</a></li>";
         }
         // Kombinierte Ansicht
@@ -141,17 +141,19 @@ if ($file != '') {
             $output_ergebnisse .= $action != 'results' && $action != 'table' ? "<li class='nav-item'><a href='{$addm}results' class='nav-link'>{$text[10]}/{$text[16]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[10]/$text[16]</a></li>";
         }
     }
-    // Kreuztabelle
-    if ($kreuz == 1) {
-        $output_kreuztabelle .= $action != 'cross' ? "<li class='nav-item'><a href='{$addm}cross' class='nav-link'>{$text[14]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[14]</a></li>";
-    }
-    // Fieberkurve
-    if ($kurve == 1) {
-        $output_fieberkurve .= $action != 'graph' ? "<li class='nav-item'><a href='{$addm}graph&amp;stat1={$stat1}&amp;stat2={$stat2}' class='nav-link'>{$text[133]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[133]</a></li>";
-    }
-    // Ligastatistiken
-    if ($ligastats == 1) {
-        $output_ligastatistik .= $action != 'stats' ? "<li class='nav-item'><a href='{$addm}stats&amp;stat1={$favteam}' class='nav-link'>{$text[18]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[18]</a></li>";
+    if ($lmtype == 0) {
+        // Kreuztabelle
+        if ($kreuz == 1) {
+            $output_kreuztabelle .= $action != 'cross' ? "<li class='nav-item'><a href='{$addm}cross' class='nav-link'>{$text[14]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[14]</a></li>";
+        }
+        // Fieberkurve
+        if ($kurve == 1) {
+            $output_fieberkurve .= $action != 'graph' ? "<li class='nav-item'><a href='{$addm}graph&amp;stat1={$stat1}&amp;stat2={$stat2}' class='nav-link'>{$text[133]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[133]</a></li>";
+        }
+        // Ligastatistiken
+        if ($ligastats == 1) {
+            $output_ligastatistik .= $action != 'stats' ? "<li class='nav-item'><a href='{$addm}stats&amp;stat1={$favteam}' class='nav-link'>{$text[18]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[18]</a></li>";
+        }
     }
     $output_info .= $action != 'info' ? "<li class='nav-item'><a href='{$addm}info' class='nav-link'>{$text[20]}</a></li>" : "<li class='nav-item active'><a href='#' class='nav-link active'>$text[20]</a></li>";
 
@@ -305,11 +307,10 @@ if ($eintippspiel == 1) {
         $output_tippspiel .= $action != 'tipp' ? "<li class='nav-item'><a href='{$addm}tipp' class='nav-link'>{$text['tipp'][0]}</a></li>" : "<li class='nav-item active pull-right'><a href='#' class='nav-link active'>{$text['tipp'][0]}</a></li>";
     }
 }
-$output_infolink = '<acronym title="Liga Manager Online for PHP 8.x">LMO</acronym> 4 for PHP8 - <a target="_blank" href="//github.com/henshingly/lmo_php8/" title="' . $text[580] . '">' . $text[55] . '</a>';
-if (!array_key_exists('Infolink', $template->blockvariables['__global__']))
-{
+$output_infolink = '<acronym title="Liga Manager Online for PHP 8.x">LMO</acronym> 4 for PHP8 - <a target="_blank" href="//github.com/henshingly/lmo_php8" title="' . $text[580] . '">' . $text[55] . '</a>';
+if (!array_key_exists('Infolink', $template->blockvariables['__global__'])) {
     trigger_error("'Infolink' is missing in template'", E_USER_WARNING);
-    echo $output_infolink; 
+    echo $output_infolink;
 }
 // Tippspiel-Addon
 

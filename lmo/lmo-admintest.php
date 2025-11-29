@@ -18,7 +18,6 @@
  * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
  */
 if (!defined('LMO_AUTH')) {
-    die();
     exit;
 }
 ?>

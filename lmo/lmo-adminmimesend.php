@@ -48,7 +48,7 @@ if (($action == 'admin') && ($todo == 'email') && (($_SESSION['lmouserok'] == 1)
                 array_push($dummy, $files);
             }
         }
-        
+
         closedir($verz);
         sort($dummy);
         $temp = 'ligen.zip';

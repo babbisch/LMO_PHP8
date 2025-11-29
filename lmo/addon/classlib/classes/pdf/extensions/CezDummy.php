@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Dummy class extension.
  *
@@ -6,7 +7,7 @@
  */
 error_reporting(E_ALL);
 set_time_limit(1800);
-set_include_path('../src/'.PATH_SEPARATOR.get_include_path());
+set_include_path('../src/' . PATH_SEPARATOR . get_include_path());
 include 'Cezpdf.php';
 
 /**
@@ -15,9 +16,10 @@ include 'Cezpdf.php';
 class CezDummy extends Cezpdf
 {
     public $data = array(
-                    array('first' => 'John', 'last' => 'Doe'),
-                    array('first' => 'Ole', 'last' => 'K.'),
-                );
+        array('first' => 'John', 'last' => 'Doe'),
+        array('first' => 'Ole', 'last' => 'K.'),
+    );
+
     /**
      * @param Cezpdf $ezpdf current cezpdf object
      */
@@ -31,11 +33,11 @@ class CezDummy extends Cezpdf
     /*
      * Dummy callback method
      */
-     public function dummy($info)
-     {
-         $item = new CDummyItem($info['p'], $this->data);
-         $this->addText($info['x'], $info['y'], $info['height'], $item->fullName);
-     }
+    public function dummy($info)
+    {
+        $item = new CDummyItem($info['p'], $this->data);
+        $this->addText($info['x'], $info['y'], $info['height'], $item->fullName);
+    }
 }
 
 /**
@@ -47,14 +49,14 @@ class CDummyItem
 
     public function __construct($param, &$data)
     {
-        error_log('CDummyItem:'.$param);
+        error_log('CDummyItem:' . $param);
         $this->_parseName($data, $param);
     }
 
     public function _parseName(&$data, $param)
     {
         if (isset($data[$param])) {
-            $this->fullName = $data[$param]['first'].' '.$data[$param]['last'];
+            $this->fullName = $data[$param]['first'] . ' ' . $data[$param]['last'];
         }
     }
 }

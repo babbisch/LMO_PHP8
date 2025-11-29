@@ -23,28 +23,23 @@ require_once (__DIR__ . '/../../init.php');
 
 if (isset($_REQUEST['ligalink'])) {
     $spieler_ligalink = $_REQUEST['ligalink'];
-}
-else
+} else
     $spieler_ligalink = $text['spieler'][11];
 if (isset($_REQUEST['sort'])) {
     $spieler_sort = $_REQUEST['sort'];
-}
-else
+} else
     $spieler_sort = '';
 if (isset($_REQUEST['statstart'])) {
     $statstart = $_REQUEST['statstart'];
-}
-else
+} else
     $spieler_statstart = 0;
 if (isset($_REQUEST['option'])) {
     $spieler_option = $_REQUEST['option'];
-}
-else
+} else
     $spieler_option = '';
 if (isset($_REQUEST['wert'])) {
     $wert = $_REQUEST['wert'];
-}
-else
+} else
     $spieler_wert = '';
 
 // Datei auslesen
@@ -372,7 +367,7 @@ if (isset($file) && $file != '') {
         $addr = $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=edit&amp;file=' . $file . '&amp;st=';
         $addb = $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=tabs&amp;file=' . $file . '&amp;st=';
         include (PATH_TO_LMO . '/lmo-adminsubnavi.php');
-?>
+        ?>
 
 <script type="text/javascript">
 function change(op,x) {
@@ -480,9 +475,9 @@ function mark(el){
 									<option value="<?php echo $x ?>"<?php if ($x == 0) { ?> disabled<?php
                 }
                 if ($x == 1) {
-?> selected<?php
+                    ?> selected<?php
                 }
-?>><?php echo htmlentities(stripslashes($spalten[$x]), ENT_COMPAT); ?></option><?php
+                ?>><?php echo htmlentities(stripslashes($spalten[$x]), ENT_COMPAT); ?></option><?php
             }
             ?>
 								</select>
@@ -554,7 +549,7 @@ function mark(el){
                     ?>
     			    <div class="col-1"><input type="text" class="form-control" name="data<?php echo $j1 . '|' . $j2 ?>" value="<?php echo $data[$j1][$j2] ?>" size="<?php echo strlen($data[$j1][$j2]); ?>" disabled></div><?php
                 } elseif (is_numeric($data[$j1][$j2])) {
-?>
+                    ?>
 			  <div class="col-1"><input type="number" class="form-control" name="data<?php echo $j1 . '|' . $j2 ?>" value="<?php echo $data[$j1][$j2] ?>" size="<?php echo strlen($data[$j1][$j2]); ?>"></div><?php
                 } else {
                     if ($spalten[$j2] == $text['spieler'][25]) {
@@ -635,7 +630,7 @@ function mark(el){
 						<div class="col-auto"><input type="checkbox" class="form-check-input" name="nullwerte_anzeigen" onClick="mark(this)" value="<?php echo $spieler_nullwerte_anzeigen ?>" <?php if ($spieler_nullwerte_anzeigen == 1) echo 'checked'; ?>></div>
 					</div>
 					<div class="row p-2">
-						<div class="col"><input class="btn btn-primary btn-sm" type="submit" value="<?php echo $text['spieler'][58] ?>"></div>
+						<div class="col"><input class="btn btn-primary btn-sm" type="submit" value="Konfiguration speichern"></div>
 					</div>
 				</div>
 			</form>

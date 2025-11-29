@@ -342,8 +342,8 @@ if (!file_exists($auswertfile)) {
                     $y = $x;
                     if ($spielegetippt[$x3][$jyz] > 0) {
                         for (;
-                            $y > 0;
-                            $y--) {
+                                $y > 0;
+                                $y--) {
                             $poswechs = 1;
                             for ($k = 0; $k <= $laeng1 - 24; $k += 8) {
                                 if (intval(substr($taba[$jyz][$y], $k + 1, 7)) != intval(substr($taba[$jyz][$y - 1], $k + 1, 7))) {
@@ -366,8 +366,8 @@ if (!file_exists($auswertfile)) {
                     $y = $x;
                     if ($spielegetippt[$x3][$jyz] > 0) {
                         for (;
-                            $y > 0;
-                            $y--) {
+                                $y > 0;
+                                $y--) {
                             $poswechs = 1;
                             for ($k = 0; $k <= $laeng2 - 24; $k += 8) {
                                 if (intval(substr($tabb[$jyz][$y], $k + 1, 7)) != intval(substr($tabb[$jyz][$y - 1], $k + 1, 7))) {

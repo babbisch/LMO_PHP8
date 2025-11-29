@@ -80,9 +80,10 @@ if ($file != '') {
                 if ($datm == 1) {
                     if (is_numeric($mterm[$st - 1][$i][$n])) {
                         $dt = new DateTime();
-            		$dt->setTimeStamp((int)$mterm[$st-1][$i][$n]);
-            		$dum1 = $dt->format($datf));
-            		$dum2 = $dt->format("d.m.");
+                        $dt->setTimeStamp((int) $mterm[$st - 1][$i][$n]);
+                        $dum1 = datefmt_format($fmt, $dt->setTimeStamp((int) $mterm[$st - 1][$i][$n]));
+                        // $dum1 = $dt->format($datf);
+                        $dum2 = $dt->format('d.m.');
                     } else {
                         $dum1 = $dum2 = '';
                     }
@@ -116,7 +117,7 @@ if ($file != '') {
 ?>
           <div class="col-3 text-end d-none d-xl-block"><?php
                     echo $heim1 . $teams[$teama[$st - 1][$i]] . $heim2;
-                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt='V".$teams[$teama[$st - 1][$i]]."' width='24'") . '&nbsp;';
+                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt='V" . $teams[$teama[$st - 1][$i]] . "' width='24'") . '&nbsp;';
 ?>
           </div>
           <div class="col-2 text-end d-xl-none"><?php
@@ -145,7 +146,7 @@ if ($file != '') {
                     }
 ?>
           <div class="col-3 text-start d-none d-xl-block"><?php
-                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt='".$teams[$teamb[$st - 1][$i]]."' width='24'") . '&nbsp;';
+                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt='" . $teams[$teamb[$st - 1][$i]] . "' width='24'") . '&nbsp;';
                     echo $gast1 . $teams[$teamb[$st - 1][$i]] . $gast2;
 ?>
           </div>
@@ -166,8 +167,8 @@ if ($file != '') {
                 $lmo_teamaicon = '';
                 $lmo_teambicon = '';
                 if ($urlb == 1 || $mnote[$st - 1][$i][$n] != '') {
-                    $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt='" . $teams[$teama[$st - 1][$i]] . "");
-                    $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt='" . $teams[$teamb[$st - 1][$i]] . "");
+                    $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt='" . $teams[$teama[$st - 1][$i]] . '');
+                    $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt='" . $teams[$teamb[$st - 1][$i]] . '');
                 }
                 /** Spielbericht verlinken */
                 if ($urlb == 1) {

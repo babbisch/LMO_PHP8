@@ -33,7 +33,7 @@
         if ($st != -4) { ?>
       <li class="nav-item"><a href='<?php echo $addr ?>-4' class="nav-link"><?php echo $text['spieler'][18] ?></a></li><?php
         } else {
-    ?>
+            ?>
       <li class="nav-item active"><a href="#" class="nav-link active"><?php echo $text['spieler'][18] ?></a></li><?php
         }
     }
@@ -49,7 +49,7 @@
         if ($todo != 'tabs') { ?>
     <li class="nav-item"><a href='<?php echo $addb . $stx ?>' class="nav-link"><?php echo $text[410] ?></a></li><?php
         } else {
-    ?>
+            ?>
     <li class="nav-item active"><a href="#" class="nav-link active"><?php echo $text[410] ?></a></li><?php
         }
     }
@@ -58,7 +58,7 @@
         if ($st != -2) { ?>
     <li class="nav-item"><a href='<?php echo $addr ?>-2' class="nav-link"><?php echo $text[101] ?></a></li><?php
         } else {
-    ?>
+            ?>
     <li class="nav-item active"><a href="#" class="nav-link active"><?php echo $text[101] ?></a></li><?php
         }
     }

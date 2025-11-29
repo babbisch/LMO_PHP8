@@ -21,33 +21,20 @@
  */
 ?>
 <div class="container-fluid">
-<?php
-/* Inklusive Heim & Auswärts */
-if ($tabonres == 2) {
-?>
-  <div class="row fw-bold">
-    <div class="col-6"><?php echo $tabdat; ?></div>
-    <div class="col-1"></div>
-    <div class="col-1"><?php echo $text[41]; ?></div>
-    <div class="col-1"><?php echo $text[42]; ?></div>
-  </div><?php
-}
-?>
   <div class="row fw-bold">
     <div class="col-2"></div>
     <div class="col-3"></div>
     <div class="col-1 text-end"><?php echo $text[33]; ?></div>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $text[34]; ?></div><?php
+    <div class="col-1 text-end"><?php echo $text[34]; ?></div><?php
 if ($hidr != 1) {
     ?>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $text[35]; ?></div>
+    <div class="col-1 text-end"><?php echo $text[35]; ?></div>
 <?php } ?>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $text[36]; ?></div>
+    <div class="col-1 text-end"><?php echo $text[36]; ?></div>
 <?php if ($tabpkt == 0) { ?>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $text[37] ?></div>
+    <div class="col-1 text-end"><?php echo $text[37] ?></div>
 <?php } ?>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $text[38]; ?></div>
-    <div class="col-2 text-end d-lg-none"><?php echo $text[38]; ?></div>
+    <div class="col-2 col-md-1 text-end"><?php echo $text[38]; ?></div>
     <div class="col-1 text-end d-none d-lg-block"><?php echo $text[39]; ?></div>
 <?php if ($tabpkt == 1) { ?>
     <div class="col-1 text-end"><?php echo $text[37] ?></div>
@@ -86,8 +73,8 @@ for ($x = 1; $x <= $anzteams; $x++) {
             $label = 'badge bg-danger';
         }
     }
-?>
-  <div class="row">
+    ?>
+  <div class="row align-items-center">
     <div class="col-2 text-end d-none d-lg-block"><span class="<?php echo $label; ?>"><?php echo $x; ?></span>
 <?php
     $y = 'right text-info';
@@ -142,7 +129,7 @@ for ($x = 1; $x <= $anzteams; $x++) {
         }
         // Teamnotizen
         if ($teamn[$i] != '') {
-            $lmo_tabellennotiz .= $teamn[$i];
+            $lmo_tabellennotiz .= "\n" . $teamn[$i];
         }
         $notiz = " <a data-bs-toggle='tooltip' data-bs-placement='right' data-bs-html='true' title='" . $lmo_tabellennotiz . "'><i class='bi bi-info-square'></i></a>";
         $lmo_tabellennotiz = '';
@@ -161,11 +148,11 @@ for ($x = 1; $x <= $anzteams; $x++) {
     ?>
     </div>
     <div class="col-1 text-end"><?php echo $dummy . $spiele[$i] . $dumm2; ?></div>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $dummy . $siege[$i] . $dumm2; ?></div>
+    <div class="col-1 text-end"><?php echo $dummy . $siege[$i] . $dumm2; ?></div>
   <?php if ($hidr != 1) { ?>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $dummy . $unent[$i] . $dumm2; ?></div>
+    <div class="col-1 text-end"><?php echo $dummy . $unent[$i] . $dumm2; ?></div>
   <?php } ?>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $dummy . $nieder[$i] . $dumm2; ?></div>
+    <div class="col-1 text-end"><?php echo $dummy . $nieder[$i] . $dumm2; ?></div>
   <?php if ($tabpkt == 0) { ?>
     <div class="col-1 text-end"><strong><?php echo applyFactor($punkte[$i], $pointsfaktor) ?></strong>
   <?php if ($minus == 2) { ?>
@@ -173,8 +160,7 @@ for ($x = 1; $x <= $anzteams; $x++) {
   <?php } ?>
     </div>
   <?php } ?>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $dummy . applyFactor($etore[$i], $goalfaktor) . $dumm2; ?><?php echo $dummy; ?>:<?php echo $dumm2; ?><?php echo $dummy . applyFactor($atore[$i], $goalfaktor) . $dumm2; ?></div>
-    <div class="col-2 text-end d-lg-none"><?php echo $dummy . applyFactor($etore[$i], $goalfaktor) . $dumm2; ?><?php echo $dummy; ?>:<?php echo $dumm2; ?><?php echo $dummy . applyFactor($atore[$i], $goalfaktor) . $dumm2; ?></div>
+    <div class="col-2 col-md-1 text-end"><?php echo $dummy . applyFactor($etore[$i], $goalfaktor) . $dumm2; ?><?php echo $dummy; ?>:<?php echo $dumm2; ?><?php echo $dummy . applyFactor($atore[$i], $goalfaktor) . $dumm2; ?></div>
     <div class="col-1 text-end d-none d-lg-block"><?php echo $dummy . applyFactor($dtore[$i], $goalfaktor) . $dumm2; ?></div>
   <?php if ($tabpkt == 1) { ?>
     <div class="col-1 text-end"><strong><?php echo applyFactor($punkte[$i], $pointsfaktor) ?>
@@ -208,18 +194,18 @@ if ($einzutoretab == 1) {
 <?php
 if ($einhinrueck == 1 || $einheimausw == 1) {
     if ($tabtype != 0) {
-?><a href="<?php echo $addt1 . '0' ?>"><?php echo $text[40] ?></a><?php } else { echo $text[40]; } ?> <?php
-    if ($tabonres != 2 && $einheimausw == 1) {
+        ?><a href="<?php echo $addt1 . '0' ?>"><?php echo $text[40] ?></a><?php } else { echo $text[40]; } ?> <?php
+    if ($einheimausw == 1) {
         if ($tabtype != 1) {
-?><a href="<?php echo $addt1 . '1' ?>"><?php echo $text[41] ?></a><?php } else { echo $text[41]; } ?> <?php
+            ?><a href="<?php echo $addt1 . '1' ?>"><?php echo $text[41] ?></a><?php } else { echo $text[41]; } ?> <?php
         if ($tabtype != 2) {
-?><a href="<?php echo $addt1 . '2' ?>"><?php echo $text[42] ?></a><?php } else { echo $text[42]; } ?> <?php
+            ?><a href="<?php echo $addt1 . '2' ?>"><?php echo $text[42] ?></a><?php } else { echo $text[42]; } ?> <?php
     }
     if ($einhinrueck == 1) {
         if ($tabtype != 4) {
-?><a href="<?php echo $addt1 . '4' ?>"><?php echo $text[4003] ?></a><?php } else { echo $text[4003]; } ?> <?php
+            ?><a href="<?php echo $addt1 . '4' ?>"><?php echo $text[4003] ?></a><?php } else { echo $text[4003]; } ?> <?php
         if ($tabtype != 3) {
-?><a href="<?php echo $addt1 . '3' ?>"><?php echo $text[4002] ?></a><?php } else {
+            ?><a href="<?php echo $addt1 . '3' ?>"><?php echo $text[4002] ?></a><?php } else {
             echo $text[4002];
         }
     }

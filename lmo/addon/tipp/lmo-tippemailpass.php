@@ -24,7 +24,7 @@ $mail = new PHPMailer(true);
 if (isset($xtippername2)) {
     $dumma = $users = array();
     $pswfile = PATH_TO_ADDONDIR . '/tipp/' . $tipp_tippauthtxt;
-    
+
     $datei = fopen($pswfile, 'rb');
     while ($datei && !feof($datei)) {
         $zeile = fgets($datei, 1000);
@@ -36,7 +36,7 @@ if (isset($xtippername2)) {
         }
     }
     fclose($datei);
-    
+
     $xtipperpass = substr(md5(uniqid(rand())), 0, rand(10, 20));
 
     $dumma = file($pswfile);
@@ -62,7 +62,7 @@ if (isset($xtippername2)) {
                 $mail->ClearAllRecipients();
                 $mail->ClearReplyTos();
             }
-            //Neues PAsswort speichern
+            // Neues PAsswort speichern
             $dummb[1] = password_hash($xtipperpass, PASSWORD_BCRYPT);
             $users[$i] = $dummb[0] . '|' . $dummb[1] . '|' . $dummb[2] . '|' . $dummb[3] . '|' . $dummb[4] . '|' . $dummb[5] . '|' . $dummb[6] . '|' . $dummb[7] . '|' . $dummb[8] . '|' . $dummb[9] . '|' . $dummb[10] . '|EOL';
             require (PATH_TO_ADDONDIR . '/tipp/lmo-tippsaveauth.php');

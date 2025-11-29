@@ -219,7 +219,7 @@ class partie
     function datumString($format = 'd.m.Y')
     {
         $dt = new DateTime();
-        $dt->setTimeStamp((int)$this->zeit);
+        $dt->setTimeStamp((int) $this->zeit);
         $str = $dt->format($format);
         return $str;
     }
@@ -235,7 +235,7 @@ class partie
     function zeitString($format = 'H:i')
     {
         $dt = new DateTime();
-        $dt->setTimeStamp((int)$this->zeit);
+        $dt->setTimeStamp((int) $this->zeit);
         $str = $dt->format($format);
         return $str;
     }
@@ -270,7 +270,7 @@ class partie
     function showDetails()
     {
         echo $this->heim->name . ' - ' . $this->gast->name;
-        echo ' Anpfiff: ' . $this->zeitString() .  'Uhr';
+        echo ' Anpfiff: ' . $this->zeitString() . 'Uhr';
         echo ' Ergebnis: ' . $this->hTore . ' - ' . $this->gTore . "\n";
     }
 

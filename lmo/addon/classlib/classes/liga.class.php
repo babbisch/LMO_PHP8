@@ -1,4 +1,4 @@
-<?PHP
+<?php
 
 /**
  * Liga
@@ -615,7 +615,7 @@ class liga
                         $theim = $this->getIniData('GA', $iniData[$roundSektion][$pCounter], ++$partienNumber);
                         $tgast = $this->getIniData('GB', $iniData[$roundSektion][$pCounter], $partienNumber);
                         $notiz = $this->getIniData('NT', $iniData[$roundSektion][$pCounter], $partienNumber);
-                        $zeit  = $this->getIniData('AT', $iniData[$roundSektion][$pCounter], $partienNumber);
+                        $zeit = $this->getIniData('AT', $iniData[$roundSektion][$pCounter], $partienNumber);
 
                         if (!$spielNr = $this->getIniData('SpNr', $iniData[$roundSektion][$pCounter], $partienNumber)) {
                             $spielNr = strval($pCounter) . strval($partienNumber);

@@ -97,7 +97,8 @@ if (!empty($file) && file_exists(PATH_TO_LMO . '/' . $dirliga . $file) && check_
                                 $favteam = $wert;
                                 break;
                             case 'selTeam':
-                                $selteam = $wert;
+                                if (!isset($selteam))
+                                    $selteam = $wert;
                                 break;
                             case 'ticker':
                                 $nticker = $wert;
@@ -513,11 +514,9 @@ if (!empty($file) && file_exists(PATH_TO_LMO . '/' . $dirliga . $file) && check_
             $teamk[0] = '___';  // $a=mictime();
             for ($i = 1; $i <= count($daten); $i++) {
                 $dum = explode('|', $daten[$i - 1]);
-                // if($nticker==1){
                 if (($dum[0] == 'News') && ($dum[1] != 'NC')) {
                     $nlines[] = stripslashes($dum[2]);
                 }
-                // }
 
                 if ($dum[0] == 'Teams') {
                     $teams[$dum[1]] = stripslashes($dum[2]);

@@ -61,7 +61,7 @@ if ($_SESSION['lmouserok'] == 2) {
     }
     array_splice($users, 1, 1);
     include (PATH_TO_ADDONDIR . '/tipp/lmo-admintippmenu.php');
-?>
+    ?>
   
 <div class="container">
   <div class="row">
@@ -134,27 +134,27 @@ if ($_SESSION['lmouserok'] == 2) {
         if ($tipper_sort_direction == 'desc')
             $tab0 = array_reverse($tab0);
         for ($x = 0; $x < $anztipper - 1; $x++) {
-?>
+            ?>
         <div class="row p-1">
           <div class="col-1"><?php
             if ($tab0[$x]['freig'] == '5') {
-?>
+                ?>
             <i class="bi bi-check-circle text-success"></i><?php
             } else {
-?>
+                ?>
             <i class="bi bi-x-circle text-danger"></i><?php
             }
             echo '&nbsp;' . $tab0[$x]['id'];
-?>
+            ?>
           </div>
           <div class="col-2"><?php
             if ($tab0[$x]['email'] != '') {
-?>
+                ?>
             <a href="mailto:<?php echo $tab0[$x]['email']; ?>"><?php echo $tab0[$x]['nick']; ?></a><?php
             } else {
                 echo $tab0[$x]['nick'];
             }
-?> </div>
+            ?> </div>
           <div class="col-2"><?php echo $tab0[$x]['name']; ?></div>
           <div class="col-2"><?php echo $tab0[$x]['team']; ?></div>
           <div class="col-2"><?php if ($tab0[$x]['ltipp'] > 0) { echo date('d.m.Y H:i', $tab0[$x]['ltipp']); } ?></div>    

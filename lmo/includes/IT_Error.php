@@ -17,37 +17,33 @@
 //
 // $Id$
 
-//jokerlmo: Changed include path
-require_once(PATH_TO_LMO.'/includes/PEAR.php');
-
+// jokerlmo: Changed include path
+require_once (PATH_TO_LMO . '/includes/PEAR.php');
 
 /**
-* IT[X] Error class
-*
-* @package IT[X]
-*/
-class IT_Error extends PEAR_Error {
+ * IT[X] Error class
+ *
+ * @package IT[X]
+ */
+class IT_Error extends PEAR_Error
+{
+    /**
+     * Prefix of all error messages.
+     *
+     * @var  string
+     */
+    var $error_message_prefix = 'IntegratedTemplate Error: ';
 
-
-  /**
-  * Prefix of all error messages.
-  *
-  * @var  string
-  */
-  var $error_message_prefix = "IntegratedTemplate Error: ";
-
-  /**
-  * Creates an cache error object.
-  *
-  * @param  string  error message
-  * @param  string  file where the error occured
-  * @param  string  linenumber where the error occured
-  */
-  function IT_Error($msg, $file = __FILE__, $line = __LINE__) {
-
-    $this->PEAR_Error(sprintf("%s [%s on line %d].", $msg, $file, $line));
-
-  } // end func IT_Error
-
-} // end class IT_Error
+    /**
+     * Creates an cache error object.
+     *
+     * @param  string  error message
+     * @param  string  file where the error occured
+     * @param  string  linenumber where the error occured
+     */
+    function IT_Error($msg, $file = __FILE__, $line = __LINE__)
+    {
+        $this->PEAR_Error(sprintf('%s [%s on line %d].', $msg, $file, $line));
+    }  // end func IT_Error
+}  // end class IT_Error
 ?>

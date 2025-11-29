@@ -49,18 +49,18 @@ if ($file != '') {
     $hoy = 0;
     for ($a = 1; $a <= $anzteams; $a++) {
         if ($tabtype == 3 || $newtabtype == 3) {
-            $hoy = ($anzst / 2);
+            $hoy = intval($anzst / 2);
         }
         if ($tabtype == 4 || $newtabtype == 4) {
-            $endtab = ($anzst / 2);
+            $endtab = intval($anzst / 2);
         }
         for ($j = $hoy; $j < $endtab; $j++) {
             for ($i = 0; $i < $anzsp; $i++) {
                 if ($tabtype == 3 || $newtabtype == 3) {
-                    $hoy = ($anzst / 2);
+                    $hoy = intval($anzst / 2);
                 }
                 if ($tabtype == 4 || $newtabtype == 4) {
-                    $endtab = ($anzst / 2);
+                    $endtab = intval($anzst / 2);
                 }
                 if (($goala[$j][$i] != '_') && ($goalb[$j][$i] != '_') && ((($tabtype == 0 or $tabtype == 3 or $tabtype == 4) && (($a == $teama[$j][$i]) || ($a == $teamb[$j][$i]))) || (($tabtype == 1) && ($a == $teama[$j][$i])) || (($tabtype == 2) && ($a == $teamb[$j][$i])))) {
                     if ($stt < $j + 1) {

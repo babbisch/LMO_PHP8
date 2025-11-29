@@ -69,7 +69,7 @@ if ($file != '') {
     $addb = $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=tabs&amp;file=' . $file . '&amp;st=';
 
     include (PATH_TO_LMO . '/lmo-adminsubnavi.php');
-?>
+    ?>
 
 <div class="container">
   <div class="row p-3">
@@ -188,7 +188,7 @@ if ($file != '') {
             ?>
             <div class="col-1"><strong><?php echo applyFactor($punkte[$i], $pointsfaktor) ?></strong></div><?php
             if ($minus == 2) {
-?>
+                ?>
             <div class="col-1"><strong>:</strong></div>
             <div class="col-1"><strong><?php echo applyFactor($negativ[$i], $pointsfaktor) ?></strong></div><?php
             }
@@ -200,10 +200,10 @@ if ($file != '') {
             ?>
             <div class="col-1"><strong><?php echo applyFactor($punkte[$i], $pointsfaktor) ?><?php
             if ($minus == 2) {
-?>
+                ?>
             :<?php echo applyFactor($negativ[$i], $pointsfaktor) ?><?php
             }
-?>
+            ?>
       </strong></div><?php
         }
         ?>

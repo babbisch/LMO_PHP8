@@ -72,7 +72,7 @@ $lang = array(
         'CHECK_AGAIN' => 'Neu prüfen',
         'ERROR_WRONG_PATH' => 'Der Pfad ist nicht korrekt!',
         'ERROR_CONFIRM' => 'Es sind noch Fehler vorhanden! Der LMO wird NICHT funktionieren. Trotzdem fortfahren?',
-        'ERROR_PHP' => 'Dieser LMO benötigt mindestens PHP '.$min_php_version,
+        'ERROR_PHP' => 'Dieser LMO benötigt mindestens PHP ' . $min_php_version,
         'STEP0' => 'FTP-Zugangsdaten',
         'STEP0_DESCRIPTION' => 'Um den LMO vollautomatisch zu installieren, ist ein Zugang per FTP notwendig.
          Dazu müssen Sie die Logindaten für Ihren FTP-Zugang angeben. Die Daten werden vom LMO
@@ -130,7 +130,7 @@ $lang = array(
         'CHECK_AGAIN' => 'Test again',
         'ERROR_WRONG_PATH' => 'Incorrect path!',
         'ERROR_CONFIRM' => 'There are still errors left! Proceed?',
-        'ERROR_PHP' => 'This LMO requires at least PHP '.$min_php_version,
+        'ERROR_PHP' => 'This LMO requires at least PHP ' . $min_php_version,
         'STEP0' => 'FTP login data',
         'STEP0_DESCRIPTION' => 'To install the LMO automaticly you must insert your FTP login data.
         The data will not saved nor published. If you want to install manually use
@@ -185,7 +185,7 @@ $lang = array(
         'CHECK_AGAIN' => 'Vérifier de nouveau',
         'ERROR_WRONG_PATH' => "Le chemin n'est pas correct!",
         'ERROR_CONFIRM' => 'Il y a encore des erreurs! Désirez-vous quand même continuer?',
-        'ERROR_PHP' => 'Ce LMO nécessite au moins PHP '.$min_php_version,
+        'ERROR_PHP' => 'Ce LMO nécessite au moins PHP ' . $min_php_version,
         'STEP0' => "Données d'accès FTP",
         'STEP0_DESCRIPTION' => "Pour pouvoir installer le LMO automatiquement, un accès FTP est nécessaire.
          Pour cela vous devez entrer les données d'accès de votre serveur FTP. Ces informations ne seront pas sauvegarder ou utiliser pour d'autres fins dans le LMO.
@@ -238,7 +238,7 @@ $lang = array(
         'CHECK_AGAIN' => 'Intenta otra vez',
         'ERROR_WRONG_PATH' => 'Directorio incorrecto!',
         'ERROR_CONFIRM' => 'Aun hay errores! Continuar?',
-        'ERROR_PHP' => 'Este LMO requiere al menos PHP '.$min_php_version,
+        'ERROR_PHP' => 'Este LMO requiere al menos PHP ' . $min_php_version,
         'STEP0' => 'Datos de conexión FTP',
         'STEP0_DESCRIPTION' => 'Para instalar LMO automaticamente debe insertar sus datos de la conexión FTP. Datos no guardados ni publicados. Si desea instalar manualmente use <a href="' . $_SERVER['PHP_SELF'] . '?step=2&amp;man=1">este link</a>.',
         'STEP0_FTP_SERVER' => 'Dirección servidor FTP',
@@ -272,22 +272,6 @@ $lang = array(
 );
 
 /* Configbereich Ende */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if (!empty($_GET['debug']) || !empty($_SESSION['debug'])) {
     $_SESSION['debug'] = true;
@@ -457,11 +441,11 @@ if ($lmo_install_step == 3) {
       <div class="col"><?php
 echo $patherror;
 if ($lmo_install_step == 0) {
-?>
+    ?>
   <?php
     if (!$_SESSION['man'] && !isset($_REQUEST['man'])) {
         if (version_compare(PHP_VERSION, $min_php_version, '<')) {
-?>
+            ?>
          <div class="alert alert-danger" role="alert">
              <h2 class="alert-heading"><?php echo $lang[$userlang]['ERROR'] ?></h2>
              <?php echo $lang[$userlang]['ERROR_PHP'];
@@ -513,7 +497,7 @@ if ($lmo_install_step == 0) {
 }
 
 if ($lmo_install_step == 1) {
-?>
+    ?>
   <div class="row">
     <div class="col"><h2><?php echo $lang[$userlang]['STEP1'] ?></h2></div>
   </div>
@@ -558,7 +542,7 @@ if ($lmo_install_step == 2) {
     <div class="col"><h2><?php echo $lang[$userlang]['STEP2'] ?></h2></div>
   </div><?php
     if ($_SESSION['man']) {
-?>
+        ?>
    <div class="row">
      <div class="col"><?php echo $lang[$userlang]['STEP2_MANUAL'] ?></div>
    </div><?php
@@ -623,7 +607,7 @@ if ($lmo_install_step == 2) {
 }
 
 if ($lmo_install_step == 3) {
-?>
+    ?>
   <div class="row p-2">
     <div class="col"><h2><?php echo $lang[$userlang]['STEP3'] ?></h2></div>
   </div>
@@ -694,7 +678,7 @@ if ($lmo_install_step == 3) {
 }
 
 if ($lmo_install_step == 4) {
-?>
+    ?>
   <div class="row">
     <div class="col"><h2><?php echo $lang[$userlang]['STEP4'] ?></h2></div>
   </div>

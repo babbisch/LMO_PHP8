@@ -71,8 +71,8 @@ while ($files = readdir($verz)) {
                     }
                     // Alle benötigten Werte gefunden -> Abbruch
                     if ($ligadatei[$liga_counter]['liga_name'] != '' &&
-                            $ligadatei[$liga_counter]['aktueller_spieltag'] != '' &&
-                            $ligadatei[$liga_counter]['anz_teams'] != '')
+                        $ligadatei[$liga_counter]['aktueller_spieltag'] != '' &&
+                        $ligadatei[$liga_counter]['anz_teams'] != '')
                         break;
                 }
             }
@@ -126,10 +126,10 @@ if (isset($_SESSION['liga_sort_direction']) && $_SESSION['liga_sort_direction'] 
 		<div class="col-4 offset-1 text-start d-none d-lg-block"><b><?php echo $text[529]; ?></b></div>
 		<div class="col text-start d-lg-none"><b><?php echo $text[529]; ?></b></div>
 		<?php
-            if (isset($_SESSION['lmouserok']) && $_SESSION['lmouserok'] > 0) {
-        ?>
+        if (isset($_SESSION['lmouserok']) && $_SESSION['lmouserok'] > 0) {
+            ?>
 		<div class="col-2 text-start d-none d-lg-block"><b><?php echo $text[531]; ?></b></div><?php
-            }
+        }
         ?>
 		<div class="col-2 text-start d-none d-lg-block"><b><?php echo $text[2] . '/' . $text[370]; ?></b></div>
 		<div class="col-2 text-start d-none d-lg-block"><b><?php echo $text[530]; ?></b></div>
@@ -151,9 +151,9 @@ if (isset($_SESSION['liga_sort_direction']) && $_SESSION['liga_sort_direction'] 
             echo ' ' . $liga['aktueller_spieltag'];
         }
         ?></div>
-		<div class="col-2 text-start d-none d-lg-block">
-			<?php echo datefmt_format($fmt, filemtime(PATH_TO_LMO . '/' . $dirliga . $subdir . $liga['file_name'])) ?>
-		</div>
+	        <div class="col-2 text-start d-none d-lg-block">
+	        	<?php echo datefmt_format($fmt, filemtime(PATH_TO_LMO . '/' . $dirliga . $subdir . $liga['file_name'])) ?>
+	        </div>
 	</div><?php
 }
 if ($liga_counter == 0) {

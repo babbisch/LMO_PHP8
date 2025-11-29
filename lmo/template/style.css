@@ -41,38 +41,40 @@
 
 .col-cross {
     flex: 0 0 5%;
-    max-width: 5%; 
-    padding-right: 0;
 }
 
 .col-cross.bg {
     background-color: var(--bs-secondary-bg);
 }
 
+.col-cross.sel {
+    background-color: var(--bs-gray-300);
+}
+
 a span.popup, a:link span.popup{
-	display: none;
+    display: none;
 }
 
 a.none {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover span.popup{
-  display: inline;
-  font-size:80%;
-  position: absolute;
-  background: #eee;
-  width: 15em;
-  margin: 1.5em 0 0 -4em;  
-  padding: 0.2em;
-  z-index: 999;
-  white-space:normal;
-  text-decoration:none !important;
-  text-align:left;
+    display: inline;
+    font-size:80%;
+    position: absolute;
+    background: #eee;
+    width: 20em;
+    margin: 2.5em 0 0 -4em;  
+    padding: 0.5em;
+    z-index: 999;
+    white-space:normal;
+    text-decoration:none !important;
+    text-align:left;
 }
 
 a:hover>span.popup {
-  width:auto;
-  max-width:15em;
-  \-moz-border-radius: 8px;
+    width:auto;
+    max-width:15em;
+    \-moz-border-radius: 8px;
 }

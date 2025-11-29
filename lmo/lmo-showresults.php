@@ -43,18 +43,18 @@ $heim1 = $heim2 = $gast1 = $gast2 = '';
 foreach ($datsort as $key => $val) {
     $i = $key;
     if (($teama[$st - 1][$i] > 0) && ($teamb[$st - 1][$i] > 0)) {
-?>
+        ?>
   <div class="row"><?php
         if ($datm == 1) {
             if (is_numeric($mterm[$st - 1][$i])) {
-        	$dt = new DateTime();
-	        $dt->setTimeStamp((int)$mterm[$st-1][$i]);
-	        $dum1 = datefmt_format($fmt, $dt->setTimeStamp((int)$mterm[$st-1][$i]));
-	        $dum2 = $dt->format("d.m.");
+                $dt = new DateTime();
+                $dt->setTimeStamp((int) $mterm[$st - 1][$i]);
+                $dum1 = datefmt_format($fmt, $dt->setTimeStamp((int) $mterm[$st - 1][$i]));
+                $dum2 = $dt->format('d.m.');
             } else {
                 $dum1 = $dum2 = '';
             }
-?>
+            ?>
     <div class="col-2 text-end d-none d-lg-block"><?php echo $dum1; ?></div>
     <div class="col-2 text-end d-lg-none"><?php echo $dum2; ?></div><?php
         }
@@ -77,49 +77,49 @@ foreach ($datsort as $key => $val) {
         if ($plan == '1') {
             $heim2 .= '</a>';
         }
-?>
+        ?>
     <div class="col-3 text-end d-none d-lg-block">
     <?php
-        echo $heim1 . $teams[$teama[$st - 1][$i]] . $heim2;
-        echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt=''");
+    echo $heim1 . $teams[$teama[$st - 1][$i]] . $heim2;
+    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt=''");
     ?>
     </div>
     <div class="col-3 text-end d-lg-none">
     <?php
-        echo $heim1 . $teamk[$teama[$st - 1][$i]] . $heim2;
+    echo $heim1 . $teamk[$teama[$st - 1][$i]] . $heim2;
     ?>
     </div>
     <?php
-        if ($plan == '1') {
-            $gast1 = '<a href="' . $addp . $teamb[$st - 1][$i] . "\" data-bs-toggle='tooltip' data-bs-placement='top' title=\"" . $text[269] . '">';
-        }
-        if (($favteam > 0) && ($favteam == $teamb[$st - 1][$i])) {
-            $gast1 .= '<strong>';
-        }
-        if (($favteam > 0) && ($favteam == $teamb[$st - 1][$i])) {
-            $gast2 = '</strong>';
-        }
-        if ($plan == '1') {
-            $gast2 .= '</a>';
-        }
+    if ($plan == '1') {
+        $gast1 = '<a href="' . $addp . $teamb[$st - 1][$i] . "\" data-bs-toggle='tooltip' data-bs-placement='top' title=\"" . $text[269] . '">';
+    }
+    if (($favteam > 0) && ($favteam == $teamb[$st - 1][$i])) {
+        $gast1 .= '<strong>';
+    }
+    if (($favteam > 0) && ($favteam == $teamb[$st - 1][$i])) {
+        $gast2 = '</strong>';
+    }
+    if ($plan == '1') {
+        $gast2 .= '</a>';
+    }
     ?>
     <div class="col-3 text-start d-none d-lg-block">- &nbsp; &nbsp;
     <?php
-        echo HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt=''") . "&nbsp;";
-        echo $gast1 . $teams[$teamb[$st - 1][$i]] . $gast2;
+    echo HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt=''") . '&nbsp;';
+    echo $gast1 . $teams[$teamb[$st - 1][$i]] . $gast2;
     ?>
     </div>
     <div class="col-3 text-start d-lg-none"> -&nbsp;&nbsp;
     <?php
-        echo $gast1 . $teamk[$teamb[$st - 1][$i]] . $gast2;
+    echo $gast1 . $teamk[$teamb[$st - 1][$i]] . $gast2;
     ?>  
     </div>  
     <div class="col-2 col-auto"><?php echo applyFactor($goala[$st - 1][$i], $goalfaktor); ?> : <?php echo applyFactor($goalb[$st - 1][$i], $goalfaktor); ?></div>
     <?php
-        if ($spez == 1) {
-    ?>
+    if ($spez == 1) {
+        ?>
     <?php echo $mspez[$st - 1][$i]; ?><?php
-        }
+    }
     ?>
     <div class="col-2"><?php
         /** Mannschaftsicons finden */
@@ -168,7 +168,7 @@ foreach ($datsort as $key => $val) {
         } else {
             echo " <img src='" . URL_TO_IMGDIR . "/blank.png' width='1' border='0' alt=''>";
         }
-?></div>
+        ?></div>
   </div><?php }
 }
 
@@ -187,7 +187,7 @@ if ($einzutore == 1) { ?>
 }
 
 if ($einspielfrei == 1) {
-?>
+    ?>
   <div class="row">  
     <div class="col text-start"><?php
     // if (($anzteams-($anzst/2+1)) == 0) {
@@ -217,7 +217,7 @@ if ($einspielfrei == 1) {
             echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$hoy8], '', " alt=''");
         }
     }
-?></div> 
+    ?></div> 
   </div><?php
 }
 ?>

@@ -2687,7 +2687,8 @@ class Cpdf
             for ($i = $this->nStateStack; $i >= 1; --$i) {
                 $this->restoreState($i);
             }
-        }++$this->numObj;
+        }
+        ++$this->numObj;
         if ($insert) {
             // the id from the ezPdf class is the od of the contents of the page, not the page object itself
             // query that object to find the parent
@@ -2751,7 +2752,8 @@ class Cpdf
             $content .= $cont;
             $xref[] = $pos;
             $pos += strlen($cont);
-        }++$pos;
+        }
+        ++$pos;
         $content .= "\nxref\n0 " . (count($xref) + 1) . "\n0000000000 65535 f \n";
         foreach ($xref as $p) {
             $content .= substr('0000000000', 0, 10 - strlen($p + 1)) . ($p + 1) . " 00000 n \n";
