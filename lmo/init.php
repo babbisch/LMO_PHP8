@@ -28,7 +28,7 @@ foreach ($get as $value) {
     if (str_contains($value, 'script') || str_contains($value, '%'))
         die('XSS-Scripting detected');
 }
-include ('includes/kint.phar');
+
 $fp = fopen(__DIR__ . '/logs/' . date('Ymd', time()) . '.txt', 'a');
 if ($fp) {
     fputs($fp, 'Date: ' . date('d/m/Y h:i:s a', time()) . "\n");
