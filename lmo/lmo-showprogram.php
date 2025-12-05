@@ -34,7 +34,7 @@ if ($file != '') {
             ?>
             <p><a href="<?php echo $addp . $i ?>" data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $teams[$i] ?>"><?php echo HTML_smallTeamIcon($file, $teams[$i], " title='$teams[$i]' style='vertical-align: middle;'", $teamk[$i]); ?></a></p><?php
         } else {
-            echo '<p>' . HTML_smallTeamIcon($file, $teams[$i], " title='$teams[$i]' style='vertical-align: middle;'") . '</p>';
+            echo '<p>' . HTML_smallTeamIcon($file, $teams[$i], " title='$teams[$i]' style='vertical-align: middle;'", $teamk[$i]) . '</p>';
         }
     }
     ?>
