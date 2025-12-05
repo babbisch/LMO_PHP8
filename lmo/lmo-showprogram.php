@@ -112,8 +112,8 @@ if ($file != '') {
                     $lmo_teamaicon = '';
                     $lmo_teambicon = '';
                     if ($urlb == 1 || $mnote[$j][$i] != '' || $msieg[$j][$i] > 0) {
-                        $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$j][$i]], " style='vertical-align: middle;');
-                        $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$j][$i]], " style='vertical-align: middle;');
+                        $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$j][$i]], " style='vertical-align: middle;'");
+                        $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$j][$i]], " style='vertical-align: middle;'");
                     }
                     /** Spielbericht verlinken */
                     if ($urlb == 1) {
