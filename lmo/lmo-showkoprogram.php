@@ -33,11 +33,11 @@ if ($file != '') {
         if ($i != $selteam) {
             ?>
       <a href="<?php echo $addp . $i ?>" data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text[23] . ' ' . $teams[$i] ?>">
-          <?php echo HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' title='$teams[$i]'", " alt='" . $teamk[$i] . "'"); ?>
+          <?php echo HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' title='$teams[$i]'", $teamk[$i]); ?>
       </a>
     <?php
         } else {
-            echo HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' title='$teams[$i]'", " alt='" . $teamk[$i] . "'");
+            echo HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' title='$teams[$i]'", $teamk[$i]);
         }
         echo '<br>';
     }

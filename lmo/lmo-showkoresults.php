@@ -117,7 +117,7 @@ if ($file != '') {
 ?>
           <div class="col-3 text-end d-none d-xl-block"><?php
                     echo $heim1 . $teams[$teama[$st - 1][$i]] . $heim2;
-                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt='V" . $teams[$teama[$st - 1][$i]] . "' width='24'") . '&nbsp;';
+                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " title='" . $teams[$teama[$st - 1][$i]] . "' width='24'") . '&nbsp;';
 ?>
           </div>
           <div class="col-2 text-end d-xl-none"><?php
@@ -146,7 +146,7 @@ if ($file != '') {
                     }
 ?>
           <div class="col-3 text-start d-none d-xl-block"><?php
-                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt='" . $teams[$teamb[$st - 1][$i]] . "' width='24'") . '&nbsp;';
+                    echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " title='" . $teams[$teamb[$st - 1][$i]] . "' width='24'") . '&nbsp;';
                     echo $gast1 . $teams[$teamb[$st - 1][$i]] . $gast2;
 ?>
           </div>
@@ -167,8 +167,8 @@ if ($file != '') {
                 $lmo_teamaicon = '';
                 $lmo_teambicon = '';
                 if ($urlb == 1 || $mnote[$st - 1][$i][$n] != '') {
-                    $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt='" . $teams[$teama[$st - 1][$i]] . '');
-                    $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt='" . $teams[$teamb[$st - 1][$i]] . '');
+                    $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " title='" . $teams[$teama[$st - 1][$i]] . '');
+                    $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " title='" . $teams[$teamb[$st - 1][$i]] . '');
                 }
                 /** Spielbericht verlinken */
                 if ($urlb == 1) {

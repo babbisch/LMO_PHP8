@@ -132,7 +132,7 @@ if (is_readable($filename) && $filepointer = fopen($filename, 'r+b')) {
             }
             ?>
       </div>
-      <div class="col-1"><?php echo HTML_smallTeamIcon($file, $teams[$i], " alt=''"); ?></tdivd>
+      <div class="col-1"><?php echo HTML_smallTeamIcon($file, $teams[$i], " alt=''"); ?></div>
     </div><?php
         }
     }
@@ -217,7 +217,7 @@ if (is_readable($filename) && $filepointer = fopen($filename, 'r+b')) {
             if ($spalten[$j2] == $text['spieler'][25]) {
                 $pos = array_search($data[$j1][$j2], $teamu);
 
-                echo HTML_smallTeamIcon($file, $data[$j1][$j2]);
+                echo HTML_smallTeamIcon($file, $data[$j1][$j2], '');
 
                 if (!empty($pos) && $teamu[$pos] != '' && $urlt == 1) {
                     echo '<a href="' . $teamu[$pos] . '" target="_blank" title="' . $text[46] . "\"><i class='bi bi-box-arrow-up-right text-warning' title='" . $text[564] . "'></i></a>";

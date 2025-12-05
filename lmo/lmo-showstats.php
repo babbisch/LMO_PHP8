@@ -37,11 +37,11 @@ if ($file != '') {
             ?>
             <p>
               <a href="<?php echo $adds . $i ?>&amp;stat2=<?php echo $show_stat2 ?>" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' title="<?php echo $text[57] . '<br>' . $teams[$i] ?>">
-                <?php echo HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' title='$teams[$i]'", "$teamk[$i]"); ?>
+                <?php echo HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' title='$teams[$i]'", $teamk[$i]); ?>
               </a>
             </p><?php
         } else {
-            echo '<p>' . HTML_smallTeamIcon($file, $teams[$show_stat1], " style='vertical-align: middle;' title='$teams[$show_stat1]'", "$teamk[$show_stat1]") . '</p>';
+            echo '<p>' . HTML_smallTeamIcon($file, $teams[$show_stat1], " style='vertical-align: middle;' title='$teams[$show_stat1]'", $teamk[$show_stat1]) . '</p>';
         }
     }
     ?>
@@ -199,11 +199,11 @@ if ($file != '') {
             if ($i != $show_stat2) {
                 ?><p>
                    <a href="<?php echo $adds . $show_stat1 ?>&amp;stat2=<?php echo $i ?>" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' title="<?php echo $text[58] . '<br>' . $teams[$i] ?>">
-                       <?php echo HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' alt='$teams[$i]'", "$teamk[$i]") ?>
+                       <?php echo HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' alt='$teams[$i]'", $teamk[$i]) ?>
                    </a>
                  </p><?php
             } else {
-                echo '<p>' . HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' title='$teams[$i]'", "$teamk[$i]") . '</p>';
+                echo '<p>' . HTML_smallTeamIcon($file, $teams[$i], " style='vertical-align: middle;' title='$teams[$i]'", $teamk[$i]) . '</p>';
             }
         }
         ?>

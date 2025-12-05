@@ -126,8 +126,8 @@ foreach ($datsort as $key => $val) {
         $lmo_teamaicon = '';
         $lmo_teambicon = '';
         if ($urlb == 1 || $mnote[$st - 1][$i] != '' || $msieg[$st - 1][$i] > 0) {
-            $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " style='vertical-align: middle;'", " alt=''");
-            $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " style='vertical-align: middle;'", " alt=''");
+            $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " style='vertical-align: middle;'");
+            $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " style='vertical-align: middle;'");
         }
         /** Spielbericht verlinken */
         if ($urlb == 1) {
@@ -214,7 +214,7 @@ if ($einspielfrei == 1) {
                 echo '</a>';
             }
 
-            echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$hoy8], '', " alt=''");
+            echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$hoy8], " alt=''");
         }
     }
     ?></div> 

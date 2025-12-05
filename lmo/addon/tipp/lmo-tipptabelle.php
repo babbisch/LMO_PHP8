@@ -204,7 +204,7 @@ if ($file != '' && $tipp_tipptabelle1 == 1) {
             echo '<td></td>';
         }
         ?>
-          <td><?php echo HTML_smallTeamIcon($file, $teams[$i], '', " alt=''"); ?></td>
+          <td><?php echo HTML_smallTeamIcon($file, $teams[$i], ''); ?></td>
           <td> <?php
         echo $dummy . $teams[$i] . $dumm2;
         if (($teamu[$i] != '') && ($urlt == 1)) {
@@ -216,7 +216,7 @@ if ($file != '' && $tipp_tipptabelle1 == 1) {
           <td><?php
 
         if ($teamn[$i] != '' || $strafp[$i] != 0 || $strafm[$i] != 0 || $torkorrektur1[$i] != 0 || $torkorrektur2[$i] != 0) {
-            $lmo_tabellennotiz = HTML_smallTeamIcon($file, $teams[$i], '', " alt=''");
+            $lmo_tabellennotiz = HTML_smallTeamIcon($file, $teams[$i], '');
 
             /**
              * Notizen anzeigen
