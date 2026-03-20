@@ -22,6 +22,8 @@
 // First line of XSS-Identification
 if (!array_key_exists('HTTP_USER_AGENT', $_SERVER))
     exit;
+if (str_contains($_SERVER['PATH_INFO'], ">") || str_contains($_SERVER['PATH_INFO'], "%"))
+	die('XSS-Scripting detected');
 $get = array();
 $get = $_GET;
 foreach ($get as $value) {
