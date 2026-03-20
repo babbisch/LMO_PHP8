@@ -34,7 +34,7 @@ if ($file != '') {
             ?>
             <p><a href="<?php echo $addp . $i ?>" data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $teams[$i] ?>"><?php echo HTML_smallTeamIcon($file, $teams[$i], " title='$teams[$i]' style='vertical-align: middle;'", $teamk[$i]); ?></a></p><?php
         } else {
-            echo '<p>' . HTML_smallTeamIcon($file, $teams[$i], " title='$teams[$i]' style='vertical-align: middle;'") . '</p>';
+            echo '<p>' . HTML_smallTeamIcon($file, $teams[$i], " title='$teams[$i]' style='vertical-align: middle;'", $teamk[$i]) . '</p>';
         }
     }
     ?>
@@ -112,8 +112,8 @@ if ($file != '') {
                     $lmo_teamaicon = '';
                     $lmo_teambicon = '';
                     if ($urlb == 1 || $mnote[$j][$i] != '' || $msieg[$j][$i] > 0) {
-                        $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$j][$i]], " style='vertical-align: middle;');
-                        $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$j][$i]], " style='vertical-align: middle;');
+                        $lmo_teamaicon = HTML_smallTeamIcon($file, $teams[$teama[$j][$i]], " style='vertical-align: middle;'");
+                        $lmo_teambicon = HTML_smallTeamIcon($file, $teams[$teamb[$j][$i]], " style='vertical-align: middle;'");
                     }
                     /** Spielbericht verlinken */
                     if ($urlb == 1) {

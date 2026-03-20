@@ -307,7 +307,7 @@ if ($eintippspiel == 1) {
         $output_tippspiel .= $action != 'tipp' ? "<li class='nav-item'><a href='{$addm}tipp' class='nav-link'>{$text['tipp'][0]}</a></li>" : "<li class='nav-item active pull-right'><a href='#' class='nav-link active'>{$text['tipp'][0]}</a></li>";
     }
 }
-$output_infolink = '<acronym title="Liga Manager Online for PHP 8.x">LMO</acronym> 4 for PHP8 - <a target="_blank" href="//github.com/henshingly/lmo_php8" title="' . $text[580] . '">' . $text[55] . '</a>';
+$output_infolink = '<acronym title="Liga Manager Online for PHP 8.x">LMO</acronym> 4 for PHP8 - <a target="_blank" href="//github.com/henshingly/lmo_php8" title="' . $text[54] . '">' . $text[55] . '</a>';
 if (!array_key_exists('Infolink', $template->blockvariables['__global__'])) {
     trigger_error("'Infolink' is missing in template'", E_USER_WARNING);
     echo $output_infolink;
