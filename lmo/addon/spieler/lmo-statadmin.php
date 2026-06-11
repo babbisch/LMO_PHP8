@@ -106,7 +106,7 @@ if (isset($file) && $file != '') {
             $filepointer = fopen($filename, 'w+b');
         $spalten = array();
         $data = array();
-        $spalten = fgetcsv($filepointer, 1000, '#');  // Zeile mit Spaltenbezeichnern
+        $spalten = fgetcsv($filepointer, 1000, '#', '"', '\\');  // Zeile mit Spaltenbezeichnern
         $typ = array();  // Spaltentyp (TRUE=String)
         $zeile = 0;
         if ($spalten == FALSE) {  // Datei war leer
@@ -129,9 +129,9 @@ if (isset($file) && $file != '') {
         }
         if ($formel_ges > 0) {
             $formel_str = array();
-            $formel_str = fgetcsv($filepointer, 1000, '#');  // Zeile mit Spaltenbezeichnern
+            $formel_str = fgetcsv($filepointer, 1000, '#', '"', '\\');  // Zeile mit Spaltenbezeichnern
         }
-        while ($data[$zeile] = fgetcsv($filepointer, 10000, '#')) {
+        while ($data[$zeile] = fgetcsv($filepointer, 10000, '#', '"', '\\')) {
             for ($i = 0; $i < count($data[$zeile]); $i++) {
                 if (!is_numeric($data[$zeile][$i]))
                     $typ[$i] = true;
@@ -211,11 +211,11 @@ if (isset($file) && $file != '') {
                     $zeile = 0;
                     fclose($filepointer);
                     $filepointer = fopen($filename, 'rb');
-                    $spalten = fgetcsv($filepointer, 1000, '#');  // Zeile mit Spaltenbezeichnern
+                    $spalten = fgetcsv($filepointer, 1000, '#', '"', '\\');  // Zeile mit Spaltenbezeichnern
                     if ($formel_ges > 0) {
-                        fgetcsv($filepointer, 1000, '#');  // Zeile mit Formeln übergehen
+                        fgetcsv($filepointer, 1000, '#', '"', '\\');  // Zeile mit Formeln übergehen
                     }
-                    while ($data[$zeile] = fgetcsv($filepointer, 10000, '#')) {
+                    while ($data[$zeile] = fgetcsv($filepointer, 10000, '#', '"', '\\')) {
                         $zeile++;
                     }
                     $spaltenzahl = count($spalten);
