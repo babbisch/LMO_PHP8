@@ -116,6 +116,39 @@ if ($file != '') {
                     $anzab = isset($_POST['xanzab']) ? trim($_POST['xanzab']) : $anzab;
                 }
                 break;
+            case 5:
+                if (($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) && $lmtype == 0) {
+            	    for ($j = $anzsp; $j < 40; $j++) {
+                	$teama[$i][$j] = 0;
+                	$teamb[$i][$j] = 0;
+                	$goala[$i][$j] = -1;
+                	$goalb[$i][$j] = -1;
+                	$msieg[$i][$j] = 0;
+                	$mterm[$i][$j] = '';
+                	$mnote[$i][$j] = '';
+                	$mberi[$i][$j] = '';
+                	$mspez[$i][$j] = '_';
+            	    }
+        	}
+        	for ($i = $anzst; $i < 116; $i++) {
+            	    for ($j = 0; $j < 40; $j++) {
+                	$teama[$i][$j] = 0;
+                	$teamb[$i][$j] = 0;
+                	$goala[$i][$j] = -1;
+                	$goalb[$i][$j] = -1;
+                	$msieg[$i][$j] = 0;
+                	$mterm[$i][$j] = '';
+                	$mnote[$i][$j] = '';
+                	$mberi[$i][$j] = '';
+                	$mspez[$i][$j] = '_';
+            	    }
+        	}
+        	$anzst = trim($_POST['xanzst']);
+        	$anzsp = trim($_POST['xanzsp']);
+        	if ($stx > $anzst) {
+            	    $stx = $anzst;
+        	}
+                break;
         }
         require (PATH_TO_LMO . '/lmo-savefile.php');
     }
@@ -123,7 +156,7 @@ if ($file != '') {
     $addb = $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=tabs&amp;file=' . $file . '&amp;st=';
 
     include (PATH_TO_LMO . '/lmo-adminsubnavi.php');
-?>
+    ?>
 
 <div class="container">
   <div class="row p-3">
@@ -140,24 +173,24 @@ if ($file != '') {
         if ($show == 2) {
             echo $text[250] . '<br />';
         } else {
-?>
+            ?>
           <a href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=2&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[250]; ?></a><br /><?php
         }
         if ($lmtype == 0) {
             if ($show == 3) {
                 echo $text[178] . '<br />';
             } else {
-?>
+                ?>
             <a href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=3&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[178]; ?></a><br /><?php
             }
             if ($show == 4) {
                 echo $text[40] . '<br />';
             } else {
-?>
+                ?>
             <a href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=4&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[40]; ?></a><br /><?php
             }
-?>
-        <a href='<?php echo "$addr-3" ?>' title="<?php echo $text[339] ?>"><?php echo $text[338] ?></a><?php
+            ?>
+        <a href="<?php echo $_SERVER['PHP_SELF'] . "?action=admin&amp;todo=edit&amp;show=5&amp;file=$file&amp;st=-1"; ?>"><?php echo $text[338]; ?></a><?php
         }
     }
     ?>
@@ -173,7 +206,7 @@ if ($file != '') {
         <div class="container"><?php
     if ($show == 0) {
         if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
-?>
+            ?>
           <div class="row pb-1">
             <div class="col-7 col-md-3 offset-md-2 text-end"><input class="form-control" type="text" name="xtitel" maxlength="60" value="<?php echo $titel; ?>" onChange="dolmoedit()"></div>
             <div class="col-5 text-start"><acronym title="<?php echo $text[118]; ?>"><?php echo $text[113]; ?></acronym></div>
@@ -187,7 +220,7 @@ if ($file != '') {
             <div class="col-5 text-start"><acronym title="<?php echo $text[66]; ?>"><?php echo $text[65] . ' ' . $text[38]; ?></acronym></div>
           </div><?php
             }
-?>
+            ?>
           <div class="row pb-1">
             <div class="col-7 col-md-3 offset-md-2 text-end">
               <select class="form-select" name="xpointsfaktor" onChange="dolmoedit()">
@@ -265,7 +298,7 @@ if ($file != '') {
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xenablegamesort" onChange="dolmoedit()"<?php if ($enablegamesort == 1) { echo ' checked'; } ?>></div>
           </div><?php
             if ($lmtype == 1) {
-?>
+                ?>
           <div class="row pb-1">
             <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[418]; ?>"><?php echo $text[417]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xklfin" onChange="dolmoedit()"<?php if ($klfin == 1) { echo ' checked'; } ?>></div>
@@ -301,7 +334,7 @@ if ($file != '') {
           </div>
           <div class="row pb-1"><?php
             if ($lmtype == 0 && $tabonres == 0) {
-?>
+                ?>
             <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[512]; ?>"><?php echo $text[10]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xergebnis" onChange="dolmoedit()"<?php if ($ergebnis == 1) { echo ' checked'; } ?>></div>
           </div>
@@ -310,16 +343,16 @@ if ($file != '') {
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xtabelle" onChange="dolmoedit()"<?php if ($tabelle == 1) { echo ' checked'; } ?>></div><?php
             }
             if ($lmtype == 1) {
-?>
+                ?>
             <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[512]; ?>"><?php echo $text[10]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xergebnis" onChange="dolmoedit()"<?php if ($ergebnis == 1) { echo ' checked'; } ?>></div><?php
             }
             if ($lmtype == 0 && $tabonres >= 1) {
-?>
+                ?>
             <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[512]; ?>"><?php echo $text[10] . '/' . $text[16]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xergebnis" onChange="dolmoedit()"<?php if ($ergebnis == 1) { echo ' checked'; } ?>></div><?php
             }
-?>
+            ?>
           </div>
           <div class="row pb-1">
             <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[256]; ?>"><?php echo $text[255]; ?></acronym></div>
@@ -343,20 +376,20 @@ if ($file != '') {
           </div><?php
             }
             if ($einspieler == 1) {
-?>
+                ?>
           <div class="row pb-1">
             <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text['spieler'][19]; ?>"><?php echo $text['spieler'][18]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xmittore" onChange="dolmoedit()"<?php if ($mittore == 1) { echo ' checked'; } ?>></div>
           </div><?php
             }
             if ($lmtype == 0) {
-?>
+                ?>
           <div class="row pb-1">
             <div class="col-6 col-md-4 text-end"><acronym title="<?php echo $text[514]; ?>"><?php echo $text[18]; ?></acronym></div>
             <div class="col-1 text-start"><input type="checkbox" class="form-check-input" name="xligastats" onChange="dolmoedit()"<?php if ($ligastats == 1) { echo ' checked'; } ?>></div>
           </div><?php
             }
-?>
+            ?>
           <div class="row p-2">
             <div class="col"><strong><?php echo $text[264]; ?></strong></div>
           </div>
@@ -506,6 +539,23 @@ if ($file != '') {
               </select>
             </div>
           </div><?php }
+    } elseif ($show == 5) {
+        if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) { ?>
+          <div class="row">
+            <div class="col"><strong><?php echo $text[340]; ?></strong></div>
+          </div>
+          <div class="row">
+            <div class="col"><?php echo getMessage($text[561], TRUE); ?></div>
+          </div>
+          <div class="row pb-1">
+            <div class="col-5 text-end"><acronym title="<?php echo $text[275] ?>"><?php echo $text[274]; ?></acronym></div>
+            <div class="col-1 text-start"><input class="form-control" style="width: 4rem;" type="number" name="xanzst" size="3" maxlength="3" value="<?php echo $anzst ?>"></div>
+          </div>
+          <div class="row pb-1">
+            <div class="col-5 text-end"><acronym title="<?php echo $text[278] ?>"><?php echo $text[277]; ?></acronym></div>
+            <div class="col-1 text-start"><input class="form-control" style="width: 4rem;" type="number" name="xanzsp" size="2" maxlength="2" value="<?php echo $anzsp ?>"></div>
+          </div>        
+    <?php }
     } ?>
           <div class="row pt-3">
             <div class="col">
