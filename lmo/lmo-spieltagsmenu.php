@@ -17,8 +17,8 @@ if (isset($anzst)) {
                 $j = $text[358];
                 $k = $text[359];
             } else {
-                $j = $i;
-                $k = $text[366];
+                $j = 'Q'.$i;
+                $k = $text[366] . " " . $i;
             }
         } else {
             $j = sprintf('%02d', $i);
