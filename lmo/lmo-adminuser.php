@@ -103,7 +103,7 @@ if ($_SESSION['lmouserok'] == 2) {
             echo "<p>$show_admin_name</p>";
         } else {
             ?>
-             <p><a class="btn btn-sm btn-outline-primary" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=user&amp;show=' . $testshow; ?>"><?php echo $show_admin_name; ?></a></p><?php
+             <p><a class="btn-solid btn-sm btn-outline-primary" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=user&amp;show=' . $testshow; ?>"><?php echo $show_admin_name; ?></a></p><?php
         }
         $testshow++;
     }
@@ -135,18 +135,24 @@ if ($_SESSION['lmouserok'] == 2) {
           </div>
           <div class="row">
             <div class="col-4 text-end"><?php echo $text[324] ?></div>
-            <div class="col-8 text-start"><input class="form-check-input" onClick="document.lmoedit<?php echo $show ?>.xadmin_erweitert<?php echo $show ?>.disabled=true" type="radio" name="xadmin_rang<?php echo $show ?>" value="2" <?php if ($lmo_admin[2] == 2) echo ' checked'; ?>> <?php echo $text[326] ?></div>
+            <div class="col-8 text-start form-field">
+              <input class="radio" onClick="document.lmoedit<?php echo $show ?>.xadmin_erweitert<?php echo $show ?>.disabled=true" type="radio" name="xadmin_rang<?php echo $show ?>" value="2" <?php if ($lmo_admin[2] == 2) echo ' checked'; ?>> <?php echo $text[326] ?>
+            </div>
           </div>
           <div class="row pt-3">
-            <div class="col-8 offset-4 text-start"><input class="form-check-input" onClick="document.lmoedit<?php echo $show ?>.xadmin_erweitert<?php echo $show ?>.disabled=false" type="radio" name="xadmin_rang<?php echo $show ?>" value="1" <?php if ($lmo_admin[2] == 1) echo ' checked'; ?>> <?php echo $text[325] ?></div>
+            <div class="col-8 offset-4 text-start form-field">
+              <input class="radio" onClick="document.lmoedit<?php echo $show ?>.xadmin_erweitert<?php echo $show ?>.disabled=false" type="radio" name="xadmin_rang<?php echo $show ?>" value="1" <?php if ($lmo_admin[2] == 1) echo ' checked'; ?>> <?php echo $text[325] ?>
+            </div>
           </div>
           <div class="row">
-            <div class="col-8 offset-4 text-start"><input class="form-check-input" type="checkbox" name="xadmin_erweitert<?php echo $show ?>" <?php if (isset($lmo_admin[4]) && $lmo_admin[4] == 1) echo ' checked'; ?> <?php if ($lmo_admin[2] == 2) echo ' disabled'; ?>> <acronym title="<?php echo $text[560] ?>"><?php echo $text[559] ?></acronym></div>
+            <div class="col-8 offset-4 text-start form-field">
+              <input class="radio" type="checkbox" name="xadmin_erweitert<?php echo $show ?>" <?php if (isset($lmo_admin[4]) && $lmo_admin[4] == 1) echo ' checked'; ?> <?php if ($lmo_admin[2] == 2) echo ' disabled'; ?>> <?php echo $text[559] ?>
+            </div>
           </div><?php
             if ($lmo_admin[2] == 1) {
 ?>
           <div class="row">
-            <div class="col-8 offset-4 text-start"><acronym title="<?php echo $text[398] ?>"> <?php echo $text[397] ?></acronym></div>
+            <div class="col-8 offset-4 text-start" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[398] ?>"> <?php echo $text[397] ?></div>
           </div><?php
                 $helfer_ligen = explode(',', $lmo_admin_data[$testshow][3]);
                 $handle = opendir(PATH_TO_LMO . '/' . $dirliga);
@@ -156,18 +162,18 @@ if ($_SESSION['lmouserok'] == 2) {
                         $ligenname = substr($file, 0, -4);
 ?>
           <div class="row">
-            <div class="col-8 offset-4"><input class="form-check-input" type="checkbox" name="xhelfer_ligen<?php echo $show ?>[]" value="<?php echo $ligenname ?>"<?php if (in_array($ligenname, $helfer_ligen)) echo ' checked' ?>> <?php echo $titel ?></div>
+            <div class="col-8 offset-4"><input class="check" type="checkbox" name="xhelfer_ligen<?php echo $show ?>[]" value="<?php echo $ligenname ?>"<?php if (in_array($ligenname, $helfer_ligen)) echo ' checked' ?>> <?php echo $titel ?></div>
           </div><?php
                     }
                 }
             }
 ?>
           <div class="row pt-3">
-            <div class="col"><acronym title="<?php echo $text[327] ?>"><input class="btn btn-primary btn-sm" type="submit" value="<?php echo $text[329] ?>"></acronym></div><?php
+            <div class="col" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[327] ?>"><input class="btn-solid btn-sm theme-primary" type="submit" value="<?php echo $text[329] ?>"></div><?php
             if ($testshow != 0) {
 ?>      
             <div class="col">
-              <a href="<?php echo $_SERVER['PHP_SELF'] ?>?action=admin&amp;todo=user&amp;del=<?php echo $show ?>" class="btn btn-danger btn-sm"onclick="return confirm('<?php echo $text[499] ?>');" title="<?php echo $text[328] ?>"><?php echo $text[330] ?></a>
+              <a href="<?php echo $_SERVER['PHP_SELF'] ?>?action=admin&amp;todo=user&amp;del=<?php echo $show ?>" class="btn-solid btn-sm theme-danger"onclick="return confirm('<?php echo $text[499] ?>');" title="<?php echo $text[328] ?>"><?php echo $text[330] ?></a>
             </div><?php
             }
 ?>
@@ -190,7 +196,7 @@ if ($_SESSION['lmouserok'] == 2) {
     <input type="hidden" name="show" value="<?php echo count($lmo_admin_data) ?>">
     <div class="col-auto offset-4"><input class="form-control" type="text" name="xadmin_name" style="width: 10rem;" maxlength="32" value="NeuerUser"></div>
     <div class="col-auto"><input class="form-control" type="text" name="xadmin_pass" style="width: 10rem;" maxlength="32" value="<?php echo substr(md5(uniqid(rand())), 0, rand(8, 16)); ?>"></div>
-    <div class="col-auto"><input class="btn btn-primary btn-sm" type="submit" value="<?php echo $text[329] ?>" title="<?php echo $text[327] ?>"></div>
+    <div class="col-auto"><input class="btn-solid btn-sm theme-primary" type="submit" value="<?php echo $text[329] ?>" title="<?php echo $text[327] ?>"></div>
   </form>
 </div><?php
 }

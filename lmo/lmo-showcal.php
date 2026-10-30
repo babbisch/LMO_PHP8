@@ -1,8 +1,17 @@
 <div class="container"><?php if (strlen($cal) > 4) { ?>
   <div class="row justify-content-center">
-    <div class="col-3 text-end"><a href="<?php echo $addk . $ma; ?>" title="<?php echo $text[142]; ?>"><?php echo $text[5]; ?></a></div>
-    <div class="col-6 text-center"><a href="<?php echo $addk . $ml; ?>" title="<?php echo $text[173]; ?>"><?php echo $md; ?></a></div>
-    <div class="col-3 text-start"><a href="<?php echo $addk . $mb; ?>" title="<?php echo $text[143]; ?>"><?php echo $text[154]; ?></a>&nbsp;&nbsp;<a href="<?php echo $addk . $mc; ?>" title="<?php echo $text[144]; ?>"><?php echo $text[7]; ?></a></div>
+    <div class="col-1"
+      ><a href="<?php echo $addk . $ma; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[142]; ?>"><?php echo $text[5]; ?></a>
+    </div>
+    <div class="col-5 text-center">
+      <a href="<?php echo $addk . $ml; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[173]; ?>"><?php echo $md; ?></a>
+    </div>
+    <div class="col-auto">
+      <a href="<?php echo $addk . $mb; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[143]; ?>"><?php echo $text[154]; ?></a>
+    </div>
+    <div class="col-1">
+      <a href="<?php echo $addk . $mc; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[144]; ?>"><?php echo $text[7]; ?></a>
+    </div>
   </div>
   <div class="row justify-content-center">
     <div class="row justify-content-center">
@@ -43,7 +52,7 @@
                 }
             } else {
                 if (($heute == 6) || ($heute == 7)) {
-                    $stil = 'bg-secondary-subtle';
+                    $stil = 'bg-secodary-subtle';
                 } else {
                     $stil = '';
                 }
@@ -77,9 +86,9 @@
 } else {
 ?>
   <div class="row justify-content-center">
-    <div class="col-3 text-end"><a href="<?php echo $addk . $ma; ?>" title="<?php echo $text[157]; ?>"><?php echo $text[5]; ?></a></div>
+    <div class="col-3 text-end"><a href="<?php echo $addk . $ma; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[157]; ?>"><?php echo $text[5]; ?></a></div>
     <div class="col-6 text-center"><?php echo $text[156] . ' ' . $md; ?></div>
-    <div class="col-3 text-start"><a href="<?php echo $addk . $mb; ?>" title="<?php echo $text[158]; ?>"><?php echo $text[154]; ?></a>&nbsp;&nbsp;<a href="<?php echo $addk . $mc; ?>" title="<?php echo $text[159]; ?>"><?php echo $text[7]; ?></a></div>
+    <div class="col-3 text-start"><a href="<?php echo $addk . $mb; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[158]; ?>"><?php echo $text[154]; ?></a>&nbsp;&nbsp;<a href="<?php echo $addk . $mc; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[159]; ?>"><?php echo $text[7]; ?></a></div>
   </div><?php
     $dat0 = getdate(time());
     $lmo_output_buffer = array();
@@ -93,14 +102,13 @@
         } else {
             $k = '';
         }
-        echo '<a href="' . $addk . $k . $i . $md . '" title="' . $text[172] . '">' . $text[159 + $i] . '</a></div>';
+        echo '<a href="' . $addk . $k . $i . $md . '" data-bs-toggle="tooltip" data-bs-title="' . $text[172] . '">' . $text[159 + $i] . '</a></div>';
 
-        $lmo_output_buffer[$i] = $lmo_stlink[$i] . '<br>';
+        $lmo_output_buffer[$i] = $lmo_stlink[$i] . '<br />';
 
-        echo '</div>';
         if (($i == 6) || ($i == 12)) {
-            echo "</div><div class='row justify-content-center'><div class='col-1'>";
-            echo implode("</div><div class='col-1'>", $lmo_output_buffer);
+            //echo "</div><div class='row justify-content-center'><div class='col-1'>";
+            //echo implode("</div><div class='col-1'>", $lmo_output_buffer);
             echo '</div>';
             $lmo_output_buffer = array();
         }

@@ -22,7 +22,7 @@
 // First line of XSS-Identification
 if (!array_key_exists('HTTP_USER_AGENT', $_SERVER))
     exit;
-if (str_contains($_SERVER['PATH_INFO'], ">") || str_contains($_SERVER['PATH_INFO'], "%"))
+if (array_key_exists('PATH_INFO', $_SERVER) && (str_contains($_SERVER['PATH_INFO'], ">") || str_contains($_SERVER['PATH_INFO'], "%")))
 	die('XSS-Scripting detected');
 $get = array();
 $get = $_GET;
@@ -30,6 +30,8 @@ foreach ($get as $value) {
     if (str_contains($value, 'script') || str_contains($value, '%'))
         die('XSS-Scripting detected');
 }
+
+include ('includes/kint.phar');
 
 $fp = fopen(__DIR__ . '/logs/' . date('Ymd', time()) . '.txt', 'a');
 if ($fp) {

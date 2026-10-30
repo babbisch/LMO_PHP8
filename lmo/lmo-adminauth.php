@@ -31,10 +31,18 @@ if ($action == 'admin') {
       <form name="lmoedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" role="form" class="row g-3">
         <input type="hidden" name="action" value="admin">
         <div class="d-flex"><?php echo $text[305]; ?></div>
-        <div class="d-flex col-6"><input class="form-control" type="text" name="xusername" placeholder="<?php echo $text[306]; ?>" value="<?php echo $_SESSION['lmousername']; ?>"></div>
-        <div class="d-flex col-6"><input class="form-control" type="password" name="xuserpass" placeholder="<?php echo $text[308]; ?>" value=""></div>
-        <div class="d-flex col-6"><input title="<?php echo $text[311] ?>" class="btn btn-primary btn-sm" type="submit" name="xusersub" value="<?php echo $text[310]; ?>"></div>
-        <div class="d-flex col-6"><a class="btn btn-secondary btn-sm" href="<?php echo URL_TO_LMO ?>/lmo.php" title="<?php echo $text[470]; ?>"><?php echo $text[469]; ?></a></div>
+        <div class="d-flex col-6">
+          <input class="form-control" type="text" name="xusername" placeholder="<?php echo $text[306]; ?>" value="<?php echo $_SESSION['lmousername']; ?>">
+        </div>
+        <div class="d-flex col-6">
+          <input class="form-control" type="password" name="xuserpass" placeholder="<?php echo $text[308]; ?>" value="">
+        </div>
+        <div class="d-flex col-6">
+          <input class="btn-solid btn-sm theme-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?php echo $text[311] ?>" type="submit" name="xusersub" value="<?php echo $text[310]; ?>">
+        </div>
+        <div class="d-flex col-6">
+          <a class="btn-solid btn-sm theme-secondary" href="<?php echo URL_TO_LMO ?>/lmo.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[470]; ?>"><?php echo $text[469]; ?></a>
+        </div>
       </form>
     </div>
   </div>

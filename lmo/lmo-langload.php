@@ -90,23 +90,4 @@ while (false !== ($f = readdir($handle))) {
 $orgpkt = $text[37];
 $orgtor = $text[38];
 
-// /*
-if (!function_exists('c')) {
-    function c($c)
-    {
-        if ($c == 1)
-            return (base64_decode('PGFjcm9ueW0gdGl0bGU9IkxpZ2EgTWFuYWdlciBPbmxpbmUgZm9yIFBIUCA4LngiPkxNTzwvYWNyb255bT4gNCBmb3IgUEhQIDggIC0gPGEgaHJlZj0i'));
-        return (base64_decode('aHR0cHM6Ly9naXRodWIuY29tL2hlbnNoaW5nbHkvbG1vX3BocDgiIHRpdGxlPSJDbGljayBoZXJlIHRvIGdldCBpbmZvcm1hdGlvbnMgYWJvdXQgdGhpcyBzY3JpcHQiPsKpIDE5OTctbm93IExNTy1Hcm91cDwvYT4='));
-    }
-}
-if (!function_exists('e')) {
-    function e($c)
-    {
-        if (strpos(htmlentities($c), htmlentities(base64_decode('PCEtLUluZm9saW5rLS0+'))) > 0) {
-            false;
-        } else {
-            eval(base64_decode('ZWNobyAnPGFjcm9ueW0gdGl0bGU9IkxpZ2EgTWFuYWdlciBPbmxpbmUgZm9yIFBIUCA4LngiPkxNTzwvYWNyb255bT4gNCBmb3IgUEhQIDggLSA8YSBocmVmPSJodHRwczovL2dpdGh1Yi5jb20vaGVuc2hpbmdseS9sbW9fcGhwOCIgdGl0bGU9IkNsaWNrIGhlcmUgdG8gZ2V0IGluZm9ybWF0aW9ucyBhYm91dCB0aGlzIHNjcmlwdCI+IDE5OTctbm93IExNTy1Hcm91cDwvYT4='));
-        }
-    }
-}  // */
 ?>

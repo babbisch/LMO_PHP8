@@ -55,8 +55,8 @@ foreach ($datsort as $key => $val) {
                 $dum1 = $dum2 = '';
             }
             ?>
-    <div class="col-2 text-end d-none d-lg-block"><?php echo $dum1; ?></div>
-    <div class="col-2 text-end d-lg-none"><?php echo $dum2; ?></div><?php
+    <div class="col-2 text-end d-none lg:d-block"><?php echo $dum1; ?></div>
+    <div class="col-2 text-end lg:d-none"><?php echo $dum2; ?></div><?php
         }
 
         /* Spielfrei-Hack-Beginn1 */
@@ -78,13 +78,13 @@ foreach ($datsort as $key => $val) {
             $heim2 .= '</a>';
         }
         ?>
-    <div class="col-3 text-end d-none d-lg-block">
+    <div class="col-3 text-end d-none lg:d-block">
     <?php
     echo $heim1 . $teams[$teama[$st - 1][$i]] . $heim2;
     echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teama[$st - 1][$i]], " alt=''");
     ?>
     </div>
-    <div class="col-3 text-end d-lg-none">
+    <div class="col-3 text-end lg:d-none">
     <?php
     echo $heim1 . $teamk[$teama[$st - 1][$i]] . $heim2;
     ?>
@@ -103,13 +103,13 @@ foreach ($datsort as $key => $val) {
         $gast2 .= '</a>';
     }
     ?>
-    <div class="col-3 text-start d-none d-lg-block">- &nbsp; &nbsp;
+    <div class="col-3 text-start d-none lg:d-block">- &nbsp; &nbsp;
     <?php
     echo HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt=''") . '&nbsp;';
     echo $gast1 . $teams[$teamb[$st - 1][$i]] . $gast2;
     ?>
     </div>
-    <div class="col-3 text-start d-lg-none"> -&nbsp;&nbsp;
+    <div class="col-3 text-start lg:d-none"> -&nbsp;&nbsp;
     <?php
     echo $gast1 . $teamk[$teamb[$st - 1][$i]] . $gast2;
     ?>  

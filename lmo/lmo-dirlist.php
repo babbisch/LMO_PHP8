@@ -123,35 +123,35 @@ if (isset($_SESSION['liga_sort_direction']) && $_SESSION['liga_sort_direction'] 
 
 <div class="container">
 	<div class="row">
-		<div class="col-4 offset-1 text-start d-none d-lg-block"><b><?php echo $text[529]; ?></b></div>
-		<div class="col text-start d-lg-none"><b><?php echo $text[529]; ?></b></div>
+		<div class="col-4 offset-1 text-start d-none lg:d-block"><b><?php echo $text[529]; ?></b></div>
+		<div class="col text-start lg:d-none"><b><?php echo $text[529]; ?></b></div>
 		<?php
         if (isset($_SESSION['lmouserok']) && $_SESSION['lmouserok'] > 0) {
             ?>
-		<div class="col-2 text-start d-none d-lg-block"><b><?php echo $text[531]; ?></b></div><?php
+		<div class="col-2 text-start d-none lg:d-block"><b><?php echo $text[531]; ?></b></div><?php
         }
         ?>
-		<div class="col-2 text-start d-none d-lg-block"><b><?php echo $text[2] . '/' . $text[370]; ?></b></div>
-		<div class="col-2 text-start d-none d-lg-block"><b><?php echo $text[530]; ?></b></div>
+		<div class="col-2 text-start d-none lg:d-block"><b><?php echo $text[2] . '/' . $text[370]; ?></b></div>
+		<div class="col-2 text-start d-none lg:d-block"><b><?php echo $text[530]; ?></b></div>
 	</div>
 <?php foreach ($ligadatei as $liga) { ?>
 	<div class="row">
-		<div class="col-4 offset-1 text-start d-none d-lg-block"><a href="<?php echo $addi . $subdir . $liga['file_name'] . '&amp;st=' . $liga['aktueller_spieltag'] ?>"><?php echo HTML_smallLigaIcon($liga['icon'], " title='" . $liga['liga_name'] . "'"); ?><?php echo $liga['liga_name'] ?></a></div>
-		<div class="col text-start d-lg-none"><a href="<?php echo $addi . $subdir . $liga['file_name'] . '&amp;st=' . $liga['aktueller_spieltag'] ?>"><?php echo $liga['liga_name'] ?></a></div>
+		<div class="col-4 offset-1 text-start d-none lg:d-block"><a href="<?php echo $addi . $subdir . $liga['file_name'] . '&amp;st=' . $liga['aktueller_spieltag'] ?>"><?php echo HTML_smallLigaIcon($liga['icon'], " title='" . $liga['liga_name'] . "'"); ?><?php echo $liga['liga_name'] ?></a></div>
+		<div class="col text-start lg:d-none"><a href="<?php echo $addi . $subdir . $liga['file_name'] . '&amp;st=' . $liga['aktueller_spieltag'] ?>"><?php echo $liga['liga_name'] ?></a></div>
 		<?php
         if (isset($_SESSION['lmouserok']) && $_SESSION['lmouserok'] > 0) {
             ?>
-      		<div class="col-2 text-start d-none d-lg-block"><?php echo $liga['file_name'] ?></div><?php
+      		<div class="col-2 text-start d-none lg:d-block"><?php echo $liga['file_name'] ?></div><?php
         }
         ?>
-		<div class="col-2 text-start d-none d-lg-block">
+		<div class="col-2 text-start d-none lg:d-block">
 		<?php
         echo $liga['rundenbezeichnung'];
         if ($liga['liga_typ'] == 0) {
             echo ' ' . $liga['aktueller_spieltag'];
         }
         ?></div>
-	        <div class="col-2 text-start d-none d-lg-block">
+	        <div class="col-2 text-start d-none lg:d-block">
 	        	<?php echo datefmt_format($fmt, filemtime(PATH_TO_LMO . '/' . $dirliga . $subdir . $liga['file_name'])) ?>
 	        </div>
 	</div><?php

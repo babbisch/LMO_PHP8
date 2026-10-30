@@ -249,19 +249,19 @@ if ($_SESSION['lmouserok'] == 2) {
       <div class="col-3 text-start"><?php echo $text['viewer'][2]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
-      <div class="col-4  offset-2 text-start"><input class="form-check-input" type="radio" value="1" name="modus" checked onClick="byDate(this);">&nbsp;<?php echo $text['viewer'][3]; ?></div>
-      <div class="col-4 text-start"><input class="form-check-input" type="radio" value="2" name="modus" onClick="byDay(this);">&nbsp;<?php echo $text['viewer'][6]; ?></div>
+      <div class="col-4  offset-2 text-start form-field"><input type="radio" class="radio" value="1" name="modus" checked onClick="byDate(this);">&nbsp;<?php echo $text['viewer'][3]; ?></div>
+      <div class="col-4 text-start form-field"><input type="radio" class="radio" value="2" name="modus" onClick="byDay(this);">&nbsp;<?php echo $text['viewer'][6]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
-      <div class="col-1 offset-2"><input class="form-control" type="number" name="anzahl_tage_plus" value="7"></div>
+      <div class="col-1 offset-2"><input class="form-control w-4" type="number" name="anzahl_tage_plus" value="7"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][4]; ?></div>
-      <div class="col-1"><input class="form-control" type="number" name="anzahl_spieltage_vor" value="3" disabled></div>
+      <div class="col-1"><input class="form-control w-4" type="number" name="anzahl_spieltage_vor" value="3" disabled></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][7]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
-      <div class="col-1 offset-2"><input class="form-control" type="number" name="anzahl_tage_minus" value="7"></div>
+      <div class="col-1 offset-2"><input class="form-control w-4" type="number" name="anzahl_tage_minus" value="7"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][5]; ?></div>
-      <div class="col-1"><input class="form-control" type="number" name="anzahl_spieltage_zurueck" value="3" disabled></div>
+      <div class="col-1"><input class="form-control w-4" type="number" name="anzahl_spieltage_zurueck" value="3" disabled></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][8]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
@@ -271,7 +271,7 @@ if ($_SESSION['lmouserok'] == 2) {
       <div class="col-1 offset-2"><input class="form-control" type="text" name="datumsformat" value="d.m.y"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][10]; ?></div>
       <div class="col-2">
-        <select class="form-select" name="template" size="1">
+        <select class="form-control" name="template" size="1">
           <?php for ($tpl = 0; $tpl < $tmpl_counter; $tpl++) {
             echo '<option>' . $tpl_files[$tpl] . '</option>' . chr(13);
         } ?>
@@ -286,10 +286,10 @@ if ($_SESSION['lmouserok'] == 2) {
       <div class="col-3 text-start"><?php echo $text['viewer'][27]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
-      <div class="col-1 offset-2 text-end"><input class="form-check-input" type="checkbox" name="favteam_highlight" checked></div>
+      <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="favteam_highlight" checked></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][54]; ?></div>
       <div class="col-2">
-        <select class="form-select" name="mannschaftsnamen" onChange="dolmoedit();">
+        <select class="form-control" name="mannschaftsnamen">
           <option value="0"><?php echo $text['viewer'][46] ?></option>
           <option value="1"><?php echo $text['viewer'][47] ?></option>
           <option value="2"><?php echo $text['viewer'][48] ?></option>
@@ -298,38 +298,38 @@ if ($_SESSION['lmouserok'] == 2) {
       <div class="col-3 text-start"><?php echo $text['viewer'][16]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
-      <div class="col-1 offset-2 text-end"><input class="form-check-input" type="checkbox" name="heute_highlight" checked></div>
+      <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="heute_highlight" checked></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][40]; ?></div>
       <div class="col-2"><input class="form-control" type="text" name="spielberichtesymbol" value="bi bi-journal"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][23]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
-      <div class="col-1 offset-2 text-end"><input class="form-check-input" type="checkbox" name="spielberichte_neues_fenster"></div>
+      <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="spielberichte_neues_fenster"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][14]; ?></div>
       <div class="col-2"><input class="form-control" type="text" name="tabellensymbol" value="bi bi-table"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][24]; ?></div>
     </div>
     <div class="row align-items-center input-group pb-1">
-      <div class="col-1 offset-2 text-end"><input class="form-check-input" type="checkbox" name="tabelle_verlinken"></div>
+      <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="tabelle_verlinken"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][13]; ?></div>
       <div class="col-2"><input class="form-control" type="text" name="notizsymbol" value="bi bi-sticky"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][25]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
-      <div class="col-1 offset-2 text-end"><input class="form-check-input" type="checkbox" name="mannschaftshomepages_verlinken"></div>
+      <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="mannschaftshomepages_verlinken"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][25]; ?></div>
       <div class="col-2"><input class="form-control" type="text" name="spieltagtext"value="<?php echo $text[145]; ?>"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][26]; ?></div>
     </div>
     <div class="row align-items-center pb-1">
-      <div class="col-1 offset-2"><input class="form-control" type="number" name="cache_refresh" size="3" value="0"></div>
+      <div class="col-1 offset-2"><input class="form-control w-4" type="number" name="cache_refresh" size="3" value="0"></div>
       <div class="col-3 text-start"><acronym title="<?php echo $text['viewer'][53]; ?>"><?php echo $text['viewer'][52]; ?></acronym></div>
       <div class="col-2"><input class="form-control" type="text" name="tordummy" value="_"></div>
       <div class="col-3 text-start"><?php echo $text['viewer'][12]; ?></div>
     </div>
     <div class="row p-2">
       <div class="col">
-        <input type="submit" class="btn btn-primary btn-sm" value="<?php echo $text['viewer'][22]; ?> >>" name="B1">
+        <input type="submit" class="btn-solid btn-sm theme-primary" value="<?php echo $text['viewer'][22]; ?> >>" name="B1">
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="formular1" value="1">
       </div>
@@ -354,9 +354,9 @@ if ($_SESSION['lmouserok'] == 2) {
       <div class="col"><strong><?php echo $text['viewer'][30]; ?></strong></div>
     </div>
     <div class="row">
-      <div class="col-3 offset-5 text-start">
+      <div class="col-3 offset-5 text-start form-field">
       <?php foreach ($ligadatei as $liga) { ?>
-        <input class="form-check-input" type="checkbox" name="<?php echo 'c' . $z; ?>" value = "<?php echo 'c' . $z; ?>"> <?php echo $liga['liga_name'] . '<br>'; ?>
+        <input type="checkbox" class="check" name="<?php echo 'c' . $z; ?>" value = "<?php echo 'c' . $z; ?>"> <?php echo $liga['liga_name'] . '<br>'; ?>
          <?php echo chr(13);
             $z++;
         } ?>
@@ -365,9 +365,9 @@ if ($_SESSION['lmouserok'] == 2) {
     <div class="row pt-3">
       <div class="col">
         <script type="text/javascript">
-          document.writeln ('<input type="button" class="btn btn-sm btn-secondary" value="<?php echo $text['viewer'][43]; ?>" onClick="checkAll(this)"\>');
-      	  document.writeln ('<input type="button" class="btn btn-sm btn-secondary" value="<?php echo $text['viewer'][44]; ?>" onClick="uncheckAll(this)"\>');
-      	  document.writeln ('<input type="button" class="btn btn-sm btn-secondary" value="<?php echo $text['viewer'][45]; ?>" onClick="switchAll(this)"\>');         
+          document.writeln ('<input type="button" class="btn-solid btn-sm theme-secondary" value="<?php echo $text['viewer'][43]; ?>" onClick="checkAll(this)"\>');
+      	  document.writeln ('<input type="button" class="btn-solid btn-sm theme-secondary" value="<?php echo $text['viewer'][44]; ?>" onClick="uncheckAll(this)"\>');
+      	  document.writeln ('<input type="button" class="btn-solid btn-sm theme-secondary" value="<?php echo $text['viewer'][45]; ?>" onClick="switchAll(this)"\>');         
       	</script>
       </div>
     </div>
@@ -382,7 +382,7 @@ if ($_SESSION['lmouserok'] == 2) {
         <input type="hidden" name="dateiname" value="<?php echo $save_file_name; ?>">
         <input type="hidden" name="config_array" value="<?php echo $save_config_array; ?>">
         <input type="hidden" name="zaehler" value="<?php echo $z; ?>">
-        <input type="submit" class="btn btn-primary btn-sm" value="<?php echo $text['viewer'][22]; ?> >>" name="B2">
+        <input type="submit" class="btn-solid btn-sm theme-primary" value="<?php echo $text['viewer'][22]; ?> >>" name="B2">
       </div>
     </div>
   </form>
@@ -419,10 +419,10 @@ if ($_SESSION['lmouserok'] == 2) {
                 if ($ii > $max)
                     break;
                 if ($spalte == 1)
-                    echo '<div class="row">' . chr(13) . '<div class="col-2 offset-3 text-start">';
+                    echo '<div class="row">' . chr(13) . '<div class="col-2 offset-3 text-start form-field">';
                 if ($spalte > 1)
-                    echo '<div class="col-2 text-start">';
-                echo '<input type="checkbox" class="form-check-input" name="t' . $ges_teams . '" value="' . $ligenfile[$i] . '[' . $ii . ']' . '">&nbsp;' . $mannschaft->name;
+                    echo '<div class="col-2 text-start form-field">';
+                echo '<input type="checkbox" class="check" name="t' . $ges_teams . '" value="' . $ligenfile[$i] . '[' . $ii . ']' . '">&nbsp;' . $mannschaft->name;
                 if ($spalte < 4)
                     echo '</div>' . chr(13);
                 if ($spalte == 4)
@@ -440,9 +440,9 @@ if ($_SESSION['lmouserok'] == 2) {
     <div class="row pt-3">
       <div class="col">
         <script type="text/javascript">
-          document.writeln ('<input type=button class="btn btn-secondary btn-sm" value="<?php echo $text['viewer'][43]; ?>" onClick="checkAll(this)"\>');
-	  document.writeln ('<input type=button class="btn btn-secondary btn-sm" value="<?php echo $text['viewer'][44]; ?>" onClick="uncheckAll(this)"\>');
-	  document.writeln ('<input type=button class="btn btn-secondary btn-sm" value="<?php echo $text['viewer'][45]; ?>" onClick="switchAll(this)"\>');         
+          document.writeln ('<input type=button class="btn-solid btn-sm theme-success" value="<?php echo $text['viewer'][43]; ?>" onClick="checkAll(this)"\>');
+	  document.writeln ('<input type=button class="btn-solid btn-sm theme-danger" value="<?php echo $text['viewer'][44]; ?>" onClick="uncheckAll(this)"\>');
+	  document.writeln ('<input type=button class="btn-solid btn-sm theme-accent" value="<?php echo $text['viewer'][45]; ?>" onClick="switchAll(this)"\>');         
 	</script>
       </div>
     </div>
@@ -455,11 +455,11 @@ if ($_SESSION['lmouserok'] == 2) {
         <input type="hidden" name="dateiname" value="<?php echo $save_file_name; ?>">
         <input type="hidden" name="config_array" value="<?php echo $save_config_array; ?>">
         <input type="hidden" name="zaehler" value="<?php echo $ges_teams; ?>">
-        <input type="submit" class="btn btn-primary btn-sm" value="<?php echo $text['viewer'][32]; ?> >>" name="B3">
+        <input type="submit" class="btn-solid btn-sm theme-primary" value="<?php echo $text['viewer'][32]; ?> >>" name="B3">
       </div>
     </div>
   </form>
-  <div class="row">
+  <div class="row p-5">
     <div class="col"><strong><?php echo $text['viewer'][100]; ?></strong></div>
   </div>
 </div>

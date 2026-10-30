@@ -52,7 +52,7 @@ if ($tipp_gesamt == 1) {
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="todo" value="tipp">
         <input type="hidden" name="save" value="4">
-        <input class="btn btn-sm btn-secondary" type="submit" name="best" value="<?php echo $text['tipp'][236]; ?>">
+        <input class="btn-solid btn-sm theme-secondary" type="submit" name="best" value="<?php echo $text['tipp'][236]; ?>">
       </form>
     </div>
   </div><?php } ?>

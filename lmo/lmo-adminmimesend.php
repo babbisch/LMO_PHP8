@@ -115,7 +115,7 @@ if (($action == 'admin') && ($todo == 'email') && (($_SESSION['lmouserok'] == 1)
     } else {
 ?>
   <form action="<?php echo $_SERVER['PHP_SELF'] ?>">
-    <label>Mailadresse: <input name="madr" type="text" class="lmo-formular-input" size="25" maxlength="128"></label>
+    <label>Mailadresse: <input name="madr" type="text" class="form-control" size="25" maxlength="128"></label>
     <input type="hidden" name="action" value="admin">
     <input type="hidden" name="todo" value="email">
     <input type="hidden" name="down" value="<?php echo $down ?>">

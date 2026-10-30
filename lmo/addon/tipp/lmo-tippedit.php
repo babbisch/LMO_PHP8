@@ -238,13 +238,13 @@ if ($file != '') {
     if ($tipp_tippmodus == 0) {
         ?>
             <div class="col-1">
-              <acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][95] ?>">1</acronym>&nbsp;&nbsp;<?php
+              <acronym title="<?php echo $text['tipp'][95] ?>">1</acronym>&nbsp;&nbsp;<?php
         if ($hidr == 0) {
             ?>
-              <acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][96] ?>">0</acronym>&nbsp;&nbsp;<?php
+              <acronym title="<?php echo $text['tipp'][96] ?>">0</acronym>&nbsp;&nbsp;<?php
         }
         ?>
-              <acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][97] ?>">2</acronym>
+              <acronym title="<?php echo $text['tipp'][97] ?>">2</acronym>
             </div><?php
     }
     // BEIDE
@@ -305,7 +305,7 @@ if ($file != '') {
         echo $text['tipp'][177];
     }
     if ($savebutton == 1) { ?>
-              <input class="btn btn-sm btn-success" type="submit" title="<?php echo $text[114] ?>" name="best" value="<?php echo $text['tipp'][8]; ?>"<?php if ($tipp_imvorraus >= 0 && $st > ($stx + $tipp_imvorraus)) { echo ' disabled'; } ?>><?php } else {
+              <input class="btn-solid btn-sm theme-success" type="submit" title="<?php echo $text[114] ?>" name="best" value="<?php echo $text['tipp'][8]; ?>"<?php if ($tipp_imvorraus >= 0 && $st > ($stx + $tipp_imvorraus)) { echo ' disabled'; } ?>><?php } else {
         echo '&nbsp;';
     } ?>
             </div>

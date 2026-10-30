@@ -90,7 +90,7 @@ if ($file != '') {
                 $a = intval(date($lmo_daterule2, $mterm[$j][$i]));
                 if (($teama[$j][$i] != 0) && ($teamb[$j][$i] != 0)) {
                     if (!empty($lmo_stlink_title[$a])) {
-                        $lmo_stlink_title[$a] = $lmo_stlink_title[$a] . ', &#10;';
+                        $lmo_stlink_title[$a] = $lmo_stlink_title[$a] . '&#10;';
                     } else {
                         $lmo_stlink_title[$a] = ($j + 1) . '. ' . $text[2] . ': &#10;';
                     }
@@ -131,7 +131,7 @@ if ($file != '') {
         // Links generieren
         for ($i = 0; $i < count($lmo_stlink_title); $i++) {
             if (!empty($lmo_stlink_title[$i])) {
-                $lmo_stlink[$i] = $lmo_stlink[$i] . '&nbsp;&nbsp;<a href="' . $addr . ($j + 1) . '" title="' . $lmo_stlink_title[$i] . '">' . ($j + 1) . '. ' . $text[145] . '</a><br>';;
+                $lmo_stlink[$i] = $lmo_stlink[$i] . '&nbsp;&nbsp;<a href="' . $addr . ($j + 1) . '">' . ($j + 1) . '. ' . $text[145] . '</a><br>';;
             }
         }
     }  // for $anzst

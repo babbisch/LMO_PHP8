@@ -59,7 +59,7 @@ if ($archivlink == 1) {
     }
     if (str_contains($subdir, '/')) {
 ?>
-      <p><a href="<?php echo $_SERVER['PHP_SELF'] ?>?subdir=<?php echo dirname($subdir) . '/' ?>"><?php echo $text[5]; ?> <?php echo $text[562]; ?></a></p><?php
+      <p class="pt-5"><a href="<?php echo $_SERVER['PHP_SELF'] ?>?subdir=<?php echo dirname($subdir) . '/' ?>"><?php echo $text[5]; ?> <?php echo $text[562]; ?></a></p><?php
     }
 }
 ?>

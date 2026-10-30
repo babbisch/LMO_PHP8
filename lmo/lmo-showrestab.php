@@ -17,6 +17,7 @@
  *
  * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
  */
+ 
 if (isset($file) && $file != '') {
     $tabtype = isset($_GET['tabtype']) ? $_GET['tabtype'] : 0;
     $newtabtype = 0;

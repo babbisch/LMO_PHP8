@@ -138,7 +138,7 @@ if ($action == 'tipp') {
             <div class="col-3"><input class="form-control" type="password" name="xtipperpass" size="16" maxlength="32" value="<?php echo $_SESSION['lmotipperpass']; ?>"></div>
           </div>
           <div class="row p-1">
-            <div class="col-3 offset-3"><input class="btn btn-sm btn-secondary" title="<?php echo $text[311] ?>" type="submit" name="xtippersub" value="<?php echo $text['tipp'][12]; ?>"></div>
+            <div class="col-3 offset-3"><input class="btn-solid btn-sm theme-secondary" title="<?php echo $text[311] ?>" type="submit" name="xtippersub" value="<?php echo $text['tipp'][12]; ?>"></div>
           </div>
         </div>
       </form>
@@ -153,7 +153,7 @@ if ($action == 'tipp') {
             <form name="lmotippedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
               <input type="hidden" name="action" value="tipp">
               <input type="hidden" name="todo" value="newtipper">
-              <input class="btn btn-sm btn-primary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][11]; ?>" >
+              <input class="btn-solid btn-sm theme-primary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][11]; ?>" >
             </form>
           </div>
         </div>
@@ -215,7 +215,7 @@ if ($action == 'tipp') {
           </div>
           <div class="row p-1">
             <div class="col-3 text-start"><?php echo $text['tipp'][75] . ' ' . $text['tipp'][76]; ?></div>
-            <div class="col-3"><input class="btn btn-sm btn-secondary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][76]; ?>" ></div>
+            <div class="col-3"><input class="btn-solid btn-sm theme-secondary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][76]; ?>" ></div>
           </div>
         </div>
       </form>

@@ -104,6 +104,18 @@ if ($action == 'admin') {
             echo "<li class='nav-item'><a href='#' class='nav-link active'>" . $text['viewer'][20] . "</a></li>\n";
         }
         /* Viewer-Addon */
+        /* Stats-Addon */
+        if (($todo != 'stats')) {
+            echo "<li class='nav-item'><a href='{$adda}stats' onclick='return chklmolink();' title='{$text['stats'][0]}' class='nav-link'>{$text['stats'][0]}</a></li>\n";
+        } else {
+            echo "<li class='nav-item'><a href='#' class='nav-link active'>" . $text['stats'][0] . "</a></li>\n";
+        }
+        if (($todo != 'archive')) {
+            echo "<li class='nav-item'><a href='{$adda}archive' onclick='return chklmolink();' title='{$text['stats'][7]}' class='nav-link'>{$text['stats'][7]}</a></li>\n";
+        } else {
+            echo "<li class='nav-item'><a href='#' class='nav-link active'>" . $text['stats'][7] . "</a></li>\n";
+        }
+        /* Stats-Addon */
     } elseif ($_SESSION['lmouserok'] == 1) {
         if ($todo != 'open') {
             echo "<li class='nav-item'><a href='{$adda}open' onclick='return chklmolink();' class='nav-link'>{$text[80]}</a></li>\n";
@@ -237,9 +249,9 @@ if ($action == 'admin') {
       <?php if ($einsprachwahl == 1) { echo getLangSelector(); } ?>
     </div>
   </div>
-  <div class="row justify-content-center pt-3">
+  <div class="row justify-content-center p-5">
     <div class="col-4">
-      <a class="btn btn-warning btn-sm" href="<?php echo URL_TO_LMO . '/lmo.php?file=' . $file; ?>" target="_blank" title="<?php echo $text[116] ?>"><?php echo $text[115] ?></a>
+      <a class="btn-solid btn-sm theme-warning" href="<?php echo URL_TO_LMO . '/lmo.php?file=' . $file; ?>" target="_blank" title="<?php echo $text[116] ?>"><?php echo $text[115] ?></a>
     </div>
     <div class="col-4">
       <?php echo $text[471] . ': ' . number_format((getmicrotime() - $startzeit), 4, '.', ',') . ' sek.'; ?>

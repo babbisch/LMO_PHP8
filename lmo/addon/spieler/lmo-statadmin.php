@@ -403,7 +403,7 @@ function mark(el){
 								<input type="text" class="form-control" name="wert" placeholder="<?php echo $text['spieler'][6] ?>">
 							</div>
 							<div class="col-auto">
-								<input class="btn btn-sm btn-success" type="submit" value="+">
+								<input class="btn-solid btn-sm theme-success" type="submit" value="+">
 							</div>
 							<div class="col-auto">
 								<input type="hidden" name="option" value="addplayer">
@@ -416,8 +416,8 @@ function mark(el){
 					</div>
 					<div class="col-3 text-start">
 						<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="row">
-							<div class="col">
-								<select class="form-select" name="wert"><?php
+							<div class="col form-field">
+								<select class="form-control" name="wert"><?php
         for ($x = 0; $x < $zeile; $x++) {
             ?>
 									<option value="<?php echo $x ?>"><?php echo htmlentities(stripslashes($data[$x][0]), ENT_COMPAT); ?></option><?php
@@ -426,7 +426,7 @@ function mark(el){
 								</select>
 							</div>
 							<div class="col-auto">
-								<input class="btn btn-sm btn-warning" type="submit" value="&minus;">
+								<input class="btn-solid btn-sm theme-warning" type="submit" value="&minus;">
 							</div>
 							<div class="col-auto">
 								<input type="hidden" name="option" value="delplayer">
@@ -443,33 +443,30 @@ function mark(el){
 				<div class="row p-1">
 					<div class="col-3 offset-3 text-start">
 						<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" name="spalten" class="row">
+							<input type="hidden" name="option" value="addcolumn">
+							<input type="hidden" name="sort" value="<?php echo $spieler_sort ?>">
+							<input type="hidden" name="todo" value="edit">
+							<input type="hidden" name="st" value="<?php echo $st; ?>">
+							<input type="hidden" name="file" value="<?php echo $file ?>">
 							<div class="row">
 								<div class="col">
 									<input type="text" class="form-control" name="wert" placeholder="<?php echo $text['spieler'][5] ?>">
 								</div>
-								<div class="col-auto">
-									<input class="btn btn-sm btn-success" type="submit" value="+">
+								<div class="col form-field">
+									<input type="radio" class="radio" name="type" value="0" checked>&nbsp;<?php echo $text['spieler'][52] ?>
+									<input type="radio" class="radio" name="type" value="<?php echo $text['spieler'][43] ?>">&nbsp;<?php echo $text['spieler'][53] ?>
+									<input type="radio" class="radio" name="type" value="F">&nbsp;<?php echo $text['spieler'][54] ?>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-								<?php echo $text['spieler'][38] ?>:
-									<input type="radio" class="form-check-input" name="type" value="0" checked>&nbsp;<?php echo $text['spieler'][52] ?>
-									<input type="radio" class="form-check-input" name="type" value="<?php echo $text['spieler'][43] ?>">&nbsp;<?php echo $text['spieler'][53] ?>
-									<input type="radio" class="form-check-input" name="type" value="F">&nbsp;<?php echo $text['spieler'][54] ?>
-									<input type="hidden" name="option" value="addcolumn">
-									<input type="hidden" name="sort" value="<?php echo $spieler_sort ?>">
-									<input type="hidden" name="todo" value="edit">
-									<input type="hidden" name="st" value="<?php echo $st; ?>">
-									<input type="hidden" name="file" value="<?php echo $file ?>">
+								<div class="col-auto">
+									<input class="btn-solid btn-sm theme-success" type="submit" value="+">
 								</div>
 							</div>
 						</form>
 					</div>
 					<div class="col-3 text-start">
 						<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" name="spieler" class="row">
-							<div class="col">
-								<select class="form-select" name="wert"><?php
+							<div class="col form-field">
+								<select class="form-control" name="wert"><?php
             for ($x = 0; $x < $spaltenzahl; $x++) {
                 ?>
 									<option value="<?php echo $x ?>"<?php if ($x == 0) { ?> disabled<?php
@@ -483,7 +480,7 @@ function mark(el){
 								</select>
 							</div>
 							<div class="col-auto">
-								<input class="btn btn-sm btn-warning" type="submit" value="&minus;">
+								<input class="btn-solid btn-sm theme-warning" type="submit" value="&minus;">
 							</div>
 								<div class="col-auto">
 								<input type="hidden" name="option" value="delcolumn">
@@ -523,7 +520,7 @@ function mark(el){
             for ($i = 0; $i < $spaltenzahl; $i++) {
                 if ($formel[$i]) {
                     ?>
-                    <div class="col-2"><input type="text" class="form-control" onClick="sel('formel_str<?php echo $i ?>')" onChange="mark(this)" name="formel_str<?php echo $i ?>" value="<?php echo $formel_str[$i] ?>" size="<?php echo strlen($formel_str[$i]); ?>"></div><?php
+                    <div class="col-1"><input type="text" class="form-control" onClick="sel('formel_str<?php echo $i ?>')" onChange="mark(this)" name="formel_str<?php echo $i ?>" value="<?php echo $formel_str[$i] ?>" size="<?php echo strlen($formel_str[$i]); ?>"></div><?php
                 } elseif ($i == 0) {
                     ?>
                     <div class="col-1"><strong><?php echo $text['spieler'][54]; ?>:</strong></div><?php
@@ -554,8 +551,8 @@ function mark(el){
                 } else {
                     if ($spalten[$j2] == $text['spieler'][25]) {
                         ?>
-							<div class="col-1">
-  							<select name="data<?php echo $j1 . '|' . $j2 ?>" size="1"><?php
+							<div class="col-1 form-field">
+  							<select class="form-control" name="data<?php echo $j1 . '|' . $j2 ?>" size="1"><?php
                         for ($j = 0; $j <= $anzteams; $j++) {
                             ?>
   									<option <?php if (htmlentities($teams[$j]) == $data[$j1][$j2]) echo 'selected'; ?>><?php echo htmlentities($teams[$j]) ?></option><?php
@@ -581,7 +578,7 @@ function mark(el){
 							<input type="hidden" name="st" value="<?php echo $st; ?>">
 							<input type="hidden" name="sort" value="<?php echo $spieler_sort ?>">
 							<input type="hidden" name="file" value="<?php echo $file ?>">
-							<input class="btn btn-primary btn-sm" type="submit" value="Statistik updaten">
+							<input class="btn-solid btn-sm theme-accent" type="submit" value="Statistik updaten">
 						</div>
 				</div>
       			</form>
@@ -607,8 +604,8 @@ function mark(el){
 					</div>
 					<div class="row p-2">
 						<div class="col-3"><?php echo $text['spieler'][21] ?>: </div>
-						<div class="col-auto">
-	  						<select class="form-select" name="standard_sortierung" onChange="mark(this)" size="1"><?php
+						<div class="col-auto form-field">
+	  						<select class="form-control" name="standard_sortierung" onChange="mark(this)" size="1"><?php
         for ($x = 0; $x < $spaltenzahl; $x++) {
             ?>
   								<option value="<?php echo $x ?>" <?php if ($x == $spieler_standard_sortierung) echo 'selected'; ?>><?php echo $spalten[$x] ?></option><?php
@@ -619,18 +616,18 @@ function mark(el){
 					</div>
 			          	<div class="row p-2">
             					<div class="col-3"><?php echo $text['spieler'][13] ?>: </div>
-            					<div class="col-auto">
-            						<input type="radio" class="form-check-input" name="standard_richtung" onClick="mark(this)" value="1"<?php if ($spieler_standard_richtung == 1) echo ' checked'; ?>> <?php echo $text['spieler'][48] ?>
+            					<div class="col-auto form-field">
+            						<input type="radio" class="radio" name="standard_richtung" onClick="mark(this)" value="1"<?php if ($spieler_standard_richtung == 1) echo ' checked'; ?>> <?php echo $text['spieler'][48] ?>
             						<br>
-            						<input type="radio" class="form-check-input" name="standard_richtung" onClick="mark(this)" value="0"<?php if ($spieler_standard_richtung == 0) echo ' checked'; ?>> <?php echo $text['spieler'][47] ?>
+            						<input type="radio" class="radio" name="standard_richtung" onClick="mark(this)" value="0"<?php if ($spieler_standard_richtung == 0) echo ' checked'; ?>> <?php echo $text['spieler'][47] ?>
             					</div>
           				</div>
           				<div class="row p-2">
 						<div class="col-3"><?php echo $text['spieler'][23] ?>: </div>
-						<div class="col-auto"><input type="checkbox" class="form-check-input" name="nullwerte_anzeigen" onClick="mark(this)" value="<?php echo $spieler_nullwerte_anzeigen ?>" <?php if ($spieler_nullwerte_anzeigen == 1) echo 'checked'; ?>></div>
+						<div class="col-auto"><input type="checkbox" class="check" name="nullwerte_anzeigen" onClick="mark(this)" value="<?php echo $spieler_nullwerte_anzeigen ?>" <?php if ($spieler_nullwerte_anzeigen == 1) echo 'checked'; ?>></div>
 					</div>
 					<div class="row p-2">
-						<div class="col"><input class="btn btn-primary btn-sm" type="submit" value="Konfiguration speichern"></div>
+						<div class="col"><input class="btn-solid btn-sm theme-primary" type="submit" value="Konfiguration speichern"></div>
 					</div>
 				</div>
 			</form>
@@ -671,6 +668,7 @@ function cmpstrlength($a, $b)
 
 function formel_berechnen($formel, $formel_str, $spalten)
 {
+
     global $data;
     uasort($spalten, 'cmpstrlength');
     for ($i = 0; $i < count($spalten); $i++) {
@@ -697,10 +695,10 @@ function formel_berechnen($formel, $formel_str, $spalten)
             for ($j = 0; $j < count($data); $j++) {
                 $help2 = 0.0;
                 try {
-					@eval($formel_str[$i]);
-				} catch (\DivisionByZeroError $e) {
-					$help2 = 0;
-				}
+                    @eval($formel_str[$i]);
+                } catch (\DivisionByZeroError $e) {
+                    $help2 = 0;
+                }
                 $data[$j][$i] = $help2;
             }
         }

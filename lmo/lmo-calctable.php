@@ -268,6 +268,7 @@ if ($file != '') {
                 $negativ[$a] = $negativ[$a] - $strafm[$a];
             }
         }  // Hack-Straftore
+
         if ($kegel == 0) {
             array_push($tab0, (50000000 + $punkte[$a]) . (50000000 - $negativ[$a]) . (50000000 + $dtore[$a]) . (50000000 + $etore[$a]) . (50000000 + $a));
         } else {

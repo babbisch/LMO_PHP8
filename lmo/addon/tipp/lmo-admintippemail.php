@@ -84,12 +84,12 @@ echo $tipp_textreminder1; ?>">
       <div class="col d-flex justify-content-center"><h1><?php echo $text['tipp'][165] ?></h1></div>
     </div>
     <div class="row p-1">
-      <div class="col-4 col-md-3 text-end"><input type="radio" class="form-check-input" name="emailart" value="0" <?php if ($emailart == 0) { echo 'checked'; } ?> onClick="changetextarea(0)">&nbsp;<?php echo $text['tipp'][166]; ?></div>
+      <div class="col-2 offset-1 text-end form-field"><input type="radio" class="radio" name="emailart" value="0" <?php if ($emailart == 0) { echo 'checked'; } ?> onClick="changetextarea(0)"><label><?php echo $text['tipp'][166]; ?></label></div>
     </div>
     <div class="row p-1">
-      <div class="col-4 col-md-3 text-end"><input type="radio" class="form-check-input" name="emailart" value="2" <?php if ($emailart == 2) { echo 'checked'; } ?> onClick="changetextarea(2)">&nbsp;<?php echo $text['tipp'][168]; ?></div>
-      <div class="col-7 col-md-3 text-start">
-        <select class="form-select" name="adressat" onChange="emailart[1].checked=true;changetextarea(2);">
+      <div class="col-2 offset-1 text-end form-field"><input type="radio" class="radio" name="emailart" value="2" <?php if ($emailart == 2) { echo 'checked'; } ?> onClick="changetextarea(2)"><label><?php echo $text['tipp'][168]; ?></label></div>
+      <div class="col-7 md:col-3 text-start">
+        <select class="form-control" name="adressat" onChange="emailart[1].checked=true;changetextarea(2);">
           <option value=""><?php echo $text['tipp'][51] ?></option><?php
 require (PATH_TO_ADDONDIR . '/tipp/lmo-tippselectemail.php');
 ?>
@@ -97,8 +97,8 @@ require (PATH_TO_ADDONDIR . '/tipp/lmo-tippselectemail.php');
        </div>
      </div>
      <div class="row p-1">
-       <div class="col-4 col-md-3 text-end"><input type="radio" class="form-check-input" name="emailart" value="1" <?php if ($emailart == 1) { echo 'checked'; } ?> onClick="changetextarea(1)">&nbsp;<?php echo $text['tipp'][167]; ?></div>
-       <div class="col-7 col-md-5 text-start">
+       <div class="col-2 offset-1 text-end form-field"><input type="radio" class="radio" name="emailart" value="1" <?php if ($emailart == 1) { echo 'checked'; } ?> onClick="changetextarea(1)"><label><?php echo $text['tipp'][167]; ?></label></div>
+       <div class="col-7 md:col-5 text-start">
          <div class="container"><?php
 $ftype = '.l98';
 $iptype = 'reminder';
@@ -161,7 +161,7 @@ if ($emailart == 1) {
             </div>
           </div>
           <div class="row p-1">
-            <div class="col"><input class="btn btn-success" type="submit" name="best" value="<?php echo $text['tipp'][169]; ?>"></td>
+            <div class="col"><input class="btn-solid btn-sm theme-success" type="submit" name="best" value="<?php echo $text['tipp'][169]; ?>"></td>
           </div>
           <div class="row p-1">
             <div class="col-3 col-md-1 offset-md-4"><?php echo $text['tipp'][178]; ?></div>

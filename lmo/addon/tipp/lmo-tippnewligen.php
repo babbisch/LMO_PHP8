@@ -67,7 +67,7 @@ if (($action == 'tipp') && ($todo == 'newligen')) {
         require (PATH_TO_ADDONDIR . '/tipp/lmo-tippnewdir.php');
         if ($i != 0) { ?>
         <br />
-        <input class="btn btn-sm btn-primary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][5]; ?>"><?php } ?>
+        <input class="btn-solid btn-sm theme-primary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][5]; ?>"><?php } ?>
       </form><?php } ?>
     </div>
   </div><?php

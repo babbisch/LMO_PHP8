@@ -291,7 +291,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
             if ($tipp_tippmodus == 1) {
                 ?>
           <div class="col-1">
-            <acronym title="<?php echo $text['tipp'][241] . ':' . $text['tipp'][242] ?>"><?php echo $text['tipp'][209]; /* Dein Tipp */ ?></acronym><br><?php
+            <acronym title="<?php echo $text['tipp'][241] . ':' . $text['tipp'][242] ?>"><?php echo $text['tipp'][209]; /* Dein Tipp */ ?><br><?php
                 if ($goalfaktor[$i] != 1) {
                     echo '(' . $text[553 + log10($goalfaktor[$i])] . ')';
                 }
@@ -300,14 +300,14 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
             if ($tipp_tippmodus == 0) {
                 ?>
           <div class="col-1">
-            <acronym title="<?php echo $text['tipp'][95] ?>">1</acronym>&nbsp;<?php if ($hidr[$i] == 0) { ?>
-            <acronym title="<?php echo $text['tipp'][96] ?>">0</acronym>&nbsp;<?php } else { ?>
+            <acronym title="<?php echo $text['tipp'][95] ?>">1&nbsp;<?php if ($hidr[$i] == 0) { ?>
+            <acronym title="<?php echo $text['tipp'][96] ?>">0&nbsp;<?php } else { ?>
             &nbsp;<?php } ?>
-            <acronym title="<?php echo $text['tipp'][97] ?>">2</acronym>
+            <acronym title="<?php echo $text['tipp'][97] ?>">2
           </div><?php }
             if ($tipp_jokertipp == 1) { ?>
           <div class="col-1">
-            <acronym title="<?php echo $text['tipp'][290] ?>"><?php echo $text['tipp'][289]; ?></acronym>
+            <acronym title="<?php echo $text['tipp'][290] ?>"><?php echo $text['tipp'][289]; ?>
           </div><?php } ?>
           <div class="col-1"><?php echo $text['tipp'][31]; /* Ergebnis */ ?></div>
           <div class="col-1"><?php echo $text[37]; /* PP */ ?></div>
@@ -361,7 +361,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
             if ($btip == true) {
                 ?>
           <div class="col-1">
-              <input class="custom-control" style="width:2.2rem;" name="xtippa<?php echo $i; ?>" value="<?php echo $tippa[$i]; ?>"> : <input class="custom-control" style="width:2.2rem;" name="xtippb<?php echo $i; ?>" value="<?php echo $tippb[$i]; ?>">
+              <input class="form-control rw-3" name="xtippa<?php echo $i; ?>" value="<?php echo $tippa[$i]; ?>"> : <input class="form-control w-3" name="xtippb<?php echo $i; ?>" value="<?php echo $tippb[$i]; ?>">
           </div><?php
             } else {
                 ?>
@@ -451,7 +451,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
         </div><?php } ?>
         <div class="row pt-3">
           <div class="col"><?php if ($savebutton == 1) { ?>
-              <input title="<?php echo $text[114] ?>" class="btn btn-primary" type="submit" name="best" value="<?php echo $text['tipp'][8]; ?>"><?php } ?>
+              <input title="<?php echo $text[114] ?>" class="btn-solidtheme-primary" type="submit" name="best" value="<?php echo $text['tipp'][8]; ?>"><?php } ?>
           </div>
         </div>
       </div>

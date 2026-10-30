@@ -183,7 +183,7 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
                             }
                             echo applyFactor($goala[$st - 1][$i][$n], $goalfaktor) . ':' . applyFactor($goalb[$st - 1][$i][$n], $goalfaktor);
                             if ($mtipp[$st - 1][$i][$n] == 1) {
-                                echo '</del></acronym>';
+                                echo '</del>';
                                 $nw = 1;
                             }
                         } else {
@@ -192,7 +192,7 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
                             }
                             echo applyFactor($goala[$st - 1][$i], $goalfaktor) . ':' . applyFactor($goalb[$st - 1][$i], $goalfaktor);
                             if ($mtipp[$st - 1][$i] == 1) {
-                                echo '</del></acronym>';
+                                echo '</del>';
                                 $nw = 1;
                             }
                         }

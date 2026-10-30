@@ -90,7 +90,7 @@ if (($action == 'tipp') && ($todo == 'delaccount')) {
           <input type="hidden" name="newpage" value="1">
           <input class="form-control" type="password" name="xtipperpass" size="16" maxlength="32" value="<?php echo $xtipperpass; ?>" placeholder="<?php echo $text['tipp'][69]; ?>">
           <br />
-          <input class="btn btn-sm btn-danger" type="submit" name="xtippersub" value="<?php echo $text[82]; ?>">
+          <input class="btn-solid btn-sm theme-danger" type="submit" name="xtippersub" value="<?php echo $text[82]; ?>">
         </form>
       </div><?php }
     if ($newpage == 1) { /* erfolgreich */ ?>

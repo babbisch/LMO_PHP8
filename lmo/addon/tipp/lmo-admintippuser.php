@@ -158,8 +158,8 @@ if ($_SESSION['lmouserok'] == 2) {
           <div class="col-2"><?php echo $tab0[$x]['name']; ?></div>
           <div class="col-2"><?php echo $tab0[$x]['team']; ?></div>
           <div class="col-2"><?php if ($tab0[$x]['ltipp'] > 0) { echo date('d.m.Y H:i', $tab0[$x]['ltipp']); } ?></div>    
-          <div class="col-auto"><a class="btn btn-sm btn-primary" href='<?php echo $added . $tab0[$x]['nick'] ?>' onClick="return chklmolink();"><i class="bi bi-pencil" title="<?php echo $text['tipp'][98] ?>"></i></a></div>
-          <div class="col-auto"><a href='<?php echo $addd . $tab0[$x]['nick'] ?>' onClick="return confirm('<?php echo $text[499] ?>');" class="btn btn-sm btn-danger"><i class="bi bi-trash" title="<?php echo $text[82] ?>"></i></a></div>
+          <div class="col-auto"><a class="btn-solid btn-sm theme-primary" href='<?php echo $added . $tab0[$x]['nick'] ?>' onClick="return chklmolink();"><i class="bi bi-pencil" title="<?php echo $text['tipp'][98] ?>"></i></a></div>
+          <div class="col-auto"><a href='<?php echo $addd . $tab0[$x]['nick'] ?>' onClick="return confirm('<?php echo $text[499] ?>');" class="btn-solid btn-sm theme-danger"><i class="bi bi-trash" title="<?php echo $text[82] ?>"></i></a></div>
         </div><?php
         }
     }
@@ -167,9 +167,9 @@ if ($_SESSION['lmouserok'] == 2) {
       </div></div>
     </div>
   </div>
-  <div class="row">
+  <div class="row p-3">
     <div class="col">
-      <a class="btn btn-primary" href="<?php echo $_SERVER['PHP_SELF']; ?>?action=admin&amp;todo=tippuseredit&amp;save=-1"><?php echo $text['tipp'][136]; ?></a></th>
+      <a class="btn-solid btn-sm theme-accent" href="<?php echo $_SERVER['PHP_SELF']; ?>?action=admin&amp;todo=tippuseredit&amp;save=-1"><?php echo $text['tipp'][136]; ?></a></th>
     </div>
   </div>
 </div><?php

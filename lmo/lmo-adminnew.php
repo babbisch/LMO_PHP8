@@ -225,16 +225,18 @@ if ($newpage < 3) {
 if ($newpage == 0) {
     ?>
           <div class="row pb-1">
-            <div class="col text-end"><acronym title="<?php echo $text[245]; ?>"><?php echo $text[244]; ?></acronym></div>
-            <div class="col text-start"><acronym title="<?php echo $text[245]; ?>"><?php echo $dirliga; ?><input class="custom-control" type="text" name="xfile" maxlength="28" value="<?php echo $xfile; ?>" placeholder="noname">.l98</acronym></div>
+            <div class="col-6 text-end"><?php echo $text[244]; ?></div>
+            <div class="col-auto"><?php echo $dirliga; ?></div>
+            <div class="col-auto"><input class="form-control" type="text" name="xfile" maxlength="28" value="<?php echo $xfile; ?>" placeholder="noname"></div>
+            <div class="col-auto">.l98</div>
           </div>
           <div class="row pb-1">
-            <div class="col text-end"><acronym title="<?php echo $text[118] ?>"><?php echo $text[113]; ?></acronym></div>
-            <div class="col text-start"><acronym title="<?php echo $text[118] ?>"><input class="custom-control" type="text" name="xtitel" size="26rem" maxlength="60" value="<?php echo $xtitel; ?>" placeholder="No Name"></acronym></div>
+            <div class="col-6 text-end"><?php echo $text[113]; ?></div>
+            <div class="col"><input class="form-control" type="text" name="xtitel" size="26rem" maxlength="60" value="<?php echo $xtitel; ?>" placeholder="No Name"></div>
           </div>
           <div class="row pb-1">
-            <div class="col text-end"><acronym title="<?php echo $text[175] ?>"><?php echo $text[174]; ?></acronym></div>
-            <div class="col text-start"><acronym title="<?php echo $text[175] ?>"><select class="custom-select" name="xtype" onChange="dolmoedit()"><?php echo '<option value="0"';
+            <div class="col-6 text-end"><?php echo $text[174]; ?></div>
+            <div class="col"><acronym title="<?php echo $text[175] ?>"><select class="form-control" name="xtype" ><?php echo '<option value="0"';
     if ($xtype == 0) {
         echo ' selected';
     }
@@ -243,30 +245,30 @@ if ($newpage == 0) {
     if ($xtype == 1) {
         echo ' selected';
     }
-    echo '>' . $text[177] . '</option>'; ?></select></acronym></div>
+    echo '>' . $text[177] . '</option>'; ?></select></div>
           </div><?php
 }
 if ($newpage == 1) {
     if ($xtype == 0) {
         ?>
           <div class="row pb-1">
-            <div class="col text-end"><acronym title="<?php echo $text[272] ?>"><?php echo $text[271]; ?></acronym></div>
-            <div class="col text-start"><input class="custom-control" type="number" name="xteams" style="width: 4rem;" maxlength="2" value="18"></div>
+            <div class="col text-end"><?php echo $text[271]; ?></div>
+            <div class="col text-start"><input class="form-control" type="number" name="xteams" style="width: 4rem;" maxlength="2" value="18"></div>
           </div>
           <div class="row pb-1">
-            <div class="col text-end"><acronym title="<?php echo $text[275] ?>"><?php echo $text[274]; ?></acronym></div>
-            <div class="col text-start"><input class="custom-control" type="number" name="xanzst" style="width: 4rem;" maxlength="3" value="34"></div>
+            <div class="col text-end"><?php echo $text[274]; ?></div>
+            <div class="col text-start"><input class="form-control" type="number" name="xanzst" style="width: 4rem;" maxlength="3" value="34"></div>
           </div>
           <div class="row pb-1">
-            <div class="col text-end"><acronym title="<?php echo $text[278] ?>"><?php echo $text[277]; ?></acronym></div>
-            <div class="col text-start"><input class="custom-control" type="number" name="xanzsp" style="width: 4rem;" maxlength="2" value="9"></div>
+            <div class="col text-end"><?php echo $text[277]; ?></div>
+            <div class="col text-start"><input class="form-control" type="number" name="xanzsp" style="width: 4rem;" maxlength="2" value="9"></div>
           </div><?php
     } else {
         ?>
           <div class="row pb-1">
-            <div class="col text-end"><acronym title="<?php echo $text[272] ?>"><?php echo $text[271]; ?></acronym></div>
+            <div class="col text-end"><?php echo $text[271]; ?></div>
             <div class="col text-start">
-              <select class="custom-select" name="xteams" onChange="dolmoedit()"><?php if ($xteams == '') {
+              <select class="form-control" name="xteams" ><?php if ($xteams == '') {
             $xteams = 16;
         }
         for ($i = 2; $i < 129; $i = $i * 2) {
@@ -290,9 +292,9 @@ if ($newpage == 2) {
     if ($xtype == 0) {
         ?>
           <div class="row pb-1">
-            <div class="col text-end"><acronym title="<?php echo $text[285] ?>"><?php echo $text[284]; ?></acronym></div>
-            <div class="col text-start">
-              <input type="radio" class="form-check-input" name="xprogram" value="none"<?php if ($xprogram == 'none') { echo ' checked'; } ?> onChange="dolmoedit()"> <?php echo $text[286]; ?><br><br>
+            <div class="col text-end"><?php echo $text[284]; ?></div>
+            <div class="col text-start form-field">
+              <input type="radio" class="radio" name="xprogram" value="none"<?php if ($xprogram == 'none') { echo ' checked'; } ?> > <?php echo $text[286]; ?><br><br>
               <?php echo $text[287]; ?>:<br><?php
         $ftype = '.l98';
         require (PATH_TO_LMO . '/lmo-adminnewdir.php');
@@ -306,7 +308,7 @@ if ($newpage == 2) {
             //        2. Ist die Spieltaganzahl gleich Hin- und Rückrunde oder nur Hinrunde?
             if (($xanzsp == $soll_anzsp) && (($xanzst == $soll_anzst) || ($xanzst == $soll_anzst / 2))) {
 ?>
-              <input type="radio" class="form-check-input" name="xprogram" value="random"<?php if ($xprogram == 'random') { echo ' checked'; } ?> onChange="dolmoedit()"> <?php
+              <input type="radio" class="radio" name="xprogram" value="random"<?php if ($xprogram == 'random') { echo ' checked'; } ?> > <?php
                 echo $text[288];
             }
         }
@@ -319,9 +321,9 @@ if ($newpage == 2) {
         for ($i = 1; $i <= $xanzst; $i++) {
 ?>
           <div class="row">
-            <div class="col text-end"><acronym title="<?php echo $text[352] ?>"><?php echo $text[351] . ' ' . $i; ?></acronym></div>
+            <div class="col text-end"><acronym title="<?php echo $text[352] ?>"><?php echo $text[351] . ' ' . $i; ?></div>
             <div class="col text-start">
-              <select class="custom-select" name="xmod<?php echo $i; ?>" onChange="dolmoedit()">
+              <select class="form-control" name="xmod<?php echo $i; ?>" >
                 <option value="1"<?php if ($xmodus[$i - 1] == 1) { echo ' selected'; } ?>><?php echo $text[353] ?></option>
                 <option value="2"<?php if ($xmodus[$i - 1] == 2) { echo ' selected'; } ?>><?php echo $text[354] ?></option>
                 <option value="3"<?php if ($xmodus[$i - 1] == 3) { echo ' selected'; } ?>><?php echo $text[355] ?></option>
@@ -337,17 +339,17 @@ if ($newpage < 3) {
     ?>
           <div class="row p-3">
             <div class="col-2 offset-2">
-              <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="btn btn-danger btn-sm" onclick="return siklmolink(this.href);" title="<?php echo $text[248]; ?>"><?php echo $text[247]; ?></a>
+              <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="btn-solid btn-sm theme-danger" title="<?php echo $text[248]; ?>"><?php echo $text[247]; ?></a>
             </div><?php
     if ($newpage < 2) {
         ?>
             <div class="col-4 text-end">
-              <input title="<?php echo $text[261]; ?>" class="btn btn-primary btn-sm" type="submit" name="best" value="<?php echo $text[260]; ?>">
+              <input title="<?php echo $text[261]; ?>" class="btn-solid btn-sm theme-primary" type="submit" name="best" value="<?php echo $text[260]; ?>">
             </div><?php
     } else {
         ?>
             <div class="col-4 text-end">
-              <input title="<?php echo $text[290]; ?>" class="btn btn-primary btn-sm" type="submit" name="best" value="<?php echo $text[289]; ?>">
+              <input title="<?php echo $text[290]; ?>" class="btn-solid btn-sm theme-primary" type="submit" name="best" value="<?php echo $text[289]; ?>">
             </div><?php
     }
     ?>
@@ -360,7 +362,7 @@ if ($newpage == 3) {
           </div>
           <div class="row pt-3">
             <div class="col">
-              <a href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=edit&amp;st=-2&amp;file=' . $file; ?>" class="btn btn-success btn-sm" title="<?php echo $text[293]; ?>"><?php echo $text[292]; ?></a>
+              <a href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=edit&amp;st=-2&amp;file=' . $file; ?>" class="btn-solid btn-sm theme-success" title="<?php echo $text[293]; ?>"><?php echo $text[292]; ?></a>
             </div>
           </div><?php
 }

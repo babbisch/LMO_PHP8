@@ -22,7 +22,7 @@ if (($file != '') && ($kreuz == 1)) {
     $addr = $_SERVER['PHP_SELF'] . '?action=results&amp;file=' . $file . '&amp;st=';
     $croteam = !empty($_GET['croteam']) ? $_GET['croteam'] : $favteam;
     ?>
-      <div class="container">
+      <div class="container text-center">
 
 <?php
     for ($i = 0; $i <= ($anzteams); $i++) {
@@ -34,7 +34,7 @@ if (($file != '') && ($kreuz == 1)) {
             } elseif ($j == $i) {
                 echo "<div class='col-cross bg'>";
             } elseif ($croteam != 0 && ($j == $croteam || $i == $croteam)) {
-                echo "<div class='col-cross sel'>";
+                echo "<div class='col-cross bg-subtle-secondary'>";
             } else {
                 echo "<div class='col-cross'>";
             }
@@ -79,22 +79,21 @@ if (($file != '') && ($kreuz == 1)) {
                             if ($l > 0) {
                                 echo '<br />';
                             }
+                            $lmo_kreuz_longtime = '';
+                            $lmo_kreuz_shorttime = '';
                             if ($mterm[$b][$a] > 0) {
-                                $lmo_kreuz_longtime = ', ' . date('d.m.Y', $mterm[$b][$a]);
-                                $lmo_kreuz_shorttime = date('d.m.', $mterm[$b][$a]);
-                            } else {
-                                $lmo_kreuz_longtime = '';
-                                $lmo_kreuz_shorttime = '';
+                                //$lmo_kreuz_longtime = ', ' . date('d.m.Y', $mterm[$b][$a]);
+                                //$lmo_kreuz_shorttime = date('d.m.', $mterm[$b][$a]);
                             }
                             echo '<a href="' . $addr . ($b + 1) . "\" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' title=\"" . $teams[$i] . ' - ' . $teams[$j] . ' <br>(' . ($b + 1) . '. ' . $text[2] . $lmo_kreuz_longtime . $dummy . ')">';
                             if ($goala[$b][$a] == '_' && $lmo_kreuz_shorttime != '') {
                                 echo "<small>$lmo_kreuz_shorttime</small>";
                             } else {
-                                if ($goala[$b][$a] != '_')
+                                if ($goala[$b][$a] != '_') {
                                     echo '<strong>';
-                                echo applyFactor($goala[$b][$a], $goalfaktor) . ':' . applyFactor($goalb[$b][$a], $goalfaktor);
-                                if ($goala[$b][$a] != '_')
+                                    echo applyFactor($goala[$b][$a], $goalfaktor) . ':' . applyFactor($goalb[$b][$a], $goalfaktor);
                                     echo '</strong>';
+                                }
                             }
                             if ($spez == 1) {
                                 echo ' ' . $mspez[$b][$a];

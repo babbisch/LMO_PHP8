@@ -272,9 +272,9 @@ if ($file != '') {
 // Ligenübersicht
 if ($backlink == 1 && ($file != '' || $action == 'tipp')) {
     if (basename($file) == $file) {
-        $output_ligenuebersicht .= "<a href='" . $_SERVER['PHP_SELF'] . "' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' title='{$text[392]}'>{$text[391]}</a>";
+        $output_ligenuebersicht .= "<a href='" . $_SERVER['PHP_SELF'] . "' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='{$text[392]}'>{$text[391]}</a>";
     } else {
-        $output_ligenuebersicht .= "<a href='" . $_SERVER['PHP_SELF'] . '?subdir=' . dirname($file) . "/' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' title='{$text[392]}'>{$text[391]}</a>";
+        $output_ligenuebersicht .= "<a href='" . $_SERVER['PHP_SELF'] . '?subdir=' . dirname($file) . "/' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' data-bs-title='{$text[392]}'>{$text[391]}</a>";
     }
 }
 
@@ -307,7 +307,7 @@ if ($eintippspiel == 1) {
         $output_tippspiel .= $action != 'tipp' ? "<li class='nav-item'><a href='{$addm}tipp' class='nav-link'>{$text['tipp'][0]}</a></li>" : "<li class='nav-item active pull-right'><a href='#' class='nav-link active'>{$text['tipp'][0]}</a></li>";
     }
 }
-$output_infolink = '<acronym title="Liga Manager Online for PHP 8.x">LMO</acronym> 4 for PHP8 - <a target="_blank" href="//github.com/henshingly/lmo_php8" title="' . $text[54] . '">' . $text[55] . '</a>';
+$output_infolink = 'LMO 4 for PHP 8.x - <a target="_blank" href="//github.com/henshingly/lmo_php8" data-bs-toggle="tooltip" data-bs-title="' . $text[54] . '">' . $text[55] . '</a>';
 if (!array_key_exists('Infolink', $template->blockvariables['__global__'])) {
     trigger_error("'Infolink' is missing in template'", E_USER_WARNING);
     echo $output_infolink;

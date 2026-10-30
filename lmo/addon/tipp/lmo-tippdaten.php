@@ -206,7 +206,7 @@ if (($action == 'tipp') && ($todo == 'daten')) {
         if ($tipp_freischaltcode == 1) {
 ?>
           <div class="row">
-            <div class="col-2 text-end"><acronym title="<?php echo $text['tipp'][300] ?>"><?php echo ' ' . $text['tipp'][16] . ' ' . $text['tipp'][19]; ?></acronym></div>
+            <div class="col-2 text-end" data-bs-toggle="tooltip" data-bs-title="<?php echo $text['tipp'][300] ?>"><?php echo ' ' . $text['tipp'][16] . ' ' . $text['tipp'][19]; ?></div>
             <div class="col-4"><input class="form-control" type="text" name="xtipperemail2" size="25" maxlength="64" value="<?php echo $tipp_tipper_daten[4]; ?>"></div>
           </div><?php
         }
@@ -216,8 +216,8 @@ if (($action == 'tipp') && ($todo == 'daten')) {
           </div>
           <div class="row">
             <div class="col">
-            <input type="checkbox" class="form-check-input" name="xnews" value="1" <?php if ($tipp_tipper_daten[9] != -1) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][206] ?><br>
-            <input type="checkbox" class="form-check-input" name="xremind" value="1" <?php if ($tipp_tipper_daten[10] != -1) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][167] ?>
+            <input type="checkbox" class="check" name="xnews" value="1" <?php if ($tipp_tipper_daten[9] != -1) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][206] ?><br>
+            <input type="checkbox" class="check" name="xremind" value="1" <?php if ($tipp_tipper_daten[10] != -1) { echo 'checked'; } ?>>&nbsp;<?php echo $text['tipp'][167] ?>
             </div>
           </div><?php
         if ($tipp_tipperimteam >= 0) {
@@ -252,7 +252,7 @@ if (($action == 'tipp') && ($todo == 'daten')) {
 ?>
           <div class="row pt-3">
             <div class="col">
-              <input class="btn btn-sm btn-primary" type="submit" name="xtippersub" value="<?php echo $text[329]; ?>">
+              <input class="btn-solid btn-sm theme-primary" type="submit" name="xtippersub" value="<?php echo $text[329]; ?>">
             </div>
           </div>
 <?php } ?>

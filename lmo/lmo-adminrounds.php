@@ -130,7 +130,7 @@ if (($file != '') && ($_SESSION['lmouserok'] == 2)) {
           <div class="col-3"><?php echo $str1 . $partie->gast->name . $str2; ?></div>
           <div class="col-1"><?php echo $str1 . $hTore . $str2; ?> : <?php echo $str1 . $gTore . $str2; ?></div>
           <div class="col-1">
-            <select class="custom-select" onChange="dolmoedit()" name="sp_<?php
+            <select class="custom-select"  name="sp_<?php
             echo $spTag->nr . '_' . $partie->heim->nr . '_' . $partie->gast->nr . '" data-width="auto">';
             for ($sp = 1; $sp <= $liga->spieltageCount(); $sp++) {
                 echo "<option value='$sp'";
@@ -163,7 +163,7 @@ if (($file != '') && ($_SESSION['lmouserok'] == 2)) {
     ?>
         <div class="row p-3">
             <div class="col">
-              <acronym title="<?php echo $text[114] ?>"><input class="btn btn-primary btn-sm" type="submit" name="spPlan" value="<?php echo $text[5009]; ?>"></acronym>
+              <acronym title="<?php echo $text[114] ?>"><input class="btn-solid btn-sm theme-primary" type="submit" name="spPlan" value="<?php echo $text[5009]; ?>"></acronym>
             </div>
         </div>
       </form>

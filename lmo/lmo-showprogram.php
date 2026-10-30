@@ -59,8 +59,8 @@ if ($file != '') {
                         }
 ?>
 
-          <div class="col-2 text-end d-none d-xl-block"><?php echo $dum1; ?></div>
-          <div class="col-2 text-end d-xl-none"><?php echo $dum2; ?></div><?php
+          <div class="col-2 text-end d-none xl:d-block"><?php echo $dum1; ?></div>
+          <div class="col-2 text-end xl:d-none"><?php echo $dum2; ?></div><?php
                     }
 ?>
           <?php
@@ -72,12 +72,12 @@ if ($file != '') {
                         $heim2 = '</strong>';
                     }
 ?>
-          <div class="col-3 text-end d-none d-xl-block">
+          <div class="col-3 text-end d-none xl:d-block">
           <?php
                     echo $heim1 . $teams[$teama[$j][$i]] . $heim2;
 ?>
           </div>
-          <div class="col-3 text-end d-xl-none">
+          <div class="col-3 text-end xl:d-none">
           <?php
                     echo $heim1 . $teamk[$teama[$j][$i]] . $heim2;
 ?>
@@ -91,12 +91,12 @@ if ($file != '') {
                     }
 ?>
 
-          <div class="col-3 text-start d-none d-xl-block"> -&nbsp;&nbsp;
+          <div class="col-3 text-start d-none xl:d-block"> -&nbsp;&nbsp;
           <?php
                     echo $gast1 . $teams[$teamb[$j][$i]] . $gast2;
 ?>
           </div>
-          <div class="col-3 text-start d-xl-none"> -&nbsp;&nbsp; 
+          <div class="col-3 text-start xl:d-none"> -&nbsp;&nbsp; 
           <?php
                     echo $gast1 . $teamk[$teamb[$j][$i]] . $gast2;
 ?>
@@ -104,10 +104,10 @@ if ($file != '') {
           <div class="col-2 col-sm-auto"><?php echo applyFactor($goala[$j][$i], $goalfaktor); ?> : <?php echo applyFactor($goalb[$j][$i], $goalfaktor); ?></div><?php
                     if ($spez == 1) {
 ?>
-          <div class="col-1 col-sm-auto"><?php echo $mspez[$j][$i]; ?></div><?php
+          <div class="col-1 sm:col-auto"><?php echo $mspez[$j][$i]; ?></div><?php
                     }
 ?>
-          <div class="col-2 col-sm-auto"><?php
+          <div class="col-2 sm:col-auto"><?php
                     /** Mannschaftsicons finden */
                     $lmo_teamaicon = '';
                     $lmo_teambicon = '';

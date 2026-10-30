@@ -200,8 +200,8 @@ if ($wertung == 'einzel' || $wertung == 'intern') {
     }
 } else {  /* Teamwertung */
     ?>
-    <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][120] ?>"><?php echo $text['tipp'][26]; /* Anzahl Tipper */ ?></acronym></div>
-    <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][208] ?>"><?php echo $text['tipp'][26] . 'Ø'; /* Anzahl Tipper Durchschnitt */ ?></acronym></div><?php
+    <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][120] ?>"><?php echo $text['tipp'][26]; /* Anzahl Tipper */ ?></div>
+    <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][208] ?>"><?php echo $text['tipp'][26] . 'Ø'; /* Anzahl Tipper Durchschnitt */ ?></div><?php
 }  /*?>
     <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][117]?>"><?php if($gewicht!="spiele"){
   echo "<a href=\"".$addt5."spiele\">";
@@ -209,30 +209,30 @@ if ($wertung == 'einzel' || $wertung == 'intern') {
 echo $text['tipp'][123]; // Spiele getippt
 if($gewicht!="spiele"){
   echo "</a>";
-}         ?></acronym>
+}         ?>
     </div><?php*/
 if ($tipp_showzus == 1) {
     if ($tipp_tippmodus == 1) {
         if ($tipp_rergebnis > 0) {
 ?>
-      <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][34] . ': ' . $tipp_rergebnis . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][221]; /* RE */ ?></acronym></div><?php }
+      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][34] . ': ' . $tipp_rergebnis . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][221]; /* RE */ ?></div><?php }
         if ($tipp_rtendenzdiff > $tipp_rtendenz) { ?>
-      <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][35] . ': ' . $tipp_rtendenzdiff . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][222]; /* RTD */ ?></acronym></div><?php }
+      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][35] . ': ' . $tipp_rtendenzdiff . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][222]; /* RTD */ ?></div><?php }
         if ($tipp_rtendenz > 0) { ?>
-      <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][36] . ': ' . $tipp_rtendenz . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][223]; /* RT */ ?></acronym></div><?php }
+      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][36] . ': ' . $tipp_rtendenz . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][223]; /* RT */ ?></div><?php }
         if ($tipp_rtor > 0) { ?>
-      <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][37] . ': ' . $tipp_rtor . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][224]; /* RG */ ?></acronym></div><?php }
+      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][37] . ': ' . $tipp_rtor . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][224]; /* RG */ ?></div><?php }
     }  // ende if($tipp_tippmodus==1)
     if ($tipp_rremis > 0) { ?>
-      <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][192] . ': ' . $tipp_rremis . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][225]; /* UB */ ?></acronym></div><?php }
+      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][192] . ': ' . $tipp_rremis . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][225]; /* UB */ ?></div><?php }
     if ($tipp_jokertipp == 1) { ?>
-      <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][227] ?>"><?php echo $text['tipp'][226]; /* JP */ ?></acronym></div><?php }
+      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][227] ?>"><?php echo $text['tipp'][226]; /* JP */ ?></div><?php }
 }  // ende if($tipp_showzus==1)
 if ($tipp_showstsiege == 1) { ?>
-      <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][271] ?>"><?php echo $text['tipp'][90]; /* GS */ ?></acronym></div><?php
+      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][271] ?>"><?php echo $text['tipp'][90]; /* GS */ ?></div><?php
 }
 ?>
-      <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php if ($tipp_tippmodus == 1) { echo $text['tipp'][124]; } else { echo $text['tipp'][125] . ' %'; } ?>">
+      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php if ($tipp_tippmodus == 1) { echo $text['tipp'][124]; } else { echo $text['tipp'][125] . ' %'; } ?>">
 <?php if ($gewicht != 'relativ') {
     echo '<a href="' . $addt5 . 'relativ">';
 }
@@ -243,9 +243,9 @@ if ($tipp_tippmodus == 1) {
 }
 if ($gewicht != 'relativ') {
     echo '</a>';
-} ?></acronym>
+} ?>
       </div>
-      <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][118] ?>"><?php if ($gewicht != 'absolut') {
+      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][118] ?>"><?php if ($gewicht != 'absolut') {
     echo '<a href="' . $addt5 . 'absolut" title="' . $text['tipp'][149] . '">';
 }
 if ($tipp_tippmodus == 1) {
@@ -255,7 +255,7 @@ if ($tipp_tippmodus == 1) {
 }
 if ($gewicht != 'absolut') {
     echo '</a>';
-} ?></acronym>
+} ?>
       </div>
     </div><?php
 $eigplatz = $anztipper + 2;

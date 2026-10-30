@@ -82,7 +82,7 @@ if ($tipp_tippmodus == 1) {
     if ($btip[$i] == false)
         $read = 'disabled';
     ?>
-    <input class="custom-control" type="text" name="xtippa<?php echo $i; ?>" size="2" maxlength="4" value="<?php echo $goaltippa[$i]; ?>" <?php echo $read; ?>> : <input class="custom-control" type="text" name="xtippb<?php echo $i; ?>" size="2" maxlength="4" value="<?php echo $goaltippb[$i]; ?>" <?php echo $read; ?>>
+    <input class="form-control w-4" type="number" name="xtippa<?php echo $i; ?>" size="2" maxlength="4" value="<?php echo $goaltippa[$i]; ?>" <?php echo $read; ?>> : <input class="form-control w-4" type="number" name="xtippb<?php echo $i; ?>" size="2" maxlength="4" value="<?php echo $goaltippb[$i]; ?>" <?php echo $read; ?>>
   </div><?php
 }  /* ende ($tipp_tippmodus==1) */
 
@@ -100,21 +100,21 @@ if ($tipp_tippmodus == 0) {
     }
 ?>
   <div class="col-1">
-    <input type="radio" class="form-check-input" name="xtipp<?php echo $i; ?>" value="1" <?php if ($tipp == 1) {
+    <input type="radio" class="radio" name="xtipp<?php echo $i; ?>" value="1" <?php if ($tipp == 1) {
         echo ' checked';
     }
     if ($btip[$i] == false) {
         echo ' disabled';
     } ?>>
   <?php if ($hidr == 0) { ?>
-    <input type="radio" class="form-check-input" name="xtipp<?php echo $i; ?>" value="3" <?php if ($tipp == 0) {
+    <input type="radio" class="radio" name="xtipp<?php echo $i; ?>" value="3" <?php if ($tipp == 0) {
             echo ' checked';
         }
         if ($btip[$i] == false) {
             echo ' disabled';
         } ?>>
   <?php } ?>
-    <input type="radio" class="form-check-input" name="xtipp<?php echo $i; ?>" value="2" <?php if ($tipp == 2) {
+    <input type="radio" class="radio" name="xtipp<?php echo $i; ?>" value="2" <?php if ($tipp == 2) {
         echo ' checked';
     }
     if ($btip[$i] == false) {
@@ -124,7 +124,7 @@ if ($tipp_tippmodus == 0) {
 
 /* BEIDE */
 if ($tipp_jokertipp == 1) { ?>
-  <div class="col-1"><input type="radio" class="form-check-input" name="xjokerspiel" value="<?php echo $i + 1; ?>" <?php if ($jksp == $i + 1) {
+  <div class="col-1"><input type="radio" class="radio" name="xjokerspiel" value="<?php echo $i + 1; ?>" <?php if ($jksp == $i + 1) {
         echo ' checked';
     }
     if ($btip[$i] == false) {

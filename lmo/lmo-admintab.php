@@ -212,7 +212,7 @@ if ($file != '') {
     ?>
           <div class="row p-3">
             <div class="col-1">
-              <input title="<?php echo $text[114] ?>" class="btn btn-primary btn-sm" type="submit" name="best" value="<?php echo $text[415]; ?>">
+              <input title="<?php echo $text[114] ?>" class="btn-solid bvtn.sm theme-primary" type="submit" name="best" value="<?php echo $text[415]; ?>">
             </div>
           </div>
         </div>

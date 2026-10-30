@@ -114,7 +114,7 @@ if (($action == 'tipp') && ($todo == 'pwchange')) {
           </div>
           <div class="row pt-3">
             <div class="col-4 text-end">
-              <input class="btn btn-sm btn-primary" type="submit" name="xtippersub" value="<?php echo $text[329]; ?>">
+              <input class="btn-solid btn-sm theme-primary" type="submit" name="xtippersub" value="<?php echo $text[329]; ?>">
             </div>
           </div>
         </form>

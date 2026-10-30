@@ -44,7 +44,7 @@ if ($save == 1) {
 </nav>
 <div class="container">
   <div class="row">
-    <div class="col"><?php echo getMessage($text[571], TRUE); ?></div>
+    <div class="col fg-danger"><?php echo getMessage($text[571], TRUE); ?></div>
   </div>
   <div class="row">
     <div class="col d-flex justify-content-center"><h1><?php echo $text[498] ?></h1></div>
@@ -55,10 +55,10 @@ $testshow = 0;
 foreach ($cfgarray as $addon_name => $addon_cfg) {
     if (is_array($addon_cfg)) {
         if ($show == $testshow) {
-            echo "<p>$addon_name</p>";
+            echo "<p class='btn-outline theme-info'>$addon_name</p>";
         } else {
             ?>
-               <p><a class="btn btn-sm btn-outline-primary" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=addons&amp;show=' . $testshow; ?>"><?php echo $addon_name; ?></a></p><?php
+               <p><a class="btn-solid btn-sm" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=addons&amp;show=' . $testshow; ?>"><?php echo $addon_name; ?></a></p><?php
         }
         $testshow++;
     }
@@ -81,7 +81,7 @@ foreach ($cfgarray as $addon_name => $addon_cfg) {  // Alle Addons abklappern
             foreach ($addon_cfg as $cfg_name => $cfg_value) {  // Alle Konfigwerte des Addon
 ?>
             <div class="col-4 offset-1 text-end pb-1"><?php echo $cfg_name ?></div>
-            <div class="col-4 pb-1"><input class="form-control" type="text" name="x<?php echo $cfg_name ?>" size="30" value="<?php echo $cfg_value; ?>" onChange="dolmoedit()"></div><?php
+            <div class="col-4 pb-1"><input class="form-control w-12" type="text" name="x<?php echo $cfg_name ?>" value="<?php echo $cfg_value; ?>" ></div><?php
             }
         }
         $testshow++;
@@ -91,7 +91,7 @@ foreach ($cfgarray as $addon_name => $addon_cfg) {  // Alle Addons abklappern
           </div>
           <div class="row pt-3">
             <div class="col text-center">
-              <input title="<?php echo $text[114] ?>" class="btn btn-primary btn-sm" type="submit" name="best" value="<?php echo $text[188]; ?>">
+              <input title="<?php echo $text[114] ?>" class="btn-solid btn-sm theme-primary" type="submit" name="best" value="<?php echo $text[188]; ?>">
             </div>
           </div>
         </div

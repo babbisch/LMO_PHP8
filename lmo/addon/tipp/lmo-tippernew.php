@@ -303,7 +303,7 @@ if ($newpage != 1) {
     require (PATH_TO_ADDONDIR . '/tipp/lmo-tippnewdir.php'); ?></div>
      </div>
      <div class="row p-1">
-       <div class="col-1 offset-2"><input class="btn btn-sm btn-secondary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][11]; ?>"></div>
+       <div class="col-1 offset-2"><input class="btn-solid btn-sm theme-secondary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][11]; ?>"></div>
      </div>
      <div class="row p-1">
        <div class="col"><a href="<?php echo $_SERVER['PHP_SELF'] . '?action=tipp'; ?>" title="<?php echo $text['tipp'][110]; ?>">« <?php echo $text['tipp'][110]; ?></a></div>

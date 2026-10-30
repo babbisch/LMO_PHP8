@@ -34,8 +34,8 @@ if ($hidr != 1) {
 <?php if ($tabpkt == 0) { ?>
     <div class="col-1 text-end"><?php echo $text[37] ?></div>
 <?php } ?>
-    <div class="col-2 col-md-1 text-end"><?php echo $text[38]; ?></div>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $text[39]; ?></div>
+    <div class="col-2 md:col-1 text-end"><?php echo $text[38]; ?></div>
+    <div class="col-1 text-end d-none lg:d-block"><?php echo $text[39]; ?></div>
 <?php if ($tabpkt == 1) { ?>
     <div class="col-1 text-end"><?php echo $text[37] ?></div>
 <?php } ?>
@@ -58,13 +58,13 @@ for ($x = 1; $x <= $anzteams; $x++) {
             $j = 2;
         }
         if (($x >= $j) && ($x < $j + $anzcl) && ($anzcl > 0)) {
-            $label = 'badge bg-info';
+            $label = 'badge bg-primary';
         }
         if (($x >= $j + $anzcl) && ($x < $j + $anzcl + $anzck) && ($anzck > 0)) {
-            $label = 'badge bg-clq';
+            $label = 'badge bg-info';
         }
         if (($x >= $j + $anzcl + $anzck) && ($x < $j + $anzcl + $anzck + $anzuc) && ($anzuc > 0)) {
-            $label = 'badge bg-primary';
+            $label = 'badge bg-accent';
         }
         if (($x <= $anzteams - $anzab) && ($x > $anzteams - $anzab - $anzar) && ($anzar > 0)) {
             $label = 'badge bg-warning';
@@ -75,20 +75,20 @@ for ($x = 1; $x <= $anzteams; $x++) {
     }
     ?>
   <div class="row align-items-center">
-    <div class="col-2 text-end d-none d-lg-block"><span class="<?php echo $label; ?>"><?php echo $x; ?></span>
+    <div class="col-2 text-end d-none lg:d-block"><span class="<?php echo $label; ?>"><?php echo $x; ?></span>
 <?php
-    $y = 'right text-info';
+    $y = 'right fg-info';
     if ($endtab > 1 && isset($platz0[$i]) && isset($platz1[$i])) {
         if ($platz0[$i] < $platz1[$i]) {
-            $y = 'up text-success';
+            $y = 'up-right fg-success';
         } elseif ($platz0[$i] > $platz1[$i]) {
-            $y = 'down text-danger';
+            $y = 'down-right fg-danger';
         }
     }
     ?>
     <i class="bi bi-arrow-<?php echo $y ?>"></i>
     </div>
-    <div class="col-2 text-end d-lg-none"><span class="<?php echo $label; ?>"><?php echo $x; ?></span></div>
+    <div class="col-2 text-end lg:d-none"><span class="<?php echo $label; ?>"><?php echo $x; ?></span></div>
     <?php
     if (($teamu[$i] != '') && ($urlt == 1)) {
         $url = " <a href='" . $teamu[$i] . "' target='_blank'><i class='bi bi-house'></i></a>";
@@ -137,12 +137,12 @@ for ($x = 1; $x <= $anzteams; $x++) {
         $notiz = ' ';
     }
     ?>
-    <div class="col-3 text-start d-none d-lg-block">
+    <div class="col-3 text-start d-none lg:d-block">
     <?php
     echo $dummy . $teams[$i] . $dumm2 . $url . $notiz;
     ?>
     </div>
-    <div class="col-3 text-start d-lg-none">
+    <div class="col-3 text-start lg:d-none">
     <?php
     echo $dummy . $teamm[$i] . $dumm2 . $url . $notiz;
     ?>
@@ -160,8 +160,8 @@ for ($x = 1; $x <= $anzteams; $x++) {
   <?php } ?>
     </div>
   <?php } ?>
-    <div class="col-2 col-md-1 text-end"><?php echo $dummy . applyFactor($etore[$i], $goalfaktor) . $dumm2; ?><?php echo $dummy; ?>:<?php echo $dumm2; ?><?php echo $dummy . applyFactor($atore[$i], $goalfaktor) . $dumm2; ?></div>
-    <div class="col-1 text-end d-none d-lg-block"><?php echo $dummy . applyFactor($dtore[$i], $goalfaktor) . $dumm2; ?></div>
+    <div class="col-2 md:col-1 text-end"><?php echo $dummy . applyFactor($etore[$i], $goalfaktor) . $dumm2; ?><?php echo $dummy; ?>:<?php echo $dumm2; ?><?php echo $dummy . applyFactor($atore[$i], $goalfaktor) . $dumm2; ?></div>
+    <div class="col-1 text-end d-none lg:d-block"><?php echo $dummy . applyFactor($dtore[$i], $goalfaktor) . $dumm2; ?></div>
   <?php if ($tabpkt == 1) { ?>
     <div class="col-1 text-end"><strong><?php echo applyFactor($punkte[$i], $pointsfaktor) ?>
   <?php if ($minus == 2) { ?>
