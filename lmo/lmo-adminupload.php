@@ -48,16 +48,14 @@ if (($action == 'admin') && ($todo == 'upload') && ($_SESSION['lmouserok'] == 2)
     <div class="col d-flex justify-content-center"><h1><?php echo $text[299]; ?></h1></div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-md-auto">
+    <div class="col lg:col-4">
       <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <div class="mb-3">
-          <acronym title="<?php echo $text[302] ?>"><?php echo $text[300]; ?>:</acronym>
-        </div>
-        <div class="input-group mb-3">
+        <label class="form-label"><?php echo $text[300]; ?></label>
+        <div class="input-group mb-3 form-field">
           <input type="hidden" name="action" value="admin">
           <input type="hidden" name="todo" value="upload">
           <input type="hidden" name="upl" value="1">
-          <input type="file" name="userfile" class="form-control">
+          <input type="file" name="userfile" class="form-control w-6">
         </div>
         <button type="submit" class="btn-solid btn-sm theme-primary m-3" value=""><?php echo $text[301]; ?></button>
       </form>
