@@ -36,7 +36,7 @@ if (($action == 'admin') && ($todo == 'delete') && ($_SESSION['lmouserok'] == 2)
       <div class="col d-flex justify-content-center"><h1><?php echo $text[295]; ?></h1></div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-4"><?php
+      <div class="col-auto"><?php
     $ftype = '.l98';
     require (PATH_TO_LMO . '/lmo-admindeldir.php');
     ?>
