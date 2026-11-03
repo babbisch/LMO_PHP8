@@ -32,7 +32,7 @@ if ($ftype != '') {
     sort($dummy);
     $i = 0;
     $j = 0;
-    echo "<ul class='list-group'>";
+    echo "<div class='list-group'>";
     for ($k = 0; $k < count($dummy); $k++) {
         $files = $dummy[$k];
         if ($_SESSION['lmouserok'] == 2) {
@@ -73,15 +73,15 @@ if ($ftype != '') {
                 $j++;
                 $t0 = $text[223] . ' ' . $j;
             }
-            echo "<li class='list-group-item'><a href='" . $addi . ($k + 1) . "'>" . $t0 . '</a></li>';
+            echo "<a href='" . $addi . ($k + 1) . "' class='list-group-item list-group-item-action'>" . $t0 . "</a>";
         }
     }
     if ($i == 0) {
-        echo "<li class='list-group-item'>[" . $text[223] . ']</li>';
+        echo $text[223];
     } elseif (($i > 1) && ($_SESSION['lmouserok'] == 2)) {
-        echo "<li class='list-group-item'><a href='" . $addi . "-1'><strong>" . $text[402] . '</strong></a></li>';
+        echo "<a href='" . $addi . "-1' class='list-group-item list-group-item-action fw-bold'>" . $text[402] . "</a>";
     }
-    echo '</ul>';
+    echo '</div>';
 }
 
 ?>
