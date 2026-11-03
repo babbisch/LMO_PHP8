@@ -39,11 +39,11 @@ if ($action == 'admin') {
     }
     $file = isset($_REQUEST['file']) ? $_REQUEST['file'] : '';
     $subdir = isset($_REQUEST['subdir']) ? $_REQUEST['subdir'] : dirname($file);
+    $subdir .= "/";
 
     if (@file_exists(PATH_TO_LMO . '/install/install.php') && @is_readable(PATH_TO_LMO . '/install/install.php'))
         echo getMessage('Delete install folder or set its chmod to 000!', TRUE);
 ?>
-<script type="text/javascript" src="<?php echo URL_TO_LMO ?>/js/admin.js.php"></script>
 <div class="container-fluid p-3">
   <div class="text-center"><h1><?php echo $text[77] . ' ' . $text[54]; ?></h1></div>
 </div>
