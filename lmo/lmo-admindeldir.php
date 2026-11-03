@@ -32,7 +32,7 @@ if ($ftype != '') {
     sort($dummy);
     $i = 0;
     $j = 0;
-    echo "<ul class='list-group'>";
+    echo "<div class='list-group'>";
     for ($k = 0; $k < count($dummy); $k++) {
         $files = $dummy[$k];
         $sekt = '';
@@ -61,10 +61,27 @@ if ($ftype != '') {
             $j++;
             $t0 = $text[507] . " $j";
         }
-        echo "<li class='list-group-item'><a href='{$addi}{$dirliga}{$files}' onclick='return dellmolink(this.href,\"{$t0}\");'>{$t0}</a></li>";
+        //echo "<a href='" . $addi . $dirliga . $files ."' class='list-group-item list-group-item-action ' >" . $t0 . "</a>";
+        ?>
+              <button type="button" class="btn-solid btn-sm theme-secondary" data-bs-toggle="dialog" data-bs-target="#del_<?php echo $files?>"><?php echo $t0; ?></button>
+              <dialog class="dialog" id="del_<?php echo $files?>">
+                <div class="dialog-header">
+                  <h1 class="dialog-title"><?php echo $text[295]; ?></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+                </div>
+                <div class="dialog-body">
+                  <p><?php echo $text[296]; ?></p>
+                </div>
+                <div class="dialog-footer">
+                  <button type="button" class="btn-solid theme-secondary" data-bs-dismiss="dialog"><?php echo $text[347]; ?></button>
+                  <a href='<?php echo $addi . $dirliga . $files; ?>' type="button" class="btn-solid theme-danger"><?php echo $text[82]; ?></a>
+                </div>
+              </dialog>
+              <p> </p>
+        <?php
     }
     if ($i == 0) {
-        echo "<li class='list-group-item'>[" . $text[223] . ']</li>';
+        echo $text[223];
     }
-    echo '</ul>';
+    echo '</div>';
 }

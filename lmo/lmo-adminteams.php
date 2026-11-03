@@ -21,7 +21,6 @@
  */
 require_once (PATH_TO_LMO . '/lmo-admintest.php');
 if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1)) {
-    // require_once(PATH_TO_LMO."/lmo-adminopenfile.php");
     require_once (PATH_TO_LMO . '/lmo-openfile.php');
     if (!isset($team)) {
         $team = '';
@@ -212,12 +211,12 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
     if ($lmtype == 0) {
         /** Titel Notiz */
         ?>
-            <div class="col-auto"><acronym title="<?php echo $text[405] ?>"><i class="bi bi-info-circle-fill fg-info" style="font-size: 1.3rem;"></i></acronym></div>
+            <div class="col-auto"><i class="bi bi-info-circle-fill fg-info" style="font-size: 1.3rem;"></i></div>
 <?php
     }
     /** Titel Homepage */
     ?>
-            <div class="col-auto"><acronym title="<?php echo $text[130] ?>"><i class="bi bi-box-arrow-up-right fg-warning" style="font-size: 1.3rem;"></i></acronym></div>
+            <div class="col-auto"><i class="bi bi-box-arrow-up-right fg-warning" style="font-size: 1.3rem;"></i></div>
           </div>
 <?php
     /** Mannschaftsnamen */
@@ -291,7 +290,20 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
             /** Mannschaft löschen */
             ?>
             <div class="col-auto">
-              <a href='<?php echo $addz . $i; ?>' onclick="return dteamlmolink(this.href,'<?php echo $teams[$i]; ?>');" class="btn-solid btn-sm theme-danger" title="<?php echo $text[334]; ?>"><i class="bi bi-trash"></i></a>
+              <button type="button" class="btn-solid btn-sm theme-danger" data-bs-toggle="dialog" data-bs-target="#delteam<?php echo $i?>" title="<?php echo $text[334]; ?>"><i class="bi bi-trash"></i></button>
+              <dialog class="dialog" id="delteam<?php echo $i?>">
+                <div class="dialog-header">
+                  <h1 class="dialog-title"><?php echo $text[334]; ?></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+                </div>
+                <div class="dialog-body">
+                  <p><?php echo $text[332]; ?></p>
+                </div>
+                <div class="dialog-footer">
+                  <button type="button" class="btn-solid theme-secondary" data-bs-dismiss="dialog"><?php echo $text[347]; ?></button>
+                  <a href='<?php echo $addz . $i; ?>' type="button" class="btn-solid theme-danger"><?php echo $text[82]; ?></a>
+                </div>
+              </dialog>
             </div>
 <?php
         }
@@ -326,7 +338,7 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
 ?>
   <div class="row p-3">
     <div class="col">
-      <a class="btn-solidtheme.secondary btn-sm" href="<?php echo $addr ?>-3" onclick="return chklmolink();" title="<?php echo $text[339] ?>"><?php echo $text[338] ?></a>
+      <a class="btn-solid btn-sm theme-secndary" href="<?php echo $addr ?>-3" onclick="return chklmolink();" title="<?php echo $text[339] ?>"><?php echo $text[338] ?></a>
     </div>
   </div>
 <?php
