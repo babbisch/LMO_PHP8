@@ -80,7 +80,7 @@ if ($ftype != '') {
     if ($i == 0) {
         echo $text[223];
     } elseif (($i > 1) && ($_SESSION['lmouserok'] == 2)) {
-        echo "<a href='" . $addi . "-1' class='list-group-item list-group-item-action fw-bold' onclick='emllmolink(this.href,\"{$aadr}\");return false;'>" . $text[401] . "</a>";
+        echo "<a href='" . $addi . "-1' class='list-group-item list-group-item-action fw-bold'>" . $text[401] . "</a>";
     }
     echo '</div>';
 }
