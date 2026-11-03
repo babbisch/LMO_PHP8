@@ -32,7 +32,7 @@ if ($ftype != '') {
     sort($dummy);
     $i = 0;
     $j = 0;
-    echo "<ul class='list-group'>";
+    echo "<div class='list-group'>";
     for ($k = 0; $k < count($dummy); $k++) {
         $files = $dummy[$k];
         if ($_SESSION['lmouserok'] == 2) {
@@ -73,15 +73,16 @@ if ($ftype != '') {
                 $j++;
                 $t0 = $text[507] . " $j";
             }
-            echo "<li class='list-group-item'><a target='lmoelm' href='{$addi}" . ($k + 1) . "' onclick='emllmolink(this.href,\"{$aadr}\");return false;'>{$t0}</a></li>";
+            $l = $k + 1;
+            echo "<a href='" . $addi . $l . "' class='list-group-item list-group-item-action'>" . $t0 . "</a>";
         }
     }
     if ($i == 0) {
-        echo "<li class='list-group-item'>[{$text[223]}]</li>";
+        echo $text[223];
     } elseif (($i > 1) && ($_SESSION['lmouserok'] == 2)) {
-        echo "<li class='list-group-item'><a target='lmoelm' href='{$addi}-1' onclick='emllmolink(this.href,\"{$aadr}\");return false;'><strong>{$text[401]}</strong></a></li>";
+        echo "<a href='" . $addi . "-1' class='list-group-item list-group-item-action fw-bold' onclick='emllmolink(this.href,\"{$aadr}\");return false;'>" . $text[401] . "</a>";
     }
-    echo '</ul>';
+    echo '</div>';
 }
 
 ?>

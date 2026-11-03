@@ -92,9 +92,9 @@ function filterZero($a)
 function getMessage($message, $error = FALSE)
 {
     if ($error) {
-        return '<p class="d-flex justify-content-center"><i class="bi bi-x-circle-fill text-danger"> ' . $message . '</i></p>';
+        return '<p class="d-flex justify-content-center"><i class="bi bi-x-circle-fill fg-danger"> ' . $message . '</i></p>';
     } else {
-        return '<p class="d-flex justify-content-center"><i class="bi bi-check-circle-fill text-success"> ' . $message . '</i></p>';
+        return '<p class="d-flex justify-content-center"><i class="bi bi-check-circle-fill fg-success"> ' . $message . '</i></p>';
     }
 }
 

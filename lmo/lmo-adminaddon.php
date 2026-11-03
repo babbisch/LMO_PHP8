@@ -55,7 +55,7 @@ $testshow = 0;
 foreach ($cfgarray as $addon_name => $addon_cfg) {
     if (is_array($addon_cfg)) {
         if ($show == $testshow) {
-            echo "<p class='btn-outline theme-info'>$addon_name</p>";
+            echo "<p class='btn-outline btn-sm theme-info'>$addon_name</p>";
         } else {
             ?>
                <p><a class="btn-solid btn-sm" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=addons&amp;show=' . $testshow; ?>"><?php echo $addon_name; ?></a></p><?php

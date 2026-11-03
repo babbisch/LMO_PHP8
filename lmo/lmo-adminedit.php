@@ -349,7 +349,7 @@ if ($file != '') {
         <input type="hidden" name="st" value="<?php echo $st; ?>">
         <div class="container">
           <div class="row">
-            <div class="col-11 lg:col text-start"><?php
+            <div class="col-auto lg:col-5"><?php
     echo $st . '. ' . $text[2];
     if ($datum1[$st - 1] != '') {
         $datum = explode('.', $datum1[$st - 1]);
@@ -372,9 +372,9 @@ if ($file != '') {
             </div>
             <div class="col-4 d-none lg:d-block"></div>
             <div class="col-2 lg:d-none"></div>
-            <div class="col-1 d-none lg:d-block"><acronym title="<?php echo $text[213] ?>"><i class="bi bi-chat-fill fg-success" style="font-size: 1.3rem;"></i></acronym></div>
-            <div class="col-1 d-none lg:d-block"><acronym title="<?php echo $text[112] ?>"><i class="bi bi-info-circle-fill fg-info" style="font-size: 1.3rem;"></i></acronym></div>
-            <div class="col-1 d-none lg:d-block"><acronym title="<?php echo $text[263] ?>"><i class="bi bi-box-arrow-up-right fg-warning" style="font-size: 1.3rem;"></i></acronym></div>
+            <div class="col-1 text-center d-none lg:d-block"><acronym title="<?php echo $text[213] ?>"><i class="bi bi-chat-fill fg-success" style="font-size: 1.3rem;"></i></acronym></div>
+            <div class="col-1 text-center d-none lg:d-block"><acronym title="<?php echo $text[112] ?>"><i class="bi bi-info-circle-fill fg-info" style="font-size: 1.3rem;"></i></acronym></div>
+            <div class="col-1 text-center d-none lg:d-block"><acronym title="<?php echo $text[263] ?>"><i class="bi bi-box-arrow-up-right fg-warning" style="font-size: 1.3rem;"></i></acronym></div>
           </div><?php
     if ($lmtype != 0) {
         $anzsp = $anzteams;
@@ -439,7 +439,7 @@ if ($file != '') {
             }
             ?>
             </div>
-            <div class="col-2 lg:d-none"><?php
+            <div class="col-2 offset-1 lg:d-none"><?php
             if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
                 ?>
               <select class="select2" name="xteamsa<?php echo $i; ?>" onChange="dolmoedit()" tabindex="<?php echo $i; ?>5" size="7"><?php
@@ -492,14 +492,14 @@ if ($file != '') {
                 $goalb[$st - 1][$i] = '_';
             }
             ?>
-            <div class="col-2">
+            <div class="col-6 lg:col-2">
               <input title="<?php echo $text[109] ?>" class="form-control w-4" type="number" name="xgoala<?php echo $i; ?>" tabindex="<?php echo $i; ?>7" min="0" maxlength="4" value="<?php echo $goala[$st - 1][$i]; ?>">
               :
               <input title="<?php echo $text[110] ?>" class="form-control w-4" type="number" name="xgoalb<?php echo $i; ?>" tabindex="<?php echo $i; ?>8" min="0" maxlength="4" value="<?php echo $goalb[$st - 1][$i]; ?>">
             </div><?php
             if ($spez == 1) {
                 ?>
-            <div class="col-1">
+            <div class="col-1 text-center ">
               <select class="form-control" name="xmspez<?php echo $i; ?>" onChange="dolmoedit()" tabindex="<?php echo $i; ?>9">
                 <option<?php if ($mspez[$st - 1][$i] == '&nbsp;') { echo ' selected'; } ?>>_</option>
                 <option<?php if ($mspez[$st - 1][$i] == $text[0]) { echo ' selected'; } ?>><?php echo $text[0] ?></option>
@@ -508,7 +508,7 @@ if ($file != '') {
             </div><?php
             }
             ?>
-            <div class="col-1 d-none lg:d-block">
+            <div class="col-1 text-center d-none lg:d-block">
               <select class="form-control" id="gT<?php echo $i ?>"  name="xmsieg<?php echo $i; ?>" onChange="dolmoedit()" tabindex="<?php echo $i; ?>10">
                 <option value="0"<?php if ($msieg[$st - 1][$i] == 0) { echo ' selected'; } ?>>_</option>
                 <option value="1"<?php if ($msieg[$st - 1][$i] == 1) { echo ' selected'; } ?>><?php echo $text[214] ?></option>
@@ -521,7 +521,7 @@ if ($file != '') {
             }
             ?>
             </div>
-            <div class="col-1 d-none lg:d-block">
+            <div class="col-1 text-center d-none lg:d-block">
               <input id="n<?php echo $i ?>" class="form-control" type="text" name="xmnote<?php echo $i; ?>" tabindex="<?php echo $i; ?>11" size="2" maxlength="255" value="<?php echo htmlentities($mnote[$st - 1][$i]); ?>" onChange="dolmoedit()"><?php
             if (trim($mnote[$st - 1][$i]) == '') {
                 ?>
@@ -529,7 +529,7 @@ if ($file != '') {
             }
             ?>
             </div>
-            <div class="col-1 d-none lg:d-block"><input id="s<?php echo $i ?>" class="form-control" type="text" name="xmberi<?php echo $i; ?>" tabindex="<?php echo $i; ?>12" size="10" maxlength="255" value="<?php echo htmlentities($mberi[$st - 1][$i]); ?>" onChange="dolmoedit()"><?php
+            <div class="col-1 text-center d-none lg:d-block"><input id="s<?php echo $i ?>" class="form-control" type="text" name="xmberi<?php echo $i; ?>" tabindex="<?php echo $i; ?>12" size="10" maxlength="255" value="<?php echo htmlentities($mberi[$st - 1][$i]); ?>" onChange="dolmoedit()"><?php
             if (trim($mberi[$st - 1][$i]) == '') {
                 ?>
               <script type="text/javascript">document.getElementById('s<?php echo $i ?>').style.display='none';document.write('<a href="#" class="none" onClick="this.style.display=\'none\';document.getElementById(\'s<?php echo $i ?>\').style.display=\'inline\';return false;">+</a>');</script><?php
@@ -575,8 +575,8 @@ if ($file != '') {
                 }
                 ?>
             <div class="col-2 d-none md:d-block">
-              <input title="<?php echo $text[122] ?>" class="form-control" type="text" name="xatdat<?php echo $i . $n; ?>" tabindex="<?php echo $i . $n; ?>3" size="6" maxlength="10" value="<?php echo $dum1; ?>" onChange="dolmoedit()">
-              <input title="<?php echo $text[123] ?>" class="form-control" type="text" name="xattim<?php echo $i . $n; ?>" tabindex="<?php echo $i . $n; ?>4" size="2" maxlength="5" value="<?php echo $dum2; ?>" onChange="dolmoedit()">
+              <input title="<?php echo $text[122] ?>" class="form-control w-7" type="text" data-bs-toggle="datepicker" name="xatdat<?php echo $i . $n; ?>" tabindex="<?php echo $i . $n; ?>3" maxlength="10" value="<?php echo $dum1; ?>" onChange="dolmoedit()">
+              <input title="<?php echo $text[123] ?>" class="form-control w-4" type="text" name="xattim<?php echo $i . $n; ?>" tabindex="<?php echo $i . $n; ?>4" maxlength="5" value="<?php echo $dum2; ?>" onChange="dolmoedit()">
             </div>
             <?php
 

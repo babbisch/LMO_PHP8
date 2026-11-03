@@ -41,7 +41,7 @@ if ($action == 'admin') {
           <input class="btn-solid btn-sm theme-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?php echo $text[311] ?>" type="submit" name="xusersub" value="<?php echo $text[310]; ?>">
         </div>
         <div class="d-flex col-6">
-          <a class="btn-solid btn-sm theme-secondary" href="<?php echo URL_TO_LMO ?>/lmo.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[470]; ?>"><?php echo $text[469]; ?></a>
+          <a class="btn-solid btn-sm theme-warning" href="<?php echo URL_TO_LMO ?>/lmo.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[470]; ?>"><?php echo $text[469]; ?></a>
         </div>
       </form>
     </div>
