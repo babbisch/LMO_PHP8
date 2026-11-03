@@ -88,7 +88,7 @@
   <div class="row justify-content-center">
     <div class="col-3 text-end"><a href="<?php echo $addk . $ma; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[157]; ?>"><?php echo $text[5]; ?></a></div>
     <div class="col-6 text-center"><?php echo $text[156] . ' ' . $md; ?></div>
-    <div class="col-3 text-start"><a href="<?php echo $addk . $mb; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[158]; ?>"><?php echo $text[154]; ?></a>&nbsp;&nbsp;<a href="<?php echo $addk . $mc; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[159]; ?>"><?php echo $text[7]; ?></a></div>
+    <div class="col-3"><a href="<?php echo $addk . $mb; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[158]; ?>"><?php echo $text[154]; ?></a>&nbsp;&nbsp;<a href="<?php echo $addk . $mc; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[159]; ?>"><?php echo $text[7]; ?></a></div>
   </div><?php
     $dat0 = getdate(time());
     $lmo_output_buffer = array();

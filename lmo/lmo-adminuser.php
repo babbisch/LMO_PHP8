@@ -109,7 +109,7 @@ if ($_SESSION['lmouserok'] == 2) {
     }
     ?>
     </div>
-    <div class="col-4 offset-1 text-start">
+    <div class="col-4 offset-1">
       <form name="lmoedit<?php echo $show ?>" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="todo" value="user">
@@ -127,32 +127,32 @@ if ($_SESSION['lmouserok'] == 2) {
 ?> 
           <div class="row">
             <div class="col-4 text-end"><?php echo $text[322] ?></div>
-            <div class="col-8 text-start"><input class="form-control" type="text" name="xadmin_name<?php echo $testshow ?>" size="26" maxlength="32" value="<?php echo $lmo_admin[0] ?>"></div>
+            <div class="col-8"><input class="form-control" type="text" name="xadmin_name<?php echo $testshow ?>" size="26" maxlength="32" value="<?php echo $lmo_admin[0] ?>"></div>
           </div>
           <div class="row">
             <div class="col-4 text-end"><?php echo $text[323] ?></div>
-            <div class="col-8 text-start"><input class="form-control" type="text" name="xadmin_pass<?php echo $show ?>" size="16" maxlength="32" value=""></div>
+            <div class="col-8"><input class="form-control" type="text" name="xadmin_pass<?php echo $show ?>" size="16" maxlength="32" value=""></div>
           </div>
           <div class="row">
             <div class="col-4 text-end"><?php echo $text[324] ?></div>
-            <div class="col-8 text-start form-field">
+            <div class="col-8 form-field">
               <input class="radio" onClick="document.lmoedit<?php echo $show ?>.xadmin_erweitert<?php echo $show ?>.disabled=true" type="radio" name="xadmin_rang<?php echo $show ?>" value="2" <?php if ($lmo_admin[2] == 2) echo ' checked'; ?>> <?php echo $text[326] ?>
             </div>
           </div>
           <div class="row pt-3">
-            <div class="col-8 offset-4 text-start form-field">
+            <div class="col-8 offset-4 form-field">
               <input class="radio" onClick="document.lmoedit<?php echo $show ?>.xadmin_erweitert<?php echo $show ?>.disabled=false" type="radio" name="xadmin_rang<?php echo $show ?>" value="1" <?php if ($lmo_admin[2] == 1) echo ' checked'; ?>> <?php echo $text[325] ?>
             </div>
           </div>
           <div class="row">
-            <div class="col-8 offset-4 text-start form-field">
+            <div class="col-8 offset-4 form-field">
               <input class="radio" type="checkbox" name="xadmin_erweitert<?php echo $show ?>" <?php if (isset($lmo_admin[4]) && $lmo_admin[4] == 1) echo ' checked'; ?> <?php if ($lmo_admin[2] == 2) echo ' disabled'; ?>> <?php echo $text[559] ?>
             </div>
           </div><?php
             if ($lmo_admin[2] == 1) {
 ?>
           <div class="row">
-            <div class="col-8 offset-4 text-start" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[398] ?>"> <?php echo $text[397] ?></div>
+            <div class="col-8 offset-4" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[398] ?>"> <?php echo $text[397] ?></div>
           </div><?php
                 $helfer_ligen = explode(',', $lmo_admin_data[$testshow][3]);
                 $handle = opendir(PATH_TO_LMO . '/' . $dirliga);

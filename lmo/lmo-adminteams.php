@@ -223,13 +223,13 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
     for ($i = 1; $i <= $anzteams; $i++) {
         ?>
           <div class="row p-1">
-            <div class="col-2 text-start">     
+            <div class="col-2">     
                 <input class="form-control w-12" type="text" name="xteams<?php echo $i; ?>" maxlength="64" value="<?php echo htmlspecialchars($teams[$i]); ?>" placeholder="<?php echo $text[577] ?>" >
             </div>
-            <div class="col-2 text-start">     
+            <div class="col-2">     
                 <input class="form-control w-12" type="text" name="xteamm<?php echo $i; ?>" maxlength="12" value="<?php echo htmlspecialchars($teamm[$i]); ?>" placeholder="<?php echo $text[578] ?>" >
             </div>
-            <div class="col-1 text-start">     
+            <div class="col-1">     
                 <input class="form-control w-5" type="text" name="xteamk<?php echo $i; ?>" maxlength="5" value="<?php echo htmlspecialchars($teamk[$i]); ?>" placeholder="<?php echo $text[579] ?>" >
             </div>
 <?php
@@ -315,7 +315,7 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
     }
     ?>
           <div class="row p-3">
-            <div class="col-6 text-start">
+            <div class="col-6">
               <input title="<?php echo $text[114] ?>" class="btn-solid btn-sm theme-primary" type="submit" name="best" value="<?php echo $text[132]; ?>" />
             </div>
 <?php

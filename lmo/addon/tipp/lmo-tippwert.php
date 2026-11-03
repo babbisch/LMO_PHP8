@@ -531,7 +531,7 @@ if ($tabdat != '') {
     $st0 = $endtab - 1;
     if ($endtab > 1) {
 ?>
-      <div class="col-2 text-start"><a href="<?php echo $addr . $st0 ?>" title="<?php echo $text[43] ?>"><?php echo $text[5] ?> <?php echo $text[6] ?></a></div><?php
+      <div class="col-2"><a href="<?php echo $addr . $st0 ?>" title="<?php echo $text[43] ?>"><?php echo $text[5] ?> <?php echo $text[6] ?></a></div><?php
     }
     $st0 = $endtab + 1;
     if ($endtab < $anzst) {

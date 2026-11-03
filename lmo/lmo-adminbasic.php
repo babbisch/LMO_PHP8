@@ -209,15 +209,15 @@ if ($file != '') {
             ?>
           <div class="row pb-1">
             <div class="col-7 md:col-3 md:offset-2 text-end"><input class="form-control" type="text" name="xtitel" maxlength="60" value="<?php echo $titel; ?>" ></div>
-            <div class="col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[118]; ?>"><?php echo $text[113]; ?></acronym></div>
+            <div class="col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[118]; ?>"><?php echo $text[113]; ?></acronym></div>
           </div><?php if ($lmtype == 0) { ?>
           <div class="row pb-1">
             <div class="col-7 md:col-3 md:offset-2 text-end"><input class="form-control" type="text" name="xnamepkt" maxlength="60" value="<?php if ($namepkt == '') { echo $text[37]; } else { echo $namepkt; } ?>" ></div>
-            <div class="col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[66]; ?>"><?php echo $text[65] . ' ' . $text[37]; ?></acronym></div>
+            <div class="col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[66]; ?>"><?php echo $text[65] . ' ' . $text[37]; ?></acronym></div>
           </div>
           <div class="row pb-1">
             <div class="col-7 md:col-3 md:offset-2 text-end"><input class="form-control" type="text" name="xnametor" maxlength="60" value="<?php if ($nametor == '') { echo $text[38]; } else { echo $nametor; } ?>" ></div>
-            <div class="col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[66]; ?>"><?php echo $text[65] . ' ' . $text[38]; ?></acronym></div>
+            <div class="col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[66]; ?>"><?php echo $text[65] . ' ' . $text[38]; ?></acronym></div>
           </div><?php
             }
             ?>
@@ -230,7 +230,7 @@ if ($file != '') {
                 <option value="1000"<?php if ($pointsfaktor == 1000) echo ' selected'; ?>><?php echo $text[556] ?></option>
               </select>
             </div>
-            <div class="col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[558]; ?>"><?php echo $text[557]; ?> <?php echo $text[37]; ?></acronym></div>
+            <div class="col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[558]; ?>"><?php echo $text[557]; ?> <?php echo $text[37]; ?></acronym></div>
           </div>
           <div class="row pb-1">
             <div class="col-7 md:col-3 md:offset-2 text-end">
@@ -241,7 +241,7 @@ if ($file != '') {
                 <option value="1000"<?php if ($goalfaktor == 1000) echo ' selected'; ?>><?php echo $text[556] ?></option>
               </select>
             </div>
-            <div class="col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[558]; ?>"><?php echo $text[557]; ?> <?php echo $text[38]; ?></acronym></div>
+            <div class="col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[558]; ?>"><?php echo $text[557]; ?> <?php echo $text[38]; ?></acronym></div>
           </div><?php
         }
         ?>
@@ -255,7 +255,7 @@ if ($file != '') {
         ?>
               </select>
             </div>
-            <div class="col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[190]; ?>"><?php echo $text[189]; ?></acronym></div>
+            <div class="col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[190]; ?>"><?php echo $text[189]; ?></acronym></div>
           </div>
           <div class="row pb-1">
             <div class="col-7 md:col-3 md:offset-2 text-end">
@@ -267,7 +267,7 @@ if ($file != '') {
         ?>
               </select>
             </div>
-            <div class="col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[195]; ?>"><?php echo $text[194]; ?></acronym></div>
+            <div class="col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[195]; ?>"><?php echo $text[194]; ?></acronym></div>
           </div><?php if ($lmtype == 0) { ?>
           <div class="row pb-1">
             <div class="col-7 md:col-3 md:offset-2 text-end">
@@ -279,7 +279,7 @@ if ($file != '') {
             ?>
               </select>
             </div>
-            <div class="col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[197]; ?>"><?php echo $text[196]; ?></acronym></div>
+            <div class="col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[197]; ?>"><?php echo $text[196]; ?></acronym></div>
           </div>
           <div class="row pb-1">
             <div class="col-7 md:col-3 md:offset-2 text-end"><select class="form-control" name="xstat2" ><?php
@@ -295,22 +295,22 @@ if ($file != '') {
         if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) { ?>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[570]; ?>"><?php echo $text[569]; ?></acronym></div>
-            <div class="col-1 text-start"><input type="checkbox" class="check" name="xenablegamesort" <?php if ($enablegamesort == 1) { echo ' checked'; } ?>></div>
+            <div class="col-1"><input type="checkbox" class="check" name="xenablegamesort" <?php if ($enablegamesort == 1) { echo ' checked'; } ?>></div>
           </div><?php
             if ($lmtype == 1) {
                 ?>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[418]; ?>"><?php echo $text[417]; ?></acronym></div>
-            <div class="col-1 text-start"><input type="checkbox" class="check" name="xklfin" <?php if ($klfin == 1) { echo ' checked'; } ?>></div>
+            <div class="col-1"><input type="checkbox" class="check" name="xklfin" <?php if ($klfin == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[552]; ?>"><?php echo $text[551]; ?></acronym></div>
-            <div class="col-1 text-start"><input type="checkbox" class="check" name="xplaydown" <?php if ($playdown == 1) { echo ' checked'; } ?>></div>
+            <div class="col-1"><input type="checkbox" class="check" name="xplaydown" <?php if ($playdown == 1) { echo ' checked'; } ?>></div>
           </div><?php }
             if ($lmtype == 0) { ?>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[400]; ?>"><?php echo $text[399]; ?></acronym></div>
-            <div class="col-6 md:col-3 text-start">
+            <div class="col-6 md:col-3">
               <select class="form-control" name="xonrun" >
                 <option value="0"<?php if ($ergebnis == '0') { echo ' disabled'; } elseif ($onrun == 0) { echo ' selected'; } ?>><?php echo $text[10] ?></option>
                 <option value="1"<?php if ($tabelle == '0') { echo ' disabled'; } elseif ($onrun == 1) { echo ' selected'; } ?>><?php echo $text[16] ?></option>
@@ -326,67 +326,67 @@ if ($file != '') {
           </div><?php } ?>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[254]; ?>"><?php echo $text[253]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xdatm" <?php if ($datm == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xdatm" <?php if ($datm == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[252]; ?>"><?php echo $text[251]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xdats" <?php if ($dats == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xdats" <?php if ($dats == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1"><?php
             if ($lmtype == 0 && $tabonres == 0) {
                 ?>
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="ritopght" data-bs-title="<?php echo $text[512]; ?>"><?php echo $text[10]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xergebnis" <?php if ($ergebnis == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xergebnis" <?php if ($ergebnis == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[513]; ?>"><?php echo $text[16]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xtabelle" <?php if ($tabelle == 1) { echo ' checked'; } ?>></div><?php
+            <div class="col-auto"><input type="checkbox" class="check" name="xtabelle" <?php if ($tabelle == 1) { echo ' checked'; } ?>></div><?php
             }
             if ($lmtype == 1) {
                 ?>
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[512]; ?>"><?php echo $text[10]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xergebnis" <?php if ($ergebnis == 1) { echo ' checked'; } ?>></div><?php
+            <div class="col-auto"><input type="checkbox" class="check" name="xergebnis" <?php if ($ergebnis == 1) { echo ' checked'; } ?>></div><?php
             }
             if ($lmtype == 0 && $tabonres >= 1) {
                 ?>
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[512]; ?>"><?php echo $text[10] . '/' . $text[16]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xergebnis" <?php if ($ergebnis == 1) { echo ' checked'; } ?>></div><?php
+            <div class="col-auto"><input type="checkbox" class="check" name="xergebnis" <?php if ($ergebnis == 1) { echo ' checked'; } ?>></div><?php
             }
             ?>
           </div>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[256]; ?>"><?php echo $text[255]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xdatc" <?php if ($datc == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xdatc" <?php if ($datc == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[511]; ?>"><?php echo $text[12]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xplan" <?php if ($plan == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xplan" <?php if ($plan == 1) { echo ' checked'; } ?>></div>
           </div>
 	  <div class="row pb-1">
             <div class="col-6 md:col-4 text-end"><?php echo $text['stats'][0]; ?></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xstats" <?php if ($stats == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xstats" <?php if ($stats == 1) { echo ' checked'; } ?>></div>
           </div><?php if ($lmtype == 0) { ?>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[468]; ?>"><?php echo $text[467]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xkreuz" <?php if ($kreuz == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xkreuz" <?php if ($kreuz == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[238]; ?>"><?php echo $text[237]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xkurve" <?php if ($kurve == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xkurve" <?php if ($kurve == 1) { echo ' checked'; } ?>></div>
           </div><?php
             }
             if ($einspieler == 1) {
                 ?>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text['spieler'][19]; ?>"><?php echo $text['spieler'][18]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xmittore" <?php if ($mittore == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xmittore" <?php if ($mittore == 1) { echo ' checked'; } ?>></div>
           </div><?php
             }
             if ($lmtype == 0) {
                 ?>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[514]; ?>"><?php echo $text[18]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xligastats" <?php if ($ligastats == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xligastats" <?php if ($ligastats == 1) { echo ' checked'; } ?>></div>
           </div><?php
             }
             ?>
@@ -395,37 +395,37 @@ if ($file != '') {
           </div>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="rtopight" data-bs-title="<?php echo $text[268]; ?>"><?php echo $text[267]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xurlt" <?php if ($urlt == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xurlt" <?php if ($urlt == 1) { echo ' checked'; } ?>></div>
           </div>
           <div class="row pb-1">
             <div class="col-6 md:col-4 text-end " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<?php echo $text[266]; ?>"><?php echo $text[265]; ?></acronym></div>
-            <div class="col-auto text-start"><input type="checkbox" class="check" name="xurlb" <?php if ($urlb == 1) { echo ' checked'; } ?>></div>
+            <div class="col-auto"><input type="checkbox" class="check" name="xurlb" <?php if ($urlb == 1) { echo ' checked'; } ?>></div>
           </div><?php }
     } elseif ($show == 3) {
         if (($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) && $lmtype == 0) { ?>
           <div class="row pb-1">
             <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="xminus" <?php if ($minus == 2) { echo ' checked'; } ?>></div>
-            <div class="col-8 md:col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[180]; ?>"><?php echo $text[179]; ?></acronym></div>
+            <div class="col-8 md:col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[180]; ?>"><?php echo $text[179]; ?></acronym></div>
           </div>
           <div class="row pb-1">
             <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="xspez" <?php if ($spez == 1) { echo ' checked'; } ?>></div>
-            <div class="col-8 md:col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[185]; ?>"><?php echo $text[184]; ?></acronym></div>
+            <div class="col-8 md:col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[185]; ?>"><?php echo $text[184]; ?></acronym></div>
           </div>
           <div class="row pb-1">
             <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="xhidr" <?php if ($hidr == 1) { echo ' checked'; } ?>></div>
-            <div class="col-8 md:col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[242]; ?>"><?php echo $text[241]; ?></acronym></div>
+            <div class="col-8 md:col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[242]; ?>"><?php echo $text[241]; ?></acronym></div>
           </div>
           <div class="row pb-1">
             <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="xdirekt" <?php if ($direkt == 1) { echo ' checked'; } ?>></div>
-            <div class="col-8 md:col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[187]; ?>"><?php echo $text[186]; ?></acronym></div>
+            <div class="col-8 md:col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[187]; ?>"><?php echo $text[186]; ?></acronym></div>
           </div>
           <div class="row pb-1">
             <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="xkegel" <?php if ($kegel == 1) { echo ' checked'; } ?>></div>
-            <div class="col-8 md:col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[396]; ?>"><?php echo $text[395]; ?></acronym></div>
+            <div class="col-8 md:col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[396]; ?>"><?php echo $text[395]; ?></acronym></div>
           </div>
           <div class="row pb-1">
             <div class="col-1 offset-2 text-end"><input type="checkbox" class="check" name="xhands" <?php if ($hands == 1) { echo ' checked'; } ?>></div>
-            <div class="col-8 md:col-auto text-start " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[408]; ?>"><?php echo $text[407]; ?></acronym></div>
+            <div class="col-8 md:col-auto " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[408]; ?>"><?php echo $text[407]; ?></acronym></div>
           </div>
           <div class="row p-2">
             <div class="col"><strong><?php echo $text[198]; ?></strong></div>
@@ -549,11 +549,11 @@ if ($file != '') {
           </div>
           <div class="row pb-1">
             <div class="col-5 text-end " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[275] ?>"><?php echo $text[274]; ?></acronym></div>
-            <div class="col-1 text-start"><input class="form-control w-4" type="number" name="xanzst" size="3" maxlength="3" value="<?php echo $anzst ?>"></div>
+            <div class="col-1"><input class="form-control w-4" type="number" name="xanzst" size="3" maxlength="3" value="<?php echo $anzst ?>"></div>
           </div>
           <div class="row pb-1">
             <div class="col-5 text-end " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[278] ?>"><?php echo $text[277]; ?></acronym></div>
-            <div class="col-1 text-start"><input class="form-control w-4" type="number" name="xanzsp" size="2" maxlength="2" value="<?php echo $anzsp ?>"></div>
+            <div class="col-1"><input class="form-control w-4" type="number" name="xanzsp" size="2" maxlength="2" value="<?php echo $anzsp ?>"></div>
           </div>        
     <?php }
     } ?>

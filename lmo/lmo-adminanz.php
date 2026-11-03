@@ -78,11 +78,11 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
           </div>
           <div class="row">
             <div class="col-5 text-end align-self-center"><?php echo $text[274]; ?></div>
-            <div class="col-5 text-start"><input class="form-control w-4" type="number" name="xanzst" size="3" maxlength="3" value="<?php echo $anzst ?>"></div>
+            <div class="col-5"><input class="form-control w-4" type="number" name="xanzst" size="3" maxlength="3" value="<?php echo $anzst ?>"></div>
           </div>
           <div class="row">
             <div class="col-5 text-end align-self-center"><?php echo $text[277]; ?></div>
-            <div class="col-5 text-start"><input class="form-control w-4" type="number" name="xanzsp" size="2" maxlength="2" value="<?php echo $anzsp ?>"></div>
+            <div class="col-5"><input class="form-control w-4" type="number" name="xanzsp" size="2" maxlength="2" value="<?php echo $anzsp ?>"></div>
           </div>
           <div class="row p-3">
             <div class="col">

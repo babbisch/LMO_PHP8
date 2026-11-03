@@ -137,12 +137,12 @@ for ($x = 1; $x <= $anzteams; $x++) {
         $notiz = ' ';
     }
     ?>
-    <div class="col-3 text-start d-none lg:d-block">
+    <div class="col-3 d-none lg:d-block">
     <?php
     echo $dummy . $teams[$i] . $dumm2 . $url . $notiz;
     ?>
     </div>
-    <div class="col-3 text-start lg:d-none">
+    <div class="col-3 lg:d-none">
     <?php
     echo $dummy . $teamm[$i] . $dumm2 . $url . $notiz;
     ?>

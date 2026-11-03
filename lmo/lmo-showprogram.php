@@ -91,12 +91,12 @@ if ($file != '') {
                     }
 ?>
 
-          <div class="col-3 text-start d-none xl:d-block"> -&nbsp;&nbsp;
+          <div class="col-3 d-none xl:d-block"> -&nbsp;&nbsp;
           <?php
                     echo $gast1 . $teams[$teamb[$j][$i]] . $gast2;
 ?>
           </div>
-          <div class="col-3 text-start xl:d-none"> -&nbsp;&nbsp; 
+          <div class="col-3 xl:d-none"> -&nbsp;&nbsp; 
           <?php
                     echo $gast1 . $teamk[$teamb[$j][$i]] . $gast2;
 ?>

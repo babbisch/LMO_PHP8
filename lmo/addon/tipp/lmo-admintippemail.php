@@ -88,7 +88,7 @@ echo $tipp_textreminder1; ?>">
     </div>
     <div class="row p-1">
       <div class="col-2 offset-1 text-end form-field"><input type="radio" class="radio" name="emailart" value="2" <?php if ($emailart == 2) { echo 'checked'; } ?> onClick="changetextarea(2)"><label><?php echo $text['tipp'][168]; ?></label></div>
-      <div class="col-7 md:col-3 text-start">
+      <div class="col-7 md:col-3">
         <select class="form-control" name="adressat" onChange="emailart[1].checked=true;changetextarea(2);">
           <option value=""><?php echo $text['tipp'][51] ?></option><?php
 require (PATH_TO_ADDONDIR . '/tipp/lmo-tippselectemail.php');
@@ -98,7 +98,7 @@ require (PATH_TO_ADDONDIR . '/tipp/lmo-tippselectemail.php');
      </div>
      <div class="row p-1">
        <div class="col-2 offset-1 text-end form-field"><input type="radio" class="radio" name="emailart" value="1" <?php if ($emailart == 1) { echo 'checked'; } ?> onClick="changetextarea(1)"><label><?php echo $text['tipp'][167]; ?></label></div>
-       <div class="col-7 md:col-5 text-start">
+       <div class="col-7 md:col-5">
          <div class="container"><?php
 $ftype = '.l98';
 $iptype = 'reminder';
@@ -165,7 +165,7 @@ if ($emailart == 1) {
           </div>
           <div class="row p-1">
             <div class="col-3 col-md-1 offset-md-4"><?php echo $text['tipp'][178]; ?></div>
-            <div class="col-9 col-md-3 text-start"><?php echo $text['tipp'][179]; ?></div>
+            <div class="col-9 col-md-3"><?php echo $text['tipp'][179]; ?></div>
           </div>
         </div>
       </div>

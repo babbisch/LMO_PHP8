@@ -103,13 +103,13 @@ foreach ($datsort as $key => $val) {
         $gast2 .= '</a>';
     }
     ?>
-    <div class="col-3 text-start d-none lg:d-block">- &nbsp; &nbsp;
+    <div class="col-3 d-none lg:d-block">- &nbsp; &nbsp;
     <?php
     echo HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " alt=''") . '&nbsp;';
     echo $gast1 . $teams[$teamb[$st - 1][$i]] . $gast2;
     ?>
     </div>
-    <div class="col-3 text-start lg:d-none"> -&nbsp;&nbsp;
+    <div class="col-3 lg:d-none"> -&nbsp;&nbsp;
     <?php
     echo $gast1 . $teamk[$teamb[$st - 1][$i]] . $gast2;
     ?>  
@@ -189,7 +189,7 @@ if ($einzutore == 1) { ?>
 if ($einspielfrei == 1) {
     ?>
   <div class="row">  
-    <div class="col text-start"><?php
+    <div class="col"><?php
     // if (($anzteams-($anzst/2+1)) == 0) {
     $spielfreic = array_merge($spielfreia, $spielfreib);
     $hoy5 = 1;

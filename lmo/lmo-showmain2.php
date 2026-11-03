@@ -252,7 +252,7 @@ if ($file != '') {
         ob_start();
         include (PATH_TO_LMO . '/lmo-savehtml.php');
         include (PATH_TO_LMO . '/lmo-savehtml1.php');
-?><div class="col-2 offset-3 text-start"><?php
+?><div class="col-2 offset-3"><?php
         if ($lmtype == 0 && $druck == 1 && file_exists(PATH_TO_LMO . '/' . $diroutput . basename($file) . '-st.html')) {
             echo "<a href='" . URL_TO_LMO . '/' . $diroutput . basename($file) . "-st.html'>{$text[478]}</a>";
         }

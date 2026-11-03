@@ -253,21 +253,21 @@ if ($newpage == 1) {
         ?>
           <div class="row pb-1">
             <div class="col text-end"><?php echo $text[271]; ?></div>
-            <div class="col text-start"><input class="form-control" type="number" name="xteams" style="width: 4rem;" maxlength="2" value="18"></div>
+            <div class="col"><input class="form-control" type="number" name="xteams" style="width: 4rem;" maxlength="2" value="18"></div>
           </div>
           <div class="row pb-1">
             <div class="col text-end"><?php echo $text[274]; ?></div>
-            <div class="col text-start"><input class="form-control" type="number" name="xanzst" style="width: 4rem;" maxlength="3" value="34"></div>
+            <div class="col"><input class="form-control" type="number" name="xanzst" style="width: 4rem;" maxlength="3" value="34"></div>
           </div>
           <div class="row pb-1">
             <div class="col text-end"><?php echo $text[277]; ?></div>
-            <div class="col text-start"><input class="form-control" type="number" name="xanzsp" style="width: 4rem;" maxlength="2" value="9"></div>
+            <div class="col"><input class="form-control" type="number" name="xanzsp" style="width: 4rem;" maxlength="2" value="9"></div>
           </div><?php
     } else {
         ?>
           <div class="row pb-1">
             <div class="col text-end"><?php echo $text[271]; ?></div>
-            <div class="col text-start">
+            <div class="col">
               <select class="form-control" name="xteams" ><?php if ($xteams == '') {
             $xteams = 16;
         }
@@ -284,7 +284,7 @@ if ($newpage == 1) {
           </div>
           <div class="row pb-1">
             <div class="col text-end"></div>
-            <div class="col text-start"><?php echo $text[350] ?></div>
+            <div class="col"><?php echo $text[350] ?></div>
           </div><?php
     }
 }
@@ -293,7 +293,7 @@ if ($newpage == 2) {
         ?>
           <div class="row pb-1">
             <div class="col text-end"><?php echo $text[284]; ?></div>
-            <div class="col text-start form-field">
+            <div class="col form-field">
               <input type="radio" class="radio" name="xprogram" value="none"<?php if ($xprogram == 'none') { echo ' checked'; } ?> > <?php echo $text[286]; ?><br><br>
               <?php echo $text[287]; ?>:<br><?php
         $ftype = '.l98';
@@ -322,7 +322,7 @@ if ($newpage == 2) {
 ?>
           <div class="row">
             <div class="col text-end"><acronym title="<?php echo $text[352] ?>"><?php echo $text[351] . ' ' . $i; ?></div>
-            <div class="col text-start">
+            <div class="col">
               <select class="form-control" name="xmod<?php echo $i; ?>" >
                 <option value="1"<?php if ($xmodus[$i - 1] == 1) { echo ' selected'; } ?>><?php echo $text[353] ?></option>
                 <option value="2"<?php if ($xmodus[$i - 1] == 2) { echo ' selected'; } ?>><?php echo $text[354] ?></option>

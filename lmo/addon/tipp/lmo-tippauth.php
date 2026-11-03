@@ -210,11 +210,11 @@ if ($action == 'tipp') {
             }
 ?>
           <div class="row p-1">
-            <div class="col-3 text-start"><?php echo ' ' . $text['tipp'][23] . ' ' . $text['tipp'][218] . ' ' . $text['tipp'][219]; ?></div>
+            <div class="col-3"><?php echo ' ' . $text['tipp'][23] . ' ' . $text['tipp'][218] . ' ' . $text['tipp'][219]; ?></div>
             <div class="col-3"><input class="form-control" type="text" name="xtippername2" size="16" maxlength="32" value="<?php echo $xtippername2; ?>"></div>
           </div>
           <div class="row p-1">
-            <div class="col-3 text-start"><?php echo $text['tipp'][75] . ' ' . $text['tipp'][76]; ?></div>
+            <div class="col-3"><?php echo $text['tipp'][75] . ' ' . $text['tipp'][76]; ?></div>
             <div class="col-3"><input class="btn-solid btn-sm theme-secondary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][76]; ?>" ></div>
           </div>
         </div>

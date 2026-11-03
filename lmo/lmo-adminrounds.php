@@ -95,7 +95,7 @@ if (($file != '') && ($_SESSION['lmouserok'] == 2)) {
     foreach ($liga->spieltage as $spTag) {
         ?>
         <div class="row p-3">
-          <div class="col-10 text-start">
+          <div class="col-10">
             <strong><?php echo $spTag->nr . '. ' . $text[2] . '&nbsp;&nbsp;' . $spTag->vonBisString() . '</strong> / ' . $spTag->partienCount() . ' ' . $text[5003]; ?>
           </div>
           <div class="col-2 test-end">

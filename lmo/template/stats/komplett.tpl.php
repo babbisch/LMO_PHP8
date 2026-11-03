@@ -19,7 +19,7 @@
     <div class="col-2 text-center"><!--Iconhbig--></div>
     <div class="col-1 text-center"><!--Text2--></div>
     <div class="col-2 text-center"><!--Icongbig--></div>
-    <div class="col-3 text-start"><!--TeamB--></div>
+    <div class="col-3"><!--TeamB--></div>
   </div>
   <!-- BEGIN Liga -->
   <div class="row mb-2 mt-3">
@@ -27,12 +27,12 @@
   </div>
   <!-- BEGIN Inhalt -->
   <div class="row mb-3">
-    <div class="col-2 text-start"><!--Datum--></div>
+    <div class="col-2"><!--Datum--></div>
     <div class="col-3 text-end d-none d-lg-block"><!--Heim--></div>
     <div class="col-2 text-end d-lg-none"><!--HeimMittel--></div>
     <div class="col-1 text-center"> - </div>
-    <div class="col-3 text-start d-none d-lg-block"><!--Gast--></div>
-    <div class="col-2 text-start d-lg-none"><!--GastMittel--></div>
+    <div class="col-3 d-none d-lg-block"><!--Gast--></div>
+    <div class="col-2 d-lg-none"><!--GastMittel--></div>
     <div class="col-2 text-center"><!--Tore--> <!--SpielEnde--></div>
     <div class="col-1"><!--Notiz--></div>       
   </div>

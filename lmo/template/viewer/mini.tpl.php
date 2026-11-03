@@ -11,7 +11,7 @@
     <div class="col"><!--Datum--></div>
 	<div class="col text-end"><!--Heim--></div>
 	<div class="col">&nbsp;-&nbsp;</div>
-	<div class="col text-start"><!--Gast--></div>
+	<div class="col"><!--Gast--></div>
 	<div class="col"><!--Tore--></div>
   </div>
   <!-- END Inhalt -->

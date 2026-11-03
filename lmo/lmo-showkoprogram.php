@@ -207,7 +207,7 @@ if ($file != '') {
     } ?>
       </div>
     </div>
-    <div class="col-1 text-start">
+    <div class="col-1">
     <?php
     for ($i = ceil($anzteams / 2) + 1; $i <= $anzteams; $i++) {
         if ($i != $selteam) {

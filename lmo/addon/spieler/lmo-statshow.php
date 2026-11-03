@@ -242,7 +242,7 @@ if (is_readable($filename) && $filepointer = fopen($filename, 'r+b')) {
     </div>
   </div>
   <div class="row p-2">
-    <div class="col-4 offset-2 text-start">
+    <div class="col-4 offset-2">
       <a href="<?php echo URL_TO_ADDONDIR . "/spieler/lmo-statprint.php?file=$file&amp;begin=$begin&amp;sort=$sort&amp;direction=$direction&amp;team=$team"; ?>"><?php echo $text['spieler'][56] ?></a>
     </div><?php
     if ($spieler_anzeige_pro_seite != 0) {

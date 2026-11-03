@@ -88,7 +88,7 @@ if ($file != '') {
         <input type="hidden" name="st" value="<?php echo $st; ?>">
         <div class="container">
           <div class="row pb-3">
-            <div class="col-4 text-start"><strong><?php echo $st . '. ' . $text[2]; ?></strong></div>
+            <div class="col-4"><strong><?php echo $st . '. ' . $text[2]; ?></strong></div>
             <div class="col-1"><strong><?php echo $text[33]; ?></strong></div>
             <div class="col-1"><strong><?php echo $text[34]; ?></strong></div><?php
     if ($hidr != 1) {
@@ -132,7 +132,7 @@ if ($file != '') {
         ?>
               </select>
             </div>
-            <div class="col-3 text-start"><?php echo $dummy . $teams[$i] . $dumm2; ?><?php
+            <div class="col-3"><?php echo $dummy . $teams[$i] . $dumm2; ?><?php
         if ($teamn[$i] != '' || $strafp[$i] != 0 || $strafm[$i] != 0 || $torkorrektur1[$i] != 0 || $torkorrektur2[$i] != 0) {
             $lmo_tabellennotiz = '';
 

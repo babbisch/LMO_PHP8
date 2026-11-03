@@ -40,9 +40,9 @@ if (($action == 'admin') && ($todo == 'open')) {
     $output = '';
     foreach ($dirs as $dir) {
         $descr = file_get_contents(PATH_TO_LMO . '/' . $dirliga . $subdir . $dir . '/dir-descr.txt');
-        $output .= "<div class='row'><div class='col-1'></div><div class='col-4 text-start'><a href='" . $adda . 'open&amp;subdir=' . $subdir . $dir . "/'>" . $dir . '</a></div>';
+        $output .= "<div class='row'><div class='col-1'></div><div class='col-4'><a href='" . $adda . 'open&amp;subdir=' . $subdir . $dir . "/'>" . $dir . '</a></div>';
         if ($descr != '') {
-            $output .= "<div class='col-2 text-start'><small>" . $descr . '</small></div>';
+            $output .= "<div class='col-2'><small>" . $descr . '</small></div>';
         }
         $output .= '</div>';
     }
@@ -52,7 +52,7 @@ if (($action == 'admin') && ($todo == 'open')) {
       <div class="container">
         <div class="row">
           <div class="col-1"></div>
-          <div class="col-4 text-start"><?php echo $text[509]; ?></div>
+          <div class="col-4"><?php echo $text[509]; ?></div>
         </div>
         <?php echo $output ?>
       </div><?php

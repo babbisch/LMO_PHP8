@@ -18,7 +18,7 @@
 	<div class="col text-end"><acronym title="<!--HeimLang-->"><!--Heim--></acronym></div>
 	<div class="col"><!--Iconheim--></div>
 	<div class="col">&nbsp;-&nbsp;</div>
-	<div class="col text-start"><!--Icongast--></div>
+	<div class="col"><!--Icongast--></div>
 	<div class="col"><acronym title="<!--GastLang-->"><!--Gast--></acronym></div>
 	<div class="col"><!--Tore--></div>
 	<div class="col"><!--Tabellenlink--></div>

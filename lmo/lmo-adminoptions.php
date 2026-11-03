@@ -115,7 +115,7 @@ if ($show == 0) {
     ?>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs- title="<?php echo $text[506] ?>"><?php echo $text[505]; ?></div>
-            <div class="col-4 text-start">
+            <div class="col-4">
               <select class="form-control" name="xdeflang" ><?php
     $handle = opendir(PATH_TO_LANGDIR);
     while (false !== ($f = readdir($handle))) {
@@ -133,7 +133,7 @@ if ($show == 0) {
         ?>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs- title="<?php echo $text[575] ?>"><?php echo $text[574]; ?></div>
-            <div class="col-4 text-start">
+            <div class="col-4">
               <select class="form-control w-7 select2" name="xtimezone" ><?php
         $timezones = get_timezones();
         foreach ($timezones as $continent => $zones) {
@@ -154,21 +154,21 @@ if ($show == 0) {
     ?>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs- title="<?php echo $text[222] ?>"><?php echo $text[221]; ?></div>
-            <div class="col-3 text-start"><input class="form-control w-7" type="text" name="xdirliga" size="25" maxlength="80" value="<?php echo $dirliga; ?>" ></div>
+            <div class="col-3"><input class="form-control w-7" type="text" name="xdirliga" size="25" maxlength="80" value="<?php echo $dirliga; ?>" ></div>
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs- title="<?php echo $text[240] ?>"><?php echo $text[239]; ?></div>
-            <div class="col-2 text-start"><input class="form-control w-7" type="time" name="xdeftime" size="25" maxlength="5" value="<?php echo $deftime; ?>" ></div>
+            <div class="col-2"><input class="form-control w-7" type="time" name="xdeftime" size="25" maxlength="5" value="<?php echo $deftime; ?>" ></div>
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs- title="<?php echo $text[256] ?>"><?php echo $text[257]; ?>&nbsp;</div>
-            <div class="col-5 text-start">
+            <div class="col-5">
               <input type="text" class="form-control w-12" name="xdefdateformat2" value="<?php echo $defdateformat ?>">
             </div>
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs- title="<?php echo $text[344] ?>"><?php echo $text[343]; ?></div>
-            <div class="col-4 text-start"><input class="form-control w-12" type="text" name="xadr" size="25" maxlength="128" value="<?php echo $aadr; ?>" ></div>
+            <div class="col-4"><input class="form-control w-12" type="text" name="xadr" size="25" maxlength="128" value="<?php echo $aadr; ?>" ></div>
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs- title="<?php echo $text[532] ?>"><?php echo $text[533]; ?></div>
@@ -179,7 +179,7 @@ if ($show == 0) {
                 <option value="file_name"<?php if ($liga_sort == 'file_name') echo ' selected'; ?>><?php echo $text[531] ?></option>
               </select>
             </div>
-            <div class="col-3 text-start form-field">
+            <div class="col-3 form-field">
               <input type="radio" class="radio" id="gridRadio1" name="xliga_sort_direction"  value="asc"<?php if ($liga_sort_direction == 'asc') echo ' checked'; ?>>
               <label for="gridRadio1"><?php echo $text[527] ?></label>
               <input type="radio" class="radio" id="gridRadio2" name="xliga_sort_direction"  value="desc"<?php if ($liga_sort_direction == 'desc') echo ' checked'; ?>>
@@ -190,7 +190,7 @@ if ($show == 0) {
     ?>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs- title="<?php echo $text[228] ?>"><?php echo $text[227]; ?></div>
-            <div class="col-7 text-start">
+            <div class="col-7">
               <select class="form-control" name="xtabpkt" >
                 <option value="0"<?php if ($tabpkt == 0) { echo ' selected'; } ?>><?php echo $text[229] ?></option>
                 <option value="1"<?php if ($tabpkt == 1) { echo ' selected'; } ?>><?php echo $text[230] ?></option>
@@ -199,7 +199,7 @@ if ($show == 0) {
           </div>
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs- title="<?php echo $text[232] ?>"><?php echo $text[231] ?></div>
-            <div class="col-7 text-start">
+            <div class="col-7">
               <select class="form-control" name="xtabonres" >
                 <option value="0"<?php if ($tabonres == 0) { echo ' selected'; } ?>><?php echo $text[233] ?></option>
                 <option value="1"<?php if ($tabonres == 1) { echo ' selected'; } ?>><?php echo $text[234] ?></option>
@@ -240,7 +240,7 @@ if ($show == 0) {
           <div class="row align-items-center pb-1">
             <div class="col-5 text-end" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[490] ?>"><?php echo $text[489]; ?></div>
             <div class="col-1"></div>
-            <div class="col-6 text-start form-field">
+            <div class="col-6 form-field">
               <input type="checkbox" class="check" name="xeinzutoretab" <?php if ($einzutoretab == 1) { echo ' checked'; } ?>><label><?php echo $text[491] ?></label>
               <input type="checkbox" class="check" name="xeinzutore" <?php if ($einzutore == 1) { echo ' checked'; } ?>><label><?php echo $text[492] ?></label>
             </div>

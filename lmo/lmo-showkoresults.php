@@ -36,7 +36,7 @@ if ($file != '') {
     <div class="col text-center"><?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php'); ?></div>
   </div>
   <div class="row">
-    <div class="col text-start p-2">
+    <div class="col p-2">
       <strong><?php
     if ($st == $anzst) {
         $j = $text[374];
@@ -145,12 +145,12 @@ if ($file != '') {
                         $gast2 .= '</a>';
                     }
 ?>
-          <div class="col-3 text-start d-none xl:d-block"><?php
+          <div class="col-3 d-none xl:d-block"><?php
                     echo '&nbsp;' . HTML_smallTeamIcon($file, $teams[$teamb[$st - 1][$i]], " title='" . $teams[$teamb[$st - 1][$i]] . "' width='24'") . '&nbsp;';
                     echo $gast1 . $teams[$teamb[$st - 1][$i]] . $gast2;
 ?>
           </div>
-          <div class="col-2 text-start xl:d-none"><?php
+          <div class="col-2 xl:d-none"><?php
                     echo $gast1 . $teamk[$teamb[$st - 1][$i]] . $gast2;
 ?>
           </div><?php
@@ -162,7 +162,7 @@ if ($file != '') {
 ?>
           <div class="col-1 d-none xl:d-block"><?php echo applyFactor($goala[$st - 1][$i][$n], $goalfaktor); ?> : <?php echo applyFactor($goalb[$st - 1][$i][$n], $goalfaktor); ?> <?php echo $mspez[$st - 1][$i][$n]; ?></div>
           <div class="col-3 xl:d-none"><?php echo applyFactor($goala[$st - 1][$i][$n], $goalfaktor); ?> : <?php echo applyFactor($goalb[$st - 1][$i][$n], $goalfaktor); ?> <?php echo $mspez[$st - 1][$i][$n]; ?></div>
-          <div class="col-2 text-start"><?php
+          <div class="col-2"><?php
                 /** Mannschaftsicons finden */
                 $lmo_teamaicon = '';
                 $lmo_teambicon = '';
@@ -198,7 +198,7 @@ if ($file != '') {
     }
 ?>
   <div class="row">
-    <div class="col-2 text-start"><?php
+    <div class="col-2"><?php
     $st0 = $st - 1;
     if ($st > 1) {
 ?>
