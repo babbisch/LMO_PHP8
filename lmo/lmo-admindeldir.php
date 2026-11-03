@@ -61,7 +61,6 @@ if ($ftype != '') {
             $j++;
             $t0 = $text[507] . " $j";
         }
-        //echo "<a href='" . $addi . $dirliga . $files ."' class='list-group-item list-group-item-action ' >" . $t0 . "</a>";
         ?>
               <button type="button" class="btn-solid btn-sm theme-secondary" data-bs-toggle="dialog" data-bs-target="#del_<?php echo $files?>"><?php echo $t0; ?></button>
               <dialog class="dialog" id="del_<?php echo $files?>">
@@ -77,7 +76,7 @@ if ($ftype != '') {
                   <a href='<?php echo $addi . $dirliga . $files; ?>' type="button" class="btn-solid theme-danger"><?php echo $text[82]; ?></a>
                 </div>
               </dialog>
-              <p> </p>
+              <p></p>
         <?php
     }
     if ($i == 0) {
