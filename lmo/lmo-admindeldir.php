@@ -72,7 +72,6 @@ if ($ftype != '') {
                   <p><?php echo $text[296]; ?></p>
                 </div>
                 <div class="dialog-footer">
-                  <button type="button" class="btn-solid theme-secondary" data-bs-dismiss="dialog"><?php echo $text[347]; ?></button>
                   <a href='<?php echo $addi . $dirliga . $files; ?>' type="button" class="btn-solid theme-danger"><?php echo $text[82]; ?></a>
                 </div>
               </dialog>
