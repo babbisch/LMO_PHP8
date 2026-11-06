@@ -90,15 +90,15 @@ if ($save == 1) {
     <div class="col-3">
       <div class="container">
         <div class="row p-1">
-          <div class="col-auto"><?php if ($show == 0) {
+          <div class="col text-end"><?php if ($show == 0) {
     echo "<p class='btn-outline btn-sm theme-info'>$text[99]</p>"; ?><?php } else { ?> <a class="btn-solid btn-sm" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=options&amp;show=0'; ?>"><?php echo $text[99]; ?></a><?php } ?></div>
         </div>
         <div class="row p-1">
-          <div class="col-auto"><?php if ($show == 1) {
+          <div class="col text-end"><?php if ($show == 1) {
     echo "<p class='btn-outline btn-sm theme-info'>$text[226]</p>"; ?><?php } else { ?> <a class="btn-solid btn-sm" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=options&amp;show=1'; ?>"><?php echo $text[226]; ?></a><?php } ?></div>
         </div>
         <div class="row p-1">
-          <div class="col-auto"><?php if ($show == 2) {
+          <div class="col text-end"><?php if ($show == 2) {
     echo "<p class='btn-outline btn-sm theme-info'>$text[250]</p>"; ?><?php } else { ?> <a class="btn-solid btn-sm" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=options&amp;show=2'; ?>"><?php echo $text[250]; ?></a><?php } ?></div>
         </div>
       </div>
