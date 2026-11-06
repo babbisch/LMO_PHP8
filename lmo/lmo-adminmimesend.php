@@ -27,16 +27,6 @@ $todo = isset($_GET['todo']) ? $_GET['todo'] : '';
 $down = isset($_GET['down']) ? $_GET['down'] : 0;
 $madr = isset($_GET['madr']) ? $_GET['madr'] : '';
 
-?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-					"http://www.w3.org/TR/html4/loose.dtd">
-<html lang="de">
-<head>
-<title>LMO Admin</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-</head>
-<body>
-<?php
 if (($action == 'admin') && ($todo == 'email') && (($_SESSION['lmouserok'] == 1) || ($_SESSION['lmouserok'] == 2))) {
     if (($down != 0) && ($madr != '')) {
         $array = array();
@@ -77,8 +67,6 @@ if (($action == 'admin') && ($todo == 'email') && (($_SESSION['lmouserok'] == 1)
                     $mail->ClearAllRecipients();
                     $mail->ClearReplyTos();
                 }
-?>
-  <p><script type="text/javascript">document.write('<a href="#" onclick="self.close();"><?php echo $text[347] ?><\/a>');</script></p><?php
             }
         } elseif ($down == -1) {
             if (count($dummy) > 0) {
@@ -106,24 +94,12 @@ if (($action == 'admin') && ($todo == 'email') && (($_SESSION['lmouserok'] == 1)
                     $mail->ErrorInfo();
                     $mail->ClearAllRecipients();
                     $mail->ClearReplyTos();
-                }
-?>
-  <p><script type="text/javascript">document.write('<a href="#" onclick="self.close();"><?php echo $text[347] ?><\/a>');</script></p><?php
+                }               
             }
         }
         unlink($temp);
-    } else {
-?>
-  <form action="<?php echo $_SERVER['PHP_SELF'] ?>">
-    <label>Mailadresse: <input name="madr" type="text" class="form-control" size="25" maxlength="128"></label>
-    <input type="hidden" name="action" value="admin">
-    <input type="hidden" name="todo" value="email">
-    <input type="hidden" name="down" value="<?php echo $down ?>">
-    <input type="submit" value="Senden">
-  </form>
-  <p><script type="text/javascript">document.write('<a href="#" onclick="self.close();"><?php echo $text[347] ?><\/a>');</script></p><?php
-    }
+        redirect($_SERVER['HTTP_REFERER']);
+    } 
 }
 ?>
-</body>
-</html>
+
