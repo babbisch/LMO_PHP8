@@ -74,14 +74,32 @@ if ($ftype != '') {
                 $t0 = $text[507] . " $j";
             }
             $l = $k + 1;
-            echo "<a href='" . $addi . $l . "' class='list-group-item list-group-item-action'>" . $t0 . "</a>";
+            ?>
+              <button type="button" class="btn-outline btn-sm theme-secondary" data-bs-toggle="dialog" data-bs-target="#mail_<?php echo $l?>"><?php echo $t0; ?></button>
+              <dialog class="dialog" id="mail_<?php echo $l?>">
+              <form action="<?php echo $addi . $l; ?>">
+              <input type="hidden" name="action" value="admin">
+              <input type="hidden" name="todo" value="email">
+              <input type="hidden" name="down" value="<?php echo $l; ?>">
+                <div class="dialog-header">
+                  <h1 class="dialog-title"><?php echo $text[345]; ?></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+                </div>
+                <div class="dialog-body">
+                  <label class="form-label"><?php echo $text[346]; ?></label>
+                  <input class="form-control" type="email" name="madr" placeholder="info@example.com">
+                </div>
+                <div class="dialog-footer">
+                  <button type="submit" class="btn-solid theme-success"><?php echo $text[581]; ?></button>
+                </div>
+              </form>
+              </dialog>    
+              <p></p>       
+            <?php
         }
     }
     if ($i == 0) {
         echo $text[223];
-    } elseif (($i > 1) && ($_SESSION['lmouserok'] == 2)) {
-        echo "<a href='" . $addi . "-1' class='list-group-item list-group-item-action fw-bold'>" . $text[401] . "</a>";
-    }
     echo '</div>';
 }
 
