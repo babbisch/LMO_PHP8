@@ -73,14 +73,12 @@ if ($ftype != '') {
                 $j++;
                 $t0 = $text[223] . ' ' . $j;
             }
-            echo "<a href='" . $addi . ($k + 1) . "' class='list-group-item list-group-item-action'>" . $t0 . "</a>";
+            echo "<a href='" . $addi . ($k + 1) . "' class='btn-outline btn-sm theme-secondary'>" . $t0 . "</a>";
+            echo "<p></p>";
         }
     }
     if ($i == 0) {
         echo $text[223];
-    } elseif (($i > 1) && ($_SESSION['lmouserok'] == 2)) {
-        echo "<a href='" . $addi . "-1' class='list-group-item list-group-item-action fw-bold'>" . $text[402] . "</a>";
-    }
     echo '</div>';
 }
 
