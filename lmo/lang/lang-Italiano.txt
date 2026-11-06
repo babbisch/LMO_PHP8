@@ -581,6 +581,8 @@
 577=Squadra (lunga)
 578=(medio)
 579=(breve)
+580=Penalità in termini di gol inflitte a questa squadra dalla federazione
+581=Invia
 700=Sab.
 701=Sabado
 702=Ago.

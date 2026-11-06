@@ -578,6 +578,8 @@
 577=Team (lang)
 578=(gemiddeld)
 579=(kort)
+580=Strafdoelpunten toegekend aan dit team door de bond.
+581=Versturen
 700=Za.
 701=Zaterdag
 702=Aug.

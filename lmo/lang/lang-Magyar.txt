@@ -578,6 +578,8 @@
 577 = Csapat (hosszú)
 578=(közepes)
 579 = (rövid)
+580=A szövetség által ennek a csapatnak ítélt büntetőgólok
+581=Elküld
 700=szo.
 701=szombat
 702=aug.

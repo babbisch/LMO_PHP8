@@ -54,7 +54,7 @@
 053=Bitte wähle eine Liga aus
 054=Liga Manager Online
 055=© 1997-now LMO-Group
-056=[ <a href="https://www.vest-sport.de/forum/" target="_blank" title="Hilfe zum LMO und seinen Addons">Support-Forum</a> | <a href="https://www.vest-sport.de/forum/viewforum.php?f=10" target="_blank" title="Hier gibt es weitere Ligen für den LigaManager">Ligaliste</a> ]
+056=[ <a href="//www.liga-manager-online.org/forum/" target="_blank" data-bs-toggle="tooltip" tata-bs-title="Hilfe zum LMO und seinen Addons">Support-Forum</a> ]
 057=Die Statistik von
 058=Die Statistik von
 059=Keine 2. Mannschaft
@@ -294,7 +294,7 @@
 293=Als erstes sollten nun die Namen der Mannschaften eingeben werden
 294=Öffnen einer Liga
 295=Löschen einer Liga
-296=diese Liga wirklich löschen?\n(Das läßt sich nicht zurücknehmen)
+296=Diese Liga wirklich löschen? (Das lässt sich nicht zurücknehmen)
 297=wurde erfolgreich gelöscht
 298=konnte nicht gelöscht werden
 299=Upload einer Datei
@@ -330,21 +330,21 @@
 329=Speichern
 330=Löschen
 331=Neuen Admin hinzufügen
-332=Soll die folgende Mannschaft\nwirklich vom Spielbetrieb zurückgezogen werden\n(Das lässt sich nicht zurücknehmen)
+332=Soll die folgende Mannschaft wirklich vom Spielbetrieb zurückgezogen werden? (Das lässt sich nicht zurücknehmen)
 333=Mannschaft zurückziehen
 334=Diese Mannschaft vom Spielbetrieb zurückziehen
 335=Soll eine neue Mannschaft zum Spielbetrieb hinzugefügt werden?
 336=Mannschaft hinzufügen
 337=Eine neue Mannschaft zum Spielbetrieb hinzufügen
 338=Spieltags- und Spiel-Anzahl
-339=Hier die Anzahl der Spieltage und die Anzahl der Spiele pro Spieltag ändern. \nACHTUNG: Das kann zu Datenverlust führen!
+339=Hier die Anzahl der Spieltage und die Anzahl der Spiele pro Spieltag ändern. ACHTUNG: Das kann zu Datenverlust führen!
 340=Anzahl der Spieltage und Spiele
 341=LMO-Admin Ligaversand
 342=Hier ist die angeforderte Liga. \n\n Viel Spaß
 343=E-Mail des Webmasters
 344=Gibe hier die E-Mail-Adresse des Webmasters bzw. Haupt-Admins ein. Die wird für den E-Mail-Versand von Ligen benötigt.
 345=E-Mail-Versand einer Liga
-346=Bitte geben Sie die E-Mail-Adresse des Empfängers ein:
+346=Bitte die E-Mail-Adresse des Empfängers angeben:
 347=Fenster schließen
 348=Versand erfolgreich
 349=Eine Liga vom Server downloaden oder per E-Mail versenden
@@ -364,7 +364,7 @@
 363=zum Halbfinale wechseln
 364=F
 365=zum Finale wechseln
-366=zu dieser Runde wechseln
+366=wechseln zu Qualifikationsrunde
 367=Anzeige der Spielergebnisse einer bestimmten Runde
 368=zur vorigen Runde blättern
 369=zur nächsten Runde blättern
@@ -579,6 +579,7 @@
 578=(mittel)
 579=(kurz)
 580=Straftore, die diese Mannschaft vom Verband erhalten hat
+581=Senden
 700=Sa.
 701=Samstag
 702=Aug.

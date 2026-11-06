@@ -578,6 +578,8 @@
 577=équipe(longue)
 578=(moyen)
 579=(court)
+580=Buts de pénalité infligés à cette équipe par la fédération
+581=Envoyer
 700=Sam.
 701=Samedi
 702=Ao.

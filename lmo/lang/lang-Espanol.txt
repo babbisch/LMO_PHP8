@@ -578,6 +578,8 @@
 577=Equipo (largo)
 578=(medio)
 579=(pequeño)
+580=Goles de penalización que este equipo ha recibido por parte de la federación
+581=Enviar
 700=Sáb.
 701=Sábado
 702=Ago.

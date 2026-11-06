@@ -578,6 +578,8 @@
 577=Echipă (lung)
 578=(mediu)
 579=(scurt)
+580=Góly z penalt udělené tomuto týmu asociací
+581=Poslat
 700=So.
 701=Sobota
 702=srp.

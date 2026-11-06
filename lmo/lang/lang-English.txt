@@ -578,6 +578,8 @@
 577=Team (long)
 578=(middle)
 579=(short)
+580=Penalty goals awarded against this team by the association
+581=Send
 700=Sat.
 701=Saturday
 702=Aug.
