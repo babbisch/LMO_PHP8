@@ -25,11 +25,28 @@ if (($action == 'admin') && ($todo == 'download')) {
 <div class="container-fluid">
   <div class="row">
     <div class="col d-flex justify-content-center"><h1><?php echo $text[316]; ?></h1></div>
+    <div class="col d-flex justify-content-center"><h1><?php echo $text[345]; ?></h1></div>
   </div>
-  <div class="row d-grid justify-items-center">
-    <div class="col-auto"><?php
+  <div class="row">
+    <div class="col">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col"><?php
     require (PATH_TO_LMO . '/lmo-admindowndir.php');
     ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col"><?php
+    require (PATH_TO_LMO . '/lmo-adminmimedir.php');
+    ?>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div><?php
