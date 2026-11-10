@@ -35,12 +35,6 @@ if (($action == 'admin') && ($todo == 'download')) {
     require (PATH_TO_LMO . '/lmo-admindowndir.php');
     ?>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="container-fluid">
-        <div class="row">
           <div class="col"><?php
     require (PATH_TO_LMO . '/lmo-adminmimedir.php');
     ?>

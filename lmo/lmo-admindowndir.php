@@ -77,7 +77,7 @@ if ($ftype != '') {
             echo "<p></p>";
         }
     }
-    if ($i == 0) {
+    if ($i == 0)
         echo $text[223];
     echo '</div>';
 }

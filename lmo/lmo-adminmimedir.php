@@ -98,7 +98,7 @@ if ($ftype != '') {
             <?php
         }
     }
-    if ($i == 0) {
+    if ($i == 0)
         echo $text[223];
     echo '</div>';
 }
