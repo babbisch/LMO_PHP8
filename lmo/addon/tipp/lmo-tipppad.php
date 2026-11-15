@@ -23,7 +23,7 @@ if (($action == 'tipp') && ($todo == '')) {
     $addw = $_SERVER['PHP_SELF'] . '?action=tipp&amp;todo=wert&amp;file=';
 ?>
 
-<div class="container">
+<div id="tipppad">
   <div class="row">
     <div class="col"><?php echo $text['tipp'][3]; ?>:</div>
   </div>

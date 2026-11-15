@@ -20,7 +20,7 @@
  * $Id$
  */
 ?>
-<div class="container-fluid">
+<div id="showtable">
   <div class="row fw-bold">
     <div class="col-2"></div>
     <div class="col-3"></div>

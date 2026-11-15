@@ -90,7 +90,7 @@ if ($_SESSION['lmouserok'] == 2) {
     <li class="nav-item" role="presentation"><a href="#" class="nav-link active"><?php echo $text[317] ?></a></li>
   </ul>
 </nav>
-<div class="container">
+<div id="adminuser">
   <div class="row p-3">
     <div class="col"><h1><?php echo $text[321] ?></h1></div>
   </div>
@@ -114,7 +114,7 @@ if ($_SESSION['lmouserok'] == 2) {
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="todo" value="user">
         <input type="hidden" name="save" value="<?php echo $show ?>">
-        <div class="container"><?php
+        <div><?php
     $testshow = 0;
     foreach ($lmo_admin_data as $lmo_admin) {
         if ($show == -1 && $testshow == 0) {

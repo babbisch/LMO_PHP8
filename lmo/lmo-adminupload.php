@@ -43,7 +43,7 @@ if (($action == 'admin') && ($todo == 'upload') && ($_SESSION['lmouserok'] == 2)
         @chmod($ufile, 0644);
     }
 ?>
-<div class="container">
+<div id="adminupload">
   <div class="row">
     <div class="col d-flex justify-content-center"><h1><?php echo $text[299]; ?></h1></div>
   </div>

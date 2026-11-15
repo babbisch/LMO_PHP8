@@ -192,7 +192,7 @@ if ($newpage == 3) {
     require (PATH_TO_LMO . '/lmo-savefile.php');
 }
 ?>
-<div class="container">
+<div id="adminnew">
   <div class="row">
     <div class="col d-flex justify-content-center"><h1><?php echo $text[243]; ?></h1></div>
   </div>
@@ -218,7 +218,7 @@ if ($newpage < 3) {
     }
 }
 ?>
-        <div class="container">
+        <div>
           <div class="row pb-1">
             <div class="col"><?php echo $text[246] . ' ' . ($newpage + 1) . ' ' . $text[259] . ' 4'; ?></div>
           </div><?php
@@ -236,7 +236,7 @@ if ($newpage == 0) {
           </div>
           <div class="row pb-1">
             <div class="col-6 text-end"><?php echo $text[174]; ?></div>
-            <div class="col"><acronym title="<?php echo $text[175] ?>"><select class="form-control" name="xtype" ><?php echo '<option value="0"';
+            <div class="col"><select class="form-control" name="xtype" ><?php echo '<option value="0"';
     if ($xtype == 0) {
         echo ' selected';
     }
@@ -321,7 +321,7 @@ if ($newpage == 2) {
         for ($i = 1; $i <= $xanzst; $i++) {
 ?>
           <div class="row">
-            <div class="col text-end"><acronym title="<?php echo $text[352] ?>"><?php echo $text[351] . ' ' . $i; ?></div>
+            <div class="col text-end"><?php echo $text[351] . ' ' . $i; ?></div>
             <div class="col">
               <select class="form-control" name="xmod<?php echo $i; ?>" >
                 <option value="1"<?php if ($xmodus[$i - 1] == 1) { echo ' selected'; } ?>><?php echo $text[353] ?></option>

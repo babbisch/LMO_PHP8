@@ -208,7 +208,7 @@ if ($_SESSION['lmouserok'] == 2) {
         echo getMessage($text[138]);
         ?>
 
-<div class="container">
+<div id="adminvieweroptions">
   <div class="row">
     <div class="col d-flex justify-content-center"><h3><?php echo $text['viewer'][42]; ?></h3></div>
   </div>
@@ -235,7 +235,7 @@ if ($_SESSION['lmouserok'] == 2) {
     if (!$form1 && !$form2 && !$form3) {  // <!-- Hauptauswahl  -->
 ?>
 
-<div class="container">
+<div class="">
   <div class="row">
     <div class="col d-flex justify-content-center"><h3><?php echo $text['viewer'][21]; ?></h3></div>
   </div>
@@ -345,7 +345,7 @@ if ($_SESSION['lmouserok'] == 2) {
     if (!$form2 && $form1 && !$form3) {  // <!-- Bei  ersten Aufruf Ligendateien anzeigen -->
 ?>
 
-<div class="container">
+<div class="">
   <div class="row">
     <div class="col d-flex justify-content-center"><h3><?php echo $text['viewer'][21]; ?></h3></div>
   </div>
@@ -397,7 +397,7 @@ if ($_SESSION['lmouserok'] == 2) {
     if (!$form3 && $form2) {  // <!-- Jetzt kommen die Mannschaftsauswahlen  -->
 ?>
 
-<div class="container">
+<div class="">
   <div class="row">
     <div class="col d-flex justify-content-center"><h3><?php echo $text['viewer'][21]; ?> </h3></div>
   </div>

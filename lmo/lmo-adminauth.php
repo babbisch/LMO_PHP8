@@ -22,7 +22,7 @@ if ($action == 'admin') {
     require (PATH_TO_LMO . '/lmo-admincheck_auth.php');
     if (empty($_SESSION['lmouserok'])) {
 ?>
-<div class="container-fluid">
+<div id="adminauth">
   <div class="d-flex justify-content-center"><h1><?php echo $text[77] . ' ' . $text[54]; ?></h1></div>
 </div>
 <div class="container-fluid p-3">

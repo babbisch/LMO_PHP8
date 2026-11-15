@@ -91,7 +91,7 @@ if (is_readable($filename) && $filepointer = fopen($filename, 'r+b')) {
         $begin = 0;
     }
     ?>
-<div class="container">
+<div id="statshow">
   <div class="row"><?php
     if ($spieler_vereinsweise_anzeigen == 1) {
         ?>

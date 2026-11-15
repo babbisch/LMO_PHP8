@@ -183,7 +183,7 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
     include (PATH_TO_LMO . '/lmo-adminsubnavi.php');
 ?>
 
-<div class="container">
+<div id="adminteams">
   <div class="row pt-3">
     <div class="col d-flex justify-content-center"><h1><?php echo $titel; ?></h1></div>
   </div>
@@ -195,7 +195,7 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
         <input type="hidden" name="save" value="1">
         <input type="hidden" name="file" value="<?php echo $file; ?>">
         <input type="hidden" name="st" value="<?php echo $st; ?>">
-
+        <div>
           <div class="row">
             <div class="col-5" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[125] . ', ' . $text[572] . ', ' . $text[126] ?>"><?php echo $text[127]; ?></div>
 <?php
@@ -328,7 +328,7 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
     }
     ?>
           </div>
-
+        </div>
       </form>
     </div>
   </div>

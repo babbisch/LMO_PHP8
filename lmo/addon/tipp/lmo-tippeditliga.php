@@ -158,7 +158,7 @@ if ($punktespiel == -1) {
                 echo '+' . ($punktespiel - 1);
             }
         } else {
-            echo "<i class='bi bi-x text-danger'></i>";
+            echo "<i class='bi bi-x fg-danger'></i>";
         }
     }
 }

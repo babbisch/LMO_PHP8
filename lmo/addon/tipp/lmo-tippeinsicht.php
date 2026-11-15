@@ -46,7 +46,7 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
     }
 ?>
 
-<div class="container">
+<div id="tippeinsicht">
   <?php if ($tipp_einsichterst >= 1) { ?>
   <div class="row p-1">
     <div class="col d-flex justify-content-center"><p class="lead"><?php echo $text['tipp'][220] . ' ' . $text['tipp'][215 + $tipp_einsichterst]; ?></p></div>
@@ -76,7 +76,7 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
             if ($von != $start) {
                 echo "<td align='center'><a href=\"" . $addt3 . $von . '">';
             } else {
-                echo '<td align=\'center\' class="nobr">';
+                echo '<td align='center' class="nobr">';
             }
             $k1 = strtolower(substr($tippernick[intval(substr($tab0[$von], -6))], 0, 3));
             $k2 = strtolower(substr($tippernick[intval(substr($tab0[$bis], -6))], 0, 3));

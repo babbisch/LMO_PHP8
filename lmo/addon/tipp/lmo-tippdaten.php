@@ -163,7 +163,7 @@ if (($action == 'tipp') && ($todo == 'daten')) {
         }
     }  // end ($newpage==1)
 ?>
-<div class="container">
+<div id="tippdaten">
 <?php
     if ($newpage != 1) {
 ?>
@@ -173,7 +173,7 @@ if (($action == 'tipp') && ($todo == 'daten')) {
         <input type="hidden" name="action" value="tipp">
         <input type="hidden" name="todo" value="daten">
         <input type="hidden" name="newpage" value="1">
-        <div class="container"><?php
+        <div><?php
         if ($tipp_realname != 0) {
 ?>
           <div class="row">

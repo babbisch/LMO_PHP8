@@ -89,7 +89,7 @@ if (($action == 'tipp') && ($todo == 'pwchange')) {
         require (PATH_TO_ADDONDIR . '/tipp/lmo-tippsaveauth.php');
     }  // end ($newpage==1)
 ?>
-<div class="container">
+<div id="tipppwchange">
   <div class="row">
     <div class="col"><?php echo $text['tipp'][107]; ?></div>
   </div><?php if ($newpage != 1) { ?>
@@ -99,7 +99,7 @@ if (($action == 'tipp') && ($todo == 'pwchange')) {
         <input type="hidden" name="action" value="tipp">
         <input type="hidden" name="todo" value="pwchange">
         <input type="hidden" name="newpage" value="1">
-        <div class="container">
+        <div>
           <div class="row p-1">
             <div class="col-4 text-end"><?php echo ' ' . $text['tipp'][140]; ?> &nbsp;</div>
             <div class="col-auto"><input class="form-control" type="password" name="xtipperpass" size="16" maxlength="32" value="<?php echo $xtipperpass; ?>"></div>

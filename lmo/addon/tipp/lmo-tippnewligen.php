@@ -54,7 +54,7 @@ if (($action == 'tipp') && ($todo == 'newligen')) {
         }
     }  // end ($newpage==1)
 ?>
-<div class="container">
+<div id="tippnewligen">
   <div class="row">
     <div class="col offset-4"><?php echo $text['tipp'][135]; ?></div>
   </div>

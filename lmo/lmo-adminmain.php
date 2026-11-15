@@ -44,7 +44,7 @@ if ($action == 'admin') {
     if (@file_exists(PATH_TO_LMO . '/install/install.php') && @is_readable(PATH_TO_LMO . '/install/install.php'))
         echo getMessage('Delete install folder or set its chmod to 000!', TRUE);
 ?>
-<div class="container-fluid p-3">
+<div id="adminmain" class="p-3">
   <div class="text-center"><h1><?php echo $text[77] . ' ' . $text[54]; ?></h1></div>
 </div>
 <nav><?php
@@ -243,7 +243,7 @@ if ($action == 'admin') {
     }
 ?>
 
-<div class="container-fluid">
+<div>
   <div class="row">
     <div class="col-4">
       <?php if ($einsprachwahl == 1) { echo getLangSelector(); } ?>

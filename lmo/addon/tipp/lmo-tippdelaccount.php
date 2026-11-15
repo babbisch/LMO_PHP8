@@ -77,7 +77,7 @@ if (($action == 'tipp') && ($todo == 'delaccount')) {
     }  // end ($newpage==1)
 
 ?>
-  <div class="container">
+  <div id="tippdellaccount">
     <div class="row">
       <div class="col offset-4"><?php echo $text['tipp'][6]; ?></div>
     </div>

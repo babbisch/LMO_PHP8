@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div id="showspieltagsmenu">
   <div class="row p-1">
     <div class="col justify-content-center"><?php
 if (isset($anzst)) {

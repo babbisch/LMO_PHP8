@@ -28,13 +28,13 @@ include_once (PATH_TO_ADDONDIR . '/tipp/lmo-admintippjavascript.php');
 include (PATH_TO_ADDONDIR . '/tipp/lmo-admintippmenu.php');
 ?>
 
-<div class="container">
+<div id="admintippoptions">
   <div class="row pb-2">
     <div class="col d-flex justify-content-center"><h1><?php echo $text['tipp'][33] ?></h1></div>
   </div>
   <div class="row pb-2">
     <div class="col-3 text-end">
-      <div class="container">
+      <div>
         <div class="row p-1"><div class="col-auto text-end"><?php if ($show == 0) {
     echo "<p class='btn-outline btn-sm btn-sm theme-info'>".$text['tipp'][91]."</p>"; ?><?php } else { ?><a class="btn-solid btn-sm" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=tippoptions&amp;show=0'; ?>"><?php echo $text['tipp'][91]; ?></a><?php } ?></div></div>
         <div class="row p-1"><div class="col-auto text-end"><?php if ($show == 1) {
@@ -68,7 +68,7 @@ include (PATH_TO_ADDONDIR . '/tipp/lmo-admintippmenu.php');
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="todo" value="tippoptions">
         <input type="hidden" name="save" value="1">
-        <div class="container"><?php
+        <div><?php
 if ($show == 0) {
     ?>
           <div class="row pb-2">

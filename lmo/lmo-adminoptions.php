@@ -82,13 +82,13 @@ if ($save == 1) {
     <li class="nav-item"><a href="<?php echo $addr_user ?>" class="nav-link" title="<?php echo $text[318] ?>"><?php echo $text[317] ?></a></li>
   </ul>
 </nav>
-<div class="container">
+<div id="admiinoptions">
   <div class="row d-flex justify-content-center">
     <div class="col-auto"><h1><?php echo $text[225] ?></h1></div>
   </div>
   <div class="row">
     <div class="col-3">
-      <div class="container">
+      <div>
         <div class="row p-1">
           <div class="col text-end"><?php if ($show == 0) {
     echo "<p class='btn-outline btn-sm theme-info'>$text[99]</p>"; ?><?php } else { ?> <a class="btn-solid btn-sm" href="<?php echo $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=options&amp;show=0'; ?>"><?php echo $text[99]; ?></a><?php } ?></div>
@@ -110,7 +110,7 @@ if ($save == 1) {
         <input type="hidden" name="save" value="1">
         <input type="hidden" name="file" value="<?php echo $file; ?>">
         <input type="hidden" name="show" value="<?php echo $show; ?>">
-        <div class="container"><?php
+        <div><?php
 if ($show == 0) {
     ?>
           <div class="row align-items-center pb-1">

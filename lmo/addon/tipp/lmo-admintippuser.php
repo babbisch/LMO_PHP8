@@ -63,13 +63,13 @@ if ($_SESSION['lmouserok'] == 2) {
     include (PATH_TO_ADDONDIR . '/tipp/lmo-admintippmenu.php');
     ?>
   
-<div class="container">
+<div id="admintippuser">
   <div class="row">
     <div class="col d-flex justify-content-center"><h1><?php echo $text['tipp'][114] ?></h1></div>
   </div>
   <div class="row">
     <div class="col">
-      <div class="container">
+      <div>
 	<?php
     if (count($users) > 1) {
         $tipper_sort_direction = isset($_GET['tipper_sort_direction']) ? $_GET['tipper_sort_direction'] : 'asc';
@@ -158,8 +158,22 @@ if ($_SESSION['lmouserok'] == 2) {
           <div class="col-2"><?php echo $tab0[$x]['name']; ?></div>
           <div class="col-2"><?php echo $tab0[$x]['team']; ?></div>
           <div class="col-2"><?php if ($tab0[$x]['ltipp'] > 0) { echo date('d.m.Y H:i', $tab0[$x]['ltipp']); } ?></div>    
-          <div class="col-auto"><a class="btn-solid btn-sm theme-primary" href='<?php echo $added . $tab0[$x]['nick'] ?>' onClick="return chklmolink();"><i class="bi bi-pencil" title="<?php echo $text['tipp'][98] ?>"></i></a></div>
-          <div class="col-auto"><a href='<?php echo $addd . $tab0[$x]['nick'] ?>' onClick="return confirm('<?php echo $text[499] ?>');" class="btn-solid btn-sm theme-danger"><i class="bi bi-trash" title="<?php echo $text[82] ?>"></i></a></div>
+          <div class="col-auto"><a class="btn-solid btn-sm theme-primary" href='<?php echo $added . $tab0[$x]['nick'] ?>'><i class="bi bi-pencil" title="<?php echo $text['tipp'][98] ?>"></i></a></div>
+          <div class="col-auto">
+            <button type="button" class="btn-solid btn-sm theme-danger" data-bs-toggle="dialog" data-bs-target="#del_<?php echo $tab0[$x]['nick']?>"><i class="bi bi-trash"></i></button>
+            <dialog class="dialog" id="del_<?php echo $tab0[$x]['nick']?>">
+              <div class="dialog-header">
+                <h1 class="dialog-title"><?php echo $text[82]; ?></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+              </div>
+              <div class="dialog-body">
+                <p><?php echo $tab0[$x]['nick'] . " " . $text[499]; ?></p>
+              </div>
+              <div class="dialog-footer">
+                <a href='<?php echo $addd . $tab0[$x]['nick'] ?>' type="button" class="btn-solid theme-danger"><?php echo $text[82]; ?></a>
+              </div>
+            </dialog>
+          </div>
         </div><?php
         }
     }

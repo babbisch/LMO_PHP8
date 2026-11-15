@@ -389,13 +389,13 @@ function mark(el){
 }
 
 </script>
-<div class="container">
+<div id="statadmin">
 	<div class="row pt-3">
 		<div class="col d-flex justify-content-center"><h1><?php echo $text['spieler'][18] ?></h1></div>
 	</div>
 	<div class="row">
 		<div class="col">
-			<div class="container">
+			<div>
 				<div class="row p-1">
 					<div class="col-3 offset-3">
 						<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="row">
@@ -503,7 +503,7 @@ function mark(el){
 	<div class="row pt-3">
 	        <div class="col">
 			<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-				<div class="container">
+				<div>
 					<div class="row"><?php
         for ($i = 0; $i < $spaltenzahl; $i++) {
             $stat_sort = $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=statistik&amp;sort=' . $i . '&amp;file=' . $file . '&amp;direction=';
@@ -591,7 +591,7 @@ function mark(el){
 				<input type="hidden" name="todo" value="edit">
         			<input type="hidden" name="st" value="<?php echo $st; ?>">
 				<input type="hidden" name="file" value="<?php echo $file ?>">
-				<div class="container">
+				<div>
 					<div class="row p-2">
 						<div class="col"><h3><?php echo $text['spieler'][39] ?></h3></div>
 					</div>

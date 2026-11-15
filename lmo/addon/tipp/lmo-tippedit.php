@@ -166,9 +166,9 @@ if ($file != '') {
         require_once (PATH_TO_ADDONDIR . '/tipp/lmo-tippcalceinsicht.php');
     }
 ?>
-<div class="container">
+<div class="container" id="tippedit">
   <div class="row">
-    <div class="col"><?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php'); ?></div>
+    <div class="col text-center"><?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php'); ?></div>
   </div>
   <div class="row">
     <div class="col">
@@ -178,7 +178,7 @@ if ($file != '') {
         <input type="hidden" name="save" value="1">
         <input type="hidden" name="file" value="<?php echo $file; ?>">
         <input type="hidden" name="st" value="<?php echo $st; ?>">
-        <div class="container">
+        <div>
           <div class="row"><?php
     if ($datum1[$st - 1] != '') {
         $datum = explode('.', $datum1[$st - 1]);
@@ -301,7 +301,7 @@ if ($file != '') {
     }
     ?>
           <div class="row">
-            <div class="col-5"><?php if ($tipp_imvorraus >= 0 && $st > ($stx + $tipp_imvorraus)) {
+            <div class="col-4"><?php if ($tipp_imvorraus >= 0 && $st > ($stx + $tipp_imvorraus)) {
         echo $text['tipp'][177];
     }
     if ($savebutton == 1) { ?>
@@ -309,7 +309,7 @@ if ($file != '') {
         echo '&nbsp;';
     } ?>
             </div>
-            <div class="col-5 text-end"><?php
+            <div class="col-4 text-end"><?php
     echo $text[37] . ' ';
     if ($lmtype == 0) {
         echo $text[2];
@@ -328,18 +328,4 @@ if ($file != '') {
     </div>
   </div>
 </div>
-<table width="100%" cellspacing="0" cellpadding="0" border="0">
-  <tr><?php
-    $st0 = $st - 1;
-    if ($st > 1) {
-?>
-    <td align='left'>&nbsp;<a href="<?php echo $addr . $st0 ?>" title="<?php echo $text[6] ?>"><?php echo $text[5] ?> <?php echo $text[6] ?></a>&nbsp;</td><?php
-    }
-    $st0 = $st + 1;
-    if ($st < $anzst) {
-?>
-    <td align="right">&nbsp;<a href="<?php echo $addr . $st0 ?>" title="<?php echo $text[8] ?>"><?php echo $text[8] ?> <?php echo $text[7] ?></a>&nbsp;</td><?php
-    }
-?>
-  </tr>
-</table><?php } ?>
+<?php } ?>

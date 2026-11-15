@@ -109,7 +109,7 @@ if ($tabdat == '') {
     $addt5 = $_SERVER['PHP_SELF'] . '?action=tipp&amp;todo=wert&amp;stwertmodus=' . $stwertmodus . '&amp;file=' . $file . '&amp;endtab=' . $endtab . '&amp;wertung=' . $wertung . '&amp;teamintern=' . str_replace(' ', '%20', $teamintern) . '&amp;gewicht=';
 }
 ?>
-<div class="container">
+<div id="tippwert">
   <div class="row">
     <div class="col"><?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php'); ?></div>
   </div>

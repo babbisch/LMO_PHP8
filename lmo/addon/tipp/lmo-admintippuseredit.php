@@ -202,7 +202,7 @@ if ($action == 'admin' && $todo == 'tippuseredit' && ($nick != '' || $save == -1
             }
         }
 ?>
-    <div class="container">
+    <div id="admintippuseredit">
       <div class="row">
         <div class="col d-flex justify-content-center"><?php echo $text['tipp'][114] ?></div>
       </div>
@@ -219,7 +219,7 @@ if ($action == 'admin' && $todo == 'tippuseredit' && ($nick != '' || $save == -1
   <input type="hidden" name="action" value="admin">
   <input type="hidden" name="todo" value="tippuseredit">
   <input type="hidden" name="newpage" value="<?php echo $save == count($users) ? '1' : '0' ?>">
-  <div class="container">
+  <div>
     <div class="row">
       <div class="col"><h1><?php if ($save == count($users)) {
             echo $text['tipp'][136];

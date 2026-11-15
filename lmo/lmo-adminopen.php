@@ -22,7 +22,7 @@ $subdir = isset($_REQUEST['subdir']) ? $_REQUEST['subdir'] : '';
 if (($action == 'admin') && ($todo == 'open')) {
     $adda = $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=';
 ?>
-<div class="container-fluid">
+<div id="adminopen">
   <div class="row">
     <div class="col d-flex justify-content-center"><h1><?php echo $text[294] ?></h1></div>
   </div>
@@ -49,7 +49,7 @@ if (($action == 'admin') && ($todo == 'open')) {
 
     if ($output != '') {
 ?>
-      <div class="container">
+      <div>
         <div class="row">
           <div class="col-1"></div>
           <div class="col-4"><?php echo $text[509]; ?></div>

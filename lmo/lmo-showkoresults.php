@@ -31,7 +31,7 @@ if ($file != '') {
     }
 ?>
 
-<div class="container">
+<div id="showkoresults">
   <div class="row">
     <div class="col text-center"><?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php'); ?></div>
   </div>
@@ -96,9 +96,9 @@ if ($file != '') {
                     $m2 = array($goalb[$st - 1][$i][0], $goalb[$st - 1][$i][1], $goalb[$st - 1][$i][2], $goalb[$st - 1][$i][3], $goalb[$st - 1][$i][4], $goalb[$st - 1][$i][5], $goalb[$st - 1][$i][6]);
                     $m = gewinn($st - 1, $i, $modus[$st - 1], $m1, $m2);
                     if ($m == 1) {
-                        $color = 'text-success';
+                        $color = 'fg-success';
                     } elseif ($m == 2) {
-                        $color = 'text-danger';
+                        $color = 'fg-danger';
                     } else {
                         $color = '';
                     }
@@ -126,9 +126,9 @@ if ($file != '') {
           </div>
           <?php
                     if ($m == 2) {
-                        $color = 'text-success';
+                        $color = 'fg-success';
                     } elseif ($m == 1) {
-                        $color = 'text-danger';
+                        $color = 'fg-danger';
                     } else {
                         $color = '';
                     }
@@ -185,7 +185,7 @@ if ($file != '') {
                 if ($mnote[$st - 1][$i][$n] != '') {
                     // Allgemeine Notiz
                     $lmo_spielnotiz = '<strong>' . $text[22] . ":</strong>\n" . $mnote[$st - 1][$i][$n];
-                    echo "<a data-bs-toggle='tooltip' data-bs-placement='right' data-bs-html='true' title='" . $lmo_spielnotiz . "'> <i class='bi bi-info-circle-fill text-info' style='font-size: 1.3rem;'></i></a>";
+                    echo "<a data-bs-toggle='tooltip' data-bs-placement='right' data-bs-html='true' title='" . $lmo_spielnotiz . "'> <i class='bi bi-info-circle-fill fg-info' style='font-size: 1.3rem;'></i></a>";
                     $lmo_spielnotiz = '';
                 } else {
                     echo '&nbsp;';

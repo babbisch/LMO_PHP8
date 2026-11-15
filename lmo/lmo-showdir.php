@@ -19,7 +19,7 @@
  */
 
 ?>
-<div  class="container">
+<div id="showdir">
   <div class="row">
     <div class="col"><?php
 include (PATH_TO_LMO . '/lmo-dirlist.php');

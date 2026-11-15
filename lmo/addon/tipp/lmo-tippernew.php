@@ -214,7 +214,7 @@ if ($newpage == 1) {
   <input type="hidden" name="action" value="tipp">
   <input type="hidden" name="todo" value="newtipper">
   <input type="hidden" name="newpage" value="<?php echo (1); ?>">
-  <div class="container"><?php
+  <div><?php
 if ($newpage != 1) {
     ?>
     <div class="row p-1">

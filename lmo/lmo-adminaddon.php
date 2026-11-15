@@ -42,7 +42,7 @@ if ($save == 1) {
     <li class="nav-item" role="presentation"><a href="<?php echo $addr_user ?>" class="nav-link" title="<?php echo $text[318] ?>"><?php echo $text[317] ?></a></li>
   </ul>
 </nav>
-<div class="container">
+<div id="adminaddon">
   <div class="row">
     <div class="col fg-danger"><?php echo getMessage($text[571], TRUE); ?></div>
   </div>
@@ -72,7 +72,7 @@ foreach ($cfgarray as $addon_name => $addon_cfg) {
         <input type="hidden" name="save" value="1">
         <input type="hidden" name="file" value="<?php echo $file; ?>">
         <input type="hidden" name="show" value="<?php echo $show; ?>">
-        <div class="container">
+        <div>
           <div class="row align-items-center"><?php
 $testshow = 0;
 foreach ($cfgarray as $addon_name => $addon_cfg) {  // Alle Addons abklappern

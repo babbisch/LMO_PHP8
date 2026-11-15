@@ -204,7 +204,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
     $nw = 0;
     ?>
 
-<div class="container">
+<div id="tippviewer">
   <div class="row">
     <div class="col offset-5"><h1><?php echo $_SESSION['lmotippername'];
     if ($_SESSION['lmotipperverein'] != '') {
@@ -227,7 +227,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
       <input type="hidden" name="xstart" value="<?php echo $start; ?>">
       <input type="hidden" name="xnow" value="<?php echo $now; ?>">
       <input type="hidden" name="xthen" value="<?php echo $then; ?>">
-      <div class="container!"><?php
+      <div><?php
     if ($anzspiele == 0) {
         ?>
         <div class="row">
@@ -383,21 +383,21 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
             }
             ?>
           <div class="col-1">
-            <input type="radio" class="form-check-input" name="xtipp<?php echo $i; ?>" value="1" <?php if ($tipp == 1) {
+            <input type="radio" class="radio" name="xtipp<?php echo $i; ?>" value="1" <?php if ($tipp == 1) {
                 echo ' checked';
             }
             if ($btip == false) {
                 echo ' disabled';
             } ?>>
             <?php if ($hidr[$i] == 0) { ?>
-            <input type="radio" class="form-check-input" name="xtipp<?php echo $i; ?>" value="3" <?php if ($tipp == 0) {
+            <input type="radio" class="radio" name="xtipp<?php echo $i; ?>" value="3" <?php if ($tipp == 0) {
                     echo ' checked';
                 }
                 if ($btip == false) {
                     echo ' disabled';
                 } ?>>
           <?php } ?>
-            <input type="radio" class="form-check-input" name="xtipp<?php echo $i; ?>" value="2" <?php if ($tipp == 2) {
+            <input type="radio" class="radio" name="xtipp<?php echo $i; ?>" value="2" <?php if ($tipp == 2) {
                 echo ' checked';
             }
             if ($btip == false) {
@@ -409,7 +409,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
                 $btip = false;
             } ?>
           <div class="col-1">
-              <input type="radio" class="form-check-input" name="xjokerspiel_<?php echo $liga[$i] . '_' . $spieltag[$i]; ?>" value="<?php echo $spiel[$i]; ?>" <?php if ($jksp[$i] == $spiel[$i]) {
+              <input type="radio" class="radio" name="xjokerspiel_<?php echo $liga[$i] . '_' . $spieltag[$i]; ?>" value="<?php echo $spiel[$i]; ?>" <?php if ($jksp[$i] == $spiel[$i]) {
                 echo ' checked';
             }
             if ($btip == false) {

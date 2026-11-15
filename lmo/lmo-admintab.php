@@ -71,7 +71,7 @@ if ($file != '') {
     include (PATH_TO_LMO . '/lmo-adminsubnavi.php');
     ?>
 
-<div class="container">
+<div id="admintab">
   <div class="row p-3">
     <div class="col"><h1><?php echo $titel ?></h1></div>
   </div>
@@ -86,7 +86,7 @@ if ($file != '') {
         <input type="hidden" name="save" value="1">
         <input type="hidden" name="file" value="<?php echo $file; ?>">
         <input type="hidden" name="st" value="<?php echo $st; ?>">
-        <div class="container">
+        <div>
           <div class="row pb-3">
             <div class="col-4"><strong><?php echo $st . '. ' . $text[2]; ?></strong></div>
             <div class="col-1"><strong><?php echo $text[33]; ?></strong></div>

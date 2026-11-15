@@ -187,9 +187,9 @@ if ($file != '' && $tipp_tipptabelle1 == 1) {
         $y = 'arrow-right-circle';
         if (($endtab > 1) && ($tabtype == 0) && ($tabdat != '')) {
             if ($platz0[$i] < $platz1[$i]) {
-                $y = 'arrow-up-circle text-success';
+                $y = 'arrow-up-circle fg-success';
             } else if ($platz0[$i] > $platz1[$i]) {
-                $y = 'arrow-down-circle text-danger';
+                $y = 'arrow-down-circle fg-danger';
             }
         }
         if ($tabdat != '') {
@@ -413,9 +413,9 @@ if ($tipp_wertverein == 1 && $tabtype == 0) {
         $y = 'arrow-right-circle';
         if (($endtab > 1) && ($tabdat != '') && $tipppunktegesamt[intval(substr($tab0[0], 25))] > 0) {
             if ($platz0[$i] < $platz1[$i]) {
-                $y = 'arrow-up-cirlce text-success';
+                $y = 'arrow-up-cirlce fg-success';
             } else if ($platz0[$i] > $platz1[$i]) {
-                $y = 'arrow-down-circle text-danger';
+                $y = 'arrow-down-circle fg-danger';
             }
         }
         if ($tabdat != '') {

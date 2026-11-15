@@ -33,7 +33,7 @@ if (($file != '') && ($_SESSION['lmouserok'] == 2)) {
     $rowMarker = array();
 ?>
 <a name="top"></a>
-<div class="container">
+<div id="adminrounds">
  <div class="row">
    <div class="col"><?php include (PATH_TO_LMO . '/lmo-adminsubnavi.php'); ?></div>
   </div>
@@ -91,7 +91,7 @@ if (($file != '') && ($_SESSION['lmouserok'] == 2)) {
     $liga->loadFile(PATH_TO_LMO . '/' . $dirliga . $file);
     echo getMessage($meldung);
     ?>
-      <div class="container"><?php
+      <div><?php
     foreach ($liga->spieltage as $spTag) {
         ?>
         <div class="row p-3">
@@ -130,8 +130,7 @@ if (($file != '') && ($_SESSION['lmouserok'] == 2)) {
           <div class="col-3"><?php echo $str1 . $partie->gast->name . $str2; ?></div>
           <div class="col-1"><?php echo $str1 . $hTore . $str2; ?> : <?php echo $str1 . $gTore . $str2; ?></div>
           <div class="col-1">
-            <select class="custom-select"  name="sp_<?php
-            echo $spTag->nr . '_' . $partie->heim->nr . '_' . $partie->gast->nr . '" data-width="auto">';
+            <select class="custom-select"  name="sp_<?php echo $spTag->nr . '_' . $partie->heim->nr . '_' . $partie->gast->nr . '" ?> data-width="auto">
             for ($sp = 1; $sp <= $liga->spieltageCount(); $sp++) {
                 echo "<option value='$sp'";
                 if ($spTag->nr == $sp) {

@@ -158,7 +158,7 @@ if ($file != '') {
     include (PATH_TO_LMO . '/lmo-adminsubnavi.php');
     ?>
 
-<div class="container">
+<div id="adminbasic">
   <div class="row p-3">
     <div class="col d-flex justify-content-center"><h1><?php echo $titel ?></h1></div>
   </div>
@@ -203,7 +203,7 @@ if ($file != '') {
         <input type="hidden" name="show" value="<?php echo $show ?>">
         <input type="hidden" name="file" value="<?php echo $file; ?>">
         <input type="hidden" name="st" value="<?php echo $st; ?>">
-        <div class="container"><?php
+        <div><?php
     if ($show == 0) {
         if ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert'] == 1) {
             ?>
@@ -432,7 +432,7 @@ if ($file != '') {
           </div>
           <div class="row pb-1">
             <div class="col">
-              <div class="container">
+              <div>
                 <div class="row pb-1">
                   <div class="col-5"></div>
                   <div class="col-1 text-center " data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<?php echo $text[199]; ?>"><?php echo $text[34]; ?></acronym></div>

@@ -19,7 +19,7 @@
  */
 
 ?>
-<div class="container">
+<div id="showinfo">
   <div class="row">
     <div class="col">&nbsp;</div>
   </div>

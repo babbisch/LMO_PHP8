@@ -56,7 +56,7 @@ if ($action == 'tipp') {
     include (PATH_TO_ADDONDIR . '/tipp/lmo-tippmenu.php');
 ?>
   
-<div class="container">
+<div id="tippmain">
   <div class="row">
     <div class="col d-flex justify-content-center"><h1><?php echo $text['tipp'][0] . ' ';
     if (isset($titel)) {
@@ -64,13 +64,13 @@ if ($action == 'tipp') {
     } ?></h1></div>
   </div>
   <div class="row">
-    <div class="col"><?php
+    <div class="col d-flex justify-content-center"><?php
     if ($_SESSION['lmotipperok'] == 5) {
         if ($file != '' && $viewermode != 1) {
             $tippfile = PATH_TO_ADDONDIR . '/tipp/' . $tipp_dirtipp . substr($file, 0, -4) . '_' . $_SESSION['lmotippername'] . '.tip';
         }
         if ($viewermode == 1) {
-            require (PATH_TO_ADDONDIR . '/tipp/lmo-tippviewer.php');
+          require (PATH_TO_ADDONDIR . '/tipp/lmo-tippviewer.php');
         } else {
             switch ($todo) {
                 case 'edit':

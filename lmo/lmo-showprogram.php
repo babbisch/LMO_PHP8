@@ -25,7 +25,7 @@ if ($file != '') {
     $selteam = !empty($_GET['selteam']) ? $_GET['selteam'] : $selteam;
 ?>
 
-<div class="container">
+<div id="showprogram">
   <div class="row pt-3">
     <div class="col-1 text-end">
       <?php

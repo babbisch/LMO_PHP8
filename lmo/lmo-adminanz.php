@@ -57,7 +57,7 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
     $addr = $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=edit&amp;file=' . $file . '&amp;st=';
     $addb = $_SERVER['PHP_SELF'] . '?action=admin&amp;todo=tabs&amp;file=' . $file . '&amp;st=';
 ?>
-<div class="container">
+<div id="adminanz">
  <div class="row p-3">
    <div class="col"><?php include (PATH_TO_LMO . '/lmo-adminsubnavi.php'); ?></div>
   </div>
@@ -69,7 +69,7 @@ if ($file != '' && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
         <input type="hidden" name="save" value="1">
         <input type="hidden" name="file" value="<?php echo $file; ?>">
         <input type="hidden" name="st" value="<?php echo $st; ?>">
-        <div class="container">
+        <div>
           <div class="row">
             <div class="col"><strong><?php echo $text[340]; ?></strong></div>
           </div>

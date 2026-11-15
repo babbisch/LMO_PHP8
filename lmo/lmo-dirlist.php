@@ -121,7 +121,7 @@ if (isset($_SESSION['liga_sort_direction']) && $_SESSION['liga_sort_direction'] 
     $ligadatei = array_reverse($ligadatei);
 ?>
 
-<div class="container">
+<div id="dirlist">
 	<div class="row">
 		<div class="col-4 offset-1 d-none lg:d-block"><b><?php echo $text[529]; ?></b></div>
 		<div class="col-auto offset-4 lg:d-none"><b><?php echo $text[529]; ?></b></div>

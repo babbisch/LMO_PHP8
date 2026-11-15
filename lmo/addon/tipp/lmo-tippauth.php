@@ -85,7 +85,7 @@ if ($action == 'tipp') {
         include (PATH_TO_ADDONDIR . '/tipp/lmo-tippmenu.php');
 ?>
  
-<div class="container">
+<div id="tippauth">
   <div class="row p-1">
     <div class="col"><h1><?php echo $text['tipp'][0] . ' ';
         if (isset($titel)) {
@@ -107,7 +107,7 @@ if ($action == 'tipp') {
       <form name="lmotippedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input type="hidden" name="action" value="tipp">  
         <input type="hidden" name="file" value="<?php echo $file ?>">  
-        <div class="container">
+        <div>
           <caption><?php echo $text['tipp'][158]; ?></caption>
           <div class="row p-1">
             <div class="col"><?php echo $text['tipp'][44]; ?></div>
@@ -124,7 +124,7 @@ if ($action == 'tipp') {
           </div><?php } ?>
           <div class="row p-1">
             <div class="col-3 text-end"><?php echo ' ' . $text['tipp'][23]; ?></div>
-            <div class="col-3"><input class="form-control" type="text" name="xtippername" size="16" maxlength="32" value="<?php echo $_SESSION['lmotippername']; ?>"></div>
+            <div class="col"><input class="form-control w-12" type="text" name="xtippername" size="16" maxlength="32" value="<?php echo $_SESSION['lmotippername']; ?>"></div>
           </div><?php
             // Passwort falsch
             if ($_SESSION['lmotipperok'] == -1) {
@@ -135,10 +135,10 @@ if ($action == 'tipp') {
           </div><?php } ?>
           <div class="row p-1">
             <div class="col-3 text-end"><?php echo ' ' . $text[308]; ?></div>
-            <div class="col-3"><input class="form-control" type="password" name="xtipperpass" size="16" maxlength="32" value="<?php echo $_SESSION['lmotipperpass']; ?>"></div>
+            <div class="col"><input class="form-control w-12" type="password" name="xtipperpass" size="16" maxlength="32" value="<?php echo $_SESSION['lmotipperpass']; ?>"></div>
           </div>
           <div class="row p-1">
-            <div class="col-3 offset-3"><input class="btn-solid btn-sm theme-secondary" title="<?php echo $text[311] ?>" type="submit" name="xtippersub" value="<?php echo $text['tipp'][12]; ?>"></div>
+            <div class="col-3 offset-3"><input class="btn-solid btn-sm theme-success" title="<?php echo $text[311] ?>" type="submit" name="xtippersub" value="<?php echo $text['tipp'][12]; ?>"></div>
           </div>
         </div>
       </form>
@@ -146,7 +146,7 @@ if ($action == 'tipp') {
   </div>
   <div class="row p-1">
     <div class="col">
-      <div class="container">
+      <div>
         <div class="row p-1">
           <div class="col-3"><?php echo $text['tipp'][45]; ?></div>
           <div class="col-3">
@@ -197,7 +197,7 @@ if ($action == 'tipp') {
       <form name="lmotippedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input type="hidden" name="action" value="tipp">
         <input type="hidden" name="todo" value="getpass">
-        <div class="container">
+        <div>
           <div class="row p-1">
             <div class="col"><?php echo $text['tipp'][74]; ?></div>
           </div><?php
@@ -211,11 +211,11 @@ if ($action == 'tipp') {
 ?>
           <div class="row p-1">
             <div class="col-3"><?php echo ' ' . $text['tipp'][23] . ' ' . $text['tipp'][218] . ' ' . $text['tipp'][219]; ?></div>
-            <div class="col-3"><input class="form-control" type="text" name="xtippername2" size="16" maxlength="32" value="<?php echo $xtippername2; ?>"></div>
+            <div class="col"><input class="form-control w-12" type="text" name="xtippername2" size="16" maxlength="32" value="<?php echo $xtippername2; ?>"></div>
           </div>
           <div class="row p-1">
             <div class="col-3"><?php echo $text['tipp'][75] . ' ' . $text['tipp'][76]; ?></div>
-            <div class="col-3"><input class="btn-solid btn-sm theme-secondary" type="submit" name="xtippersub" value="<?php echo $text['tipp'][76]; ?>" ></div>
+            <div class="col"><input class="btn-solid btn-sm theme-accent" type="submit" name="xtippersub" value="<?php echo $text['tipp'][76]; ?>" ></div>
           </div>
         </div>
       </form>

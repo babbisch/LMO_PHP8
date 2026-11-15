@@ -28,7 +28,7 @@ if ($file != '') {
     $addr = $_SERVER['PHP_SELF'] . '?action=results&amp;file=' . $file . '&amp;st=';
     ?>
 
-<div class="container">
+<div id="showstats">
   <div class="row pt-3">
     <div class="col-1 text-end">
       <?php
@@ -47,7 +47,7 @@ if ($file != '') {
     ?>
     </div>
     <div class="col-10">
-      <div class="container"><?php
+      <div><?php
     if ($show_stat1 == 0) {
         ?>
         <div class="row">

@@ -1,4 +1,4 @@
-<div class="container"><?php if (strlen($cal) > 4) { ?>
+<div id="showcal"><?php if (strlen($cal) > 4) { ?>
   <div class="row justify-content-center">
     <div class="col-1"
       ><a href="<?php echo $addk . $ma; ?>" data-bs-toggle="tooltip" data-bs-title="<?php echo $text[142]; ?>"><?php echo $text[5]; ?></a>

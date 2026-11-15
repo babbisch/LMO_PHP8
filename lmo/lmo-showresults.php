@@ -30,7 +30,7 @@ if ($dats == 1) {
 }
 ?>
 </strong></div>
-<div class="container-fluid"><?php
+<div id="showresults"><?php
 // Wenn Spieltermine angegeben und Sortierung eingeschaltet, dann nach Datum sortieren
 $datsort = $mterm[$st - 1];
 if ($enablegamesort == '1' && filterZero($mterm[$st - 1])) {

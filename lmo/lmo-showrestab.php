@@ -87,7 +87,7 @@ if (isset($file) && $file != '') {
 
 ?>
 
-<div class="container">
+<div id="showrestab">
   <div class="row">
     <div class="col text-center"><?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php') ?></div>
   </div>
