@@ -278,20 +278,20 @@ if ($newpage != 1) {
        <div class="col-"><?php echo $text['tipp'][47]; ?></div>
      </div>
      <div class="row p-1">
-       <div class="col"><input type="radio" class="form-check-input" name="xtippervereinradio" value="0" <?php if ($xtippervereinradio == 0) { echo 'checked'; } ?>> <?php echo $text['tipp'][50]; ?></div>
+       <div class="col form-field"><input type="radio" class="radio" name="xtippervereinradio" value="0" <?php if ($xtippervereinradio == 0) { echo 'checked'; } ?>> <?php echo $text['tipp'][50]; ?></div>
      </div>
      <div class="row p-1">
-       <div class="col-2 text-end"><input type="radio" class="form-check-input" name="xtippervereinradio" value="1" <?php if ($xtippervereinradio == 1) { echo 'checked'; } ?>> <?php echo $text['tipp'][48]; ?></div>
-       <div class="col-3">
-         <select class="form-select" name="xtippervereinalt" onChange="xtippervereinradio[1].checked=true">
+       <div class="col-2 form-field"><input type="radio" class="radio" name="xtippervereinradio" value="1" <?php if ($xtippervereinradio == 1) { echo 'checked'; } ?>> <?php echo $text['tipp'][48]; ?></div>
+       <div class="col-3 form-field">
+         <select class="form-control" name="xtippervereinalt" onChange="xtippervereinradio[1].checked=true">
            <option value="" <?php if ($xtippervereinalt == '') { echo 'selected'; } ?>><?php echo $text['tipp'][51] ?></option>
            <?php require (PATH_TO_ADDONDIR . '/tipp/lmo-tippnewteams.php'); ?>
          </select>
        </div>
      </div>
      <div class="row p-1">
-       <div class="col-2 text-end"><input type="radio" class="form-check-input" name="xtippervereinradio" value="2" <?php if ($xtippervereinradio == 2) { echo 'checked'; } ?>> <?php echo $text['tipp'][49]; ?></div>
-       <div class="col-3"><input class="form-control" type="text" name="xtippervereinneu" size="25" maxlength="32" value="<?php echo $xtippervereinneu; ?>" onFocus="xtippervereinradio[2].checked=true"></div>
+       <div class="col-2 form-field"><input type="radio" class="radio" name="xtippervereinradio" value="2" <?php if ($xtippervereinradio == 2) { echo 'checked'; } ?>> <?php echo $text['tipp'][49]; ?></div>
+       <div class="col-3 form-field"><input class="form-control" type="text" name="xtippervereinneu" size="25" maxlength="32" value="<?php echo $xtippervereinneu; ?>" onFocus="xtippervereinradio[2].checked=true"></div>
      </div><?php
     }
     ?>
@@ -299,7 +299,7 @@ if ($newpage != 1) {
        <div class="col"><?php echo $text['tipp'][18]; ?></div>
      </div>
      <div class="row p-1">
-       <div class="col"><?php $ftype = '.l98';
+       <div class="col form-field"><?php $ftype = '.l98';
     require (PATH_TO_ADDONDIR . '/tipp/lmo-tippnewdir.php'); ?></div>
      </div>
      <div class="row p-1">
