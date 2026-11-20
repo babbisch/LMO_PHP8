@@ -101,19 +101,35 @@ if (($action == 'tipp') && ($todo == 'pwchange')) {
         <input type="hidden" name="newpage" value="1">
         <div>
           <div class="row p-1">
-            <div class="col-4 text-end"><?php echo ' ' . $text['tipp'][140]; ?> &nbsp;</div>
+            <div class="col-5 text-end"><?php echo ' ' . $text['tipp'][140]; ?> &nbsp;</div>
             <div class="col-auto"><input class="form-control" type="password" name="xtipperpass" size="16" maxlength="32" value="<?php echo $xtipperpass; ?>"></div>
           </div>
           <div class="row p-1">
-            <div class="col-4 text-end"><?php echo ' ' . $text['tipp'][139]; ?> &nbsp;</div>
-            <div class="col-auto"><input class="form-control" type="password" name="xtipperpassneu" size="16" maxlength="32" value="<?php echo $xtipperpassneu; ?>"></div>
+            <div class="col-5 text-end"><?php echo ' ' . $text['tipp'][139]; ?> &nbsp;</div>
+            <div class="col-auto">
+              <input class="form-control" type="password" name="xtipperpassneu" size="16" maxlength="32" value="<?php echo $xtipperpassneu; ?>">
+              <div class="strength" data-bs-strength>
+		<div class="strength-segment"></div>
+		<div class="strength-segment"></div>
+		<div class="strength-segment"></div>
+		<div class="strength-segment"></div>
+	      </div>
+            </div>
           </div>
           <div class="row p-1">
-            <div class="col-4 text-end"><?php echo ' ' . $text['tipp'][139] . ' ' . $text['tipp'][19]; ?> &nbsp;</div>
-            <div class="col-auto"><input class="form-control" type="password" name="xtipperpassneuw" size="16" maxlength="32" value="<?php echo $xtipperpassneuw; ?>"></div>
+            <div class="col-5 text-end"><?php echo ' ' . $text['tipp'][139] . ' ' . $text['tipp'][19]; ?> &nbsp;</div>
+            <div class="col-auto">
+              <input class="form-control" type="password" name="xtipperpassneuw" size="16" maxlength="32" value="<?php echo $xtipperpassneuw; ?>">
+              <div class="strength" data-bs-strength>
+		<div class="strength-segment"></div>
+		<div class="strength-segment"></div>
+		<div class="strength-segment"></div>
+		<div class="strength-segment"></div>
+	      </div>
+            </div>
           </div>
           <div class="row pt-3">
-            <div class="col-4 text-end">
+            <div class="col-5 text-end">
               <input class="btn-solid btn-sm theme-primary" type="submit" name="xtippersub" value="<?php echo $text[329]; ?>">
             </div>
           </div>

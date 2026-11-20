@@ -215,7 +215,7 @@ if ($action == 'admin' && $todo == 'tippuseredit' && ($nick != '' || $save == -1
     } else {
 ?>
 
-<form name="lmotippedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onSubmit="if (this.nick.value=='') {alert ('<?php echo $text['tipp'][112] ?>');this.nick.focus();return false;}">
+<form name="lmotippedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <input type="hidden" name="action" value="admin">
   <input type="hidden" name="todo" value="tippuseredit">
   <input type="hidden" name="newpage" value="<?php echo $save == count($users) ? '1' : '0' ?>">
@@ -232,7 +232,7 @@ if ($action == 'admin' && $todo == 'tippuseredit' && ($nick != '' || $save == -1
       <div class="col-3"><?php
         if ($save == count($users)) {
 ?>
-        <input class="form-control" type="text" name="nick" value="<?php echo $nick; ?>"><?php
+        <input class="form-control" type="text" name="nick" value="<?php echo $nick; ?>" required><?php
         } else {
 ?>
         <input type="hidden" name="nick" value="<?php echo $nick; ?>"><strong><?php echo $tipp_tipperdaten[0] ?></strong><?php
@@ -260,6 +260,12 @@ if ($action == 'admin' && $todo == 'tippuseredit' && ($nick != '' || $save == -1
          <input class="form-control" type="password" name="xtipperpass" size="25" maxlength="100" value=""><?php
         }
 ?>
+          <div class="strength" data-bs-strength>
+	    <div class="strength-segment"></div>
+	    <div class="strength-segment"></div>
+	    <div class="strength-segment"></div>
+	    <div class="strength-segment"></div>
+	  </div>
        </div>
      </div>
      <div class="row">
