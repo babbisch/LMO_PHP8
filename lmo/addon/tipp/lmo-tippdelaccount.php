@@ -79,25 +79,24 @@ if (($action == 'tipp') && ($todo == 'delaccount')) {
 ?>
   <div id="tippdellaccount">
     <div class="row">
-      <div class="col offset-4"><?php echo $text['tipp'][6]; ?></div>
+      <div class="col"><?php echo $text['tipp'][6]; ?></div>
     </div>
-    <div class="row p-3">
+    <div class="row pt-3">
       <?php if ($newpage != 1) { ?>
-      <div class="col-2 offset-4">
-        <form name="lmotippedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onSubmit="return confirm('');" class="form-inline">
+      <div class="col">
+        <form name="lmotippedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-inline">
           <input type="hidden" name="action" value="tipp">
           <input type="hidden" name="todo" value="delaccount">
           <input type="hidden" name="newpage" value="1">
-          <input class="form-control" type="password" name="xtipperpass" size="16" maxlength="32" value="<?php echo $xtipperpass; ?>" placeholder="<?php echo $text['tipp'][69]; ?>">
-          <br />
+          <input class="form-control" type="text" name="xtipperpass" size="16" maxlength="32" value="<?php echo $xtipperpass; ?>" placeholder="<?php echo $text['tipp'][69]; ?>">
           <input class="btn-solid btn-sm theme-danger" type="submit" name="xtippersub" value="<?php echo $text[82]; ?>">
         </form>
       </div><?php }
     if ($newpage == 1) { /* erfolgreich */ ?>
-      <div class="col offset-4"><?php echo getMessage($text['tipp'][121]); ?></div>
+      <div class="col"><?php echo getMessage($text['tipp'][121]); ?></div>
     </div>
     <div class="row">
-      <div class="col offset-4"><a href="<?php echo $_SERVER['PHP_SELF'] . '?action=tipp&amp'; ?>">=> <?php echo $text['tipp'][141]; ?></a></div>
+      <div class="col"><a href="<?php echo $_SERVER['PHP_SELF'] . '?action=tipp&amp'; ?>">=> <?php echo $text['tipp'][141]; ?></a></div>
     </div><?php } ?>
   </div><?php
 }

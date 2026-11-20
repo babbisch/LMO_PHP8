@@ -95,18 +95,18 @@ if (isset($file) && $file != '') {
     $st0 = $st - 1;
     if ($st > 1) {
 ?>
-     <div class="col-6">&nbsp;<a href="<?php echo $addr . $st0 ?>"><?php echo $text[5] ?> <?php echo $text[6] ?></a>&nbsp;</div><?php
+     <div class="col-2 offset-4">&nbsp;<a href="<?php echo $addr . $st0 ?>"><?php echo $text[5] ?> <?php echo $text[6] ?></a>&nbsp;</div><?php
     } else {
 ?>
-     <div class="col-6"></div><?php
+     <div class="col-2 offseet-4"></div><?php
     }
     $st0 = $st + 1;
     if ($st < $anzst) {
 ?>
-     <div class="col-6 text-end">&nbsp;<a href="<?php echo $addr . $st0 ?>"><?php echo $text[8] ?> <?php echo $text[7] ?></a>&nbsp;</div><?php
+     <div class="col-2 text-end">&nbsp;<a href="<?php echo $addr . $st0 ?>"><?php echo $text[8] ?> <?php echo $text[7] ?></a>&nbsp;</div><?php
     } else {
 ?>
-     <div class="col-6 text-end"></div><?php
+     <div class="col-2 text-end"></div><?php
     }
 ?>
   </div><?php

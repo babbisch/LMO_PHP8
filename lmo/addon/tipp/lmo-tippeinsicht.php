@@ -76,7 +76,7 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
             if ($von != $start) {
                 echo "<td align='center'><a href=\"" . $addt3 . $von . '">';
             } else {
-                echo '<td align='center' class="nobr">';
+                echo '<td align="center" class="nobr">';
             }
             $k1 = strtolower(substr($tippernick[intval(substr($tab0[$von], -6))], 0, 3));
             $k2 = strtolower(substr($tippernick[intval(substr($tab0[$bis], -6))], 0, 3));
