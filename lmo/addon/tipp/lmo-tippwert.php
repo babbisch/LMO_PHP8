@@ -28,7 +28,7 @@ if ($endtab == 0) {
     $tabdat = $endtab . '. ' . $text[2];
 }
 $all = isset($_REQUEST['all']) ? $_REQUEST['all'] : 0;
-$th = 1;
+$th = 2;
 //  if($stwertmodus=="bis" ){$endtab=$anzst;}
 if ($all == 1) {
     $endtab = 0;
@@ -109,22 +109,18 @@ if ($tabdat == '') {
     $addt5 = $_SERVER['PHP_SELF'] . '?action=tipp&amp;todo=wert&amp;stwertmodus=' . $stwertmodus . '&amp;file=' . $file . '&amp;endtab=' . $endtab . '&amp;wertung=' . $wertung . '&amp;teamintern=' . str_replace(' ', '%20', $teamintern) . '&amp;gewicht=';
 }
 ?>
-<div id="tippwert">
-  <div class="row">
-    <div class="col"><?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php'); ?></div>
-  </div>
+<div class="container" id="tippwert">
+  <?php include (PATH_TO_LMO . '/lmo-spieltagsmenu.php'); ?>
   <?php if ($tipp_tipperimteam >= 0) {
-    $th = 2; ?>
+    $th++; ?>
   <div class="row">
-    <div class="col-2"><?php
+    <div class="col d-flex justify-content-center"><?php
     if ($wertung == 'einzel') {
         echo $text['tipp'][61];
     } else {
         echo '<a href="' . $addt1 . 'einzel" title="' . $text['tipp'][59] . '">' . $text['tipp'][61] . '</a>';
     }
-    ?>
-    </div>
-    <div class="col-2"><?php
+    echo "&nbsp;&nbsp;";
     if ($wertung == 'team') {
         echo $text['tipp'][62];
     } else {
@@ -145,22 +141,21 @@ if ($tabdat == '') {
     }
 ?>
   </div><?php } ?>
-</div>
 
 <?php
 $dummy = '';
 ?>
-<div class="container"><?php
+<div><?php
 if ($all == 0) {
 ?>
-  <div class="row p-2">
-    <div class="col"><?php
+    <div class="row p-2">
+      <div class="col d-flex justify-content-center"><?php
     if ($stwertmodus == 'nur') {
         echo $text['tipp'][202];
     } else {
         echo '<a href="' . $addt4 . 'nur">' . $text['tipp'][202] . '</a>';
     }
-    echo ' ';
+    echo "&nbsp;&nbsp;";
     if ($stwertmodus == 'bis') {
         echo $text['tipp'][203];
     } else {
@@ -172,7 +167,7 @@ if ($all == 0) {
 }
 ?>
   <div class="row justify-content-center">
-    <div class="col-<?php echo $th; ?>"> <?php
+    <div class="col-<?php echo $th; ?> text-center fw-bold"> <?php
 if (isset($lmtype) && $lmtype == 1 && $tabdat != '') {
     if ($st == $anzst) {
         $j = $text[374];
@@ -193,46 +188,38 @@ if (isset($lmtype) && $lmtype == 1 && $tabdat != '') {
 if ($wertung == 'einzel' || $wertung == 'intern') {
     if ($tipp_tipperimteam >= 0) {
 ?>
-    <div class="col-1"> <?php echo $text['tipp'][27]; /* Team */ ?> </div><?php
+    <div class="col-1 fw-bold"> <?php echo $text['tipp'][27]; /* Team */ ?> </div><?php
     } else {
 ?>
-    <div class="col-1"> <?php echo $text['tipp'][23]; /* Nickname */ ?> </div><?php
+    <div class="col-1 fw-bold"> <?php echo $text['tipp'][23]; /* Nickname */ ?> </div><?php
     }
 } else {  /* Teamwertung */
     ?>
-    <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][120] ?>"><?php echo $text['tipp'][26]; /* Anzahl Tipper */ ?></div>
-    <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][208] ?>"><?php echo $text['tipp'][26] . 'Ø'; /* Anzahl Tipper Durchschnitt */ ?></div><?php
-}  /*?>
-    <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][117]?>"><?php if($gewicht!="spiele"){
-  echo "<a href=\"".$addt5."spiele\">";
+    <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][120] ?>"><?php echo $text['tipp'][26]; /* Anzahl Tipper */ ?></div>
+    <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][208] ?>"><?php echo $text['tipp'][26] . 'Ø'; /* Anzahl Tipper Durchschnitt */ ?></div><?php
 }
-echo $text['tipp'][123]; // Spiele getippt
-if($gewicht!="spiele"){
-  echo "</a>";
-}         ?>
-    </div><?php*/
 if ($tipp_showzus == 1) {
     if ($tipp_tippmodus == 1) {
         if ($tipp_rergebnis > 0) {
 ?>
-      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][34] . ': ' . $tipp_rergebnis . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][221]; /* RE */ ?></div><?php }
+      <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][34] . ': ' . $tipp_rergebnis . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][221]; /* RE */ ?></div><?php }
         if ($tipp_rtendenzdiff > $tipp_rtendenz) { ?>
-      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][35] . ': ' . $tipp_rtendenzdiff . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][222]; /* RTD */ ?></div><?php }
+      <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][35] . ': ' . $tipp_rtendenzdiff . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][222]; /* RTD */ ?></div><?php }
         if ($tipp_rtendenz > 0) { ?>
-      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][36] . ': ' . $tipp_rtendenz . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][223]; /* RT */ ?></div><?php }
+      <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][36] . ': ' . $tipp_rtendenz . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][223]; /* RT */ ?></div><?php }
         if ($tipp_rtor > 0) { ?>
-      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][37] . ': ' . $tipp_rtor . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][224]; /* RG */ ?></div><?php }
+      <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][37] . ': ' . $tipp_rtor . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][224]; /* RG */ ?></div><?php }
     }  // ende if($tipp_tippmodus==1)
     if ($tipp_rremis > 0) { ?>
-      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][192] . ': ' . $tipp_rremis . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][225]; /* UB */ ?></div><?php }
+      <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][192] . ': ' . $tipp_rremis . ' ' . $text['tipp'][38] ?>"><?php echo $text['tipp'][225]; /* UB */ ?></div><?php }
     if ($tipp_jokertipp == 1) { ?>
-      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][227] ?>"><?php echo $text['tipp'][226]; /* JP */ ?></div><?php }
+      <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][227] ?>"><?php echo $text['tipp'][226]; /* JP */ ?></div><?php }
 }  // ende if($tipp_showzus==1)
 if ($tipp_showstsiege == 1) { ?>
-      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][271] ?>"><?php echo $text['tipp'][90]; /* GS */ ?></div><?php
+      <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][271] ?>"><?php echo $text['tipp'][90]; /* GS */ ?></div><?php
 }
 ?>
-      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php if ($tipp_tippmodus == 1) { echo $text['tipp'][124]; } else { echo $text['tipp'][125] . ' %'; } ?>">
+      <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php if ($tipp_tippmodus == 1) { echo $text['tipp'][124]; } else { echo $text['tipp'][125] . ' %'; } ?>">
 <?php if ($gewicht != 'relativ') {
     echo '<a href="' . $addt5 . 'relativ">';
 }
@@ -245,7 +232,7 @@ if ($gewicht != 'relativ') {
     echo '</a>';
 } ?>
       </div>
-      <div class="col-1" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][118] ?>"><?php if ($gewicht != 'absolut') {
+      <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title="<?php echo $text['tipp'][118] ?>"><?php if ($gewicht != 'absolut') {
     echo '<a href="' . $addt5 . 'absolut" title="' . $text['tipp'][149] . '">';
 }
 if ($tipp_tippmodus == 1) {
@@ -330,7 +317,7 @@ for ($x = 1; $x <= $anztipper; $x++) {
             }
             if ($wertung == 'einzel' || $wertung == 'intern') {
 ?>
-          <div class="col-1"><?php
+          <div class="col-2"><?php
                 echo $dummy;
                 if ($tipp_showname == 1) {
                     if ($tipp_showemail == 1 && !empty($tipperemail[$i])) {
@@ -481,19 +468,7 @@ for ($x = 1; $x <= $anztipper; $x++) {
                 echo $dumm2;
             }
             echo '</div>';
-            echo "<div class='col-1'>";
-            if ($gewicht == 'absolut') {
-                echo '<strong>';
-            } else {
-                echo $dummy;
-            }
-            echo $tipppunktegesamt[$i];
-            if ($gewicht == 'absolut') {
-                echo '</strong>';
-            } else {
-                echo $dumm2;
-            }
-            echo '</div>';
+            echo "<div class='col-1 fw-bold'>$tipppunktegesamt[$i]</div>";
             echo '</div>';
         }  /* ende $wertung != "intern" || $teamintern == $tipperteam[$i]) */
     }  /* ende   if(($x>=$start && $x<=$ende) || $i==$eigpos) */
@@ -531,12 +506,12 @@ if ($tabdat != '') {
     $st0 = $endtab - 1;
     if ($endtab > 1) {
 ?>
-      <div class="col-2"><a href="<?php echo $addr . $st0 ?>" title="<?php echo $text[43] ?>"><?php echo $text[5] ?> <?php echo $text[6] ?></a></div><?php
+      <div class="col-2 offset-4"><a href="<?php echo $addr . $st0 ?>" title="<?php echo $text[43] ?>"><?php echo $text[5] ?> <?php echo $text[6] ?></a></div><?php
     }
     $st0 = $endtab + 1;
     if ($endtab < $anzst) {
 ?>
-      <div class="col-2 offset-10 text-end"><a href="<?php echo $addr . $st0 ?>" title="<?php echo $text[44] ?>"><?php echo $text[8] ?> <?php echo $text[7] ?></a></div><?php
+      <div class="col-2 text-end"><a href="<?php echo $addr . $st0 ?>" title="<?php echo $text[44] ?>"><?php echo $text[8] ?> <?php echo $text[7] ?></a></div><?php
     }
 ?>
   </div>

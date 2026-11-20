@@ -20,7 +20,7 @@
  * $Id$
  */
 ?>
-<div id="showtable">
+<div class="container" id="showtable">
   <div class="row fw-bold">
     <div class="col-2"></div>
     <div class="col-3"></div>
@@ -131,7 +131,7 @@ for ($x = 1; $x <= $anzteams; $x++) {
         if ($teamn[$i] != '') {
             $lmo_tabellennotiz .= "\n" . $teamn[$i];
         }
-        $notiz = " <a data-bs-toggle='tooltip' data-bs-placement='right' data-bs-html='true' title='" . $lmo_tabellennotiz . "'><i class='bi bi-info-square'></i></a>";
+        $notiz = " <a data-bs-toggle='tooltip' data-bs-placement='right' data-bs-html='true' title='" . $lmo_tabellennotiz . "'><i class='bi bi-info-square fg-info'></i></a>";
         $lmo_tabellennotiz = '';
     } else {
         $notiz = ' ';

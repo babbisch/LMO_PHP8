@@ -85,7 +85,7 @@ if ($action == 'tipp') {
         include (PATH_TO_ADDONDIR . '/tipp/lmo-tippmenu.php');
 ?>
  
-<div id="tippauth">
+<div class="container" id="tippauth">
   <div class="row p-1">
     <div class="col"><h1><?php echo $text['tipp'][0] . ' ';
         if (isset($titel)) {
@@ -177,7 +177,7 @@ if ($action == 'tipp') {
                         $auswertfile = PATH_TO_ADDONDIR . '/tipp/' . $tipp_dirtipp . 'auswert/' . $dummy[$u] . '.aus';
                         if ($tipp_nurgesamt == 0) {
 ?>
-        <li class="nav-item"><a href="<?php echo $addw . $dummy[$u] . '.l98'; ?>"><?php echo $ftest2[$u]; ?></a><?php if (file_exists($auswertfile)) { echo '<br><small>' . $text['tipp'][83] . ': ' . datefmt_format($fmt, filemtime($auswertfile)) . '</small>'; } ?></li><?php
+        <li class="nav-item"><a href="<?php echo $addw . $dummy[$u] . '.l98'; ?>"><?php echo $ftest2[$u]; ?></a><?php if (file_exists($auswertfile)) { echo '&nbsp;&nbsp;<small>' . $text['tipp'][83] . ': ' . datefmt_format($fmt, filemtime($auswertfile)) . '</small>'; } ?></li><?php
                         }
                     }
                 }
@@ -185,7 +185,7 @@ if ($action == 'tipp') {
             if ($tipp_gesamt == 1 && ($u > 2 || $tipp_nurgesamt == 1 && $u == 2)) {
                 $auswertfile = PATH_TO_ADDONDIR . '/tipp/' . $tipp_dirtipp . 'auswert/gesamt.aus';
 ?>
-        <li class="nav-item"><a href="<?php echo $addw . '&amp;all=1' ?>"><strong><?php echo $text['tipp'][25]; ?></strong></a><?php if (file_exists($auswertfile)) { echo '<br><small>' . $text['tipp'][83] . ': ' . datefmt_format($fmt, filemtime($auswertfile)) . '</small>'; } ?></li><?php
+        <li class="nav-item"><a href="<?php echo $addw . '&amp;all=1' ?>"><strong><?php echo $text['tipp'][25]; ?></strong></a><?php if (file_exists($auswertfile)) { echo '&nbsp;&nbsp;<small>' . $text['tipp'][83] . ': ' . datefmt_format($fmt, filemtime($auswertfile)) . '</small>'; } ?></li><?php
             }
             $auswertfile = '';
 ?>

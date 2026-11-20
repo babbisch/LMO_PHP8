@@ -144,22 +144,8 @@ if ($file != '') {
     }
     $addr = $_SERVER['PHP_SELF'] . '?action=tipp&amp;todo=edit&amp;file=' . $file . '&amp;st=';
     $addb = $_SERVER['PHP_SELF'] . '?action=tipp&amp;todo=tabs&amp;file=' . $file . '&amp;st=';
-    $breite = 17;
-    if ($spez == 1) {
-        $breite += 2;
-    }
-    if ($datm == 1) {
-        $breite++;
-    }
     if (!isset($hidr)) {
         $hidr = 0;
-    }
-    //  if($lmtype==1 && $modus[$st-1]!=2){$hidr=1;} // bei KO-Turnier außer bei Hin- und Rückspiel keinen Remistipp zulassen
-    if ($hidr == 1) {
-        $breite--;
-    }
-    if ($tipp_tippmodus == 0) {
-        $breite -= 2;
     }
     $savebutton = 0;
     if ($tipp_tippmodus == 1) {
@@ -206,7 +192,7 @@ if ($file != '') {
         }
     }
     ?>
-            <div class="col-6"><b><?php
+            <div class="col-6 fw-bold"><?php
     if ($lmtype == 0) {
         echo $st . '. ' . $text[2];
     } else {
@@ -221,11 +207,11 @@ if ($file != '') {
         }
     }
     ?>
-            </b></div><?php
+            </div><?php
     // ERGEBNISMODUS
     if ($tipp_tippmodus == 1) {
         ?>
-            <div class="col-2">
+            <div class="col-2 fw-bold">
               <?php echo $text['tipp'][209]; /* Dein Tipp */ ?><br><?php
         if ($goalfaktor != 1) {
             echo '(' . $text[553 + log10($goalfaktor)] . ')';
@@ -237,7 +223,7 @@ if ($file != '') {
     // TENDENZMODUS
     if ($tipp_tippmodus == 0) {
         ?>
-            <div class="col-1">
+            <div class="col-1 fw-bold">
               <acronym title="<?php echo $text['tipp'][95] ?>">1</acronym>&nbsp;&nbsp;<?php
         if ($hidr == 0) {
             ?>
@@ -250,11 +236,11 @@ if ($file != '') {
     // BEIDE
     if ($tipp_jokertipp == 1) {
         ?>
-            <div class="col-1"><acronym data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][290] ?>"><?php echo $text['tipp'][289]; ?></acronym></div><?php
+            <div class="col-1 fw-bold" data-bs-toggle='tooltip' data-bs-placement='top' title="<?php echo $text['tipp'][290] ?>"><?php echo $text['tipp'][289]; ?></div><?php
     }
     ?>
-            <div class="col-1"><?php echo $text['tipp'][31]; /* Ergebnis */ ?></div>
-            <div class="col-1"><?php echo $text[37]; /* PP */ ?></div>
+            <div class="col-1 fw-bold"><?php echo $text['tipp'][31]; /* Ergebnis */ ?></div>
+            <div class="col-1 fw-bold"><?php echo $text[37]; /* PP */ ?></div>
           </div><?php
     if ($lmtype != 0) {
         $anzsp = $anzteams;

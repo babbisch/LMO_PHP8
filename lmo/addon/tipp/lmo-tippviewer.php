@@ -204,7 +204,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
     $nw = 0;
     ?>
 
-<div id="tippviewer">
+<div class="container" id="tippviewer">
   <div class="row">
     <div class="col offset-5"><h1><?php echo $_SESSION['lmotippername'];
     if ($_SESSION['lmotipperverein'] != '') {
@@ -269,8 +269,8 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
             }
             ?>
         <div class="row pt-3">
-          <div class="col-8"><?php if ($tipp_tippeinsicht == 1) {
-                echo '<strong><a href="' . $_SERVER['PHP_SELF'] . '?action=tipp&amp;todo=einsicht&amp;file=' . $liga[$i] . '.l98&amp;st=' . $spieltag[$i] . '">';
+          <div class="col-6 fw-bold"><?php if ($tipp_tippeinsicht == 1) {
+                echo '<a href="' . $_SERVER['PHP_SELF'] . '?action=tipp&amp;todo=einsicht&amp;file=' . $liga[$i] . '.l98&amp;st=' . $spieltag[$i] . '">';
             }
             if ($lmtype[$i] == 0) {
                 echo $spieltag[$i] . '. ' . $text[2];
@@ -278,7 +278,7 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
                 echo $j;
             }
             if ($tipp_tippeinsicht == 1) {
-                echo '</a></strong>';
+                echo '</a>';
             }
             if ($dats[$i] == 1) {
                 if ($datum1[$i] != '') {
@@ -290,8 +290,8 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
             } ?></div><?php
             if ($tipp_tippmodus == 1) {
                 ?>
-          <div class="col-1">
-            <acronym title="<?php echo $text['tipp'][241] . ':' . $text['tipp'][242] ?>"><?php echo $text['tipp'][209]; /* Dein Tipp */ ?><br><?php
+          <div class="col-2" data-bs-toggle="tooltip" data-bs-title="<?php echo $text['tipp'][241] . ':' . $text['tipp'][242] ?>">
+            <?php echo $text['tipp'][209]; /* Dein Tipp */ ?><br><?php
                 if ($goalfaktor[$i] != 1) {
                     echo '(' . $text[553 + log10($goalfaktor[$i])] . ')';
                 }
@@ -299,15 +299,15 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
             }
             if ($tipp_tippmodus == 0) {
                 ?>
-          <div class="col-1">
+          <div class="col">
             <acronym title="<?php echo $text['tipp'][95] ?>">1&nbsp;<?php if ($hidr[$i] == 0) { ?>
             <acronym title="<?php echo $text['tipp'][96] ?>">0&nbsp;<?php } else { ?>
             &nbsp;<?php } ?>
             <acronym title="<?php echo $text['tipp'][97] ?>">2
           </div><?php }
             if ($tipp_jokertipp == 1) { ?>
-          <div class="col-1">
-            <acronym title="<?php echo $text['tipp'][290] ?>"><?php echo $text['tipp'][289]; ?>
+          <div class="col-1" data-bs-toggle="tooltip" data-bs-title="<?php echo $text['tipp'][290] ?>">
+            <?php echo $text['tipp'][289]; ?>
           </div><?php } ?>
           <div class="col-1"><?php echo $text['tipp'][31]; /* Ergebnis */ ?></div>
           <div class="col-1"><?php echo $text[37]; /* PP */ ?></div>
@@ -332,9 +332,8 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
         ?>
         <div class="row">
           <div class="col-2"><?php echo $dum1; ?></div>
-          <div class="col-3 text-end"><?php echo $teama[$i]; ?></div>
-		  <div class="col-auto">-</div>
-          <div class="col-3">
+          <div class="col-2 text-end"><?php echo $teama[$i]; ?></div>
+          <div class="col-2">
             <?php
             echo $teamb[$i];
             if ($tippa[$i] == '_') {
@@ -360,8 +359,8 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
         if ($tipp_tippmodus == 1) {
             if ($btip == true) {
                 ?>
-          <div class="col-1">
-              <input class="form-control rw-3" name="xtippa<?php echo $i; ?>" value="<?php echo $tippa[$i]; ?>"> : <input class="form-control w-3" name="xtippb<?php echo $i; ?>" value="<?php echo $tippb[$i]; ?>">
+          <div class="col-2">
+              <input class="form-control w-4" type="number" name="xtippa<?php echo $i; ?>" value="<?php echo $tippa[$i]; ?>"> : <input class="form-control w-4" type="number" name="xtippb<?php echo $i; ?>" value="<?php echo $tippb[$i]; ?>">
           </div><?php
             } else {
                 ?>

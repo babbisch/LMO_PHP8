@@ -1,6 +1,6 @@
-<div id="showspieltagsmenu">
-  <div class="row p-1">
-    <div class="col justify-content-center"><?php
+<!--div id="showspieltagsmenu"-->
+  <div class="row p-2">
+    <div class="col d-flex justify-content-center"><?php
 if (isset($anzst)) {
     for ($i = 1; $i <= $anzst; $i++) {
         if ($lmtype == 1) {
@@ -39,7 +39,7 @@ if (isset($anzst)) {
             echo "<a class='btn-outline btn-sm theme-info' href='" . $addr . $i . "' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='" . $k . "'>" . $j . '</a>';
         }
         echo "\n";
-        $break = "</div>\n</div>\n<div class='row p-2'>\n<div class='col justify-content-center'>\n";
+        $break = "</div>\n</div>\n<div class='row p-2'>\n<div class='col d-flex justify-content-center'>\n";
         if (($anzst > 47) && (($anzst % 4) == 0)) {
             if (($i == $anzst / 4) || ($i == $anzst / 2) || ($i == $anzst / 4 * 3)) {
                 echo $break;
@@ -58,4 +58,4 @@ if (isset($anzst)) {
 ?>
     </div>
   </div>
-</div>
+<!--/div-->

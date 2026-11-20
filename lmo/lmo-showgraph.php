@@ -24,7 +24,7 @@ if (($file != '') && ($kurve == 1)) {
     $tension = '0.4';
     ?>
 
-<div id="showgraph">
+<div class="container" id="showgraph">
 <?php
     $tabtype = 0;
     require (PATH_TO_LMO . '/lmo-calcgraph.php');
