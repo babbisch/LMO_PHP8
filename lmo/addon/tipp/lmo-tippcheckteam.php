@@ -47,7 +47,8 @@ for ($i = 0; $i < count($dumma); $i++) {
         }
         if ($gef == 0) {
             $team[$v] = $dummb1[5];
-            $tipperteam[$v]++;
+            //$tipperteam[$v]++;
+            str_increment($tipperteam[$v]);
             $v++;
         }
     }
