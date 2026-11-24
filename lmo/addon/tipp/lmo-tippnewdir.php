@@ -127,7 +127,7 @@ if ($ftype != '') {
                                         if ($iptype == 'reminder') {
 ?>
 
-  <div class="row p-1">
+  <div class="row p-1 align-items-center">
     <div class="col-auto form-field">
         <input type="hidden" name="liga1[]" value="<?php echo $files; ?>">
         <input type="radio" class="radio" name="liganr" value="<?php echo $i; ?>" <?php if (($liga == '' && $i == 1) || $liga == $files) { echo 'checked'; } ?> onClick="if(emailart[2].checked==false)changetextarea(1);emailart[2].checked=true;">&nbsp;<?php echo $t0; ?>
@@ -184,7 +184,7 @@ if ($ftype != '') {
                                         }
                                         if ($iptype == 'einsicht' || $iptype == 'auswert') {
 ?>
-  <div class="row p-1">
+  <div class="row p-1 align-items-center">
     <div class="col-2 offset-3 text-end"><?php echo $t0; ?></div>
     <div class="col-4">
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="row">
@@ -295,7 +295,9 @@ if ($ftype != '') {
                                                 $checked = 1;
                                             }
 ?>
-<input type="checkbox" class="check" name="xtipperligen[]" value="<?php echo substr($files, 0, -4) ?>"<?php
+  <div class="row pb-1 align-items-center">
+    <div class="col-1 form-field">
+      <input type="checkbox" class="check" name="xtipperligen[]" value="<?php echo substr($files, 0, -4) ?>"<?php
                                             if (($todo == 'newtipper' || $todo == 'tippuseredit') && $checked == 1) {
                                                 echo 'checked';
                                             } elseif ($todo == 'tippuseredit' && file_exists(PATH_TO_ADDONDIR . '/tipp/' . $tipp_dirtipp . substr($files, 0, -4) . '_' . $nick . '.tip') == true) {
@@ -311,7 +313,10 @@ if ($ftype != '') {
                                             if ($todo == 'tippoptions' && $tipp_immeralle == 1) {
                                                 echo ' disabled';
                                             }
-?>> <?php echo $t0 ?><br /><?php
+      ?>>
+    </div>
+    <div class="col"><?php echo $t0 ?></div>
+  </div><?php
                                         }
                                     }
                                     $tt1 .= $dummy[$k] . '|';

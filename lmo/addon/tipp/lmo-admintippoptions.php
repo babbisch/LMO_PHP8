@@ -64,14 +64,14 @@ include (PATH_TO_ADDONDIR . '/tipp/lmo-admintippmenu.php');
       </div>
     </div>
     <div class="col">
-      <form name="lmoedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onSubmit="return chklmopass()" class="form-inline">
+      <form name="lmoedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-inline">
         <input type="hidden" name="action" value="admin">
         <input type="hidden" name="todo" value="tippoptions">
         <input type="hidden" name="save" value="1">
         <div><?php
 if ($show == 0) {
     ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][91]; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xtippmodus" onChange="moduschange()">
@@ -80,31 +80,31 @@ if ($show == 0) {
               </select>
             </div>
           </div><?php } elseif ($show == 1) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][39]; ?></div>
             <div class="col-auto"><input class="form-control" type="text" name="xdirtipp" maxlength="80" value="<?php echo $tipp_dirtipp; ?>" ></div>
           </div><?php } elseif ($show == 2) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][34]; ?></div>
             <div class="col-1"><input class="form-control" type="number" name="xrergebnis" maxlength="5" value="<?php echo $tipp_rergebnis; ?>" ></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][35]; ?></div>
             <div class="col-1"><input class="form-control" type="number" name="xrtendenzdiff" maxlength="5" value="<?php echo $tipp_rtendenzdiff; ?>" ></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][36]; ?></div>
             <div class="col-1"><input class="form-control" type="number" name="xrtendenz" size="5" maxlength="5" value="<?php echo $tipp_rtendenz; ?>" ></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][37]; ?></div>
             <div class="col-1"><input class="form-control" type="number" name="xrtor" size="5" maxlength="5" value="<?php echo $tipp_rtor; ?>" ></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][189]; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xrtendenztor" <?php if ($tipp_tippmodus == 0) { echo ' disabled'; } ?>>
@@ -113,7 +113,7 @@ if ($show == 0) {
               </select>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][193]; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xrtendenzremis" <?php if ($tipp_tippmodus == 0) { echo ' disabled'; } ?>>
@@ -122,20 +122,20 @@ if ($show == 0) {
               </select>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][192]; ?></div>
             <div class="col-1"><input class="form-control" type="number" name="xrremis" size="5" maxlength="5" value="<?php echo $tipp_rremis; ?>" ></div>
             <div class="col-1"><?php echo $text['tipp'][38]; ?></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][152]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xentscheidungnv" <?php if ($tipp_entscheidungnv == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][153]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xentscheidungie" <?php if ($tipp_entscheidungie == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][196]; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xgtpunkte" >
@@ -145,28 +145,28 @@ if ($show == 0) {
               </select>
             </div>
           </div><?php } elseif ($show == 3) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][157]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xtippeinsicht" <?php if ($tipp_tippeinsicht == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][172]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xtipptabelle1" <?php if ($tipp_tipptabelle1 == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][56]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xgesamt" <?php if ($tipp_gesamt == 1) { echo ' checked'; } ?>></select>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][187]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xregeln" onClick="regelnchange()"<?php if ($tipp_regeln == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][186]; ?></div>
             <div class="col-auto"><input class="form-control" type="text" name="xregelnlink" size="30" maxlength="256" value="<?php echo $tipp_regelnlink; ?>" <?php if ($tipp_regeln == 0) { echo ' disabled'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][200]; ?></div>
             <div class="col-auto form-field">
               <input type="checkbox" class="check" name="xshownick" value="1" <?php if ($tipp_shownick == 1) { echo 'checked'; } ?> > <?php echo $text['tipp'][23]; ?><br />
@@ -174,12 +174,12 @@ if ($show == 0) {
               <input type="checkbox" class="check" name="xshowemail" value="1" <?php if ($tipp_showemail == 1) { echo 'checked'; } ?> > <?php echo $text['tipp'][219]; ?>
             </div>
           </div><?php } elseif ($show == 4) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][87]; ?></div>
             <div class="col-1"><input class="form-control" type="number" name="xtippbis" size="5" maxlength="5" value="<?php echo $tipp_tippBis; ?>" ></div>
             <div class="col-3"><?php echo ' ' . $text['tipp'][88]; ?></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][248]; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xtippohne" >
@@ -188,7 +188,7 @@ if ($show == 0) {
               </select>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][100]; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xtipperteam" >
@@ -205,7 +205,7 @@ if ($show == 0) {
               </select>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][154]; ?></div>
             <div class="col-auto">
               <select class="form-control" name="ximvorraus" >
@@ -219,11 +219,11 @@ if ($show == 0) {
               </select>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][288]; ?></div>
             <div class="col-auto form-field"><input type="checkbox" class="check" name="xjokertipp" onClick="jokerchange()"<?php if ($tipp_jokertipp == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][291]; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xjokertippmulti" <?php if ($tipp_jokertipp == 0) { echo ' disabled'; } ?>>
@@ -234,44 +234,44 @@ if ($show == 0) {
               </select>
             </div>
           </div><?php } elseif ($show == 5) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][132]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xadresse" <?php if ($tipp_adresse == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][286]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xrealname" <?php if ($tipp_realname == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][299]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xfreischaltcode" <?php if ($tipp_freischaltcode == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2" align-items-center>
             <div class="col-4 text-end"><?php echo $text['tipp'][146]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xfreischaltung" <?php if ($tipp_freischaltung == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][293]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xmailbeianmeldung" <?php if ($tipp_mailbeianmeldung == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 6) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][259]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xsttipp" onClick="viewerchange();"<?php if ($tipp_sttipp == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][253]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xviewertipp" onClick="viewerchange();"<?php if ($tipp_viewertipp == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][254]; ?></div>
             <div class="col-1"><input class="form-control" type="number" name="xviewertage" size="2" maxlength="2" value="<?php echo $tipp_viewertage; ?>" <?php if ($tipp_viewertipp == 0) { echo ' disabled'; } ?>></div>
             <div class="col-1"><?php echo $text['tipp'][171]; ?></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][161]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xakteinsicht" <?php if ($tipp_akteinsicht == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 7) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][160]; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xeinsichterst" >
@@ -281,35 +281,35 @@ if ($show == 0) {
               </select>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][204]; ?></div>
             <div class="col-auto"><input class="form-control" type="number" name="xanzseite" size="2" maxlength="5" value="<?php echo $tipp_anzseite; ?>" ></div>
           </div><?php } elseif ($show == 8) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][183]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xtipptabelle" <?php if ($tipp_tipptabelle == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][260]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xwertverein" <?php if ($tipp_wertverein == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 9) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][302]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xnurgesamt" <?php if ($tipp_nurgesamt == 1) { echo ' checked'; } ?><?php if ($tipp_gesamt == 0) { echo ' disabled'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][204]; ?></div>
             <div class="col-auto"><input class="form-control w-5" type="number" name="xanzseite1" maxlength="5" value="<?php echo $tipp_anzseite1; ?>" ></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][251]; ?></div>
             <div class="col-4 form-field"><input type="checkbox" class="check" name="xshowzus" <?php if ($tipp_showzus == 1) { echo ' checked'; } ?>>&nbsp;<?php echo $text['tipp'][282]; ?></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][272]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xshowstsiege" <?php if ($tipp_showstsiege == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 10) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][275] . ' 1'; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xkrit1" >
@@ -324,7 +324,7 @@ if ($show == 0) {
               </select>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][275] . ' 2'; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xkrit2" >
@@ -339,7 +339,7 @@ if ($show == 0) {
               </select>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][275] . ' 3'; ?></div>
             <div class="col-auto">
               <select class="form-control" name="xkrit3" >
@@ -354,32 +354,32 @@ if ($show == 0) {
               </select>
             </div>
           </div><?php } elseif ($show == 11) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][81]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xaktauswert" <?php if ($tipp_aktauswert == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-4 text-end"><?php echo $text['tipp'][180]; ?></div>
             <div class="col-1 form-field"><input type="checkbox" class="check" name="xaktauswertges" <?php if ($tipp_aktauswertges == 1) { echo ' checked'; } ?>></div>
           </div><?php } elseif ($show == 12) { ?>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-10"><?php echo $text['tipp'][104]; ?></div>
             <div class="col-2 form-field"><input type="checkbox" class="check" name="ximmeralle" onClick="immerallechange()"<?php if ($tipp_immeralle == 1) { echo ' checked'; } ?>></div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-auto"><?php
     echo $text['tipp'][105];
     ?>
             </div>
           </div>
-          <div class="row pb-2">
+          <div class="row pb-2 align-items-center">
             <div class="col-auto form-field"><?php
     $ftype = '.l98';
     require (PATH_TO_ADDONDIR . '/tipp/lmo-tippnewdir.php');
     ?>
             </div>
           </div><?php } ?>
-          <div class="row p-2">
+          <div class="row p-2 align-items-center">
             <div class="col-2 text-end">
               <input type="hidden" name="show" value="<?php echo $show ?>">
               <input class="btn-solid btn-sm theme-primary"  type="submit" name="best" value="<?php echo $text[188]; ?>">

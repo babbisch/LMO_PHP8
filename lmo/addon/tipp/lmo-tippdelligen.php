@@ -34,8 +34,8 @@ if (($action == 'tipp') && ($todo == 'delligen')) {
   <div class="row">
     <div class="col offset-4"><?php echo $text['tipp'][266]; ?></div>
   </div>
-  <div class="row">
-    <div class="col offset-4"><?php if ($newpage != 1) { ?>
+  <div class="row pb-1 align-items-center">
+    <div class="col offset-4 form-field"><?php if ($newpage != 1) { ?>
       <form name="lmotippedit" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-inline">
         <input type="hidden" name="action" value="tipp">
         <input type="hidden" name="todo" value="delligen">
@@ -52,9 +52,8 @@ if (($action == 'tipp') && ($todo == 'delligen')) {
     ?>
     </div>
   </div>
-  <div class="row">
-    <div clas="col offset-4"><?php echo getMessage('<strong>' . $text['tipp'][82] . '</strong> ' . $text['tipp'][267], TRUE); ?></div>
-  </div><?php
+  <?php echo getMessage('<strong>' . $text['tipp'][82] . '</strong> ' . $text['tipp'][267], TRUE); ?></div>
+  <?php
     if ($newpage == 1) {  /* Abbestellen erfolgreich */
 ?>
   <div class="row">

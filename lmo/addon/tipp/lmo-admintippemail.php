@@ -83,10 +83,10 @@ echo $tipp_textreminder1; ?>">
     <div class="row p-1">
       <div class="col d-flex justify-content-center"><h1><?php echo $text['tipp'][165] ?></h1></div>
     </div>
-    <div class="row p-1">
+    <div class="row p-1 align-items-center">
       <div class="col-2 offset-1 text-end form-field"><input type="radio" class="radio" name="emailart" value="0" <?php if ($emailart == 0) { echo 'checked'; } ?> onClick="changetextarea(0)"><label><?php echo $text['tipp'][166]; ?></label></div>
     </div>
-    <div class="row p-1">
+    <div class="row p-1 align-items-center">
       <div class="col-2 offset-1 text-end form-field"><input type="radio" class="radio" name="emailart" value="2" <?php if ($emailart == 2) { echo 'checked'; } ?> onClick="changetextarea(2)"><label><?php echo $text['tipp'][168]; ?></label></div>
       <div class="col-7 md:col-3">
         <select class="form-control" name="adressat" onChange="emailart[1].checked=true;changetextarea(2);">
@@ -96,7 +96,7 @@ require (PATH_TO_ADDONDIR . '/tipp/lmo-tippselectemail.php');
         </select>
        </div>
      </div>
-     <div class="row p-1">
+     <div class="row p-1 align-items-center">
        <div class="col-2 offset-1 text-end form-field"><input type="radio" class="radio" name="emailart" value="1" <?php if ($emailart == 1) { echo 'checked'; } ?> onClick="changetextarea(1)"><label><?php echo $text['tipp'][167]; ?></label></div>
        <div class="col-7 md:col-5">
          <div class="container"><?php
@@ -105,10 +105,8 @@ $iptype = 'reminder';
 require (PATH_TO_ADDONDIR . '/tipp/lmo-tippnewdir.php');
 if ($i > 0) {
     ?>
-                <div class="row">
-                  <div class="col">
-                    <input type="radio" class="form-check-input" name="liganr" value="0" <?php if ($liganr == 0) { echo 'checked'; } ?> onClick="if(emailart[2].checked==false)changetextarea(1);emailart[2].checked=true;">&nbsp;<strong><?php echo $text['tipp'][263] ?></strong>
-                  </div>
+                <div class="row align-items-center">
+                  <div class="col form-field fw-bold"><input type="radio" class="radio" name="liganr" value="0" <?php if ($liganr == 0) { echo 'checked'; } ?> onClick="if(emailart[2].checked==false)changetextarea(1);emailart[2].checked=true;">&nbsp;<?php echo $text['tipp'][263] ?></div>
                 </div><?php
 }
 ?>
@@ -126,7 +124,7 @@ if ($save == 1) {
     }
 }
 ?>
-          <div class="row p-1">
+          <div class="row p-1 align-items-center">
             <div class="col-3 text-end"><?php echo $text['tipp'][164]; ?></div>
             <div class="col-auto"><input class="form-control" type="text" name="start" size="2" maxlength="4" value="<?php echo $start1; ?>"></div>
             <div class="col-auto"><?php echo $text[4]; ?></div>
@@ -141,12 +139,12 @@ if ($save == 1) {
     }
 }
 ?>
-          <div class="row p-1">
+          <div class="row p-1 align-items-center">
             <div class="col-9 col-md-5 offset-3">
               <input class="form-control" type="text" name="betreff" id="betreff" size="20" maxlength="40" placeholder="<?php echo $text['tipp'][265]; ?>" value="<?php echo $betreff1; ?>">
             </div>
           </div>
-          <div class="row p-1">
+          <div class="row p-1 align-items-center">
             <div class="col-9 col-md-5 offset-3">
               <textarea  class="form-control"id="message" name="message" rows="10" cols="60"><?php
 if ($emailart == 1) {
@@ -160,10 +158,10 @@ if ($emailart == 1) {
               </textarea>
             </div>
           </div>
-          <div class="row p-1">
+          <div class="row p-1 align-items-center">
             <div class="col"><input class="btn-solid btn-sm theme-success" type="submit" name="best" value="<?php echo $text['tipp'][169]; ?>"></td>
           </div>
-          <div class="row p-1">
+          <div class="row p-1 align-items-center">
             <div class="col-3 col-md-1 offset-md-4"><?php echo $text['tipp'][178]; ?></div>
             <div class="col-9 col-md-3"><?php echo $text['tipp'][179]; ?></div>
           </div>
