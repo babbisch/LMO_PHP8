@@ -1,7 +1,6 @@
 <script type="text/javascript">
 <!---
 function immerallechange(){
-  lmotest=false;
   for(i=0;i<document.getElementsByName("xtipperligen[]").length;i++){
     if(document.getElementsByName("ximmeralle")[0].checked==0){
       document.getElementsByName("xtipperligen[]")[i].disabled=false;
@@ -12,7 +11,6 @@ function immerallechange(){
     }
   }
 function moduschange(){
-  lmotest=false;
   if(document.getElementsByName("xtippmodus")[0].value==1){
     document.getElementsByName("xrergebnis")[0].disabled=false;
     document.getElementsByName("xrtendenzdiff")[0].disabled=false;
@@ -36,7 +34,6 @@ function moduschange(){
   }
 
 function regelnchange(){
-  lmotest=false;
   if(document.getElementsByName("xregeln")[0].checked==1){
     document.getElementsByName("xregelnlink")[0].disabled=false;
     }
@@ -46,7 +43,6 @@ function regelnchange(){
   }
 
 function jokerchange(){
-lmotest=false;
   if(document.getElementsByName("xjokertipp")[0].checked==1){
     document.getElementsByName("xjokertippmulti")[0].disabled=false;   
     }
@@ -56,7 +52,6 @@ lmotest=false;
   }
 
 function viewerchange(){
-lmotest=false;
   if(document.getElementsByName("xviewertipp")[0].checked==1){
     document.getElementsByName("xviewertage")[0].disabled=false;   
   } else {
