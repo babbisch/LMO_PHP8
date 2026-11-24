@@ -24,14 +24,11 @@ for ($n = 0; $n < $modus[$st - 1]; $n++) {
         ?>
   <div class="row">
     <div class="col"><?php
-        if ($i == 1) {
-            echo '<br>';
-        }
         echo $text[419 + $i];
         ?>
     </div>
   </div><?php } ?>
-  <div class="row"><?php
+  <div class="row pb-1 align-items-center"><?php
     if ($tipp_einsichterst == 2) {
         if ($goala[$st - 1][$i][$n] != '_' && $goalb[$st - 1][$i][$n] != '_') {
             $btip1 = false;
@@ -49,35 +46,17 @@ for ($n = 0; $n < $modus[$st - 1]; $n++) {
             $dum1 = '';
         }
         ?>
-    <div class="col-2"><?php echo $dum1; ?></div><?php } ?>
+    <div class="d-none md:d-block col-2"><?php echo $dum1; ?></div><?php } ?>
+    <div class="col-5 md:col-4">
     <?php if ($n == 0) {
-        $m1 = array($goala[$st - 1][$i][0], $goala[$st - 1][$i][1], $goala[$st - 1][$i][2], $goala[$st - 1][$i][3], $goala[$st - 1][$i][4], $goala[$st - 1][$i][5], $goala[$st - 1][$i][6]);
-        $m2 = array($goalb[$st - 1][$i][0], $goalb[$st - 1][$i][1], $goalb[$st - 1][$i][2], $goalb[$st - 1][$i][3], $goalb[$st - 1][$i][4], $goalb[$st - 1][$i][5], $goalb[$st - 1][$i][6]);
-        $m = gewinn($st - 1, $i, $modus[$st - 1], $m1, $m2);
-
-        if ($m == 1) {
-            echo '<div class="col-2 text-success">';
-        } else if ($m == 2) {
-            echo '<div class="col-2 text-danger">';
-        } else {
-            echo '<div class="col-2">';
-        }
-
         if (($favteam > 0) && ($favteam == $teama[$st - 1][$i])) {
             echo '<strong>';
         }
         echo $teams[$teama[$st - 1][$i]];
         if (($favteam > 0) && ($favteam == $teama[$st - 1][$i])) {
             echo '</strong>';
-        }
-        echo '</div>';
-        if ($m == 1) {
-            echo '<div class="col-2 text-danger">';
-        } else if ($m == 2) {
-            echo '<div class="col-2 text-success">';
-        } else {
-            echo '<div class="col-2">';
-        }
+        } ?>
+        &nbsp;-&nbsp;<?php
         if (($favteam > 0) && ($favteam == $teamb[$st - 1][$i])) {
             echo '<strong>';
         }
@@ -85,10 +64,8 @@ for ($n = 0; $n < $modus[$st - 1]; $n++) {
         if (($favteam > 0) && ($favteam == $teamb[$st - 1][$i])) {
             echo '</strong>';
         }
-        echo '</div>';
-    } else { ?>
-    <div class="col-4"></div><?php
-    }
+    } ?>
+    </div><?php
     if ($goaltippa[$i][$n] == '_') {
         $goaltippa[$i][$n] = '';
     }
@@ -111,7 +88,7 @@ for ($n = 0; $n < $modus[$st - 1]; $n++) {
         if ($btip[$i] == false)
             $read = 'disabled';
         ?>
-  <div class="col-2">
+  <div class="col-4 md:col-3">
     <input class="form-control w-4" type="number" name="xtippa<?php echo $i; ?>" style="width:4rem" maxlength="4" value="<?php echo $goaltippa[$i][$n]; ?>" <?php echo $read; ?>> : <input class="form-control w-4" type="number" name="xtippb<?php echo $i; ?>" style="width:4rem" maxlength="4" value="<?php echo $goaltippb[$i][$n]; ?>" <?php echo $read; ?>>
   </div><?php
     }  /* ende $tipp_tippmodus==1 */

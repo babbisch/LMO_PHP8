@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex,nofollow" />
 <title><!--Titel--></title>
 <!--Stylesheet-->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css" >
 </head>
 <body>
@@ -38,19 +38,13 @@
 	<div class="col offset-3"><!--Sprachauswahl--></div>
    </div>
     <div class="row p-2">
-	<div class="col-2 offset-2 d-none d-lg-block"><!--Ligenuebersicht--></div>
-	<div class="col-2 d-lg-none"><!--Ligenuebersicht--></div>
-	<div class="col-3 offset-3 d-none d-lg-block"><!--LetzteAuswertung--><br /><!--Berechnungszeit--><!--Infolink--></div>
-	<div class="col-5 offset-5 d-lg-none"><!--Infolink--></div>
+	<div class="col-2 offset-2 d-none lg:d-block"><!--Ligenuebersicht--></div>
+	<div class="col-2 lg:d-none"><!--Ligenuebersicht--></div>
+	<div class="col-3 offset-3 d-none lg:d-block"><!--LetzteAuswertung--><br /><!--Berechnungszeit--><!--Infolink--></div>
+	<div class="col-5 offset-5 lg:d-none"><!--Infolink--></div>
     </div>
   </div>
   <!-- JavaScript Bundle with Popper -->
-   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-   <script type="text/javascript">
-      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl)
-      })
-   </script>
+   <script type="module" src="//cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

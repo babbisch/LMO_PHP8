@@ -20,7 +20,7 @@
  * $Id$
  */
 ?>
-<div class="row"><?php
+<div class="row pb-1 align-items-center"><?php
 if ($tipp_einsichterst == 2) {
     if ($goala[$st - 1][$i] != '_' && $goalb[$st - 1][$i] != '_') {
         $btip1 = false;
@@ -38,8 +38,8 @@ if ($datm == 1) {
         $dum1 = '';
     }
 ?>
-  <div class="col-2"><?php echo $dum1; ?></div><?php } ?>
-  <div class="col-4"><?php
+  <div class="d-none md:d-block col-2"><?php echo $dum1; ?></div><?php } ?>
+  <div class="col-5 md:col-4"><?php
 if (($favteam > 0) && ($favteam == $teama[$st - 1][$i])) {
     echo '<strong>';
 }
@@ -77,7 +77,7 @@ if ($btip[$i] == true) {
 /* ERGEBNISMODUS */
 if ($tipp_tippmodus == 1) {
 ?>
-  <div class="col-2"><?php
+  <div class="col-4 md:col-3"><?php
     $read = '';
     if ($btip[$i] == false)
         $read = 'disabled';

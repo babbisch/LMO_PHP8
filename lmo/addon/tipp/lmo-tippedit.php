@@ -192,7 +192,7 @@ if ($file != '') {
         }
     }
     ?>
-            <div class="col-6 fw-bold"><?php
+            <div class="col-5 md:col-6 fw-bold"><?php
     if ($lmtype == 0) {
         echo $st . '. ' . $text[2];
     } else {
@@ -211,7 +211,7 @@ if ($file != '') {
     // ERGEBNISMODUS
     if ($tipp_tippmodus == 1) {
         ?>
-            <div class="col-2 fw-bold">
+            <div class="col-4 md:col-3 fw-bold">
               <?php echo $text['tipp'][209]; /* Dein Tipp */ ?><br><?php
         if ($goalfaktor != 1) {
             echo '(' . $text[553 + log10($goalfaktor)] . ')';
