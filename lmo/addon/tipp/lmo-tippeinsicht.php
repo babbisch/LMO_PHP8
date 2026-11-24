@@ -76,7 +76,7 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
             if ($von != $start) {
                 echo "<td align='center'><a href=\"" . $addt3 . $von . '">';
             } else {
-                echo '<td align="center" class="nobr">';
+                echo '<td align="center">';
             }
             $k1 = strtolower(substr($tippernick[intval(substr($tab0[$von], -6))], 0, 3));
             $k2 = strtolower(substr($tippernick[intval(substr($tab0[$bis], -6))], 0, 3));
@@ -174,7 +174,7 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
                     }
                     if ($l == ($start - 1) || $l == ($ende + 2)) {
 ?>
-          <th scope="col"><?php if ($n == 0) {
+          <th scope="col" class="text-center"><?php if ($n == 0) {
                             echo $teamk[$teama[$st - 1][$i]] . '<br/>';
                         }
                         if ($lmtype != 0) {
@@ -250,13 +250,8 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
                             }
                             if ($tipp_tippmodus == 1) {
                                 // Ergebnis-Tippmodus
-                                if ($punktespiel > $tipp_rtor * $jkspfaktor) {
 ?>
-          <td><?php
-                                } else {
-?>
-          <td><?php
-                                }
+          <td class="text-center"><?php
                                 $dummy1 = '';
                                 $dummy2 = '';
                                 $dummy3 = '';
@@ -269,7 +264,7 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
                                     $dummy3 = '</strong>';
                                 }
                                 if ($jkspfaktor > 1) {
-                                    echo '<em>';
+                                    echo '<em class="fg-warning" data-bs-toggle="tooltip" data-bs-title="Joker">';
                                 }
                                 if ($lmtype != 0) {
                                     if ($tipp_rtor > 0 && ($punktespiel == $tipp_rtor * $jkspfaktor || $punktespiel == ($tipp_rtendenz + $tipp_rtor) * $jkspfaktor)) {
@@ -300,18 +295,11 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
 
                                 if ($punktespiel >= 0) {
                                     echo ' <small>' . $punktespiel . '</small>';
-                                } else {
-                                    echo '&nbsp;';
-                                }
+                                } 
                             } else {
                                 // Tendenz-Modus
-                                if ($punktespiel > 0) {
 ?>
-          <td><?php
-                                } else {
-?>
-          <td><?php
-                                }
+          <td class="text-center"><?php
                                 if ($jkspfaktor > 1) {
                                     echo '<p>';
                                 }
@@ -348,7 +336,7 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
           </td><?php
                     } elseif ($l == $ende) {
 ?>
-          <td><?php if ($anztipper > 0) {
+          <td class="text-center"><?php if ($anztipper > 0) {
                             if ($lmtype == 0 && $btip[$i] == false) {
                                 echo $tendenz1[$i] . '-' . $tendenz0[$i] . '-' . $tendenz2[$i];
                             } elseif ($lmtype != 0 && $btip[$i][$n] == false) {
@@ -387,23 +375,16 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
 
         if ($l >= $start && $l < $ende) {
 ?>
-          <td><?php echo $punktetipper ?></td>
-          <td>&nbsp; <?php if ($tipp_tipptabelle1 == 1 && $l >= $start && $l < $ende && $lmtype == 0) { ?>
+          <td class="fw-bold"><?php echo $punktetipper ?></td>
+          <td>&nbsp;<?php if ($tipp_tipptabelle1 == 1 && $l >= $start && $l < $ende && $lmtype == 0) { ?>
             <a href="<?php echo $addt . rawurlencode($tippernick[$k]) ?>" title="<?php echo $text['tipp'][181] . ' ' . $tippernick[$k] ?>"><?php echo $text['tipp'][172] ?></a><?php
             }
 ?>
           </td><?php
-        } elseif ($l == $start - 1) {
+        } elseif ($l == $start - 1 || $l == $ende + 2) {
 ?>
           <th scope="col"><?php echo $text[37]; ?></th>
-          <th>&nbsp;</th><?php
-        } elseif ($l == $ende + 2) {
-?>
-          <th scope="col"><?php echo $text[37]; ?></th>
-          <th>&nbsp;</th><?php
-        } else {
-?>
-          <td colspan="2">&nbsp;</td><?php
+          <?php
         }
         ?>
         </tr><?php
@@ -424,9 +405,9 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
                 $bis = $anztipper - 1;
             }
             if ($von != $start) {
-                echo "<td class='nobr'><a href=\"" . $addt3 . $von . '">';
+                echo "<td><a href=\"" . $addt3 . $von . '">';
             } else {
-                echo '<td class="nobr">';
+                echo '<td>';
             }
             $k1 = strtolower(substr($tippernick[intval(substr($tab0[$von], -6))], 0, 3));
             $k2 = strtolower(substr($tippernick[intval(substr($tab0[$bis], -6))], 0, 3));
@@ -444,8 +425,8 @@ if ($file != '' && $todo == 'einsicht' && $tipp_tippeinsicht == 1) {
       </table>
     </div>
   </div>
-<?php } /* ende if($tipp_anzseiten>1) */ ?>
+<?php } ?>
 </div>
 <?php
-}  /* ende if(($file!="") && ($todo=="einsicht")) */
+}
 ?>
